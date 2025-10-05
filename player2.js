@@ -52,7 +52,7 @@ function displayCurrentLyric() {
     let html = '';
     
     for (let i = 0; i < currentLyric.etext.length; i++) {
-        html += `<span>${currentLyric.etext[i].text}</span>`;
+        html += `<span style="">${currentLyric.etext[i].text}</span>`;
     }
     lyricElement.innerHTML = html;
     wordElements = lyricElement.getElementsByTagName('span');
