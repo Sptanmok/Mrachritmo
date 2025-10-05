@@ -25,7 +25,6 @@ body{
 
 .text span {
     display: inline-block;
-    background: linear-gradient(to right, #000000 var(--progress, 0%), #818282 var(--progress, 0%));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
