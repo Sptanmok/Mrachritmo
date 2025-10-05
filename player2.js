@@ -6,6 +6,7 @@ var _etext = document.getElementById("lyric");
 const lyricElement = document.getElementById('lyric');
 const pairLyricElement = document.getElementById('pairlyric');
 const title = document.title
+let jsonlyrics = null;
 fetch(lyricpath)
   .then(response => {
     if (!response.ok) {
@@ -63,9 +64,9 @@ function highlightWords(currentTime) {
     for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];//简化m
         if (currentTime >= word.start && wordElements[i]) { //判断时间
-            wordElements[i].style.setProperty('animation: fadeInUp 0.9s forwards;');
+            wordElements[i].style.setProperty('animation:', 'fadeInUp 0.9s forwards;');
         } else if (currentTime > word.end && wordElements[i]) {
-            wordElements[i].style.setProperty('');
+            wordElements[i].style.removeProperty('animation');
         }
     }
 }
