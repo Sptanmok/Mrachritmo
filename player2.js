@@ -64,9 +64,9 @@ function highlightWords(currentTime) {
     for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];//简化m
         if (currentTime >= word.start && wordElements[i]) { //判断时间
-            wordElements[i].style.setProperty('animation', 'fadeInUp 0.9s forwards;');
+            wordElements[i].classList.add('fade-in');
         } else if (currentTime < word.start && wordElements[i]) {
-            wordElements[i].style.removeProperty('animation');
+            wordElements[i].classList.remove('fade-in');
         }
     }
 }

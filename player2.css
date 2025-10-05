@@ -27,9 +27,10 @@ body{
     display: inline-block;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
     transition: --progress 0.1s ease;
 	white-space: normal;
+	opacity: 0;
+	transform: translateY(-20px);
 }
 
 @keyframes fadeInUp {
@@ -37,4 +38,7 @@ body{
     opacity: 1;
     transform: translateY(0);
   }
+}
+.fade-in {
+  animation: fadeInUp 0.9s forwards;
 }
