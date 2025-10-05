@@ -69,5 +69,5 @@ body{
 }
 .shake-text {
   display: inline-block;
-  animation: shake 20s ease-in-out infinite;
+  /*animation: shake 20s ease-in-out infinite;*/
 }
