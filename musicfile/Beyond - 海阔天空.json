@@ -1,0 +1,2583 @@
+[
+    {
+        "ordinal": 4,
+        "time": "0.00",
+        "text": "海阔天空 - BEYOND",
+        "eln": 8,
+        "etext": [
+            {
+                "ordinal": 4,
+                "Duration": "0.79",
+                "start": 0,
+                "end": 0.79,
+                "text": "海"
+            },
+            {
+                "ordinal": 4,
+                "Duration": "0.80",
+                "start": 0.79,
+                "end": 1.5899999999999999,
+                "text": "阔"
+            },
+            {
+                "ordinal": 4,
+                "Duration": "0.80",
+                "start": 1.5899999999999999,
+                "end": 2.39,
+                "text": "天"
+            },
+            {
+                "ordinal": 4,
+                "Duration": "0.80",
+                "start": 2.39,
+                "end": 3.19,
+                "text": "空"
+            },
+            {
+                "ordinal": 4,
+                "Duration": "0.80",
+                "start": 3.19,
+                "end": 3.99,
+                "text": "&nbsp;"
+            },
+            {
+                "ordinal": 4,
+                "Duration": "0.79",
+                "start": 3.99,
+                "end": 4.78,
+                "text": "-"
+            },
+            {
+                "ordinal": 4,
+                "Duration": "0.80",
+                "start": 4.78,
+                "end": 5.58,
+                "text": "&nbsp;"
+            },
+            {
+                "ordinal": 4,
+                "Duration": "0.80",
+                "start": 5.58,
+                "end": 6.38,
+                "text": "BEYOND"
+            }
+        ]
+    },
+    {
+        "ordinal": 5,
+        "time": "6.38",
+        "text": "词：黄家驹",
+        "eln": 5,
+        "etext": [
+            {
+                "ordinal": 5,
+                "Duration": "1.28",
+                "start": 6.38,
+                "end": 7.66,
+                "text": "词"
+            },
+            {
+                "ordinal": 5,
+                "Duration": "1.28",
+                "start": 7.66,
+                "end": 8.94,
+                "text": "："
+            },
+            {
+                "ordinal": 5,
+                "Duration": "1.28",
+                "start": 8.94,
+                "end": 10.22,
+                "text": "黄"
+            },
+            {
+                "ordinal": 5,
+                "Duration": "1.28",
+                "start": 10.22,
+                "end": 11.5,
+                "text": "家"
+            },
+            {
+                "ordinal": 5,
+                "Duration": "1.27",
+                "start": 11.5,
+                "end": 12.77,
+                "text": "驹"
+            }
+        ]
+    },
+    {
+        "ordinal": 6,
+        "time": "12.77",
+        "text": "曲：黄家驹",
+        "eln": 5,
+        "etext": [
+            {
+                "ordinal": 6,
+                "Duration": "1.28",
+                "start": 12.77,
+                "end": 14.05,
+                "text": "曲"
+            },
+            {
+                "ordinal": 6,
+                "Duration": "1.28",
+                "start": 14.05,
+                "end": 15.33,
+                "text": "："
+            },
+            {
+                "ordinal": 6,
+                "Duration": "1.28",
+                "start": 15.33,
+                "end": 16.61,
+                "text": "黄"
+            },
+            {
+                "ordinal": 6,
+                "Duration": "1.28",
+                "start": 16.61,
+                "end": 17.89,
+                "text": "家"
+            },
+            {
+                "ordinal": 6,
+                "Duration": "1.28",
+                "start": 17.89,
+                "end": 19.17,
+                "text": "驹"
+            }
+        ]
+    },
+    {
+        "ordinal": 7,
+        "time": "19.17",
+        "text": "今天我 寒夜里看雪飘过",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 7,
+                "Duration": "0.22",
+                "start": 19.17,
+                "end": 19.39,
+                "text": "今"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "0.32",
+                "start": 19.39,
+                "end": 19.71,
+                "text": "天"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "1.05",
+                "start": 19.71,
+                "end": 20.76,
+                "text": "我&nbsp;"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "2.09",
+                "start": 20.76,
+                "end": 22.85,
+                "text": "寒"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "0.16",
+                "start": 22.85,
+                "end": 23.01,
+                "text": "夜"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "0.31",
+                "start": 23.01,
+                "end": 23.32,
+                "text": "里"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "0.16",
+                "start": 23.32,
+                "end": 23.48,
+                "text": "看"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "0.50",
+                "start": 23.48,
+                "end": 23.98,
+                "text": "雪"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "0.41",
+                "start": 23.98,
+                "end": 24.39,
+                "text": "飘"
+            },
+            {
+                "ordinal": 7,
+                "Duration": "0.91",
+                "start": 24.39,
+                "end": 25.3,
+                "text": "过"
+            }
+        ]
+    },
+    {
+        "ordinal": 8,
+        "time": "25.75",
+        "text": "怀着冷却了的心窝飘远方",
+        "eln": 11,
+        "etext": [
+            {
+                "ordinal": 8,
+                "Duration": "0.17",
+                "start": 25.75,
+                "end": 25.92,
+                "text": "怀"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.18",
+                "start": 25.92,
+                "end": 26.1,
+                "text": "着"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.29",
+                "start": 26.1,
+                "end": 26.39,
+                "text": "冷"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.18",
+                "start": 26.39,
+                "end": 26.57,
+                "text": "却"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.59",
+                "start": 26.57,
+                "end": 27.16,
+                "text": "了"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.30",
+                "start": 27.16,
+                "end": 27.46,
+                "text": "的"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.55",
+                "start": 27.46,
+                "end": 28.01,
+                "text": "心"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.38",
+                "start": 28.01,
+                "end": 28.39,
+                "text": "窝"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.28",
+                "start": 28.39,
+                "end": 28.67,
+                "text": "飘"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "0.33",
+                "start": 28.67,
+                "end": 29,
+                "text": "远"
+            },
+            {
+                "ordinal": 8,
+                "Duration": "1.76",
+                "start": 29,
+                "end": 30.76,
+                "text": "方"
+            }
+        ]
+    },
+    {
+        "ordinal": 9,
+        "time": "31.60",
+        "text": "风雨里追赶 雾里分不清影踪",
+        "eln": 12,
+        "etext": [
+            {
+                "ordinal": 9,
+                "Duration": "0.25",
+                "start": 31.6,
+                "end": 31.85,
+                "text": "风"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.36",
+                "start": 31.85,
+                "end": 32.21,
+                "text": "雨"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "1.18",
+                "start": 32.21,
+                "end": 33.39,
+                "text": "里"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.28",
+                "start": 33.39,
+                "end": 33.67,
+                "text": "追"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.69",
+                "start": 33.67,
+                "end": 34.36,
+                "text": "赶&nbsp;"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.46",
+                "start": 34.36,
+                "end": 34.82,
+                "text": "雾"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.40",
+                "start": 34.82,
+                "end": 35.22,
+                "text": "里"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.45",
+                "start": 35.22,
+                "end": 35.67,
+                "text": "分"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.40",
+                "start": 35.67,
+                "end": 36.07,
+                "text": "不"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.43",
+                "start": 36.07,
+                "end": 36.5,
+                "text": "清"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.22",
+                "start": 36.5,
+                "end": 36.72,
+                "text": "影"
+            },
+            {
+                "ordinal": 9,
+                "Duration": "0.78",
+                "start": 36.72,
+                "end": 37.5,
+                "text": "踪"
+            }
+        ]
+    },
+    {
+        "ordinal": 10,
+        "time": "37.82",
+        "text": "天空海阔你与我 可会变",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 10,
+                "Duration": "0.25",
+                "start": 37.82,
+                "end": 38.07,
+                "text": "天"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.36",
+                "start": 38.07,
+                "end": 38.43,
+                "text": "空"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.39",
+                "start": 38.43,
+                "end": 38.82,
+                "text": "海"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.38",
+                "start": 38.82,
+                "end": 39.2,
+                "text": "阔"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.41",
+                "start": 39.2,
+                "end": 39.61,
+                "text": "你"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.21",
+                "start": 39.61,
+                "end": 39.82,
+                "text": "与"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.67",
+                "start": 39.82,
+                "end": 40.49,
+                "text": "我&nbsp;"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.65",
+                "start": 40.49,
+                "end": 41.14,
+                "text": "可"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "0.49",
+                "start": 41.14,
+                "end": 41.63,
+                "text": "会"
+            },
+            {
+                "ordinal": 10,
+                "Duration": "1.64",
+                "start": 41.63,
+                "end": 43.27,
+                "text": "变"
+            }
+        ]
+    },
+    {
+        "ordinal": 11,
+        "time": "44.14",
+        "text": "多少次迎着冷眼与嘲笑",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 11,
+                "Duration": "0.21",
+                "start": 44.14,
+                "end": 44.35,
+                "text": "多"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "0.33",
+                "start": 44.35,
+                "end": 44.68,
+                "text": "少"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "1.85",
+                "start": 44.68,
+                "end": 46.53,
+                "text": "次"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "1.18",
+                "start": 46.53,
+                "end": 47.71,
+                "text": "迎"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "0.18",
+                "start": 47.71,
+                "end": 47.89,
+                "text": "着"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "0.33",
+                "start": 47.89,
+                "end": 48.22,
+                "text": "冷"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "0.25",
+                "start": 48.22,
+                "end": 48.47,
+                "text": "眼"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "0.43",
+                "start": 48.47,
+                "end": 48.9,
+                "text": "与"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "0.35",
+                "start": 48.9,
+                "end": 49.25,
+                "text": "嘲"
+            },
+            {
+                "ordinal": 11,
+                "Duration": "0.85",
+                "start": 49.25,
+                "end": 50.1,
+                "text": "笑"
+            }
+        ]
+    },
+    {
+        "ordinal": 12,
+        "time": "50.54",
+        "text": "从没有放弃过心中的理想",
+        "eln": 11,
+        "etext": [
+            {
+                "ordinal": 12,
+                "Duration": "0.21",
+                "start": 50.54,
+                "end": 50.75,
+                "text": "从"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.21",
+                "start": 50.75,
+                "end": 50.96,
+                "text": "没"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.43",
+                "start": 50.96,
+                "end": 51.39,
+                "text": "有"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.18",
+                "start": 51.39,
+                "end": 51.57,
+                "text": "放"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.50",
+                "start": 51.57,
+                "end": 52.07,
+                "text": "弃"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.36",
+                "start": 52.07,
+                "end": 52.43,
+                "text": "过"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.39",
+                "start": 52.43,
+                "end": 52.82,
+                "text": "心"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.32",
+                "start": 52.82,
+                "end": 53.14,
+                "text": "中"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.42",
+                "start": 53.14,
+                "end": 53.56,
+                "text": "的"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "0.32",
+                "start": 53.56,
+                "end": 53.88,
+                "text": "理"
+            },
+            {
+                "ordinal": 12,
+                "Duration": "2.14",
+                "start": 53.88,
+                "end": 56.02,
+                "text": "想"
+            }
+        ]
+    },
+    {
+        "ordinal": 13,
+        "time": "56.67",
+        "text": "一刹那恍惚 若有所失的感觉",
+        "eln": 12,
+        "etext": [
+            {
+                "ordinal": 13,
+                "Duration": "0.19",
+                "start": 56.67,
+                "end": 56.86,
+                "text": "一"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.31",
+                "start": 56.86,
+                "end": 57.17,
+                "text": "刹"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "1.19",
+                "start": 57.17,
+                "end": 58.36,
+                "text": "那"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.32",
+                "start": 58.36,
+                "end": 58.68,
+                "text": "恍"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.64",
+                "start": 58.68,
+                "end": 59.32,
+                "text": "惚&nbsp;"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.50",
+                "start": 59.32,
+                "end": 59.82,
+                "text": "若"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.18",
+                "start": 59.82,
+                "end": 60,
+                "text": "有"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.57",
+                "start": 60,
+                "end": 60.57,
+                "text": "所"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.39",
+                "start": 60.57,
+                "end": 60.96,
+                "text": "失"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.36",
+                "start": 60.96,
+                "end": 61.32,
+                "text": "的"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.38",
+                "start": 61.32,
+                "end": 61.7,
+                "text": "感"
+            },
+            {
+                "ordinal": 13,
+                "Duration": "0.65",
+                "start": 61.7,
+                "end": 62.35,
+                "text": "觉"
+            }
+        ]
+    },
+    {
+        "ordinal": 14,
+        "time": "62.64",
+        "text": "不知不觉已变淡 心里爱",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 14,
+                "Duration": "0.31",
+                "start": 62.64,
+                "end": 62.95,
+                "text": "不"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.33",
+                "start": 62.95,
+                "end": 63.28,
+                "text": "知"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.46",
+                "start": 63.28,
+                "end": 63.74,
+                "text": "不"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.38",
+                "start": 63.74,
+                "end": 64.12,
+                "text": "觉"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.41",
+                "start": 64.12,
+                "end": 64.53,
+                "text": "已"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.26",
+                "start": 64.53,
+                "end": 64.79,
+                "text": "变"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.56",
+                "start": 64.79,
+                "end": 65.35,
+                "text": "淡&nbsp;"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.71",
+                "start": 65.35,
+                "end": 66.06,
+                "text": "心"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "0.47",
+                "start": 66.06,
+                "end": 66.53,
+                "text": "里"
+            },
+            {
+                "ordinal": 14,
+                "Duration": "2.11",
+                "start": 66.53,
+                "end": 68.64,
+                "text": "爱"
+            }
+        ]
+    },
+    {
+        "ordinal": 15,
+        "time": "69.65",
+        "text": "原谅我这一生不羁放纵爱自由",
+        "eln": 13,
+        "etext": [
+            {
+                "ordinal": 15,
+                "Duration": "0.22",
+                "start": 69.65,
+                "end": 69.87,
+                "text": "原"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.19",
+                "start": 69.87,
+                "end": 70.06,
+                "text": "谅"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.17",
+                "start": 70.06,
+                "end": 70.23,
+                "text": "我"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.17",
+                "start": 70.23,
+                "end": 70.4,
+                "text": "这"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.39",
+                "start": 70.4,
+                "end": 70.79,
+                "text": "一"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.41",
+                "start": 70.79,
+                "end": 71.2,
+                "text": "生"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.34",
+                "start": 71.2,
+                "end": 71.54,
+                "text": "不"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.42",
+                "start": 71.54,
+                "end": 71.96,
+                "text": "羁"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.35",
+                "start": 71.96,
+                "end": 72.31,
+                "text": "放"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.45",
+                "start": 72.31,
+                "end": 72.76,
+                "text": "纵"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.70",
+                "start": 72.76,
+                "end": 73.46,
+                "text": "爱"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "0.66",
+                "start": 73.46,
+                "end": 74.12,
+                "text": "自"
+            },
+            {
+                "ordinal": 15,
+                "Duration": "1.44",
+                "start": 74.12,
+                "end": 75.56,
+                "text": "由"
+            }
+        ]
+    },
+    {
+        "ordinal": 16,
+        "time": "76.40",
+        "text": "也会怕有一天会跌倒",
+        "eln": 9,
+        "etext": [
+            {
+                "ordinal": 16,
+                "Duration": "0.19",
+                "start": 76.4,
+                "end": 76.59,
+                "text": "也"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "0.17",
+                "start": 76.59,
+                "end": 76.76,
+                "text": "会"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "0.28",
+                "start": 76.76,
+                "end": 77.04,
+                "text": "怕"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "0.17",
+                "start": 77.04,
+                "end": 77.21,
+                "text": "有"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "0.60",
+                "start": 77.21,
+                "end": 77.81,
+                "text": "一"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "0.37",
+                "start": 77.81,
+                "end": 78.18,
+                "text": "天"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "0.19",
+                "start": 78.18,
+                "end": 78.37,
+                "text": "会"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "0.47",
+                "start": 78.37,
+                "end": 78.84,
+                "text": "跌"
+            },
+            {
+                "ordinal": 16,
+                "Duration": "3.42",
+                "start": 78.84,
+                "end": 82.26,
+                "text": "倒"
+            }
+        ]
+    },
+    {
+        "ordinal": 17,
+        "time": "82.71",
+        "text": "背弃了理想谁人都可以",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 17,
+                "Duration": "0.22",
+                "start": 82.71,
+                "end": 82.93,
+                "text": "背"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "0.19",
+                "start": 82.93,
+                "end": 83.12,
+                "text": "弃"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "0.28",
+                "start": 83.12,
+                "end": 83.4,
+                "text": "了"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "0.20",
+                "start": 83.4,
+                "end": 83.6,
+                "text": "理"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "1.27",
+                "start": 83.6,
+                "end": 84.87,
+                "text": "想"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "0.33",
+                "start": 84.87,
+                "end": 85.2,
+                "text": "谁"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "0.23",
+                "start": 85.2,
+                "end": 85.43,
+                "text": "人"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "0.58",
+                "start": 85.43,
+                "end": 86.01,
+                "text": "都"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "0.61",
+                "start": 86.01,
+                "end": 86.62,
+                "text": "可"
+            },
+            {
+                "ordinal": 17,
+                "Duration": "1.22",
+                "start": 86.62,
+                "end": 87.84,
+                "text": "以"
+            }
+        ]
+    },
+    {
+        "ordinal": 18,
+        "time": "88.51",
+        "text": "哪会怕有一天只你共我",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 18,
+                "Duration": "0.49",
+                "start": 88.51,
+                "end": 89,
+                "text": "哪"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.20",
+                "start": 89,
+                "end": 89.2,
+                "text": "会"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.36",
+                "start": 89.2,
+                "end": 89.56,
+                "text": "怕"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.20",
+                "start": 89.56,
+                "end": 89.76,
+                "text": "有"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.44",
+                "start": 89.76,
+                "end": 90.2,
+                "text": "一"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.39",
+                "start": 90.2,
+                "end": 90.59,
+                "text": "天"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.28",
+                "start": 90.59,
+                "end": 90.87,
+                "text": "只"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.17",
+                "start": 90.87,
+                "end": 91.04,
+                "text": "你"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "0.35",
+                "start": 91.04,
+                "end": 91.39,
+                "text": "共"
+            },
+            {
+                "ordinal": 18,
+                "Duration": "2.50",
+                "start": 91.39,
+                "end": 93.89,
+                "text": "我"
+            }
+        ]
+    },
+    {
+        "ordinal": 19,
+        "time": "103.40",
+        "text": "今天我 寒夜里看雪飘过",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 19,
+                "Duration": "0.22",
+                "start": 103.4,
+                "end": 103.62,
+                "text": "今"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "0.28",
+                "start": 103.62,
+                "end": 103.9,
+                "text": "天"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "1.69",
+                "start": 103.9,
+                "end": 105.59,
+                "text": "我&nbsp;"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "1.36",
+                "start": 105.59,
+                "end": 106.95,
+                "text": "寒"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "0.17",
+                "start": 106.95,
+                "end": 107.12,
+                "text": "夜"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "0.31",
+                "start": 107.12,
+                "end": 107.43,
+                "text": "里"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "0.17",
+                "start": 107.43,
+                "end": 107.6,
+                "text": "看"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "0.50",
+                "start": 107.6,
+                "end": 108.1,
+                "text": "雪"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "0.44",
+                "start": 108.1,
+                "end": 108.54,
+                "text": "飘"
+            },
+            {
+                "ordinal": 19,
+                "Duration": "0.85",
+                "start": 108.54,
+                "end": 109.39,
+                "text": "过"
+            }
+        ]
+    },
+    {
+        "ordinal": 20,
+        "time": "109.76",
+        "text": "怀着冷却了的心窝飘远方",
+        "eln": 11,
+        "etext": [
+            {
+                "ordinal": 20,
+                "Duration": "0.17",
+                "start": 109.76,
+                "end": 109.93,
+                "text": "怀"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.19",
+                "start": 109.93,
+                "end": 110.12,
+                "text": "着"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.39",
+                "start": 110.12,
+                "end": 110.51,
+                "text": "冷"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.17",
+                "start": 110.51,
+                "end": 110.68,
+                "text": "却"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.52",
+                "start": 110.68,
+                "end": 111.2,
+                "text": "了"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.40",
+                "start": 111.2,
+                "end": 111.6,
+                "text": "的"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.44",
+                "start": 111.6,
+                "end": 112.04,
+                "text": "心"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.36",
+                "start": 112.04,
+                "end": 112.4,
+                "text": "窝"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.44",
+                "start": 112.4,
+                "end": 112.84,
+                "text": "飘"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "0.30",
+                "start": 112.84,
+                "end": 113.14,
+                "text": "远"
+            },
+            {
+                "ordinal": 20,
+                "Duration": "1.72",
+                "start": 113.14,
+                "end": 114.86,
+                "text": "方"
+            }
+        ]
+    },
+    {
+        "ordinal": 21,
+        "time": "115.60",
+        "text": "风雨里追赶 雾里分不清影踪",
+        "eln": 12,
+        "etext": [
+            {
+                "ordinal": 21,
+                "Duration": "0.30",
+                "start": 115.6,
+                "end": 115.9,
+                "text": "风"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.39",
+                "start": 115.9,
+                "end": 116.29,
+                "text": "雨"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "1.29",
+                "start": 116.29,
+                "end": 117.58,
+                "text": "里"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.31",
+                "start": 117.58,
+                "end": 117.89,
+                "text": "追"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.49",
+                "start": 117.89,
+                "end": 118.38,
+                "text": "赶&nbsp;"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.59",
+                "start": 118.38,
+                "end": 118.97,
+                "text": "雾"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.46",
+                "start": 118.97,
+                "end": 119.43,
+                "text": "里"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.34",
+                "start": 119.43,
+                "end": 119.77,
+                "text": "分"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.40",
+                "start": 119.77,
+                "end": 120.17,
+                "text": "不"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.43",
+                "start": 120.17,
+                "end": 120.6,
+                "text": "清"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.21",
+                "start": 120.6,
+                "end": 120.81,
+                "text": "影"
+            },
+            {
+                "ordinal": 21,
+                "Duration": "0.77",
+                "start": 120.81,
+                "end": 121.58,
+                "text": "踪"
+            }
+        ]
+    },
+    {
+        "ordinal": 22,
+        "time": "121.92",
+        "text": "天空海阔你与我 可会变",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 22,
+                "Duration": "0.26",
+                "start": 121.92,
+                "end": 122.18,
+                "text": "天"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.30",
+                "start": 122.18,
+                "end": 122.48,
+                "text": "空"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.47",
+                "start": 122.48,
+                "end": 122.95,
+                "text": "海"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.32",
+                "start": 122.95,
+                "end": 123.27,
+                "text": "阔"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.44",
+                "start": 123.27,
+                "end": 123.71,
+                "text": "你"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.23",
+                "start": 123.71,
+                "end": 123.94,
+                "text": "与"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.96",
+                "start": 123.94,
+                "end": 124.9,
+                "text": "我&nbsp;"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.37",
+                "start": 124.9,
+                "end": 125.27,
+                "text": "可"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "0.33",
+                "start": 125.27,
+                "end": 125.6,
+                "text": "会"
+            },
+            {
+                "ordinal": 22,
+                "Duration": "1.01",
+                "start": 125.6,
+                "end": 126.61,
+                "text": "变"
+            }
+        ]
+    },
+    {
+        "ordinal": 23,
+        "time": "128.70",
+        "text": "原谅我这一生不羁放纵爱自由",
+        "eln": 13,
+        "etext": [
+            {
+                "ordinal": 23,
+                "Duration": "0.20",
+                "start": 128.7,
+                "end": 128.9,
+                "text": "原"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.19",
+                "start": 128.9,
+                "end": 129.09,
+                "text": "谅"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.22",
+                "start": 129.09,
+                "end": 129.31,
+                "text": "我"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.47",
+                "start": 129.31,
+                "end": 129.78,
+                "text": "这"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.46",
+                "start": 129.78,
+                "end": 130.24,
+                "text": "一"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.30",
+                "start": 130.24,
+                "end": 130.54,
+                "text": "生"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.24",
+                "start": 130.54,
+                "end": 130.78,
+                "text": "不"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.34",
+                "start": 130.78,
+                "end": 131.12,
+                "text": "羁"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.35",
+                "start": 131.12,
+                "end": 131.47,
+                "text": "放"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.42",
+                "start": 131.47,
+                "end": 131.89,
+                "text": "纵"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.72",
+                "start": 131.89,
+                "end": 132.61,
+                "text": "爱"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "0.67",
+                "start": 132.61,
+                "end": 133.28,
+                "text": "自"
+            },
+            {
+                "ordinal": 23,
+                "Duration": "1.58",
+                "start": 133.28,
+                "end": 134.86,
+                "text": "由"
+            }
+        ]
+    },
+    {
+        "ordinal": 24,
+        "time": "135.55",
+        "text": "也会怕有一天会跌倒",
+        "eln": 9,
+        "etext": [
+            {
+                "ordinal": 24,
+                "Duration": "0.21",
+                "start": 135.55,
+                "end": 135.76,
+                "text": "也"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "0.17",
+                "start": 135.76,
+                "end": 135.93,
+                "text": "会"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "0.31",
+                "start": 135.93,
+                "end": 136.24,
+                "text": "怕"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "0.18",
+                "start": 136.24,
+                "end": 136.42,
+                "text": "有"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "0.45",
+                "start": 136.42,
+                "end": 136.87,
+                "text": "一"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "0.47",
+                "start": 136.87,
+                "end": 137.34,
+                "text": "天"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "0.19",
+                "start": 137.34,
+                "end": 137.53,
+                "text": "会"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "0.50",
+                "start": 137.53,
+                "end": 138.03,
+                "text": "跌"
+            },
+            {
+                "ordinal": 24,
+                "Duration": "3.27",
+                "start": 138.03,
+                "end": 141.3,
+                "text": "倒"
+            }
+        ]
+    },
+    {
+        "ordinal": 25,
+        "time": "141.83",
+        "text": "背弃了理想谁人都可以",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 25,
+                "Duration": "0.18",
+                "start": 141.83,
+                "end": 142.01,
+                "text": "背"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "0.18",
+                "start": 142.01,
+                "end": 142.19,
+                "text": "弃"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "0.31",
+                "start": 142.19,
+                "end": 142.5,
+                "text": "了"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "0.17",
+                "start": 142.5,
+                "end": 142.67,
+                "text": "理"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "1.39",
+                "start": 142.67,
+                "end": 144.06,
+                "text": "想"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "0.17",
+                "start": 144.06,
+                "end": 144.23,
+                "text": "谁"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "0.28",
+                "start": 144.23,
+                "end": 144.51,
+                "text": "人"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "0.61",
+                "start": 144.51,
+                "end": 145.12,
+                "text": "都"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "0.70",
+                "start": 145.12,
+                "end": 145.82,
+                "text": "可"
+            },
+            {
+                "ordinal": 25,
+                "Duration": "1.35",
+                "start": 145.82,
+                "end": 147.17,
+                "text": "以"
+            }
+        ]
+    },
+    {
+        "ordinal": 26,
+        "time": "148.08",
+        "text": "哪会怕有一天只你共我",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 26,
+                "Duration": "0.19",
+                "start": 148.08,
+                "end": 148.27,
+                "text": "哪"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.16",
+                "start": 148.27,
+                "end": 148.43,
+                "text": "会"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.28",
+                "start": 148.43,
+                "end": 148.71,
+                "text": "怕"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.18",
+                "start": 148.71,
+                "end": 148.89,
+                "text": "有"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.50",
+                "start": 148.89,
+                "end": 149.39,
+                "text": "一"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.42",
+                "start": 149.39,
+                "end": 149.81,
+                "text": "天"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.17",
+                "start": 149.81,
+                "end": 149.98,
+                "text": "只"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.24",
+                "start": 149.98,
+                "end": 150.22,
+                "text": "你"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "0.34",
+                "start": 150.22,
+                "end": 150.56,
+                "text": "共"
+            },
+            {
+                "ordinal": 26,
+                "Duration": "2.52",
+                "start": 150.56,
+                "end": 153.08,
+                "text": "我"
+            }
+        ]
+    },
+    {
+        "ordinal": 27,
+        "time": "158.06",
+        "text": "仍然自由自我",
+        "eln": 6,
+        "etext": [
+            {
+                "ordinal": 27,
+                "Duration": "0.33",
+                "start": 158.06,
+                "end": 158.39,
+                "text": "仍"
+            },
+            {
+                "ordinal": 27,
+                "Duration": "0.20",
+                "start": 158.39,
+                "end": 158.59,
+                "text": "然"
+            },
+            {
+                "ordinal": 27,
+                "Duration": "0.26",
+                "start": 158.59,
+                "end": 158.85,
+                "text": "自"
+            },
+            {
+                "ordinal": 27,
+                "Duration": "0.24",
+                "start": 158.85,
+                "end": 159.09,
+                "text": "由"
+            },
+            {
+                "ordinal": 27,
+                "Duration": "0.45",
+                "start": 159.09,
+                "end": 159.54,
+                "text": "自"
+            },
+            {
+                "ordinal": 27,
+                "Duration": "1.03",
+                "start": 159.54,
+                "end": 160.57,
+                "text": "我"
+            }
+        ]
+    },
+    {
+        "ordinal": 28,
+        "time": "161.42",
+        "text": "永远高唱我歌",
+        "eln": 6,
+        "etext": [
+            {
+                "ordinal": 28,
+                "Duration": "0.19",
+                "start": 161.42,
+                "end": 161.61,
+                "text": "永"
+            },
+            {
+                "ordinal": 28,
+                "Duration": "0.18",
+                "start": 161.61,
+                "end": 161.79,
+                "text": "远"
+            },
+            {
+                "ordinal": 28,
+                "Duration": "0.19",
+                "start": 161.79,
+                "end": 161.98,
+                "text": "高"
+            },
+            {
+                "ordinal": 28,
+                "Duration": "0.29",
+                "start": 161.98,
+                "end": 162.27,
+                "text": "唱"
+            },
+            {
+                "ordinal": 28,
+                "Duration": "0.31",
+                "start": 162.27,
+                "end": 162.58,
+                "text": "我"
+            },
+            {
+                "ordinal": 28,
+                "Duration": "1.37",
+                "start": 162.58,
+                "end": 163.95,
+                "text": "歌"
+            }
+        ]
+    },
+    {
+        "ordinal": 29,
+        "time": "164.42",
+        "text": "走遍千里 原谅我这一生不羁放纵爱自由",
+        "eln": 17,
+        "etext": [
+            {
+                "ordinal": 29,
+                "Duration": "0.19",
+                "start": 164.42,
+                "end": 164.61,
+                "text": "走"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "1.21",
+                "start": 164.61,
+                "end": 165.82,
+                "text": "遍"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.35",
+                "start": 165.82,
+                "end": 166.17,
+                "text": "千"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "2.45",
+                "start": 166.17,
+                "end": 168.62,
+                "text": "里&nbsp;"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.80",
+                "start": 168.62,
+                "end": 169.42,
+                "text": "原"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.16",
+                "start": 169.42,
+                "end": 169.58,
+                "text": "谅"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.27",
+                "start": 169.58,
+                "end": 169.85,
+                "text": "我"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.15",
+                "start": 169.85,
+                "end": 170,
+                "text": "这"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.49",
+                "start": 170,
+                "end": 170.49,
+                "text": "一"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.36",
+                "start": 170.49,
+                "end": 170.85,
+                "text": "生"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.40",
+                "start": 170.85,
+                "end": 171.25,
+                "text": "不"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.38",
+                "start": 171.25,
+                "end": 171.63,
+                "text": "羁"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.37",
+                "start": 171.63,
+                "end": 172,
+                "text": "放"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.41",
+                "start": 172,
+                "end": 172.41,
+                "text": "纵"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.79",
+                "start": 172.41,
+                "end": 173.2,
+                "text": "爱"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "0.67",
+                "start": 173.2,
+                "end": 173.87,
+                "text": "自"
+            },
+            {
+                "ordinal": 29,
+                "Duration": "1.33",
+                "start": 173.87,
+                "end": 175.2,
+                "text": "由"
+            }
+        ]
+    },
+    {
+        "ordinal": 30,
+        "time": "176.14",
+        "text": "也会怕有一天会跌倒",
+        "eln": 9,
+        "etext": [
+            {
+                "ordinal": 30,
+                "Duration": "0.19",
+                "start": 176.14,
+                "end": 176.33,
+                "text": "也"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "0.15",
+                "start": 176.33,
+                "end": 176.48,
+                "text": "会"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "0.30",
+                "start": 176.48,
+                "end": 176.78,
+                "text": "怕"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "0.15",
+                "start": 176.78,
+                "end": 176.93,
+                "text": "有"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "0.48",
+                "start": 176.93,
+                "end": 177.41,
+                "text": "一"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "0.47",
+                "start": 177.41,
+                "end": 177.88,
+                "text": "天"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "0.19",
+                "start": 177.88,
+                "end": 178.07,
+                "text": "会"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "0.46",
+                "start": 178.07,
+                "end": 178.53,
+                "text": "跌"
+            },
+            {
+                "ordinal": 30,
+                "Duration": "3.37",
+                "start": 178.53,
+                "end": 181.9,
+                "text": "倒"
+            }
+        ]
+    },
+    {
+        "ordinal": 31,
+        "time": "182.26",
+        "text": "背弃了理想 谁人都可以",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 31,
+                "Duration": "0.20",
+                "start": 182.26,
+                "end": 182.46,
+                "text": "背"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.16",
+                "start": 182.46,
+                "end": 182.62,
+                "text": "弃"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.41",
+                "start": 182.62,
+                "end": 183.03,
+                "text": "了"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.16",
+                "start": 183.03,
+                "end": 183.19,
+                "text": "理"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.93",
+                "start": 183.19,
+                "end": 184.12,
+                "text": "想&nbsp;"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.66",
+                "start": 184.12,
+                "end": 184.78,
+                "text": "谁"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.17",
+                "start": 184.78,
+                "end": 184.95,
+                "text": "人"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.76",
+                "start": 184.95,
+                "end": 185.71,
+                "text": "都"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "0.75",
+                "start": 185.71,
+                "end": 186.46,
+                "text": "可"
+            },
+            {
+                "ordinal": 31,
+                "Duration": "1.02",
+                "start": 186.46,
+                "end": 187.48,
+                "text": "以"
+            }
+        ]
+    },
+    {
+        "ordinal": 32,
+        "time": "188.67",
+        "text": "哪会怕有一天只你共我",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 32,
+                "Duration": "0.19",
+                "start": 188.67,
+                "end": 188.86,
+                "text": "哪"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.16",
+                "start": 188.86,
+                "end": 189.02,
+                "text": "会"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.25",
+                "start": 189.02,
+                "end": 189.27,
+                "text": "怕"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.18",
+                "start": 189.27,
+                "end": 189.45,
+                "text": "有"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.46",
+                "start": 189.45,
+                "end": 189.91,
+                "text": "一"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.39",
+                "start": 189.91,
+                "end": 190.3,
+                "text": "天"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.17",
+                "start": 190.3,
+                "end": 190.47,
+                "text": "只"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.26",
+                "start": 190.47,
+                "end": 190.73,
+                "text": "你"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "0.31",
+                "start": 190.73,
+                "end": 191.04,
+                "text": "共"
+            },
+            {
+                "ordinal": 32,
+                "Duration": "2.54",
+                "start": 191.04,
+                "end": 193.58,
+                "text": "我"
+            }
+        ]
+    },
+    {
+        "ordinal": 33,
+        "time": "194.51",
+        "text": "原谅我这一生不羁放纵爱自由",
+        "eln": 13,
+        "etext": [
+            {
+                "ordinal": 33,
+                "Duration": "0.20",
+                "start": 194.51,
+                "end": 194.71,
+                "text": "原"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.18",
+                "start": 194.71,
+                "end": 194.89,
+                "text": "谅"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.17",
+                "start": 194.89,
+                "end": 195.06,
+                "text": "我"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.21",
+                "start": 195.06,
+                "end": 195.27,
+                "text": "这"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.28",
+                "start": 195.27,
+                "end": 195.55,
+                "text": "一"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.31",
+                "start": 195.55,
+                "end": 195.86,
+                "text": "生"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.37",
+                "start": 195.86,
+                "end": 196.23,
+                "text": "不"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.35",
+                "start": 196.23,
+                "end": 196.58,
+                "text": "羁"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.28",
+                "start": 196.58,
+                "end": 196.86,
+                "text": "放"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.45",
+                "start": 196.86,
+                "end": 197.31,
+                "text": "纵"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.92",
+                "start": 197.31,
+                "end": 198.23,
+                "text": "爱"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "0.63",
+                "start": 198.23,
+                "end": 198.86,
+                "text": "自"
+            },
+            {
+                "ordinal": 33,
+                "Duration": "2.07",
+                "start": 198.86,
+                "end": 200.93,
+                "text": "由"
+            }
+        ]
+    },
+    {
+        "ordinal": 34,
+        "time": "201.27",
+        "text": "也会怕有一天会跌倒",
+        "eln": 9,
+        "etext": [
+            {
+                "ordinal": 34,
+                "Duration": "0.21",
+                "start": 201.27,
+                "end": 201.48,
+                "text": "也"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "0.19",
+                "start": 201.48,
+                "end": 201.67,
+                "text": "会"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "0.15",
+                "start": 201.67,
+                "end": 201.82,
+                "text": "怕"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "0.25",
+                "start": 201.82,
+                "end": 202.07,
+                "text": "有"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "0.33",
+                "start": 202.07,
+                "end": 202.4,
+                "text": "一"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "0.43",
+                "start": 202.4,
+                "end": 202.83,
+                "text": "天"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "0.17",
+                "start": 202.83,
+                "end": 203,
+                "text": "会"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "0.43",
+                "start": 203,
+                "end": 203.43,
+                "text": "跌"
+            },
+            {
+                "ordinal": 34,
+                "Duration": "2.57",
+                "start": 203.43,
+                "end": 206,
+                "text": "倒"
+            }
+        ]
+    },
+    {
+        "ordinal": 35,
+        "time": "207.38",
+        "text": "背弃了理想谁人都可以",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 35,
+                "Duration": "0.18",
+                "start": 207.38,
+                "end": 207.56,
+                "text": "背"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.14",
+                "start": 207.56,
+                "end": 207.7,
+                "text": "弃"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.32",
+                "start": 207.7,
+                "end": 208.02,
+                "text": "了"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.14",
+                "start": 208.02,
+                "end": 208.16,
+                "text": "理"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.89",
+                "start": 208.16,
+                "end": 209.05,
+                "text": "想"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.61",
+                "start": 209.05,
+                "end": 209.66,
+                "text": "谁"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.17",
+                "start": 209.66,
+                "end": 209.83,
+                "text": "人"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.38",
+                "start": 209.83,
+                "end": 210.21,
+                "text": "都"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "1.08",
+                "start": 210.21,
+                "end": 211.29,
+                "text": "可"
+            },
+            {
+                "ordinal": 35,
+                "Duration": "0.65",
+                "start": 211.29,
+                "end": 211.94,
+                "text": "以"
+            }
+        ]
+    },
+    {
+        "ordinal": 36,
+        "time": "213.61",
+        "text": "哪会怕有一天只你共我",
+        "eln": 10,
+        "etext": [
+            {
+                "ordinal": 36,
+                "Duration": "0.19",
+                "start": 213.61,
+                "end": 213.8,
+                "text": "哪"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.16",
+                "start": 213.8,
+                "end": 213.96,
+                "text": "会"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.26",
+                "start": 213.96,
+                "end": 214.22,
+                "text": "怕"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.17",
+                "start": 214.22,
+                "end": 214.39,
+                "text": "有"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.33",
+                "start": 214.39,
+                "end": 214.72,
+                "text": "一"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.45",
+                "start": 214.72,
+                "end": 215.17,
+                "text": "天"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.17",
+                "start": 215.17,
+                "end": 215.34,
+                "text": "只"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.29",
+                "start": 215.34,
+                "end": 215.63,
+                "text": "你"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "0.29",
+                "start": 215.63,
+                "end": 215.92,
+                "text": "共"
+            },
+            {
+                "ordinal": 36,
+                "Duration": "3.75",
+                "start": 215.92,
+                "end": 219.67,
+                "text": "我"
+            }
+        ]
+    }
+]

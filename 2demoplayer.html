@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="player.css">
+<meta charset="utf-8">
+<title>demo</title>
+</head>
+<body>
+    <canvas id="spectrum" width="800" height="200"></canvas>
+    <div class="main">
+      <div>
+        <h1 class="text" type="lyric" id="lyric"></h1>
+      </div>
+      <p type="text" id="pairlyric"></p>
+      <br />
+	  <div class="player">
+        <audio id="audio" src="musicfile/Beyond - 海阔天空.flac" controls style="width:100%" lyricpath="./musicfile/Beyond - 海阔天空.json"></audio>
+      </div>
+    </div>
+<script src="player.js"></script>
+</body>
+</html>

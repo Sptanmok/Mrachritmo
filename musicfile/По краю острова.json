@@ -1,0 +1,1837 @@
+{
+    "metadata": {},
+    "lyrics": [
+        {
+            "ordinal": 4,
+            "time": "0.00",
+            "text": "По краю острова - Ploho/Молчат Дома",
+            "eln": 13,
+            "etext": [
+                {
+                    "ordinal": 4,
+                    "Duration": "0.13",
+                    "start": 0,
+                    "end": 0.13,
+                    "text": "По"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.06",
+                    "start": 0.13,
+                    "end": 0.19,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.27",
+                    "start": 0.19,
+                    "end": 0.46,
+                    "text": "краю"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.06",
+                    "start": 0.46,
+                    "end": 0.52,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.46",
+                    "start": 0.52,
+                    "end": 0.98,
+                    "text": "острова"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.07",
+                    "start": 0.98,
+                    "end": 1.05,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.06",
+                    "start": 1.05,
+                    "end": 1.11,
+                    "text": "-"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.07",
+                    "start": 1.11,
+                    "end": 1.18,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.33",
+                    "start": 1.18,
+                    "end": 1.51,
+                    "text": "Ploho"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.06",
+                    "start": 1.51,
+                    "end": 1.5699999999999998,
+                    "text": "/"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.40",
+                    "start": 1.5699999999999998,
+                    "end": 1.97,
+                    "text": "Молчат"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.06",
+                    "start": 1.97,
+                    "end": 2.03,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 4,
+                    "Duration": "0.26",
+                    "start": 2.03,
+                    "end": 2.29,
+                    "text": "Дома"
+                }
+            ]
+        },
+        {
+            "ordinal": 5,
+            "time": "2.30",
+            "text": "Lyrics by：Виктор Ужаков/Андрей Сморгонский/Игоья Старшинов/Роман Комогорцев/Егор Шкутк/Павел Козлов",
+            "eln": 8,
+            "etext": [
+                {
+                    "ordinal": 5,
+                    "Duration": "0.58",
+                    "start": 2.3,
+                    "end": 2.88,
+                    "text": "Lyrics&nbsp;"
+                },
+                {
+                    "ordinal": 5,
+                    "Duration": "0.34",
+                    "start": 2.88,
+                    "end": 3.22,
+                    "text": "by：Виктор&nbsp;"
+                },
+                {
+                    "ordinal": 5,
+                    "Duration": "0.33",
+                    "start": 3.22,
+                    "end": 3.55,
+                    "text": "Ужаков/Андрей&nbsp;"
+                },
+                {
+                    "ordinal": 5,
+                    "Duration": "0.75",
+                    "start": 3.55,
+                    "end": 4.3,
+                    "text": "Сморгонский/Игоья&nbsp;"
+                },
+                {
+                    "ordinal": 5,
+                    "Duration": "0.46",
+                    "start": 4.3,
+                    "end": 4.76,
+                    "text": "Старшинов/Роман&nbsp;"
+                },
+                {
+                    "ordinal": 5,
+                    "Duration": "0.62",
+                    "start": 4.76,
+                    "end": 5.38,
+                    "text": "Комогорцев/Егор&nbsp;"
+                },
+                {
+                    "ordinal": 5,
+                    "Duration": "0.62",
+                    "start": 5.38,
+                    "end": 6,
+                    "text": "Шкутк/Павел&nbsp;"
+                },
+                {
+                    "ordinal": 5,
+                    "Duration": "0.40",
+                    "start": 6,
+                    "end": 6.4,
+                    "text": "Козлов"
+                }
+            ]
+        },
+        {
+            "ordinal": 6,
+            "time": "6.40",
+            "text": "Composed by：Виктор Ужаков/Андрей Сморгонский/Игоья Старшинов/Роман Комогорцев/Егор Шкутк/Павел Козлов",
+            "eln": 8,
+            "etext": [
+                {
+                    "ordinal": 6,
+                    "Duration": "0.46",
+                    "start": 6.4,
+                    "end": 6.86,
+                    "text": "Composed&nbsp;"
+                },
+                {
+                    "ordinal": 6,
+                    "Duration": "0.61",
+                    "start": 6.86,
+                    "end": 7.47,
+                    "text": "by：Виктор&nbsp;"
+                },
+                {
+                    "ordinal": 6,
+                    "Duration": "0.73",
+                    "start": 7.47,
+                    "end": 8.2,
+                    "text": "Ужаков/Андрей&nbsp;"
+                },
+                {
+                    "ordinal": 6,
+                    "Duration": "1.05",
+                    "start": 8.2,
+                    "end": 9.25,
+                    "text": "Сморгонский/Игоья&nbsp;"
+                },
+                {
+                    "ordinal": 6,
+                    "Duration": "0.53",
+                    "start": 9.25,
+                    "end": 9.78,
+                    "text": "Старшинов/Роман&nbsp;"
+                },
+                {
+                    "ordinal": 6,
+                    "Duration": "0.73",
+                    "start": 9.78,
+                    "end": 10.51,
+                    "text": "Комогорцев/Егор&nbsp;"
+                },
+                {
+                    "ordinal": 6,
+                    "Duration": "0.66",
+                    "start": 10.51,
+                    "end": 11.17,
+                    "text": "Шкутк/Павел&nbsp;"
+                },
+                {
+                    "ordinal": 6,
+                    "Duration": "0.60",
+                    "start": 11.17,
+                    "end": 11.77,
+                    "text": "Козлов"
+                }
+            ]
+        },
+        {
+            "ordinal": 7,
+            "time": "28.65",
+            "text": "Прохладная осень лёгкий шелест дубин",
+            "eln": 5,
+            "etext": [
+                {
+                    "ordinal": 7,
+                    "Duration": "0.99",
+                    "start": 28.65,
+                    "end": 29.64,
+                    "text": "Прохладная&nbsp;"
+                },
+                {
+                    "ordinal": 7,
+                    "Duration": "0.45",
+                    "start": 29.64,
+                    "end": 30.09,
+                    "text": "осень&nbsp;"
+                },
+                {
+                    "ordinal": 7,
+                    "Duration": "0.75",
+                    "start": 30.09,
+                    "end": 30.84,
+                    "text": "лёгкий&nbsp;"
+                },
+                {
+                    "ordinal": 7,
+                    "Duration": "0.37",
+                    "start": 30.84,
+                    "end": 31.21,
+                    "text": "шелест&nbsp;"
+                },
+                {
+                    "ordinal": 7,
+                    "Duration": "0.87",
+                    "start": 31.21,
+                    "end": 32.08,
+                    "text": "дубин"
+                }
+            ]
+        },
+        {
+            "ordinal": 8,
+            "time": "32.08",
+            "text": "Стучат молоточки по клавишам спин",
+            "eln": 5,
+            "etext": [
+                {
+                    "ordinal": 8,
+                    "Duration": "0.52",
+                    "start": 32.08,
+                    "end": 32.6,
+                    "text": "Стучат&nbsp;"
+                },
+                {
+                    "ordinal": 8,
+                    "Duration": "0.64",
+                    "start": 32.6,
+                    "end": 33.24,
+                    "text": "молоточки&nbsp;"
+                },
+                {
+                    "ordinal": 8,
+                    "Duration": "0.47",
+                    "start": 33.24,
+                    "end": 33.71,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 8,
+                    "Duration": "1.04",
+                    "start": 33.71,
+                    "end": 34.75,
+                    "text": "клавишам&nbsp;"
+                },
+                {
+                    "ordinal": 8,
+                    "Duration": "0.57",
+                    "start": 34.75,
+                    "end": 35.32,
+                    "text": "спин"
+                }
+            ]
+        },
+        {
+            "ordinal": 9,
+            "time": "35.48",
+            "text": "Эта песня простая её ноты просты",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 9,
+                    "Duration": "0.35",
+                    "start": 35.48,
+                    "end": 35.83,
+                    "text": "Эта&nbsp;"
+                },
+                {
+                    "ordinal": 9,
+                    "Duration": "0.41",
+                    "start": 35.83,
+                    "end": 36.24,
+                    "text": "песня&nbsp;"
+                },
+                {
+                    "ordinal": 9,
+                    "Duration": "0.70",
+                    "start": 36.24,
+                    "end": 36.94,
+                    "text": "простая&nbsp;"
+                },
+                {
+                    "ordinal": 9,
+                    "Duration": "0.22",
+                    "start": 36.94,
+                    "end": 37.16,
+                    "text": "её&nbsp;"
+                },
+                {
+                    "ordinal": 9,
+                    "Duration": "0.63",
+                    "start": 37.16,
+                    "end": 37.79,
+                    "text": "ноты&nbsp;"
+                },
+                {
+                    "ordinal": 9,
+                    "Duration": "0.75",
+                    "start": 37.79,
+                    "end": 38.54,
+                    "text": "просты"
+                }
+            ]
+        },
+        {
+            "ordinal": 10,
+            "time": "41.78",
+            "text": "За полем лес ну а за лесом поле",
+            "eln": 11,
+            "etext": [
+                {
+                    "ordinal": 10,
+                    "Duration": "0.21",
+                    "start": 41.78,
+                    "end": 41.99,
+                    "text": "За&nbsp;"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.18",
+                    "start": 41.99,
+                    "end": 42.17,
+                    "text": "полем"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.19",
+                    "start": 42.17,
+                    "end": 42.36,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.17",
+                    "start": 42.36,
+                    "end": 42.53,
+                    "text": "лес"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.16",
+                    "start": 42.53,
+                    "end": 42.69,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.14",
+                    "start": 42.69,
+                    "end": 42.83,
+                    "text": "ну&nbsp;"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.13",
+                    "start": 42.83,
+                    "end": 42.96,
+                    "text": "а&nbsp;"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.16",
+                    "start": 42.96,
+                    "end": 43.12,
+                    "text": "за"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.26",
+                    "start": 43.12,
+                    "end": 43.38,
+                    "text": "&nbsp;"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.36",
+                    "start": 43.38,
+                    "end": 43.74,
+                    "text": "лесом&nbsp;"
+                },
+                {
+                    "ordinal": 10,
+                    "Duration": "0.66",
+                    "start": 43.74,
+                    "end": 44.4,
+                    "text": "поле"
+                }
+            ]
+        },
+        {
+            "ordinal": 11,
+            "time": "45.19",
+            "text": "Змея шипит свернувшись на престоле",
+            "eln": 5,
+            "etext": [
+                {
+                    "ordinal": 11,
+                    "Duration": "0.15",
+                    "start": 45.19,
+                    "end": 45.34,
+                    "text": "Змея&nbsp;"
+                },
+                {
+                    "ordinal": 11,
+                    "Duration": "0.40",
+                    "start": 45.34,
+                    "end": 45.74,
+                    "text": "шипит&nbsp;"
+                },
+                {
+                    "ordinal": 11,
+                    "Duration": "1.01",
+                    "start": 45.74,
+                    "end": 46.75,
+                    "text": "свернувшись&nbsp;"
+                },
+                {
+                    "ordinal": 11,
+                    "Duration": "0.24",
+                    "start": 46.75,
+                    "end": 46.99,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 11,
+                    "Duration": "0.82",
+                    "start": 46.99,
+                    "end": 47.81,
+                    "text": "престоле"
+                }
+            ]
+        },
+        {
+            "ordinal": 12,
+            "time": "50.17",
+            "text": "Робко ищет кусты",
+            "eln": 3,
+            "etext": [
+                {
+                    "ordinal": 12,
+                    "Duration": "0.79",
+                    "start": 50.17,
+                    "end": 50.96,
+                    "text": "Робко&nbsp;"
+                },
+                {
+                    "ordinal": 12,
+                    "Duration": "0.53",
+                    "start": 50.96,
+                    "end": 51.49,
+                    "text": "ищет&nbsp;"
+                },
+                {
+                    "ordinal": 12,
+                    "Duration": "0.38",
+                    "start": 51.49,
+                    "end": 51.87,
+                    "text": "кусты"
+                }
+            ]
+        },
+        {
+            "ordinal": 13,
+            "time": "55.27",
+            "text": "Мы все бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 13,
+                    "Duration": "0.16",
+                    "start": 55.27,
+                    "end": 55.43,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 13,
+                    "Duration": "0.17",
+                    "start": 55.43,
+                    "end": 55.6,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 13,
+                    "Duration": "0.40",
+                    "start": 55.6,
+                    "end": 56,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 13,
+                    "Duration": "0.36",
+                    "start": 56,
+                    "end": 56.36,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 13,
+                    "Duration": "0.30",
+                    "start": 56.36,
+                    "end": 56.66,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 13,
+                    "Duration": "1.06",
+                    "start": 56.66,
+                    "end": 57.72,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 14,
+            "time": "58.30",
+            "text": "Всю жизнь бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 14,
+                    "Duration": "0.19",
+                    "start": 58.3,
+                    "end": 58.49,
+                    "text": "Всю&nbsp;"
+                },
+                {
+                    "ordinal": 14,
+                    "Duration": "0.52",
+                    "start": 58.49,
+                    "end": 59.01,
+                    "text": "жизнь&nbsp;"
+                },
+                {
+                    "ordinal": 14,
+                    "Duration": "0.41",
+                    "start": 59.01,
+                    "end": 59.42,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 14,
+                    "Duration": "0.19",
+                    "start": 59.42,
+                    "end": 59.61,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 14,
+                    "Duration": "0.40",
+                    "start": 59.61,
+                    "end": 60.01,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 14,
+                    "Duration": "0.94",
+                    "start": 60.01,
+                    "end": 60.95,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 15,
+            "time": "61.76",
+            "text": "Мы все живем на крае острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 15,
+                    "Duration": "0.17",
+                    "start": 61.76,
+                    "end": 61.93,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 15,
+                    "Duration": "0.19",
+                    "start": 61.93,
+                    "end": 62.12,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 15,
+                    "Duration": "0.31",
+                    "start": 62.12,
+                    "end": 62.43,
+                    "text": "живем&nbsp;"
+                },
+                {
+                    "ordinal": 15,
+                    "Duration": "0.32",
+                    "start": 62.43,
+                    "end": 62.75,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 15,
+                    "Duration": "0.47",
+                    "start": 62.75,
+                    "end": 63.22,
+                    "text": "крае&nbsp;"
+                },
+                {
+                    "ordinal": 15,
+                    "Duration": "0.84",
+                    "start": 63.22,
+                    "end": 64.06,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 16,
+            "time": "66.49",
+            "text": "Острого ножа",
+            "eln": 2,
+            "etext": [
+                {
+                    "ordinal": 16,
+                    "Duration": "0.66",
+                    "start": 66.49,
+                    "end": 67.15,
+                    "text": "Острого&nbsp;"
+                },
+                {
+                    "ordinal": 16,
+                    "Duration": "0.66",
+                    "start": 67.15,
+                    "end": 67.81,
+                    "text": "ножа"
+                }
+            ]
+        },
+        {
+            "ordinal": 17,
+            "time": "67.81",
+            "text": "Мы все бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 17,
+                    "Duration": "0.26",
+                    "start": 67.81,
+                    "end": 68.07,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 17,
+                    "Duration": "0.25",
+                    "start": 68.07,
+                    "end": 68.32,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 17,
+                    "Duration": "0.44",
+                    "start": 68.32,
+                    "end": 68.76,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 17,
+                    "Duration": "0.45",
+                    "start": 68.76,
+                    "end": 69.21,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 17,
+                    "Duration": "0.31",
+                    "start": 69.21,
+                    "end": 69.52,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 17,
+                    "Duration": "1.21",
+                    "start": 69.52,
+                    "end": 70.73,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 18,
+            "time": "71.66",
+            "text": "Всю жизнь бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 18,
+                    "Duration": "0.17",
+                    "start": 71.66,
+                    "end": 71.83,
+                    "text": "Всю&nbsp;"
+                },
+                {
+                    "ordinal": 18,
+                    "Duration": "0.17",
+                    "start": 71.83,
+                    "end": 72,
+                    "text": "жизнь&nbsp;"
+                },
+                {
+                    "ordinal": 18,
+                    "Duration": "0.44",
+                    "start": 72,
+                    "end": 72.44,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 18,
+                    "Duration": "0.21",
+                    "start": 72.44,
+                    "end": 72.65,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 18,
+                    "Duration": "0.38",
+                    "start": 72.65,
+                    "end": 73.03,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 18,
+                    "Duration": "0.93",
+                    "start": 73.03,
+                    "end": 73.96,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 19,
+            "time": "74.91",
+            "text": "Мы все живем на крае острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 19,
+                    "Duration": "0.20",
+                    "start": 74.91,
+                    "end": 75.11,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 19,
+                    "Duration": "0.17",
+                    "start": 75.11,
+                    "end": 75.28,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 19,
+                    "Duration": "0.45",
+                    "start": 75.28,
+                    "end": 75.73,
+                    "text": "живем&nbsp;"
+                },
+                {
+                    "ordinal": 19,
+                    "Duration": "0.34",
+                    "start": 75.73,
+                    "end": 76.07,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 19,
+                    "Duration": "0.30",
+                    "start": 76.07,
+                    "end": 76.37,
+                    "text": "крае&nbsp;"
+                },
+                {
+                    "ordinal": 19,
+                    "Duration": "0.97",
+                    "start": 76.37,
+                    "end": 77.34,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 20,
+            "time": "79.71",
+            "text": "Острого ножа",
+            "eln": 2,
+            "etext": [
+                {
+                    "ordinal": 20,
+                    "Duration": "0.88",
+                    "start": 79.71,
+                    "end": 80.59,
+                    "text": "Острого&nbsp;"
+                },
+                {
+                    "ordinal": 20,
+                    "Duration": "0.75",
+                    "start": 80.59,
+                    "end": 81.34,
+                    "text": "ножа"
+                }
+            ]
+        },
+        {
+            "ordinal": 21,
+            "time": "108.16",
+            "text": "Стремление к центру безобразия",
+            "eln": 4,
+            "etext": [
+                {
+                    "ordinal": 21,
+                    "Duration": "0.93",
+                    "start": 108.16,
+                    "end": 109.09,
+                    "text": "Стремление&nbsp;"
+                },
+                {
+                    "ordinal": 21,
+                    "Duration": "0.19",
+                    "start": 109.09,
+                    "end": 109.28,
+                    "text": "к&nbsp;"
+                },
+                {
+                    "ordinal": 21,
+                    "Duration": "0.52",
+                    "start": 109.28,
+                    "end": 109.8,
+                    "text": "центру&nbsp;"
+                },
+                {
+                    "ordinal": 21,
+                    "Duration": "0.99",
+                    "start": 109.8,
+                    "end": 110.79,
+                    "text": "безобразия"
+                }
+            ]
+        },
+        {
+            "ordinal": 22,
+            "time": "111.29",
+            "text": "Ты думал будет лучше и вот на тебе",
+            "eln": 8,
+            "etext": [
+                {
+                    "ordinal": 22,
+                    "Duration": "0.34",
+                    "start": 111.29,
+                    "end": 111.63,
+                    "text": "Ты&nbsp;"
+                },
+                {
+                    "ordinal": 22,
+                    "Duration": "0.38",
+                    "start": 111.63,
+                    "end": 112.01,
+                    "text": "думал&nbsp;"
+                },
+                {
+                    "ordinal": 22,
+                    "Duration": "0.41",
+                    "start": 112.01,
+                    "end": 112.42,
+                    "text": "будет&nbsp;"
+                },
+                {
+                    "ordinal": 22,
+                    "Duration": "0.47",
+                    "start": 112.42,
+                    "end": 112.89,
+                    "text": "лучше&nbsp;"
+                },
+                {
+                    "ordinal": 22,
+                    "Duration": "0.19",
+                    "start": 112.89,
+                    "end": 113.08,
+                    "text": "и&nbsp;"
+                },
+                {
+                    "ordinal": 22,
+                    "Duration": "0.21",
+                    "start": 113.08,
+                    "end": 113.29,
+                    "text": "вот&nbsp;"
+                },
+                {
+                    "ordinal": 22,
+                    "Duration": "0.40",
+                    "start": 113.29,
+                    "end": 113.69,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 22,
+                    "Duration": "0.61",
+                    "start": 113.69,
+                    "end": 114.3,
+                    "text": "тебе"
+                }
+            ]
+        },
+        {
+            "ordinal": 23,
+            "time": "114.80",
+            "text": "Одна картина в странных минах других",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 23,
+                    "Duration": "0.18",
+                    "start": 114.8,
+                    "end": 114.98,
+                    "text": "Одна&nbsp;"
+                },
+                {
+                    "ordinal": 23,
+                    "Duration": "0.48",
+                    "start": 114.98,
+                    "end": 115.46,
+                    "text": "картина&nbsp;"
+                },
+                {
+                    "ordinal": 23,
+                    "Duration": "0.22",
+                    "start": 115.46,
+                    "end": 115.68,
+                    "text": "в&nbsp;"
+                },
+                {
+                    "ordinal": 23,
+                    "Duration": "0.52",
+                    "start": 115.68,
+                    "end": 116.2,
+                    "text": "странных&nbsp;"
+                },
+                {
+                    "ordinal": 23,
+                    "Duration": "0.42",
+                    "start": 116.2,
+                    "end": 116.62,
+                    "text": "минах&nbsp;"
+                },
+                {
+                    "ordinal": 23,
+                    "Duration": "1.17",
+                    "start": 116.62,
+                    "end": 117.79,
+                    "text": "других"
+                }
+            ]
+        },
+        {
+            "ordinal": 24,
+            "time": "121.42",
+            "text": "Ушёл в глубины по перилам",
+            "eln": 5,
+            "etext": [
+                {
+                    "ordinal": 24,
+                    "Duration": "0.19",
+                    "start": 121.42,
+                    "end": 121.61,
+                    "text": "Ушёл&nbsp;"
+                },
+                {
+                    "ordinal": 24,
+                    "Duration": "0.20",
+                    "start": 121.61,
+                    "end": 121.81,
+                    "text": "в&nbsp;"
+                },
+                {
+                    "ordinal": 24,
+                    "Duration": "0.69",
+                    "start": 121.81,
+                    "end": 122.5,
+                    "text": "глубины&nbsp;"
+                },
+                {
+                    "ordinal": 24,
+                    "Duration": "0.39",
+                    "start": 122.5,
+                    "end": 122.89,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 24,
+                    "Duration": "0.70",
+                    "start": 122.89,
+                    "end": 123.59,
+                    "text": "перилам"
+                }
+            ]
+        },
+        {
+            "ordinal": 25,
+            "time": "124.57",
+            "text": "Нам говорили там красиво",
+            "eln": 4,
+            "etext": [
+                {
+                    "ordinal": 25,
+                    "Duration": "0.20",
+                    "start": 124.57,
+                    "end": 124.77,
+                    "text": "Нам&nbsp;"
+                },
+                {
+                    "ordinal": 25,
+                    "Duration": "0.74",
+                    "start": 124.77,
+                    "end": 125.51,
+                    "text": "говорили&nbsp;"
+                },
+                {
+                    "ordinal": 25,
+                    "Duration": "0.24",
+                    "start": 125.51,
+                    "end": 125.75,
+                    "text": "там&nbsp;"
+                },
+                {
+                    "ordinal": 25,
+                    "Duration": "0.75",
+                    "start": 125.75,
+                    "end": 126.5,
+                    "text": "красиво"
+                }
+            ]
+        },
+        {
+            "ordinal": 26,
+            "time": "127.87",
+            "text": "Возможно нас поторопили",
+            "eln": 3,
+            "etext": [
+                {
+                    "ordinal": 26,
+                    "Duration": "0.73",
+                    "start": 127.87,
+                    "end": 128.6,
+                    "text": "Возможно&nbsp;"
+                },
+                {
+                    "ordinal": 26,
+                    "Duration": "0.30",
+                    "start": 128.6,
+                    "end": 128.9,
+                    "text": "нас&nbsp;"
+                },
+                {
+                    "ordinal": 26,
+                    "Duration": "0.98",
+                    "start": 128.9,
+                    "end": 129.88,
+                    "text": "поторопили"
+                }
+            ]
+        },
+        {
+            "ordinal": 27,
+            "time": "130.36",
+            "text": "Итог один",
+            "eln": 2,
+            "etext": [
+                {
+                    "ordinal": 27,
+                    "Duration": "0.33",
+                    "start": 130.36,
+                    "end": 130.69,
+                    "text": "Итог&nbsp;"
+                },
+                {
+                    "ordinal": 27,
+                    "Duration": "0.60",
+                    "start": 130.69,
+                    "end": 131.29,
+                    "text": "один"
+                }
+            ]
+        },
+        {
+            "ordinal": 28,
+            "time": "134.74",
+            "text": "Мы все бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 28,
+                    "Duration": "0.17",
+                    "start": 134.74,
+                    "end": 134.91,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 28,
+                    "Duration": "0.35",
+                    "start": 134.91,
+                    "end": 135.26,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 28,
+                    "Duration": "0.39",
+                    "start": 135.26,
+                    "end": 135.65,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 28,
+                    "Duration": "0.15",
+                    "start": 135.65,
+                    "end": 135.8,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 28,
+                    "Duration": "0.63",
+                    "start": 135.8,
+                    "end": 136.43,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 28,
+                    "Duration": "0.60",
+                    "start": 136.43,
+                    "end": 137.03,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 29,
+            "time": "137.73",
+            "text": "Всю жизнь бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 29,
+                    "Duration": "0.18",
+                    "start": 137.73,
+                    "end": 137.91,
+                    "text": "Всю&nbsp;"
+                },
+                {
+                    "ordinal": 29,
+                    "Duration": "0.45",
+                    "start": 137.91,
+                    "end": 138.36,
+                    "text": "жизнь&nbsp;"
+                },
+                {
+                    "ordinal": 29,
+                    "Duration": "0.39",
+                    "start": 138.36,
+                    "end": 138.75,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 29,
+                    "Duration": "0.18",
+                    "start": 138.75,
+                    "end": 138.93,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 29,
+                    "Duration": "0.42",
+                    "start": 138.93,
+                    "end": 139.35,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 29,
+                    "Duration": "0.74",
+                    "start": 139.35,
+                    "end": 140.09,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 30,
+            "time": "141.03",
+            "text": "Мы все живем на крае острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 30,
+                    "Duration": "0.19",
+                    "start": 141.03,
+                    "end": 141.22,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 30,
+                    "Duration": "0.18",
+                    "start": 141.22,
+                    "end": 141.4,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 30,
+                    "Duration": "0.48",
+                    "start": 141.4,
+                    "end": 141.88,
+                    "text": "живем&nbsp;"
+                },
+                {
+                    "ordinal": 30,
+                    "Duration": "0.26",
+                    "start": 141.88,
+                    "end": 142.14,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 30,
+                    "Duration": "0.37",
+                    "start": 142.14,
+                    "end": 142.51,
+                    "text": "крае&nbsp;"
+                },
+                {
+                    "ordinal": 30,
+                    "Duration": "0.75",
+                    "start": 142.51,
+                    "end": 143.26,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 31,
+            "time": "146.00",
+            "text": "Острого ножа",
+            "eln": 2,
+            "etext": [
+                {
+                    "ordinal": 31,
+                    "Duration": "0.92",
+                    "start": 146,
+                    "end": 146.92,
+                    "text": "Острого&nbsp;"
+                },
+                {
+                    "ordinal": 31,
+                    "Duration": "0.73",
+                    "start": 146.92,
+                    "end": 147.65,
+                    "text": "ножа"
+                }
+            ]
+        },
+        {
+            "ordinal": 32,
+            "time": "147.65",
+            "text": "Мы все бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 32,
+                    "Duration": "0.20",
+                    "start": 147.65,
+                    "end": 147.85,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 32,
+                    "Duration": "0.27",
+                    "start": 147.85,
+                    "end": 148.12,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 32,
+                    "Duration": "0.47",
+                    "start": 148.12,
+                    "end": 148.59,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 32,
+                    "Duration": "0.23",
+                    "start": 148.59,
+                    "end": 148.82,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 32,
+                    "Duration": "0.32",
+                    "start": 148.82,
+                    "end": 149.14,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 32,
+                    "Duration": "0.87",
+                    "start": 149.14,
+                    "end": 150.01,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 33,
+            "time": "150.99",
+            "text": "Всю жизнь бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 33,
+                    "Duration": "0.20",
+                    "start": 150.99,
+                    "end": 151.19,
+                    "text": "Всю&nbsp;"
+                },
+                {
+                    "ordinal": 33,
+                    "Duration": "0.43",
+                    "start": 151.19,
+                    "end": 151.62,
+                    "text": "жизнь&nbsp;"
+                },
+                {
+                    "ordinal": 33,
+                    "Duration": "0.34",
+                    "start": 151.62,
+                    "end": 151.96,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 33,
+                    "Duration": "0.22",
+                    "start": 151.96,
+                    "end": 152.18,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 33,
+                    "Duration": "0.39",
+                    "start": 152.18,
+                    "end": 152.57,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 33,
+                    "Duration": "0.76",
+                    "start": 152.57,
+                    "end": 153.33,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 34,
+            "time": "154.29",
+            "text": "Мы все живем на крае острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 34,
+                    "Duration": "0.18",
+                    "start": 154.29,
+                    "end": 154.47,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 34,
+                    "Duration": "0.29",
+                    "start": 154.47,
+                    "end": 154.76,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 34,
+                    "Duration": "0.33",
+                    "start": 154.76,
+                    "end": 155.09,
+                    "text": "живем&nbsp;"
+                },
+                {
+                    "ordinal": 34,
+                    "Duration": "0.28",
+                    "start": 155.09,
+                    "end": 155.37,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 34,
+                    "Duration": "0.32",
+                    "start": 155.37,
+                    "end": 155.69,
+                    "text": "крае&nbsp;"
+                },
+                {
+                    "ordinal": 34,
+                    "Duration": "1.05",
+                    "start": 155.69,
+                    "end": 156.74,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 35,
+            "time": "159.18",
+            "text": "Острого ножа",
+            "eln": 2,
+            "etext": [
+                {
+                    "ordinal": 35,
+                    "Duration": "0.98",
+                    "start": 159.18,
+                    "end": 160.16,
+                    "text": "Острого&nbsp;"
+                },
+                {
+                    "ordinal": 35,
+                    "Duration": "0.83",
+                    "start": 160.16,
+                    "end": 160.99,
+                    "text": "ножа"
+                }
+            ]
+        },
+        {
+            "ordinal": 36,
+            "time": "160.99",
+            "text": "Мы все бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 36,
+                    "Duration": "0.36",
+                    "start": 160.99,
+                    "end": 161.35,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 36,
+                    "Duration": "0.25",
+                    "start": 161.35,
+                    "end": 161.6,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 36,
+                    "Duration": "0.28",
+                    "start": 161.6,
+                    "end": 161.88,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 36,
+                    "Duration": "0.18",
+                    "start": 161.88,
+                    "end": 162.06,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 36,
+                    "Duration": "0.22",
+                    "start": 162.06,
+                    "end": 162.28,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 36,
+                    "Duration": "0.99",
+                    "start": 162.28,
+                    "end": 163.27,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 37,
+            "time": "164.21",
+            "text": "Всю жизнь бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 37,
+                    "Duration": "0.45",
+                    "start": 164.21,
+                    "end": 164.66,
+                    "text": "Всю&nbsp;"
+                },
+                {
+                    "ordinal": 37,
+                    "Duration": "0.25",
+                    "start": 164.66,
+                    "end": 164.91,
+                    "text": "жизнь&nbsp;"
+                },
+                {
+                    "ordinal": 37,
+                    "Duration": "0.44",
+                    "start": 164.91,
+                    "end": 165.35,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 37,
+                    "Duration": "0.15",
+                    "start": 165.35,
+                    "end": 165.5,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 37,
+                    "Duration": "0.43",
+                    "start": 165.5,
+                    "end": 165.93,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 37,
+                    "Duration": "0.69",
+                    "start": 165.93,
+                    "end": 166.62,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 38,
+            "time": "167.53",
+            "text": "Мы все живем на крае острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 38,
+                    "Duration": "0.21",
+                    "start": 167.53,
+                    "end": 167.74,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 38,
+                    "Duration": "0.16",
+                    "start": 167.74,
+                    "end": 167.9,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 38,
+                    "Duration": "0.35",
+                    "start": 167.9,
+                    "end": 168.25,
+                    "text": "живем&nbsp;"
+                },
+                {
+                    "ordinal": 38,
+                    "Duration": "0.21",
+                    "start": 168.25,
+                    "end": 168.46,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 38,
+                    "Duration": "0.27",
+                    "start": 168.46,
+                    "end": 168.73,
+                    "text": "крае&nbsp;"
+                },
+                {
+                    "ordinal": 38,
+                    "Duration": "1.15",
+                    "start": 168.73,
+                    "end": 169.88,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 39,
+            "time": "172.23",
+            "text": "Острого ножа",
+            "eln": 2,
+            "etext": [
+                {
+                    "ordinal": 39,
+                    "Duration": "1.17",
+                    "start": 172.23,
+                    "end": 173.4,
+                    "text": "Острого&nbsp;"
+                },
+                {
+                    "ordinal": 39,
+                    "Duration": "0.61",
+                    "start": 173.4,
+                    "end": 174.01,
+                    "text": "ножа"
+                }
+            ]
+        },
+        {
+            "ordinal": 40,
+            "time": "174.26",
+            "text": "Мы все бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 40,
+                    "Duration": "0.15",
+                    "start": 174.26,
+                    "end": 174.41,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 40,
+                    "Duration": "0.25",
+                    "start": 174.41,
+                    "end": 174.66,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 40,
+                    "Duration": "0.31",
+                    "start": 174.66,
+                    "end": 174.97,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 40,
+                    "Duration": "0.29",
+                    "start": 174.97,
+                    "end": 175.26,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 40,
+                    "Duration": "0.38",
+                    "start": 175.26,
+                    "end": 175.64,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 40,
+                    "Duration": "0.87",
+                    "start": 175.64,
+                    "end": 176.51,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 41,
+            "time": "177.47",
+            "text": "Всю жизнь бежим по краю острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 41,
+                    "Duration": "0.17",
+                    "start": 177.47,
+                    "end": 177.64,
+                    "text": "Всю&nbsp;"
+                },
+                {
+                    "ordinal": 41,
+                    "Duration": "0.25",
+                    "start": 177.64,
+                    "end": 177.89,
+                    "text": "жизнь&nbsp;"
+                },
+                {
+                    "ordinal": 41,
+                    "Duration": "0.35",
+                    "start": 177.89,
+                    "end": 178.24,
+                    "text": "бежим&nbsp;"
+                },
+                {
+                    "ordinal": 41,
+                    "Duration": "0.27",
+                    "start": 178.24,
+                    "end": 178.51,
+                    "text": "по&nbsp;"
+                },
+                {
+                    "ordinal": 41,
+                    "Duration": "0.24",
+                    "start": 178.51,
+                    "end": 178.75,
+                    "text": "краю&nbsp;"
+                },
+                {
+                    "ordinal": 41,
+                    "Duration": "1.00",
+                    "start": 178.75,
+                    "end": 179.75,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 42,
+            "time": "180.76",
+            "text": "Мы все живем на крае острова",
+            "eln": 6,
+            "etext": [
+                {
+                    "ordinal": 42,
+                    "Duration": "0.15",
+                    "start": 180.76,
+                    "end": 180.91,
+                    "text": "Мы&nbsp;"
+                },
+                {
+                    "ordinal": 42,
+                    "Duration": "0.18",
+                    "start": 180.91,
+                    "end": 181.09,
+                    "text": "все&nbsp;"
+                },
+                {
+                    "ordinal": 42,
+                    "Duration": "0.41",
+                    "start": 181.09,
+                    "end": 181.5,
+                    "text": "живем&nbsp;"
+                },
+                {
+                    "ordinal": 42,
+                    "Duration": "0.32",
+                    "start": 181.5,
+                    "end": 181.82,
+                    "text": "на&nbsp;"
+                },
+                {
+                    "ordinal": 42,
+                    "Duration": "0.25",
+                    "start": 181.82,
+                    "end": 182.07,
+                    "text": "крае&nbsp;"
+                },
+                {
+                    "ordinal": 42,
+                    "Duration": "1.11",
+                    "start": 182.07,
+                    "end": 183.18,
+                    "text": "острова"
+                }
+            ]
+        },
+        {
+            "ordinal": 43,
+            "time": "185.59",
+            "text": "Острого ножа",
+            "eln": 2,
+            "etext": [
+                {
+                    "ordinal": 43,
+                    "Duration": "1.09",
+                    "start": 185.59,
+                    "end": 186.68,
+                    "text": "Острого&nbsp;"
+                },
+                {
+                    "ordinal": 43,
+                    "Duration": "0.75",
+                    "start": 186.68,
+                    "end": 187.43,
+                    "text": "ножа"
+                }
+            ]
+        }
+    ]
+}
