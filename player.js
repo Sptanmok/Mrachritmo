@@ -6,6 +6,7 @@ var _etext = document.getElementById("lyric");
 const lyricElement = document.getElementById('lyric');
 const pairLyricElement = document.getElementById('pairlyric');
 const title = document.title
+let old;
 fetch(lyricpath)
   .then(response => {
     if (!response.ok) {
@@ -43,9 +44,12 @@ function updateLyrics() {
         displayCurrentLyric();
     }
 	if (document.hidden == true && audio.paused == false) {
-		document.title = jsonlyrics.lyrics[currentLyricIndex].text;
-	}else{
-		document.title = title
+		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
+			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
+			old = jsonlyrics.lyrics[currentLyricIndex].text;
+		}
+	}else if (document.title !== title){
+		document.title = title;
 	}
                 
     if (currentLyricIndex !== -1) {
