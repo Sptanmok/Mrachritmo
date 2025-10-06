@@ -44,9 +44,11 @@ function updateLyrics() {
         displayCurrentLyric();
     }
 	if (document.hidden == true && audio.paused == false) {
-		if(old !== document.title){
+		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
 			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
 			old = jsonlyrics.lyrics[currentLyricIndex].text;
+		}else if(document.title == title){
+			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
 		}
 	}else if (document.title !== title){
 		document.title = title;
