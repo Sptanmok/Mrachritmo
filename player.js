@@ -20,7 +20,7 @@ fetch(lyricpath)
 	initLyrics();
   })
 function initLyrics() {
-    setInterval(updateLyrics, 10);//刷新
+    setInterval(updateLyrics, 20);//刷新
 }
 function updateLyrics() {
 	if (audio.paused == true){
@@ -44,7 +44,7 @@ function updateLyrics() {
         displayCurrentLyric();
     }
 	if (document.hidden == true && audio.paused == false) {
-		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
+		if(old !== document.title){
 			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
 			old = jsonlyrics.lyrics[currentLyricIndex].text;
 		}
