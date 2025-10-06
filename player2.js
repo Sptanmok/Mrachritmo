@@ -7,6 +7,7 @@ const lyricElement = document.getElementById('lyric');
 const pairLyricElement = document.getElementById('pairlyric');
 const title = document.title
 let jsonlyrics = null;
+let old;
 fetch(lyricpath)
   .then(response => {
     if (!response.ok) {
