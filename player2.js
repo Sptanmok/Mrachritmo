@@ -39,9 +39,14 @@ function updateLyrics() {
         displayCurrentLyric();
     }
 	if (document.hidden == true && audio.paused == false) {
-		document.title = jsonlyrics.lyrics[currentLyricIndex].text;
-	}else{
-		document.title = title
+		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
+			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
+			old = jsonlyrics.lyrics[currentLyricIndex].text;
+		}else if(document.title == title){
+			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
+		}
+	}else if (document.title !== title){
+		document.title = title;
 	}
     if (currentLyricIndex !== -1) {
         highlightWords(currentTime);
