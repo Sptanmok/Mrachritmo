@@ -8,6 +8,18 @@ const pairLyricElement = document.getElementById('pairlyric');
 const title = document.title
 let jsonlyrics = null;
 let old;
+const canvas = document.getElementById('spectrum');
+const ctx = canvas.getContext('2d');
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const analyser = audioContext.createAnalyser();
+analyser.fftSize = 256;
+
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+const dd = audioContext.createMediaElementSource(audio);
+dd.connect(analyser);
+analyser.connect(audioContext.destination);
+main = document.querySelector(".main");
 fetch(lyricpath)
   .then(response => {
     if (!response.ok) {
@@ -21,7 +33,7 @@ fetch(lyricpath)
 	initLyrics();
   })
 function initLyrics() {
-    setInterval(updateLyrics, 10);//刷新
+    setInterval(updateLyrics, 30);//刷新
 }
 function updateLyrics() {
     const currentTime = audio.currentTime;
@@ -52,6 +64,7 @@ function updateLyrics() {
     if (currentLyricIndex !== -1) {
         highlightWords(currentTime);
     }
+	canvas.width = main.clientWidth
 }
 function displayCurrentLyric() {
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
@@ -77,17 +90,6 @@ function highlightWords(currentTime) {
     }
 }
 //频谱条
-const canvas = document.getElementById('spectrum');
-const ctx = canvas.getContext('2d');
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-const analyser = audioContext.createAnalyser();
-analyser.fftSize = 256;
-
-const bufferLength = analyser.frequencyBinCount;
-const dataArray = new Uint8Array(bufferLength);
-const dd = audioContext.createMediaElementSource(audio);
-dd.connect(analyser);
-analyser.connect(audioContext.destination);
 function drawSpectrum() {
   requestAnimationFrame(drawSpectrum);
   analyser.getByteFrequencyData(dataArray);
