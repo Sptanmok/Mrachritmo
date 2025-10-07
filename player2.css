@@ -1,8 +1,7 @@
 body{
 	background-image:url('./20250820072923875926.webp');
 	background-repeat: no-repeat;
-	background-size: cover;
-	font-family: 18px Saira, LXGWWenKai, sans-serif;
+	font-family: 'LXGW WenKai Light', 'Saira Light', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,7 +14,6 @@ body{
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-	font: 18px Saira, LXGWWenKai, sans-serif;
 	backdrop-filter: blur(7px);
 	background-color: rgba(255, 255, 255, 0.3);
 }
@@ -41,4 +39,19 @@ body{
 }
 .fade-in {
   animation: fadeInUp 0.9s forwards;
+}
+@font-face {
+  font-family: 'Saira Light';
+  src: url('https://cdn.mioical.moe/font/Saira-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LXGW WenKai Light';
+  src: url('https://cdn.mioical.moe/font/LXGWWenKai-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
