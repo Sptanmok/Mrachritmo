@@ -101,7 +101,7 @@ function drawSpectrum() {
     ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
 
 
-    x += barWidth + 1.2;
+    x += barWidth + 1;
   }
 }
 
