@@ -34,9 +34,14 @@
           };
           let text = "";
           let totalSeconds = 0;
-          const lines = lrc.split('\n');
-          const timeTagRegex = /^\[(\d{1,2}):(\d{2})(?:\.(\d{1,3}))?\](.*)$/;
-          const metadataRegex = /^\[([a-zA-Z]+)\s*:\s*(.*?)\]$/;
+          lrc = lrc.replace(/^\uFEFF/, '');
+
+          // 分割行
+          const lines = lrc.split(/\r?\n/);
+
+          // 更宽松的匹配规则
+          const metadataRegex = /^\s*\[([a-zA-Z]+)\s*:\s*(.*?)\]\s*$/;
+          const timeTagRegex = /\[(\d{1,2}):(\d{2})(?:[.:](\d{1,3}))?\](.*)/;
           console.log("2");
           //定义正则表达式
           for (line of lines) {
