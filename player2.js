@@ -64,7 +64,7 @@ function updateLyrics() {
     if (currentLyricIndex !== -1) {
         highlightWords(currentTime);
     }
-	canvas.width = main.clientWidth
+	canvas.width = main.clientWidth - 40
 }
 function displayCurrentLyric() {
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
@@ -90,19 +90,17 @@ function highlightWords(currentTime) {
     }
 }
 //频谱条
+const barWidth = (canvas.width / bufferLength) * 2.5;
 function drawSpectrum() {
   requestAnimationFrame(drawSpectrum);
   analyser.getByteFrequencyData(dataArray);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const barWidth = (canvas.width / bufferLength) * 2.5;
   let barHeight;
   let x = 0;
   for (let i = 0; i < bufferLength; i++) {
     barHeight = dataArray[i];
     ctx.fillStyle = "white";
     ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-
-
     x += barWidth + 1;
   }
 }

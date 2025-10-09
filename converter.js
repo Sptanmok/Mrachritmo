@@ -39,7 +39,6 @@
           const metadataRegex = /^\[(.*?):(.*)\]$/;
           console.log("2");
           //定义正则表达式
-          let i = 0;
           for (line of lines) {
                if (!line.trim()) continue;
                const metadataMatch = line.match(metadataRegex);
@@ -55,7 +54,7 @@
                }
                
                //获取和处理普通时间
-               const pairlyricif = result.lyrics.findIndex(user => user.time == totalSeconds);
+               const pairlyricif = result.lyrics.findIndex(lybl => lybl.time == totalSeconds);
                if (pairlyricif != -1) {
                	 result.lyrics[pairlyricif].pairlyric = text;
                	 continue;
@@ -73,12 +72,18 @@
                 while ((ttt = regex.exec(text)) !== null) {
                   if (tttc) {
                     ei++;
-            	     const totalSecondsStart = parseInt(tttc[1]) * 60 + parseInt(tttc[2]) + parseInt(tttc[3]) / 100;
-            	     const totalSecondsEnd = parseInt(ttt[1]) * 60 + parseInt(ttt[2]) + parseInt(ttt[3]) / 100;//大部分为到百分位，有一些到千分位
+					 let decimal = null;
+					 if (tttc[3].toString().length === 3){//大部分为到百分位，有一些到千分位
+					 	decimal = parseInt(tttc[3]) / 1000
+					 } else{
+					 	decimal = parseInt(tttc[3]) / 100
+					 }
+            	     const totalSecondsStart = parseInt(tttc[1]) * 60 + parseInt(tttc[2]) + decimal;
+            	     const totalSecondsEnd = parseInt(ttt[1]) * 60 + parseInt(ttt[2]) + decimal;
            	     const Duration = totalSecondsEnd - totalSecondsStart;
            	     tttd = text.substring(tttc.index + tttc[0].length, ttt.index);
                      tttd = tttd.replace(/ /g, '&nbsp;')
-                     eljson.push({ ordinal: i, Duration: Duration.toFixed(2), start: totalSecondsStart, end: totalSecondsEnd, text: tttd });
+                     eljson.push({ Duration: Duration.toFixed(2), start: totalSecondsStart, end: totalSecondsEnd, text: tttd });
                   }
                   tttc = ttt;
                 }
@@ -98,7 +103,6 @@
                        
                    });
                }
-               i++;
           }
        console.log(result);
        return result;
