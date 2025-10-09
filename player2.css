@@ -1,5 +1,6 @@
 body{
-	background-image:url('./20250820072923875926.webp');
+	/*background-image:url('./20250820072923875926.webp');*/
+	background: linear-gradient(green, blue);
 	background-repeat: no-repeat;
 	font-family: 'LXGW WenKai Light', 'Saira Light', sans-serif;
     min-height: 100vh;
@@ -28,7 +29,7 @@ body{
     transition: --progress 0.1s ease;
 	white-space: normal;
 	opacity: 0;
-	transform: translateY(-20px);
+	transform: translateY(-13.333333333333333333333333333333px);
 }
 
 @keyframes fadeInUp {
