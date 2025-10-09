@@ -1,14 +1,14 @@
 {
-    "metadata": {},
+    "metadata": {
+        "ti": "Are You Ok！",
+        "ar": "雷军"
+    },
     "lyrics": [
         {
-            "ordinal": 2,
             "time": "0.10",
             "text": "Are You OK - 雷军",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 2,
                     "Duration": "0.10",
                     "start": 0.1,
                     "end": 0.2,
@@ -17,13 +17,10 @@
             ]
         },
         {
-            "ordinal": 3,
             "time": "0.20",
             "text": "Written by：Mr.Lemon/Lou Bega",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 3,
                     "Duration": "0.10",
                     "start": 0.2,
                     "end": 0.3,
@@ -32,27 +29,16 @@
             ]
         },
         {
-            "ordinal": 4,
             "time": "1.73",
             "text": "Thank you",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 4,
                     "Duration": "0.42",
                     "start": 1.73,
                     "end": 2.15,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 2.15,
-                    "end": 2.15,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.36",
                     "start": 2.15,
                     "end": 2.51,
@@ -62,41 +48,22 @@
             "pairlyric": "谢谢"
         },
         {
-            "ordinal": 5,
             "time": "4.56",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 5,
                     "Duration": "0.18",
                     "start": 4.5600000000000005,
                     "end": 4.74,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 4.74,
-                    "end": 4.74,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.20",
                     "start": 4.74,
                     "end": 4.9399999999999995,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 4.9399999999999995,
-                    "end": 4.9399999999999995,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.38",
                     "start": 4.9399999999999995,
                     "end": 5.32,
@@ -105,20 +72,15 @@
             ]
         },
         {
-            "ordinal": 6,
             "time": "4.56",
             "text": "你还好吧？",
-            "eln": 0,
             "etext": []
         },
         {
-            "ordinal": 7,
             "time": "5.67",
             "text": "Hello",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 7,
                     "Duration": "0.58",
                     "start": 5.67,
                     "end": 6.25,
@@ -128,27 +90,16 @@
             "pairlyric": "哈喽"
         },
         {
-            "ordinal": 8,
             "time": "6.79",
             "text": "Thank you",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 8,
                     "Duration": "0.20",
                     "start": 6.79,
                     "end": 6.99,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 6.99,
-                    "end": 6.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.24",
                     "start": 6.99,
                     "end": 7.23,
@@ -158,55 +109,28 @@
             "pairlyric": "谢谢"
         },
         {
-            "ordinal": 9,
             "time": "7.67",
             "text": "Thank you very much",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 9,
                     "Duration": "0.19",
                     "start": 7.67,
                     "end": 7.86,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 7.86,
-                    "end": 7.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.25",
                     "start": 7.86,
                     "end": 8.11,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 8.11,
-                    "end": 8.11,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.27",
                     "start": 8.11,
                     "end": 8.38,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 8.38,
-                    "end": 8.38,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.33",
                     "start": 8.38,
                     "end": 8.71,
@@ -216,13 +140,10 @@
             "pairlyric": "非常感谢"
         },
         {
-            "ordinal": 10,
             "time": "9.67",
             "text": "Hello",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 10,
                     "Duration": "0.41",
                     "start": 9.67,
                     "end": 10.08,
@@ -232,27 +153,16 @@
             "pairlyric": "哈喽"
         },
         {
-            "ordinal": 11,
             "time": "10.53",
             "text": "Thank you",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 11,
                     "Duration": "0.19",
                     "start": 10.53,
                     "end": 10.72,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 11,
-                    "Duration": "0.00",
-                    "start": 10.72,
-                    "end": 10.72,
-                    "text": ""
-                },
-                {
-                    "ordinal": 11,
                     "Duration": "0.29",
                     "start": 10.72,
                     "end": 11.01,
@@ -262,55 +172,28 @@
             "pairlyric": "谢谢"
         },
         {
-            "ordinal": 12,
             "time": "11.53",
             "text": "Thank you very much",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 12,
                     "Duration": "0.21",
                     "start": 11.53,
                     "end": 11.74,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 12,
-                    "Duration": "0.00",
-                    "start": 11.74,
-                    "end": 11.74,
-                    "text": ""
-                },
-                {
-                    "ordinal": 12,
                     "Duration": "0.22",
                     "start": 11.74,
                     "end": 11.96,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 12,
-                    "Duration": "0.00",
-                    "start": 11.96,
-                    "end": 11.96,
-                    "text": ""
-                },
-                {
-                    "ordinal": 12,
                     "Duration": "0.21",
                     "start": 11.96,
                     "end": 12.17,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 12,
-                    "Duration": "0.00",
-                    "start": 12.17,
-                    "end": 12.17,
-                    "text": ""
-                },
-                {
-                    "ordinal": 12,
                     "Duration": "0.33",
                     "start": 12.17,
                     "end": 12.5,
@@ -320,13 +203,10 @@
             "pairlyric": "非常感谢"
         },
         {
-            "ordinal": 13,
             "time": "13.00",
             "text": "He",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 13,
                     "Duration": "0.17",
                     "start": 13,
                     "end": 13.17,
@@ -336,27 +216,16 @@
             "pairlyric": "哈"
         },
         {
-            "ordinal": 14,
             "time": "13.17",
             "text": "He hello",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 14,
                     "Duration": "0.24",
                     "start": 13.17,
                     "end": 13.41,
                     "text": "He&nbsp;"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 13.41,
-                    "end": 13.41,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.49",
                     "start": 13.41,
                     "end": 13.9,
@@ -366,27 +235,16 @@
             "pairlyric": "哈 哈喽"
         },
         {
-            "ordinal": 15,
             "time": "14.41",
             "text": "Thank you",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 15,
                     "Duration": "0.19",
                     "start": 14.41,
                     "end": 14.6,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 14.6,
-                    "end": 14.6,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.29",
                     "start": 14.6,
                     "end": 14.89,
@@ -396,55 +254,28 @@
             "pairlyric": "谢谢"
         },
         {
-            "ordinal": 16,
             "time": "15.33",
             "text": "Thank you very much",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 16,
                     "Duration": "0.18",
                     "start": 15.33,
                     "end": 15.51,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 15.51,
-                    "end": 15.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.20",
                     "start": 15.51,
                     "end": 15.71,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 15.71,
-                    "end": 15.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.28",
                     "start": 15.71,
                     "end": 15.99,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 15.99,
-                    "end": 15.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.41",
                     "start": 15.99,
                     "end": 16.4,
@@ -454,13 +285,10 @@
             "pairlyric": "非常感谢"
         },
         {
-            "ordinal": 17,
             "time": "16.86",
             "text": "He",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 17,
                     "Duration": "0.18",
                     "start": 16.86,
                     "end": 17.04,
@@ -470,13 +298,10 @@
             "pairlyric": "哈"
         },
         {
-            "ordinal": 18,
             "time": "17.04",
             "text": "Hehe",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 18,
                     "Duration": "0.19",
                     "start": 17.04,
                     "end": 17.23,
@@ -486,13 +311,10 @@
             "pairlyric": "哈 哈"
         },
         {
-            "ordinal": 19,
             "time": "17.23",
             "text": "Hello",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 19,
                     "Duration": "0.62",
                     "start": 17.23,
                     "end": 17.85,
@@ -502,27 +324,16 @@
             "pairlyric": "哈喽"
         },
         {
-            "ordinal": 20,
             "time": "18.17",
             "text": "Thank you",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 20,
                     "Duration": "0.20",
                     "start": 18.17,
                     "end": 18.37,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 18.37,
-                    "end": 18.37,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.74",
                     "start": 18.37,
                     "end": 19.11,
@@ -532,55 +343,28 @@
             "pairlyric": "谢谢"
         },
         {
-            "ordinal": 21,
             "time": "19.11",
             "text": "Thank you very much",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 21,
                     "Duration": "0.19",
                     "start": 19.11,
                     "end": 19.3,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 19.3,
-                    "end": 19.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.19",
                     "start": 19.3,
                     "end": 19.49,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 19.49,
-                    "end": 19.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.20",
                     "start": 19.49,
                     "end": 19.69,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 19.69,
-                    "end": 19.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.47",
                     "start": 19.69,
                     "end": 20.16,
@@ -590,83 +374,40 @@
             "pairlyric": "非常感谢"
         },
         {
-            "ordinal": 22,
             "time": "20.67",
             "text": "How are you indian mi fans",
-            "eln": 11,
             "etext": [
                 {
-                    "ordinal": 22,
                     "Duration": "0.30",
                     "start": 20.67,
                     "end": 20.97,
                     "text": "How&nbsp;"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 20.97,
-                    "end": 20.97,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.27",
                     "start": 20.97,
                     "end": 21.24,
                     "text": "are&nbsp;"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 21.24,
-                    "end": 21.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.54",
                     "start": 21.24,
                     "end": 21.78,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 21.78,
-                    "end": 21.78,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.39",
                     "start": 21.78,
                     "end": 22.17,
                     "text": "indian&nbsp;"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 22.17,
-                    "end": 22.17,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.20",
                     "start": 22.17,
                     "end": 22.37,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 22.37,
-                    "end": 22.37,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.33",
                     "start": 22.37,
                     "end": 22.7,
@@ -676,69 +417,34 @@
             "pairlyric": "印度的米粉你们好吗？"
         },
         {
-            "ordinal": 23,
             "time": "22.93",
             "text": "Do you like mi 4i",
-            "eln": 9,
             "etext": [
                 {
-                    "ordinal": 23,
                     "Duration": "0.20",
                     "start": 22.93,
                     "end": 23.13,
                     "text": "Do&nbsp;"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 23.13,
-                    "end": 23.13,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.19",
                     "start": 23.13,
                     "end": 23.32,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 23.32,
-                    "end": 23.32,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.19",
                     "start": 23.32,
                     "end": 23.51,
                     "text": "like&nbsp;"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 23.51,
-                    "end": 23.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.42",
                     "start": 23.51,
                     "end": 23.93,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 23.93,
-                    "end": 23.93,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.57",
                     "start": 23.93,
                     "end": 24.5,
@@ -748,55 +454,28 @@
             "pairlyric": "你们喜欢小米4i吗？"
         },
         {
-            "ordinal": 24,
             "time": "24.95",
             "text": "Ok indian mi fans",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 24,
                     "Duration": "0.21",
                     "start": 24.95,
                     "end": 25.16,
                     "text": "Ok&nbsp;"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 25.16,
-                    "end": 25.16,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.49",
                     "start": 25.16,
                     "end": 25.65,
                     "text": "indian&nbsp;"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 25.65,
-                    "end": 25.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.34",
                     "start": 25.65,
                     "end": 25.99,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 25.99,
-                    "end": 25.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.41",
                     "start": 25.99,
                     "end": 26.4,
@@ -806,69 +485,34 @@
             "pairlyric": "印度的米粉们"
         },
         {
-            "ordinal": 25,
             "time": "26.64",
             "text": "Do you like mi band",
-            "eln": 9,
             "etext": [
                 {
-                    "ordinal": 25,
                     "Duration": "0.22",
                     "start": 26.64,
                     "end": 26.86,
                     "text": "Do&nbsp;"
                 },
                 {
-                    "ordinal": 25,
-                    "Duration": "0.00",
-                    "start": 26.86,
-                    "end": 26.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 25,
                     "Duration": "0.19",
                     "start": 26.86,
                     "end": 27.05,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 25,
-                    "Duration": "0.00",
-                    "start": 27.05,
-                    "end": 27.05,
-                    "text": ""
-                },
-                {
-                    "ordinal": 25,
                     "Duration": "0.38",
                     "start": 27.05,
                     "end": 27.43,
                     "text": "like&nbsp;"
                 },
                 {
-                    "ordinal": 25,
-                    "Duration": "0.00",
-                    "start": 27.43,
-                    "end": 27.43,
-                    "text": ""
-                },
-                {
-                    "ordinal": 25,
                     "Duration": "0.50",
                     "start": 27.43,
                     "end": 27.93,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 25,
-                    "Duration": "0.00",
-                    "start": 27.93,
-                    "end": 27.93,
-                    "text": ""
-                },
-                {
-                    "ordinal": 25,
                     "Duration": "0.40",
                     "start": 27.93,
                     "end": 28.33,
@@ -878,55 +522,28 @@
             "pairlyric": "你们喜欢小米手带吗"
         },
         {
-            "ordinal": 26,
             "time": "28.63",
             "text": "We will give everyone",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 26,
                     "Duration": "0.21",
                     "start": 28.63,
                     "end": 28.84,
                     "text": "We&nbsp;"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 28.84,
-                    "end": 28.84,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.20",
                     "start": 28.84,
                     "end": 29.04,
                     "text": "will&nbsp;"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 29.04,
-                    "end": 29.04,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.27",
                     "start": 29.04,
                     "end": 29.31,
                     "text": "give&nbsp;"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 29.31,
-                    "end": 29.31,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.62",
                     "start": 29.31,
                     "end": 29.93,
@@ -936,55 +553,28 @@
             "pairlyric": "我们要给每个人"
         },
         {
-            "ordinal": 27,
             "time": "30.44",
             "text": "A free mi band",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 27,
                     "Duration": "0.21",
                     "start": 30.44,
                     "end": 30.65,
                     "text": "A&nbsp;"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 30.65,
-                    "end": 30.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.59",
                     "start": 30.65,
                     "end": 31.24,
                     "text": "free&nbsp;"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 31.24,
-                    "end": 31.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.52",
                     "start": 31.24,
                     "end": 31.76,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 31.76,
-                    "end": 31.76,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.41",
                     "start": 31.76,
                     "end": 32.17,
@@ -994,27 +584,16 @@
             "pairlyric": "一条小米手带"
         },
         {
-            "ordinal": 28,
             "time": "32.40",
             "text": "And me",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 28,
                     "Duration": "0.22",
                     "start": 32.4,
                     "end": 32.62,
                     "text": "And&nbsp;"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 32.62,
-                    "end": 32.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.45",
                     "start": 32.62,
                     "end": 33.07,
@@ -1024,27 +603,16 @@
             "pairlyric": "还有我！（脸红）"
         },
         {
-            "ordinal": 29,
             "time": "34.68",
             "text": "Mi fans",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 29,
                     "Duration": "0.18",
                     "start": 34.68,
                     "end": 34.86,
                     "text": "Mi&nbsp;"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 34.86,
-                    "end": 34.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.28",
                     "start": 34.86,
                     "end": 35.14,
@@ -1054,41 +622,22 @@
             "pairlyric": "米粉们"
         },
         {
-            "ordinal": 30,
             "time": "35.42",
             "text": "Do you like",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 30,
                     "Duration": "0.19",
                     "start": 35.42,
                     "end": 35.61,
                     "text": "Do&nbsp;"
                 },
                 {
-                    "ordinal": 30,
-                    "Duration": "0.00",
-                    "start": 35.61,
-                    "end": 35.61,
-                    "text": ""
-                },
-                {
-                    "ordinal": 30,
                     "Duration": "0.19",
                     "start": 35.61,
                     "end": 35.8,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 30,
-                    "Duration": "0.00",
-                    "start": 35.8,
-                    "end": 35.8,
-                    "text": ""
-                },
-                {
-                    "ordinal": 30,
                     "Duration": "0.24",
                     "start": 35.8,
                     "end": 36.04,
@@ -1098,55 +647,28 @@
             "pairlyric": "你们喜欢（我）吗？"
         },
         {
-            "ordinal": 31,
             "time": "36.40",
             "text": "I'm very happy to",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 31,
                     "Duration": "0.21",
                     "start": 36.4,
                     "end": 36.61,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 31,
-                    "Duration": "0.00",
-                    "start": 36.61,
-                    "end": 36.61,
-                    "text": ""
-                },
-                {
-                    "ordinal": 31,
                     "Duration": "0.25",
                     "start": 36.61,
                     "end": 36.86,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 31,
-                    "Duration": "0.00",
-                    "start": 36.86,
-                    "end": 36.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 31,
                     "Duration": "0.65",
                     "start": 36.86,
                     "end": 37.51,
                     "text": "happy&nbsp;"
                 },
                 {
-                    "ordinal": 31,
-                    "Duration": "0.00",
-                    "start": 37.51,
-                    "end": 37.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 31,
                     "Duration": "0.44",
                     "start": 37.51,
                     "end": 37.95,
@@ -1156,55 +678,28 @@
             "pairlyric": "我十分高兴"
         },
         {
-            "ordinal": 32,
             "time": "38.46",
             "text": "To be aan indian",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 32,
                     "Duration": "0.18",
                     "start": 38.46,
                     "end": 38.64,
                     "text": "To&nbsp;"
                 },
                 {
-                    "ordinal": 32,
-                    "Duration": "0.00",
-                    "start": 38.64,
-                    "end": 38.64,
-                    "text": ""
-                },
-                {
-                    "ordinal": 32,
                     "Duration": "0.21",
                     "start": 38.64,
                     "end": 38.85,
                     "text": "be&nbsp;"
                 },
                 {
-                    "ordinal": 32,
-                    "Duration": "0.00",
-                    "start": 38.85,
-                    "end": 38.85,
-                    "text": ""
-                },
-                {
-                    "ordinal": 32,
                     "Duration": "0.40",
                     "start": 38.85,
                     "end": 39.25,
                     "text": "aan&nbsp;"
                 },
                 {
-                    "ordinal": 32,
-                    "Duration": "0.00",
-                    "start": 39.25,
-                    "end": 39.25,
-                    "text": ""
-                },
-                {
-                    "ordinal": 32,
                     "Duration": "0.58",
                     "start": 39.25,
                     "end": 39.83,
@@ -1214,55 +709,28 @@
             "pairlyric": "能成为一个印度人（误）"
         },
         {
-            "ordinal": 33,
             "time": "40.13",
             "text": "I'm very happy to",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 33,
                     "Duration": "0.21",
                     "start": 40.13,
                     "end": 40.34,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 33,
-                    "Duration": "0.00",
-                    "start": 40.34,
-                    "end": 40.34,
-                    "text": ""
-                },
-                {
-                    "ordinal": 33,
                     "Duration": "0.55",
                     "start": 40.34,
                     "end": 40.89,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 33,
-                    "Duration": "0.00",
-                    "start": 40.89,
-                    "end": 40.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 33,
                     "Duration": "0.43",
                     "start": 40.89,
                     "end": 41.32,
                     "text": "happy&nbsp;"
                 },
                 {
-                    "ordinal": 33,
-                    "Duration": "0.00",
-                    "start": 41.32,
-                    "end": 41.32,
-                    "text": ""
-                },
-                {
-                    "ordinal": 33,
                     "Duration": "0.43",
                     "start": 41.32,
                     "end": 41.75,
@@ -1272,55 +740,28 @@
             "pairlyric": "我十分高兴"
         },
         {
-            "ordinal": 34,
             "time": "42.32",
             "text": "To be a gift",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 34,
                     "Duration": "0.19",
                     "start": 42.32,
                     "end": 42.51,
                     "text": "To&nbsp;"
                 },
                 {
-                    "ordinal": 34,
-                    "Duration": "0.00",
-                    "start": 42.51,
-                    "end": 42.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 34,
                     "Duration": "0.18",
                     "start": 42.51,
                     "end": 42.69,
                     "text": "be&nbsp;"
                 },
                 {
-                    "ordinal": 34,
-                    "Duration": "0.00",
-                    "start": 42.69,
-                    "end": 42.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 34,
                     "Duration": "0.19",
                     "start": 42.69,
                     "end": 42.88,
                     "text": "a&nbsp;"
                 },
                 {
-                    "ordinal": 34,
-                    "Duration": "0.00",
-                    "start": 42.88,
-                    "end": 42.88,
-                    "text": ""
-                },
-                {
-                    "ordinal": 34,
                     "Duration": "0.46",
                     "start": 42.88,
                     "end": 43.34,
@@ -1330,55 +771,28 @@
             "pairlyric": "能成为一个礼物"
         },
         {
-            "ordinal": 35,
             "time": "44.06",
             "text": "I'm a free gift",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 35,
                     "Duration": "0.18",
                     "start": 44.06,
                     "end": 44.24,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 35,
-                    "Duration": "0.00",
-                    "start": 44.24,
-                    "end": 44.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 35,
                     "Duration": "0.18",
                     "start": 44.24,
                     "end": 44.42,
                     "text": "a&nbsp;"
                 },
                 {
-                    "ordinal": 35,
-                    "Duration": "0.00",
-                    "start": 44.42,
-                    "end": 44.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 35,
                     "Duration": "0.82",
                     "start": 44.42,
                     "end": 45.24,
                     "text": "free&nbsp;"
                 },
                 {
-                    "ordinal": 35,
-                    "Duration": "0.00",
-                    "start": 45.24,
-                    "end": 45.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 35,
                     "Duration": "0.37",
                     "start": 45.24,
                     "end": 45.61,
@@ -1388,27 +802,16 @@
             "pairlyric": "我是一个免费的礼物"
         },
         {
-            "ordinal": 36,
             "time": "46.12",
             "text": "For every-everyone",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 36,
                     "Duration": "0.18",
                     "start": 46.12,
                     "end": 46.3,
                     "text": "For&nbsp;"
                 },
                 {
-                    "ordinal": 36,
-                    "Duration": "0.00",
-                    "start": 46.3,
-                    "end": 46.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 36,
                     "Duration": "0.98",
                     "start": 46.3,
                     "end": 47.28,
@@ -1418,55 +821,28 @@
             "pairlyric": "送给每个每个人"
         },
         {
-            "ordinal": 37,
             "time": "48.08",
             "text": "Do you like me",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 37,
                     "Duration": "0.31",
                     "start": 48.08,
                     "end": 48.39,
                     "text": "Do&nbsp;"
                 },
                 {
-                    "ordinal": 37,
-                    "Duration": "0.00",
-                    "start": 48.39,
-                    "end": 48.39,
-                    "text": ""
-                },
-                {
-                    "ordinal": 37,
                     "Duration": "0.20",
                     "start": 48.39,
                     "end": 48.59,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 37,
-                    "Duration": "0.00",
-                    "start": 48.59,
-                    "end": 48.59,
-                    "text": ""
-                },
-                {
-                    "ordinal": 37,
                     "Duration": "0.37",
                     "start": 48.59,
                     "end": 48.96,
                     "text": "like&nbsp;"
                 },
                 {
-                    "ordinal": 37,
-                    "Duration": "0.00",
-                    "start": 48.96,
-                    "end": 48.96,
-                    "text": ""
-                },
-                {
-                    "ordinal": 37,
                     "Duration": "0.41",
                     "start": 48.96,
                     "end": 49.37,
@@ -1476,13 +852,10 @@
             "pairlyric": "你们喜欢我嘛？（脸红）"
         },
         {
-            "ordinal": 38,
             "time": "49.75",
             "text": "Yeeeeeeeh",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 38,
                     "Duration": "0.40",
                     "start": 49.75,
                     "end": 50.15,
@@ -1492,55 +865,28 @@
             "pairlyric": "是哒"
         },
         {
-            "ordinal": 39,
             "time": "50.37",
             "text": "Thank you very much",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 39,
                     "Duration": "0.20",
                     "start": 50.37,
                     "end": 50.57,
                     "text": "Thank&nbsp;"
                 },
                 {
-                    "ordinal": 39,
-                    "Duration": "0.00",
-                    "start": 50.57,
-                    "end": 50.57,
-                    "text": ""
-                },
-                {
-                    "ordinal": 39,
                     "Duration": "0.17",
                     "start": 50.57,
                     "end": 50.74,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 39,
-                    "Duration": "0.00",
-                    "start": 50.74,
-                    "end": 50.74,
-                    "text": ""
-                },
-                {
-                    "ordinal": 39,
                     "Duration": "0.18",
                     "start": 50.74,
                     "end": 50.92,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 39,
-                    "Duration": "0.00",
-                    "start": 50.92,
-                    "end": 50.92,
-                    "text": ""
-                },
-                {
-                    "ordinal": 39,
                     "Duration": "0.41",
                     "start": 50.92,
                     "end": 51.33,
@@ -1550,55 +896,28 @@
             "pairlyric": "非常感谢"
         },
         {
-            "ordinal": 40,
             "time": "51.60",
             "text": "Oh indian mi fans",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 40,
                     "Duration": "0.19",
                     "start": 51.6,
                     "end": 51.79,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 40,
-                    "Duration": "0.00",
-                    "start": 51.79,
-                    "end": 51.79,
-                    "text": ""
-                },
-                {
-                    "ordinal": 40,
                     "Duration": "0.20",
                     "start": 51.79,
                     "end": 51.99,
                     "text": "indian&nbsp;"
                 },
                 {
-                    "ordinal": 40,
-                    "Duration": "0.00",
-                    "start": 51.99,
-                    "end": 51.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 40,
                     "Duration": "0.28",
                     "start": 51.99,
                     "end": 52.27,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 40,
-                    "Duration": "0.00",
-                    "start": 52.27,
-                    "end": 52.27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 40,
                     "Duration": "0.27",
                     "start": 52.27,
                     "end": 52.54,
@@ -1608,41 +927,22 @@
             "pairlyric": "噢 印度的米粉们"
         },
         {
-            "ordinal": 41,
             "time": "52.75",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 41,
                     "Duration": "0.20",
                     "start": 52.75,
                     "end": 52.95,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 41,
-                    "Duration": "0.00",
-                    "start": 52.95,
-                    "end": 52.95,
-                    "text": ""
-                },
-                {
-                    "ordinal": 41,
                     "Duration": "0.19",
                     "start": 52.95,
                     "end": 53.14,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 41,
-                    "Duration": "0.00",
-                    "start": 53.14,
-                    "end": 53.14,
-                    "text": ""
-                },
-                {
-                    "ordinal": 41,
                     "Duration": "0.31",
                     "start": 53.14,
                     "end": 53.45,
@@ -1652,41 +952,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 42,
             "time": "53.45",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 42,
                     "Duration": "0.22",
                     "start": 53.45,
                     "end": 53.67,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 42,
-                    "Duration": "0.00",
-                    "start": 53.67,
-                    "end": 53.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 42,
                     "Duration": "0.22",
                     "start": 53.67,
                     "end": 53.89,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 42,
-                    "Duration": "0.00",
-                    "start": 53.89,
-                    "end": 53.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 42,
                     "Duration": "0.23",
                     "start": 53.89,
                     "end": 54.12,
@@ -1696,13 +977,10 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 43,
             "time": "54.44",
             "text": "Yeeeeeeeh",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 43,
                     "Duration": "0.53",
                     "start": 54.44,
                     "end": 54.97,
@@ -1712,27 +990,16 @@
             "pairlyric": "是哒"
         },
         {
-            "ordinal": 44,
             "time": "55.27",
             "text": "Oh everyone",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 44,
                     "Duration": "0.20",
                     "start": 55.27,
                     "end": 55.47,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 44,
-                    "Duration": "0.00",
-                    "start": 55.47,
-                    "end": 55.47,
-                    "text": ""
-                },
-                {
-                    "ordinal": 44,
                     "Duration": "0.53",
                     "start": 55.47,
                     "end": 56,
@@ -1742,41 +1009,22 @@
             "pairlyric": "噢 大家"
         },
         {
-            "ordinal": 45,
             "time": "56.48",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 45,
                     "Duration": "0.19",
                     "start": 56.48,
                     "end": 56.67,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 45,
-                    "Duration": "0.00",
-                    "start": 56.67,
-                    "end": 56.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 45,
                     "Duration": "0.18",
                     "start": 56.67,
                     "end": 56.85,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 45,
-                    "Duration": "0.00",
-                    "start": 56.85,
-                    "end": 56.85,
-                    "text": ""
-                },
-                {
-                    "ordinal": 45,
                     "Duration": "0.49",
                     "start": 56.85,
                     "end": 57.34,
@@ -1786,41 +1034,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 46,
             "time": "57.34",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 46,
                     "Duration": "0.19",
                     "start": 57.34,
                     "end": 57.53,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 46,
-                    "Duration": "0.00",
-                    "start": 57.53,
-                    "end": 57.53,
-                    "text": ""
-                },
-                {
-                    "ordinal": 46,
                     "Duration": "0.19",
                     "start": 57.53,
                     "end": 57.72,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 46,
-                    "Duration": "0.00",
-                    "start": 57.72,
-                    "end": 57.72,
-                    "text": ""
-                },
-                {
-                    "ordinal": 46,
                     "Duration": "0.42",
                     "start": 57.72,
                     "end": 58.14,
@@ -1830,97 +1059,46 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 47,
             "time": "58.14",
             "text": "I I I I I I I",
-            "eln": 13,
             "etext": [
                 {
-                    "ordinal": 47,
                     "Duration": "0.19",
                     "start": 58.14,
                     "end": 58.33,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 47,
-                    "Duration": "0.00",
-                    "start": 58.33,
-                    "end": 58.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 47,
                     "Duration": "0.18",
                     "start": 58.33,
                     "end": 58.51,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 47,
-                    "Duration": "0.00",
-                    "start": 58.51,
-                    "end": 58.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 47,
                     "Duration": "0.18",
                     "start": 58.51,
                     "end": 58.69,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 47,
-                    "Duration": "0.00",
-                    "start": 58.69,
-                    "end": 58.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 47,
                     "Duration": "0.18",
                     "start": 58.69,
                     "end": 58.87,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 47,
-                    "Duration": "0.00",
-                    "start": 58.87,
-                    "end": 58.87,
-                    "text": ""
-                },
-                {
-                    "ordinal": 47,
                     "Duration": "0.20",
                     "start": 58.87,
                     "end": 59.07,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 47,
-                    "Duration": "0.00",
-                    "start": 59.07,
-                    "end": 59.07,
-                    "text": ""
-                },
-                {
-                    "ordinal": 47,
                     "Duration": "0.23",
                     "start": 59.07,
                     "end": 59.3,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 47,
-                    "Duration": "0.00",
-                    "start": 59.3,
-                    "end": 59.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 47,
                     "Duration": "0.27",
                     "start": 59.3,
                     "end": 59.57,
@@ -1930,13 +1108,10 @@
             "pairlyric": "我 我 我 我 我"
         },
         {
-            "ordinal": 48,
             "time": "59.57",
             "text": "Mean",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 48,
                     "Duration": "0.46",
                     "start": 59.57,
                     "end": 60.03,
@@ -1946,41 +1121,22 @@
             "pairlyric": "是说"
         },
         {
-            "ordinal": 49,
             "time": "60.34",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 49,
                     "Duration": "0.19",
                     "start": 60.34,
                     "end": 60.53,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 49,
-                    "Duration": "0.00",
-                    "start": 60.53,
-                    "end": 60.53,
-                    "text": ""
-                },
-                {
-                    "ordinal": 49,
                     "Duration": "0.17",
                     "start": 60.53,
                     "end": 60.7,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 49,
-                    "Duration": "0.00",
-                    "start": 60.7,
-                    "end": 60.7,
-                    "text": ""
-                },
-                {
-                    "ordinal": 49,
                     "Duration": "0.30",
                     "start": 60.7,
                     "end": 61,
@@ -1990,41 +1146,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 50,
             "time": "61.22",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 50,
                     "Duration": "0.20",
                     "start": 61.22,
                     "end": 61.42,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 50,
-                    "Duration": "0.00",
-                    "start": 61.42,
-                    "end": 61.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 50,
                     "Duration": "0.20",
                     "start": 61.42,
                     "end": 61.62,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 50,
-                    "Duration": "0.00",
-                    "start": 61.62,
-                    "end": 61.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 50,
                     "Duration": "0.29",
                     "start": 61.62,
                     "end": 61.91,
@@ -2034,41 +1171,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 51,
             "time": "62.43",
             "text": "I'm very ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 51,
                     "Duration": "0.46",
                     "start": 62.43,
                     "end": 62.89,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 51,
-                    "Duration": "0.00",
-                    "start": 62.89,
-                    "end": 62.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 51,
                     "Duration": "0.51",
                     "start": 62.89,
                     "end": 63.4,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 51,
-                    "Duration": "0.00",
-                    "start": 63.4,
-                    "end": 63.4,
-                    "text": ""
-                },
-                {
-                    "ordinal": 51,
                     "Duration": "0.40",
                     "start": 63.4,
                     "end": 63.8,
@@ -2078,55 +1196,28 @@
             "pairlyric": "俺很好！"
         },
         {
-            "ordinal": 52,
             "time": "66.80",
             "text": "Oh indian mi fans",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 52,
                     "Duration": "0.21",
                     "start": 66.8,
                     "end": 67.01,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 52,
-                    "Duration": "0.00",
-                    "start": 67.01,
-                    "end": 67.01,
-                    "text": ""
-                },
-                {
-                    "ordinal": 52,
                     "Duration": "0.45",
                     "start": 67.01,
                     "end": 67.46,
                     "text": "indian&nbsp;"
                 },
                 {
-                    "ordinal": 52,
-                    "Duration": "0.00",
-                    "start": 67.46,
-                    "end": 67.46,
-                    "text": ""
-                },
-                {
-                    "ordinal": 52,
                     "Duration": "0.27",
                     "start": 67.46,
                     "end": 67.73,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 52,
-                    "Duration": "0.00",
-                    "start": 67.73,
-                    "end": 67.73,
-                    "text": ""
-                },
-                {
-                    "ordinal": 52,
                     "Duration": "0.30",
                     "start": 67.73,
                     "end": 68.03,
@@ -2136,41 +1227,22 @@
             "pairlyric": "噢 印度的米粉们"
         },
         {
-            "ordinal": 53,
             "time": "68.13",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 53,
                     "Duration": "0.18",
                     "start": 68.13,
                     "end": 68.31,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 53,
-                    "Duration": "0.00",
-                    "start": 68.31,
-                    "end": 68.31,
-                    "text": ""
-                },
-                {
-                    "ordinal": 53,
                     "Duration": "0.18",
                     "start": 68.31,
                     "end": 68.49,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 53,
-                    "Duration": "0.00",
-                    "start": 68.49,
-                    "end": 68.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 53,
                     "Duration": "0.28",
                     "start": 68.49,
                     "end": 68.77,
@@ -2180,41 +1252,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 54,
             "time": "68.77",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 54,
                     "Duration": "0.24",
                     "start": 68.77,
                     "end": 69.01,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 54,
-                    "Duration": "0.00",
-                    "start": 69.01,
-                    "end": 69.01,
-                    "text": ""
-                },
-                {
-                    "ordinal": 54,
                     "Duration": "0.20",
                     "start": 69.01,
                     "end": 69.21,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 54,
-                    "Duration": "0.00",
-                    "start": 69.21,
-                    "end": 69.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 54,
                     "Duration": "0.48",
                     "start": 69.21,
                     "end": 69.69,
@@ -2224,55 +1277,28 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 55,
             "time": "69.98",
             "text": "Oh china mi fans",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 55,
                     "Duration": "0.48",
                     "start": 69.98,
                     "end": 70.46,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 55,
-                    "Duration": "0.00",
-                    "start": 70.46,
-                    "end": 70.46,
-                    "text": ""
-                },
-                {
-                    "ordinal": 55,
                     "Duration": "0.56",
                     "start": 70.46,
                     "end": 71.02,
                     "text": "china&nbsp;"
                 },
                 {
-                    "ordinal": 55,
-                    "Duration": "0.00",
-                    "start": 71.02,
-                    "end": 71.02,
-                    "text": ""
-                },
-                {
-                    "ordinal": 55,
                     "Duration": "0.29",
                     "start": 71.02,
                     "end": 71.31,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 55,
-                    "Duration": "0.00",
-                    "start": 71.31,
-                    "end": 71.31,
-                    "text": ""
-                },
-                {
-                    "ordinal": 55,
                     "Duration": "0.46",
                     "start": 71.31,
                     "end": 71.77,
@@ -2282,41 +1308,22 @@
             "pairlyric": "噢 中国米粉"
         },
         {
-            "ordinal": 56,
             "time": "71.73",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 56,
                     "Duration": "0.31",
                     "start": 71.73,
                     "end": 72.04,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 56,
-                    "Duration": "0.00",
-                    "start": 72.04,
-                    "end": 72.04,
-                    "text": ""
-                },
-                {
-                    "ordinal": 56,
                     "Duration": "0.19",
                     "start": 72.04,
                     "end": 72.23,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 56,
-                    "Duration": "0.00",
-                    "start": 72.23,
-                    "end": 72.23,
-                    "text": ""
-                },
-                {
-                    "ordinal": 56,
                     "Duration": "0.34",
                     "start": 72.23,
                     "end": 72.57,
@@ -2326,41 +1333,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 57,
             "time": "72.85",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 57,
                     "Duration": "0.19",
                     "start": 72.85,
                     "end": 73.04,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 57,
-                    "Duration": "0.00",
-                    "start": 73.04,
-                    "end": 73.04,
-                    "text": ""
-                },
-                {
-                    "ordinal": 57,
                     "Duration": "0.17",
                     "start": 73.04,
                     "end": 73.21,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 57,
-                    "Duration": "0.00",
-                    "start": 73.21,
-                    "end": 73.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 57,
                     "Duration": "0.25",
                     "start": 73.21,
                     "end": 73.46,
@@ -2370,97 +1358,46 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 58,
             "time": "73.53",
             "text": "I I I I I I I",
-            "eln": 13,
             "etext": [
                 {
-                    "ordinal": 58,
                     "Duration": "0.20",
                     "start": 73.53,
                     "end": 73.73,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 58,
-                    "Duration": "0.00",
-                    "start": 73.73,
-                    "end": 73.73,
-                    "text": ""
-                },
-                {
-                    "ordinal": 58,
                     "Duration": "0.17",
                     "start": 73.73,
                     "end": 73.9,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 58,
-                    "Duration": "0.00",
-                    "start": 73.9,
-                    "end": 73.9,
-                    "text": ""
-                },
-                {
-                    "ordinal": 58,
                     "Duration": "0.16",
                     "start": 73.9,
                     "end": 74.06,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 58,
-                    "Duration": "0.00",
-                    "start": 74.06,
-                    "end": 74.06,
-                    "text": ""
-                },
-                {
-                    "ordinal": 58,
                     "Duration": "0.17",
                     "start": 74.06,
                     "end": 74.23,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 58,
-                    "Duration": "0.00",
-                    "start": 74.23,
-                    "end": 74.23,
-                    "text": ""
-                },
-                {
-                    "ordinal": 58,
                     "Duration": "0.17",
                     "start": 74.23,
                     "end": 74.4,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 58,
-                    "Duration": "0.00",
-                    "start": 74.4,
-                    "end": 74.4,
-                    "text": ""
-                },
-                {
-                    "ordinal": 58,
                     "Duration": "0.16",
                     "start": 74.4,
                     "end": 74.56,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 58,
-                    "Duration": "0.00",
-                    "start": 74.56,
-                    "end": 74.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 58,
                     "Duration": "0.25",
                     "start": 74.56,
                     "end": 74.81,
@@ -2470,13 +1407,10 @@
             "pairlyric": "我 我 我 我 我"
         },
         {
-            "ordinal": 59,
             "time": "74.81",
             "text": "Mean",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 59,
                     "Duration": "0.54",
                     "start": 74.81,
                     "end": 75.35,
@@ -2486,41 +1420,22 @@
             "pairlyric": "是说"
         },
         {
-            "ordinal": 60,
             "time": "75.68",
             "text": "How are you",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 60,
                     "Duration": "0.19",
                     "start": 75.68,
                     "end": 75.87,
                     "text": "How&nbsp;"
                 },
                 {
-                    "ordinal": 60,
-                    "Duration": "0.00",
-                    "start": 75.87,
-                    "end": 75.87,
-                    "text": ""
-                },
-                {
-                    "ordinal": 60,
                     "Duration": "0.19",
                     "start": 75.87,
                     "end": 76.06,
                     "text": "are&nbsp;"
                 },
                 {
-                    "ordinal": 60,
-                    "Duration": "0.00",
-                    "start": 76.06,
-                    "end": 76.06,
-                    "text": ""
-                },
-                {
-                    "ordinal": 60,
                     "Duration": "0.28",
                     "start": 76.06,
                     "end": 76.34,
@@ -2530,41 +1445,22 @@
             "pairlyric": "你好嘛？"
         },
         {
-            "ordinal": 61,
             "time": "76.52",
             "text": "How are you",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 61,
                     "Duration": "0.19",
                     "start": 76.52,
                     "end": 76.71,
                     "text": "How&nbsp;"
                 },
                 {
-                    "ordinal": 61,
-                    "Duration": "0.00",
-                    "start": 76.71,
-                    "end": 76.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 61,
                     "Duration": "0.19",
                     "start": 76.71,
                     "end": 76.9,
                     "text": "are&nbsp;"
                 },
                 {
-                    "ordinal": 61,
-                    "Duration": "0.00",
-                    "start": 76.9,
-                    "end": 76.9,
-                    "text": ""
-                },
-                {
-                    "ordinal": 61,
                     "Duration": "1.11",
                     "start": 76.9,
                     "end": 78.01,
@@ -2574,55 +1470,28 @@
             "pairlyric": "你好嘛？"
         },
         {
-            "ordinal": 62,
             "time": "77.81",
             "text": "I'm fine thank you",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 62,
                     "Duration": "0.30",
                     "start": 77.81,
                     "end": 78.11,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 62,
-                    "Duration": "0.00",
-                    "start": 78.11,
-                    "end": 78.11,
-                    "text": ""
-                },
-                {
-                    "ordinal": 62,
                     "Duration": "0.50",
                     "start": 78.11,
                     "end": 78.61,
                     "text": "fine&nbsp;"
                 },
                 {
-                    "ordinal": 62,
-                    "Duration": "0.00",
-                    "start": 78.61,
-                    "end": 78.61,
-                    "text": ""
-                },
-                {
-                    "ordinal": 62,
                     "Duration": "0.22",
                     "start": 78.61,
                     "end": 78.83,
                     "text": "thank&nbsp;"
                 },
                 {
-                    "ordinal": 62,
-                    "Duration": "0.00",
-                    "start": 78.83,
-                    "end": 78.83,
-                    "text": ""
-                },
-                {
-                    "ordinal": 62,
                     "Duration": "0.47",
                     "start": 78.83,
                     "end": 79.3,
@@ -2632,41 +1501,22 @@
             "pairlyric": "俺很好！谢谢！"
         },
         {
-            "ordinal": 63,
             "time": "81.28",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 63,
                     "Duration": "0.17",
                     "start": 81.28,
                     "end": 81.45,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 63,
-                    "Duration": "0.00",
-                    "start": 81.45,
-                    "end": 81.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 63,
                     "Duration": "0.21",
                     "start": 81.45,
                     "end": 81.66,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 63,
-                    "Duration": "0.00",
-                    "start": 81.66,
-                    "end": 81.66,
-                    "text": ""
-                },
-                {
-                    "ordinal": 63,
                     "Duration": "0.45",
                     "start": 81.66,
                     "end": 82.11,
@@ -2676,41 +1526,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 64,
             "time": "82.33",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 64,
                     "Duration": "0.22",
                     "start": 82.33,
                     "end": 82.55,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 64,
-                    "Duration": "0.00",
-                    "start": 82.55,
-                    "end": 82.55,
-                    "text": ""
-                },
-                {
-                    "ordinal": 64,
                     "Duration": "0.19",
                     "start": 82.55,
                     "end": 82.74,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 64,
-                    "Duration": "0.00",
-                    "start": 82.74,
-                    "end": 82.74,
-                    "text": ""
-                },
-                {
-                    "ordinal": 64,
                     "Duration": "0.89",
                     "start": 82.74,
                     "end": 83.63,
@@ -2720,83 +1551,40 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 65,
             "time": "83.63",
             "text": "We will give everyone a band",
-            "eln": 11,
             "etext": [
                 {
-                    "ordinal": 65,
                     "Duration": "0.28",
                     "start": 83.63,
                     "end": 83.91,
                     "text": "We&nbsp;"
                 },
                 {
-                    "ordinal": 65,
-                    "Duration": "0.00",
-                    "start": 83.91,
-                    "end": 83.91,
-                    "text": ""
-                },
-                {
-                    "ordinal": 65,
                     "Duration": "0.19",
                     "start": 83.91,
                     "end": 84.1,
                     "text": "will&nbsp;"
                 },
                 {
-                    "ordinal": 65,
-                    "Duration": "0.00",
-                    "start": 84.1,
-                    "end": 84.1,
-                    "text": ""
-                },
-                {
-                    "ordinal": 65,
                     "Duration": "0.53",
                     "start": 84.1,
                     "end": 84.63,
                     "text": "give&nbsp;"
                 },
                 {
-                    "ordinal": 65,
-                    "Duration": "0.00",
-                    "start": 84.63,
-                    "end": 84.63,
-                    "text": ""
-                },
-                {
-                    "ordinal": 65,
                     "Duration": "0.57",
                     "start": 84.63,
                     "end": 85.2,
                     "text": "everyone&nbsp;"
                 },
                 {
-                    "ordinal": 65,
-                    "Duration": "0.00",
-                    "start": 85.2,
-                    "end": 85.2,
-                    "text": ""
-                },
-                {
-                    "ordinal": 65,
                     "Duration": "0.25",
                     "start": 85.2,
                     "end": 85.45,
                     "text": "a&nbsp;"
                 },
                 {
-                    "ordinal": 65,
-                    "Duration": "0.00",
-                    "start": 85.45,
-                    "end": 85.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 65,
                     "Duration": "0.37",
                     "start": 85.45,
                     "end": 85.82,
@@ -2806,41 +1594,22 @@
             "pairlyric": "我们要给每个人一条手带"
         },
         {
-            "ordinal": 66,
             "time": "86.11",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 66,
                     "Duration": "0.24",
                     "start": 86.11,
                     "end": 86.35,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 66,
-                    "Duration": "0.00",
-                    "start": 86.35,
-                    "end": 86.35,
-                    "text": ""
-                },
-                {
-                    "ordinal": 66,
                     "Duration": "0.21",
                     "start": 86.35,
                     "end": 86.56,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 66,
-                    "Duration": "0.00",
-                    "start": 86.56,
-                    "end": 86.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 66,
                     "Duration": "0.26",
                     "start": 86.56,
                     "end": 86.82,
@@ -2850,97 +1619,46 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 67,
             "time": "87.58",
             "text": "We will give a band to everyone",
-            "eln": 13,
             "etext": [
                 {
-                    "ordinal": 67,
                     "Duration": "0.22",
                     "start": 87.58,
                     "end": 87.8,
                     "text": "We&nbsp;"
                 },
                 {
-                    "ordinal": 67,
-                    "Duration": "0.00",
-                    "start": 87.8,
-                    "end": 87.8,
-                    "text": ""
-                },
-                {
-                    "ordinal": 67,
                     "Duration": "0.20",
                     "start": 87.8,
                     "end": 88,
                     "text": "will&nbsp;"
                 },
                 {
-                    "ordinal": 67,
-                    "Duration": "0.00",
-                    "start": 88,
-                    "end": 88,
-                    "text": ""
-                },
-                {
-                    "ordinal": 67,
                     "Duration": "0.24",
                     "start": 88,
                     "end": 88.24,
                     "text": "give&nbsp;"
                 },
                 {
-                    "ordinal": 67,
-                    "Duration": "0.00",
-                    "start": 88.24,
-                    "end": 88.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 67,
                     "Duration": "0.21",
                     "start": 88.24,
                     "end": 88.45,
                     "text": "a&nbsp;"
                 },
                 {
-                    "ordinal": 67,
-                    "Duration": "0.00",
-                    "start": 88.45,
-                    "end": 88.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 67,
                     "Duration": "0.23",
                     "start": 88.45,
                     "end": 88.68,
                     "text": "band&nbsp;"
                 },
                 {
-                    "ordinal": 67,
-                    "Duration": "0.00",
-                    "start": 88.68,
-                    "end": 88.68,
-                    "text": ""
-                },
-                {
-                    "ordinal": 67,
                     "Duration": "0.29",
                     "start": 88.68,
                     "end": 88.97,
                     "text": "to&nbsp;"
                 },
                 {
-                    "ordinal": 67,
-                    "Duration": "0.00",
-                    "start": 88.97,
-                    "end": 88.97,
-                    "text": ""
-                },
-                {
-                    "ordinal": 67,
                     "Duration": "0.43",
                     "start": 88.97,
                     "end": 89.4,
@@ -2950,41 +1668,22 @@
             "pairlyric": "我们要把手带给每个人"
         },
         {
-            "ordinal": 68,
             "time": "89.81",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 68,
                     "Duration": "0.30",
                     "start": 89.81,
                     "end": 90.11,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 68,
-                    "Duration": "0.00",
-                    "start": 90.11,
-                    "end": 90.11,
-                    "text": ""
-                },
-                {
-                    "ordinal": 68,
                     "Duration": "0.38",
                     "start": 90.11,
                     "end": 90.49,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 68,
-                    "Duration": "0.00",
-                    "start": 90.49,
-                    "end": 90.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 68,
                     "Duration": "0.38",
                     "start": 90.49,
                     "end": 90.87,
@@ -2994,83 +1693,40 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 69,
             "time": "91.37",
             "text": "We will give a colourful strap",
-            "eln": 11,
             "etext": [
                 {
-                    "ordinal": 69,
                     "Duration": "0.21",
                     "start": 91.37,
                     "end": 91.58,
                     "text": "We&nbsp;"
                 },
                 {
-                    "ordinal": 69,
-                    "Duration": "0.00",
-                    "start": 91.58,
-                    "end": 91.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 69,
                     "Duration": "0.20",
                     "start": 91.58,
                     "end": 91.78,
                     "text": "will&nbsp;"
                 },
                 {
-                    "ordinal": 69,
-                    "Duration": "0.00",
-                    "start": 91.78,
-                    "end": 91.78,
-                    "text": ""
-                },
-                {
-                    "ordinal": 69,
                     "Duration": "0.21",
                     "start": 91.78,
                     "end": 91.99,
                     "text": "give&nbsp;"
                 },
                 {
-                    "ordinal": 69,
-                    "Duration": "0.00",
-                    "start": 91.99,
-                    "end": 91.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 69,
                     "Duration": "0.23",
                     "start": 91.99,
                     "end": 92.22,
                     "text": "a&nbsp;"
                 },
                 {
-                    "ordinal": 69,
-                    "Duration": "0.00",
-                    "start": 92.22,
-                    "end": 92.22,
-                    "text": ""
-                },
-                {
-                    "ordinal": 69,
                     "Duration": "0.87",
                     "start": 92.22,
                     "end": 93.09,
                     "text": "colourful&nbsp;"
                 },
                 {
-                    "ordinal": 69,
-                    "Duration": "0.00",
-                    "start": 93.09,
-                    "end": 93.09,
-                    "text": ""
-                },
-                {
-                    "ordinal": 69,
                     "Duration": "0.36",
                     "start": 93.09,
                     "end": 93.45,
@@ -3080,41 +1736,22 @@
             "pairlyric": "我们要送一条彩色带子"
         },
         {
-            "ordinal": 70,
             "time": "93.57",
             "text": "All for free",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 70,
                     "Duration": "0.32",
                     "start": 93.57,
                     "end": 93.89,
                     "text": "All&nbsp;"
                 },
                 {
-                    "ordinal": 70,
-                    "Duration": "0.00",
-                    "start": 93.89,
-                    "end": 93.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 70,
                     "Duration": "0.34",
                     "start": 93.89,
                     "end": 94.23,
                     "text": "for&nbsp;"
                 },
                 {
-                    "ordinal": 70,
-                    "Duration": "0.00",
-                    "start": 94.23,
-                    "end": 94.23,
-                    "text": ""
-                },
-                {
-                    "ordinal": 70,
                     "Duration": "0.72",
                     "start": 94.23,
                     "end": 94.95,
@@ -3124,41 +1761,22 @@
             "pairlyric": "全免费！"
         },
         {
-            "ordinal": 71,
             "time": "95.42",
             "text": "I'm very happy",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 71,
                     "Duration": "0.20",
                     "start": 95.42,
                     "end": 95.62,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 71,
-                    "Duration": "0.00",
-                    "start": 95.62,
-                    "end": 95.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 71,
                     "Duration": "0.56",
                     "start": 95.62,
                     "end": 96.18,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 71,
-                    "Duration": "0.00",
-                    "start": 96.18,
-                    "end": 96.18,
-                    "text": ""
-                },
-                {
-                    "ordinal": 71,
                     "Duration": "0.61",
                     "start": 96.18,
                     "end": 96.79,
@@ -3168,27 +1786,16 @@
             "pairlyric": "我十分嗨皮"
         },
         {
-            "ordinal": 72,
             "time": "96.69",
             "text": "Ha happy",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 72,
                     "Duration": "0.20",
                     "start": 96.69,
                     "end": 96.89,
                     "text": "Ha&nbsp;"
                 },
                 {
-                    "ordinal": 72,
-                    "Duration": "0.00",
-                    "start": 96.89,
-                    "end": 96.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 72,
                     "Duration": "0.42",
                     "start": 96.89,
                     "end": 97.31,
@@ -3198,55 +1805,28 @@
             "pairlyric": "嗨 嗨皮！"
         },
         {
-            "ordinal": 73,
             "time": "97.50",
             "text": "Oh indian mi fans",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 73,
                     "Duration": "0.22",
                     "start": 97.5,
                     "end": 97.72,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 73,
-                    "Duration": "0.00",
-                    "start": 97.72,
-                    "end": 97.72,
-                    "text": ""
-                },
-                {
-                    "ordinal": 73,
                     "Duration": "0.42",
                     "start": 97.72,
                     "end": 98.14,
                     "text": "indian&nbsp;"
                 },
                 {
-                    "ordinal": 73,
-                    "Duration": "0.00",
-                    "start": 98.14,
-                    "end": 98.14,
-                    "text": ""
-                },
-                {
-                    "ordinal": 73,
                     "Duration": "0.19",
                     "start": 98.14,
                     "end": 98.33,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 73,
-                    "Duration": "0.00",
-                    "start": 98.33,
-                    "end": 98.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 73,
                     "Duration": "0.31",
                     "start": 98.33,
                     "end": 98.64,
@@ -3256,41 +1836,22 @@
             "pairlyric": "噢 印度的米粉们"
         },
         {
-            "ordinal": 74,
             "time": "98.76",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 74,
                     "Duration": "0.18",
                     "start": 98.76,
                     "end": 98.94,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 74,
-                    "Duration": "0.00",
-                    "start": 98.94,
-                    "end": 98.94,
-                    "text": ""
-                },
-                {
-                    "ordinal": 74,
                     "Duration": "0.18",
                     "start": 98.94,
                     "end": 99.12,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 74,
-                    "Duration": "0.00",
-                    "start": 99.12,
-                    "end": 99.12,
-                    "text": ""
-                },
-                {
-                    "ordinal": 74,
                     "Duration": "0.46",
                     "start": 99.12,
                     "end": 99.58,
@@ -3300,41 +1861,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 75,
             "time": "99.58",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 75,
                     "Duration": "0.20",
                     "start": 99.58,
                     "end": 99.78,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 75,
-                    "Duration": "0.00",
-                    "start": 99.78,
-                    "end": 99.78,
-                    "text": ""
-                },
-                {
-                    "ordinal": 75,
                     "Duration": "0.19",
                     "start": 99.78,
                     "end": 99.97,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 75,
-                    "Duration": "0.00",
-                    "start": 99.97,
-                    "end": 99.97,
-                    "text": ""
-                },
-                {
-                    "ordinal": 75,
                     "Duration": "0.48",
                     "start": 99.97,
                     "end": 100.45,
@@ -3344,13 +1886,10 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 76,
             "time": "100.45",
             "text": "Yeeeeeeeh",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 76,
                     "Duration": "0.76",
                     "start": 100.45,
                     "end": 101.21,
@@ -3360,27 +1899,16 @@
             "pairlyric": "是哒"
         },
         {
-            "ordinal": 77,
             "time": "101.21",
             "text": "Oh everyone",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 77,
                     "Duration": "0.29",
                     "start": 101.21,
                     "end": 101.5,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 77,
-                    "Duration": "0.00",
-                    "start": 101.5,
-                    "end": 101.5,
-                    "text": ""
-                },
-                {
-                    "ordinal": 77,
                     "Duration": "0.99",
                     "start": 101.5,
                     "end": 102.49,
@@ -3390,41 +1918,22 @@
             "pairlyric": "噢 大家"
         },
         {
-            "ordinal": 78,
             "time": "102.49",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 78,
                     "Duration": "0.20",
                     "start": 102.49,
                     "end": 102.69,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 78,
-                    "Duration": "0.00",
-                    "start": 102.69,
-                    "end": 102.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 78,
                     "Duration": "0.17",
                     "start": 102.69,
                     "end": 102.86,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 78,
-                    "Duration": "0.00",
-                    "start": 102.86,
-                    "end": 102.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 78,
                     "Duration": "0.40",
                     "start": 102.86,
                     "end": 103.26,
@@ -3434,41 +1943,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 79,
             "time": "103.26",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 79,
                     "Duration": "0.28",
                     "start": 103.26,
                     "end": 103.54,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 79,
-                    "Duration": "0.00",
-                    "start": 103.54,
-                    "end": 103.54,
-                    "text": ""
-                },
-                {
-                    "ordinal": 79,
                     "Duration": "0.21",
                     "start": 103.54,
                     "end": 103.75,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 79,
-                    "Duration": "0.00",
-                    "start": 103.75,
-                    "end": 103.75,
-                    "text": ""
-                },
-                {
-                    "ordinal": 79,
                     "Duration": "0.37",
                     "start": 103.75,
                     "end": 104.12,
@@ -3478,97 +1968,46 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 80,
             "time": "104.44",
             "text": "I I I I I I I",
-            "eln": 13,
             "etext": [
                 {
-                    "ordinal": 80,
                     "Duration": "0.20",
                     "start": 104.44,
                     "end": 104.64,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 80,
-                    "Duration": "0.00",
-                    "start": 104.64,
-                    "end": 104.64,
-                    "text": ""
-                },
-                {
-                    "ordinal": 80,
                     "Duration": "0.19",
                     "start": 104.64,
                     "end": 104.83,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 80,
-                    "Duration": "0.00",
-                    "start": 104.83,
-                    "end": 104.83,
-                    "text": ""
-                },
-                {
-                    "ordinal": 80,
                     "Duration": "0.19",
                     "start": 104.83,
                     "end": 105.02,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 80,
-                    "Duration": "0.00",
-                    "start": 105.02,
-                    "end": 105.02,
-                    "text": ""
-                },
-                {
-                    "ordinal": 80,
                     "Duration": "0.17",
                     "start": 105.02,
                     "end": 105.19,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 80,
-                    "Duration": "0.00",
-                    "start": 105.19,
-                    "end": 105.19,
-                    "text": ""
-                },
-                {
-                    "ordinal": 80,
                     "Duration": "0.18",
                     "start": 105.19,
                     "end": 105.37,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 80,
-                    "Duration": "0.00",
-                    "start": 105.37,
-                    "end": 105.37,
-                    "text": ""
-                },
-                {
-                    "ordinal": 80,
                     "Duration": "0.19",
                     "start": 105.37,
                     "end": 105.56,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 80,
-                    "Duration": "0.00",
-                    "start": 105.56,
-                    "end": 105.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 80,
                     "Duration": "0.26",
                     "start": 105.56,
                     "end": 105.82,
@@ -3578,13 +2017,10 @@
             "pairlyric": "我 我 我 我 我"
         },
         {
-            "ordinal": 81,
             "time": "105.82",
             "text": "Mean",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 81,
                     "Duration": "0.60",
                     "start": 105.82,
                     "end": 106.42,
@@ -3594,41 +2030,22 @@
             "pairlyric": "是说"
         },
         {
-            "ordinal": 82,
             "time": "106.18",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 82,
                     "Duration": "0.22",
                     "start": 106.18,
                     "end": 106.4,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 82,
-                    "Duration": "0.00",
-                    "start": 106.4,
-                    "end": 106.4,
-                    "text": ""
-                },
-                {
-                    "ordinal": 82,
                     "Duration": "0.22",
                     "start": 106.4,
                     "end": 106.62,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 82,
-                    "Duration": "0.00",
-                    "start": 106.62,
-                    "end": 106.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 82,
                     "Duration": "0.58",
                     "start": 106.62,
                     "end": 107.2,
@@ -3638,41 +2055,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 83,
             "time": "107.20",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 83,
                     "Duration": "0.21",
                     "start": 107.2,
                     "end": 107.41,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 83,
-                    "Duration": "0.00",
-                    "start": 107.41,
-                    "end": 107.41,
-                    "text": ""
-                },
-                {
-                    "ordinal": 83,
                     "Duration": "0.21",
                     "start": 107.41,
                     "end": 107.62,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 83,
-                    "Duration": "0.00",
-                    "start": 107.62,
-                    "end": 107.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 83,
                     "Duration": "0.51",
                     "start": 107.62,
                     "end": 108.13,
@@ -3682,41 +2080,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 84,
             "time": "108.87",
             "text": "I'm very ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 84,
                     "Duration": "0.24",
                     "start": 108.87,
                     "end": 109.11,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 84,
-                    "Duration": "0.00",
-                    "start": 109.11,
-                    "end": 109.11,
-                    "text": ""
-                },
-                {
-                    "ordinal": 84,
                     "Duration": "0.42",
                     "start": 109.11,
                     "end": 109.53,
                     "text": "very&nbsp;"
                 },
                 {
-                    "ordinal": 84,
-                    "Duration": "0.00",
-                    "start": 109.53,
-                    "end": 109.53,
-                    "text": ""
-                },
-                {
-                    "ordinal": 84,
                     "Duration": "0.42",
                     "start": 109.53,
                     "end": 109.95,
@@ -3726,27 +2105,16 @@
             "pairlyric": "俺很好！"
         },
         {
-            "ordinal": 85,
             "time": "112.18",
             "text": "Once again",
-            "eln": 3,
             "etext": [
                 {
-                    "ordinal": 85,
                     "Duration": "0.26",
                     "start": 112.18,
                     "end": 112.44,
                     "text": "Once&nbsp;"
                 },
                 {
-                    "ordinal": 85,
-                    "Duration": "0.00",
-                    "start": 112.44,
-                    "end": 112.44,
-                    "text": ""
-                },
-                {
-                    "ordinal": 85,
                     "Duration": "0.55",
                     "start": 112.44,
                     "end": 112.99,
@@ -3756,55 +2124,28 @@
             "pairlyric": "再来一次！"
         },
         {
-            "ordinal": 86,
             "time": "112.99",
             "text": "Oh indian mi fans",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 86,
                     "Duration": "0.21",
                     "start": 112.99,
                     "end": 113.2,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 86,
-                    "Duration": "0.00",
-                    "start": 113.2,
-                    "end": 113.2,
-                    "text": ""
-                },
-                {
-                    "ordinal": 86,
                     "Duration": "0.19",
                     "start": 113.2,
                     "end": 113.39,
                     "text": "indian&nbsp;"
                 },
                 {
-                    "ordinal": 86,
-                    "Duration": "0.00",
-                    "start": 113.39,
-                    "end": 113.39,
-                    "text": ""
-                },
-                {
-                    "ordinal": 86,
                     "Duration": "0.22",
                     "start": 113.39,
                     "end": 113.61,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 86,
-                    "Duration": "0.00",
-                    "start": 113.61,
-                    "end": 113.61,
-                    "text": ""
-                },
-                {
-                    "ordinal": 86,
                     "Duration": "0.56",
                     "start": 113.61,
                     "end": 114.17,
@@ -3814,41 +2155,22 @@
             "pairlyric": "噢 印度的米粉们"
         },
         {
-            "ordinal": 87,
             "time": "114.17",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 87,
                     "Duration": "0.23",
                     "start": 114.17,
                     "end": 114.4,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 87,
-                    "Duration": "0.00",
-                    "start": 114.4,
-                    "end": 114.4,
-                    "text": ""
-                },
-                {
-                    "ordinal": 87,
                     "Duration": "0.19",
                     "start": 114.4,
                     "end": 114.59,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 87,
-                    "Duration": "0.00",
-                    "start": 114.59,
-                    "end": 114.59,
-                    "text": ""
-                },
-                {
-                    "ordinal": 87,
                     "Duration": "0.29",
                     "start": 114.59,
                     "end": 114.88,
@@ -3858,41 +2180,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 88,
             "time": "114.88",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 88,
                     "Duration": "0.21",
                     "start": 114.88,
                     "end": 115.09,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 88,
-                    "Duration": "0.00",
-                    "start": 115.09,
-                    "end": 115.09,
-                    "text": ""
-                },
-                {
-                    "ordinal": 88,
                     "Duration": "0.19",
                     "start": 115.09,
                     "end": 115.28,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 88,
-                    "Duration": "0.00",
-                    "start": 115.28,
-                    "end": 115.28,
-                    "text": ""
-                },
-                {
-                    "ordinal": 88,
                     "Duration": "0.42",
                     "start": 115.28,
                     "end": 115.7,
@@ -3902,55 +2205,28 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 89,
             "time": "116.46",
             "text": "Oh china mi fans",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 89,
                     "Duration": "0.27",
                     "start": 116.46,
                     "end": 116.73,
                     "text": "Oh&nbsp;"
                 },
                 {
-                    "ordinal": 89,
-                    "Duration": "0.00",
-                    "start": 116.73,
-                    "end": 116.73,
-                    "text": ""
-                },
-                {
-                    "ordinal": 89,
                     "Duration": "0.44",
                     "start": 116.73,
                     "end": 117.17,
                     "text": "china&nbsp;"
                 },
                 {
-                    "ordinal": 89,
-                    "Duration": "0.00",
-                    "start": 117.17,
-                    "end": 117.17,
-                    "text": ""
-                },
-                {
-                    "ordinal": 89,
                     "Duration": "0.22",
                     "start": 117.17,
                     "end": 117.39,
                     "text": "mi&nbsp;"
                 },
                 {
-                    "ordinal": 89,
-                    "Duration": "0.00",
-                    "start": 117.39,
-                    "end": 117.39,
-                    "text": ""
-                },
-                {
-                    "ordinal": 89,
                     "Duration": "0.38",
                     "start": 117.39,
                     "end": 117.77,
@@ -3960,41 +2236,22 @@
             "pairlyric": "噢 中国米粉"
         },
         {
-            "ordinal": 90,
             "time": "117.96",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 90,
                     "Duration": "0.20",
                     "start": 117.96,
                     "end": 118.16,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 90,
-                    "Duration": "0.00",
-                    "start": 118.16,
-                    "end": 118.16,
-                    "text": ""
-                },
-                {
-                    "ordinal": 90,
                     "Duration": "0.17",
                     "start": 118.16,
                     "end": 118.33,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 90,
-                    "Duration": "0.00",
-                    "start": 118.33,
-                    "end": 118.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 90,
                     "Duration": "0.38",
                     "start": 118.33,
                     "end": 118.71,
@@ -4004,41 +2261,22 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 91,
             "time": "118.71",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 91,
                     "Duration": "0.24",
                     "start": 118.71,
                     "end": 118.95,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 91,
-                    "Duration": "0.00",
-                    "start": 118.95,
-                    "end": 118.95,
-                    "text": ""
-                },
-                {
-                    "ordinal": 91,
                     "Duration": "0.22",
                     "start": 118.95,
                     "end": 119.17,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 91,
-                    "Duration": "0.00",
-                    "start": 119.17,
-                    "end": 119.17,
-                    "text": ""
-                },
-                {
-                    "ordinal": 91,
                     "Duration": "0.31",
                     "start": 119.17,
                     "end": 119.48,
@@ -4048,97 +2286,46 @@
             "pairlyric": "你还好吧？"
         },
         {
-            "ordinal": 92,
             "time": "119.48",
             "text": "I I I I I I I",
-            "eln": 13,
             "etext": [
                 {
-                    "ordinal": 92,
                     "Duration": "0.25",
                     "start": 119.48,
                     "end": 119.73,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 92,
-                    "Duration": "0.00",
-                    "start": 119.73,
-                    "end": 119.73,
-                    "text": ""
-                },
-                {
-                    "ordinal": 92,
                     "Duration": "0.20",
                     "start": 119.73,
                     "end": 119.93,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 92,
-                    "Duration": "0.00",
-                    "start": 119.93,
-                    "end": 119.93,
-                    "text": ""
-                },
-                {
-                    "ordinal": 92,
                     "Duration": "0.19",
                     "start": 119.93,
                     "end": 120.12,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 92,
-                    "Duration": "0.00",
-                    "start": 120.12,
-                    "end": 120.12,
-                    "text": ""
-                },
-                {
-                    "ordinal": 92,
                     "Duration": "0.22",
                     "start": 120.12,
                     "end": 120.34,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 92,
-                    "Duration": "0.00",
-                    "start": 120.34,
-                    "end": 120.34,
-                    "text": ""
-                },
-                {
-                    "ordinal": 92,
                     "Duration": "0.28",
                     "start": 120.34,
                     "end": 120.62,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 92,
-                    "Duration": "0.00",
-                    "start": 120.62,
-                    "end": 120.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 92,
                     "Duration": "0.29",
                     "start": 120.62,
                     "end": 120.91,
                     "text": "I&nbsp;"
                 },
                 {
-                    "ordinal": 92,
-                    "Duration": "0.00",
-                    "start": 120.91,
-                    "end": 120.91,
-                    "text": ""
-                },
-                {
-                    "ordinal": 92,
                     "Duration": "0.32",
                     "start": 120.91,
                     "end": 121.23,
@@ -4148,13 +2335,10 @@
             "pairlyric": "我 我 我 我 我"
         },
         {
-            "ordinal": 93,
             "time": "121.23",
             "text": "Mean",
-            "eln": 1,
             "etext": [
                 {
-                    "ordinal": 93,
                     "Duration": "0.38",
                     "start": 121.23,
                     "end": 121.61,
@@ -4164,41 +2348,22 @@
             "pairlyric": "是说"
         },
         {
-            "ordinal": 94,
             "time": "121.84",
             "text": "How are you",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 94,
                     "Duration": "0.19",
                     "start": 121.84,
                     "end": 122.03,
                     "text": "How&nbsp;"
                 },
                 {
-                    "ordinal": 94,
-                    "Duration": "0.00",
-                    "start": 122.03,
-                    "end": 122.03,
-                    "text": ""
-                },
-                {
-                    "ordinal": 94,
                     "Duration": "0.18",
                     "start": 122.03,
                     "end": 122.21,
                     "text": "are&nbsp;"
                 },
                 {
-                    "ordinal": 94,
-                    "Duration": "0.00",
-                    "start": 122.21,
-                    "end": 122.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 94,
                     "Duration": "0.34",
                     "start": 122.21,
                     "end": 122.55,
@@ -4208,41 +2373,22 @@
             "pairlyric": "你好嘛？"
         },
         {
-            "ordinal": 95,
             "time": "122.55",
             "text": "How are you",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 95,
                     "Duration": "0.26",
                     "start": 122.55,
                     "end": 122.81,
                     "text": "How&nbsp;"
                 },
                 {
-                    "ordinal": 95,
-                    "Duration": "0.00",
-                    "start": 122.81,
-                    "end": 122.81,
-                    "text": ""
-                },
-                {
-                    "ordinal": 95,
                     "Duration": "0.21",
                     "start": 122.81,
                     "end": 123.02,
                     "text": "are&nbsp;"
                 },
                 {
-                    "ordinal": 95,
-                    "Duration": "0.00",
-                    "start": 123.02,
-                    "end": 123.02,
-                    "text": ""
-                },
-                {
-                    "ordinal": 95,
                     "Duration": "0.41",
                     "start": 123.02,
                     "end": 123.43,
@@ -4252,55 +2398,28 @@
             "pairlyric": "你好嘛？"
         },
         {
-            "ordinal": 96,
             "time": "124.23",
             "text": "I'm fine thank you",
-            "eln": 7,
             "etext": [
                 {
-                    "ordinal": 96,
                     "Duration": "0.18",
                     "start": 124.23,
                     "end": 124.41,
                     "text": "I'm&nbsp;"
                 },
                 {
-                    "ordinal": 96,
-                    "Duration": "0.00",
-                    "start": 124.41,
-                    "end": 124.41,
-                    "text": ""
-                },
-                {
-                    "ordinal": 96,
                     "Duration": "0.24",
                     "start": 124.41,
                     "end": 124.65,
                     "text": "fine&nbsp;"
                 },
                 {
-                    "ordinal": 96,
-                    "Duration": "0.00",
-                    "start": 124.65,
-                    "end": 124.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 96,
                     "Duration": "0.21",
                     "start": 124.65,
                     "end": 124.86,
                     "text": "thank&nbsp;"
                 },
                 {
-                    "ordinal": 96,
-                    "Duration": "0.00",
-                    "start": 124.86,
-                    "end": 124.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 96,
                     "Duration": "0.47",
                     "start": 124.86,
                     "end": 125.33,
@@ -4310,41 +2429,22 @@
             "pairlyric": "俺很好！谢谢！"
         },
         {
-            "ordinal": 97,
             "time": "127.30",
             "text": "Are you ok",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 97,
                     "Duration": "0.19",
                     "start": 127.3,
                     "end": 127.49,
                     "text": "Are&nbsp;"
                 },
                 {
-                    "ordinal": 97,
-                    "Duration": "0.00",
-                    "start": 127.49,
-                    "end": 127.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 97,
                     "Duration": "0.20",
                     "start": 127.49,
                     "end": 127.69,
                     "text": "you&nbsp;"
                 },
                 {
-                    "ordinal": 97,
-                    "Duration": "0.00",
-                    "start": 127.69,
-                    "end": 127.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 97,
                     "Duration": "0.37",
                     "start": 127.69,
                     "end": 128.06,

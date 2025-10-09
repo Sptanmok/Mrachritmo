@@ -1,196 +1,94 @@
 {
-    "metadata": {},
+    "metadata": {
+        "ti": "胭脂",
+        "ar": "重音テト",
+        "al": "",
+        "by": "krc转qrc工具"
+    },
     "lyrics": [
         {
-            "ordinal": 4,
             "time": "23.12",
             "text": "え？うそ？私 天才じゃないの？",
-            "eln": 27,
             "etext": [
                 {
-                    "ordinal": 4,
                     "Duration": "0.17",
                     "start": 23.12,
                     "end": 23.29,
                     "text": "え"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 23.29,
-                    "end": 23.29,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.98",
                     "start": 23.29,
                     "end": 24.27,
                     "text": "？"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 24.27,
-                    "end": 24.27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.19",
                     "start": 24.27,
                     "end": 24.46,
                     "text": "う"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 24.46,
-                    "end": 24.46,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.16",
                     "start": 24.46,
                     "end": 24.62,
                     "text": "そ"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 24.62,
-                    "end": 24.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.91",
                     "start": 24.62,
                     "end": 25.53,
                     "text": "？"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 25.53,
-                    "end": 25.53,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.55",
                     "start": 25.53,
                     "end": 26.08,
                     "text": "私&nbsp;"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 26.08,
-                    "end": 26.08,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.36",
                     "start": 26.08,
                     "end": 26.44,
                     "text": "天"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 26.44,
-                    "end": 26.44,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.39",
                     "start": 26.44,
                     "end": 26.83,
                     "text": "才"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 26.83,
-                    "end": 26.83,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.17",
                     "start": 26.83,
                     "end": 27,
                     "text": "じ"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 27,
-                    "end": 27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.14",
                     "start": 27,
                     "end": 27.14,
                     "text": "ゃ"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 27.14,
-                    "end": 27.14,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.16",
                     "start": 27.14,
                     "end": 27.3,
                     "text": "な"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 27.3,
-                    "end": 27.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.18",
                     "start": 27.3,
                     "end": 27.48,
                     "text": "い"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 27.48,
-                    "end": 27.48,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.38",
                     "start": 27.48,
                     "end": 27.86,
                     "text": "の"
                 },
                 {
-                    "ordinal": 4,
-                    "Duration": "0.00",
-                    "start": 27.86,
-                    "end": 27.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 4,
                     "Duration": "0.83",
                     "start": 27.86,
                     "end": 28.69,
@@ -199,167 +97,76 @@
             ]
         },
         {
-            "ordinal": 5,
             "time": "28.89",
             "text": "なぜ なぜ！占い効かない！",
-            "eln": 23,
             "etext": [
                 {
-                    "ordinal": 5,
                     "Duration": "0.20",
                     "start": 28.89,
                     "end": 29.09,
                     "text": "な"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 29.09,
-                    "end": 29.09,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.25",
                     "start": 29.09,
                     "end": 29.34,
                     "text": "ぜ&nbsp;"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 29.34,
-                    "end": 29.34,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.18",
                     "start": 29.34,
                     "end": 29.52,
                     "text": "な"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 29.52,
-                    "end": 29.52,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.17",
                     "start": 29.52,
                     "end": 29.69,
                     "text": "ぜ"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 29.69,
-                    "end": 29.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.65",
                     "start": 29.69,
                     "end": 30.34,
                     "text": "！"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 30.34,
-                    "end": 30.34,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.17",
                     "start": 30.34,
                     "end": 30.51,
                     "text": "占"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 30.51,
-                    "end": 30.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.16",
                     "start": 30.51,
                     "end": 30.67,
                     "text": "い"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 30.67,
-                    "end": 30.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.36",
                     "start": 30.67,
                     "end": 31.03,
                     "text": "効"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 31.03,
-                    "end": 31.03,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.17",
                     "start": 31.03,
                     "end": 31.2,
                     "text": "か"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 31.2,
-                    "end": 31.2,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.40",
                     "start": 31.2,
                     "end": 31.6,
                     "text": "な"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 31.6,
-                    "end": 31.6,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "0.18",
                     "start": 31.6,
                     "end": 31.78,
                     "text": "い"
                 },
                 {
-                    "ordinal": 5,
-                    "Duration": "0.00",
-                    "start": 31.78,
-                    "end": 31.78,
-                    "text": ""
-                },
-                {
-                    "ordinal": 5,
                     "Duration": "1.00",
                     "start": 31.78,
                     "end": 32.78,
@@ -368,293 +175,130 @@
             ]
         },
         {
-            "ordinal": 6,
             "time": "34.04",
             "text": "た、た、た、大変な奴 ベラベラ 何言ってんの？",
-            "eln": 41,
             "etext": [
                 {
-                    "ordinal": 6,
                     "Duration": "0.18",
                     "start": 34.04,
                     "end": 34.22,
                     "text": "た"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 34.22,
-                    "end": 34.22,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.15",
                     "start": 34.22,
                     "end": 34.37,
                     "text": "、"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 34.37,
-                    "end": 34.37,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.16",
                     "start": 34.37,
                     "end": 34.53,
                     "text": "た"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 34.53,
-                    "end": 34.53,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.18",
                     "start": 34.53,
                     "end": 34.71,
                     "text": "、"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 34.71,
-                    "end": 34.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.28",
                     "start": 34.71,
                     "end": 34.99,
                     "text": "た"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 34.99,
-                    "end": 34.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.53",
                     "start": 34.99,
                     "end": 35.52,
                     "text": "、"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 35.52,
-                    "end": 35.52,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.17",
                     "start": 35.52,
                     "end": 35.69,
                     "text": "大"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 35.69,
-                    "end": 35.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.17",
                     "start": 35.69,
                     "end": 35.86,
                     "text": "変"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 35.86,
-                    "end": 35.86,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.35",
                     "start": 35.86,
                     "end": 36.21,
                     "text": "な"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 36.21,
-                    "end": 36.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.37",
                     "start": 36.21,
                     "end": 36.58,
                     "text": "奴&nbsp;"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 36.58,
-                    "end": 36.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.15",
                     "start": 36.58,
                     "end": 36.73,
                     "text": "ベ"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 36.73,
-                    "end": 36.73,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.17",
                     "start": 36.73,
                     "end": 36.9,
                     "text": "ラ"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 36.9,
-                    "end": 36.9,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.16",
                     "start": 36.9,
                     "end": 37.06,
                     "text": "ベ"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 37.06,
-                    "end": 37.06,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.16",
                     "start": 37.06,
                     "end": 37.22,
                     "text": "ラ&nbsp;"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 37.22,
-                    "end": 37.22,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.36",
                     "start": 37.22,
                     "end": 37.58,
                     "text": "何"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 37.58,
-                    "end": 37.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.13",
                     "start": 37.58,
                     "end": 37.71,
                     "text": "言"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 37.71,
-                    "end": 37.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.38",
                     "start": 37.71,
                     "end": 38.09,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 38.09,
-                    "end": 38.09,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.18",
                     "start": 38.09,
                     "end": 38.27,
                     "text": "て"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 38.27,
-                    "end": 38.27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.17",
                     "start": 38.27,
                     "end": 38.44,
                     "text": "ん"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 38.44,
-                    "end": 38.44,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "0.13",
                     "start": 38.44,
                     "end": 38.57,
                     "text": "の"
                 },
                 {
-                    "ordinal": 6,
-                    "Duration": "0.00",
-                    "start": 38.57,
-                    "end": 38.57,
-                    "text": ""
-                },
-                {
-                    "ordinal": 6,
                     "Duration": "1.00",
                     "start": 38.57,
                     "end": 39.57,
@@ -663,293 +307,130 @@
             ]
         },
         {
-            "ordinal": 7,
             "time": "39.71",
             "text": "どうでもいいよ、普通の僕に関係ないでしょ？",
-            "eln": 41,
             "etext": [
                 {
-                    "ordinal": 7,
                     "Duration": "0.18",
                     "start": 39.71,
                     "end": 39.89,
                     "text": "ど"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 39.89,
-                    "end": 39.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.15",
                     "start": 39.89,
                     "end": 40.04,
                     "text": "う"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 40.04,
-                    "end": 40.04,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.16",
                     "start": 40.04,
                     "end": 40.2,
                     "text": "で"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 40.2,
-                    "end": 40.2,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.15",
                     "start": 40.2,
                     "end": 40.35,
                     "text": "も"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 40.35,
-                    "end": 40.35,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.36",
                     "start": 40.35,
                     "end": 40.71,
                     "text": "い"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 40.71,
-                    "end": 40.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.14",
                     "start": 40.71,
                     "end": 40.85,
                     "text": "い"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 40.85,
-                    "end": 40.85,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.44",
                     "start": 40.85,
                     "end": 41.29,
                     "text": "よ"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 41.29,
-                    "end": 41.29,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.14",
                     "start": 41.29,
                     "end": 41.43,
                     "text": "、"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 41.43,
-                    "end": 41.43,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.14",
                     "start": 41.43,
                     "end": 41.57,
                     "text": "普"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 41.57,
-                    "end": 41.57,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.18",
                     "start": 41.57,
                     "end": 41.75,
                     "text": "通"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 41.75,
-                    "end": 41.75,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.32",
                     "start": 41.75,
                     "end": 42.07,
                     "text": "の"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 42.07,
-                    "end": 42.07,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.51",
                     "start": 42.07,
                     "end": 42.58,
                     "text": "僕"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 42.58,
-                    "end": 42.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.19",
                     "start": 42.58,
                     "end": 42.77,
                     "text": "に"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 42.77,
-                    "end": 42.77,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.17",
                     "start": 42.77,
                     "end": 42.94,
                     "text": "関"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 42.94,
-                    "end": 42.94,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.18",
                     "start": 42.94,
                     "end": 43.12,
                     "text": "係"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 43.12,
-                    "end": 43.12,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.21",
                     "start": 43.12,
                     "end": 43.33,
                     "text": "な"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 43.33,
-                    "end": 43.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.18",
                     "start": 43.33,
                     "end": 43.51,
                     "text": "い"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 43.51,
-                    "end": 43.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.18",
                     "start": 43.51,
                     "end": 43.69,
                     "text": "で"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 43.69,
-                    "end": 43.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.15",
                     "start": 43.69,
                     "end": 43.84,
                     "text": "し"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 43.84,
-                    "end": 43.84,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "0.39",
                     "start": 43.84,
                     "end": 44.23,
                     "text": "ょ"
                 },
                 {
-                    "ordinal": 7,
-                    "Duration": "0.00",
-                    "start": 44.23,
-                    "end": 44.23,
-                    "text": ""
-                },
-                {
-                    "ordinal": 7,
                     "Duration": "1.00",
                     "start": 44.23,
                     "end": 45.23,
@@ -958,125 +439,58 @@
             ]
         },
         {
-            "ordinal": 8,
             "time": "46.02",
             "text": "おい！そこの人間！",
-            "eln": 17,
             "etext": [
                 {
-                    "ordinal": 8,
                     "Duration": "0.16",
                     "start": 46.02,
                     "end": 46.18,
                     "text": "お"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 46.18,
-                    "end": 46.18,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.14",
                     "start": 46.18,
                     "end": 46.32,
                     "text": "い"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 46.32,
-                    "end": 46.32,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.37",
                     "start": 46.32,
                     "end": 46.69,
                     "text": "！"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 46.69,
-                    "end": 46.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.16",
                     "start": 46.69,
                     "end": 46.85,
                     "text": "そ"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 46.85,
-                    "end": 46.85,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.15",
                     "start": 46.85,
                     "end": 47,
                     "text": "こ"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 47,
-                    "end": 47,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.14",
                     "start": 47,
                     "end": 47.14,
                     "text": "の"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 47.14,
-                    "end": 47.14,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.16",
                     "start": 47.14,
                     "end": 47.3,
                     "text": "人"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 47.3,
-                    "end": 47.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.28",
                     "start": 47.3,
                     "end": 47.58,
                     "text": "間"
                 },
                 {
-                    "ordinal": 8,
-                    "Duration": "0.00",
-                    "start": 47.58,
-                    "end": 47.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 8,
                     "Duration": "0.80",
                     "start": 47.58,
                     "end": 48.38,
@@ -1085,111 +499,52 @@
             ]
         },
         {
-            "ordinal": 9,
             "time": "48.58",
             "text": "武器、持ってる？",
-            "eln": 15,
             "etext": [
                 {
-                    "ordinal": 9,
                     "Duration": "0.17",
                     "start": 48.58,
                     "end": 48.75,
                     "text": "武"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 48.75,
-                    "end": 48.75,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.16",
                     "start": 48.75,
                     "end": 48.91,
                     "text": "器"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 48.91,
-                    "end": 48.91,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.41",
                     "start": 48.91,
                     "end": 49.32,
                     "text": "、"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 49.32,
-                    "end": 49.32,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.18",
                     "start": 49.32,
                     "end": 49.5,
                     "text": "持"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 49.5,
-                    "end": 49.5,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.15",
                     "start": 49.5,
                     "end": 49.65,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 49.65,
-                    "end": 49.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.15",
                     "start": 49.65,
                     "end": 49.8,
                     "text": "て"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 49.8,
-                    "end": 49.8,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "0.18",
                     "start": 49.8,
                     "end": 49.98,
                     "text": "る"
                 },
                 {
-                    "ordinal": 9,
-                    "Duration": "0.00",
-                    "start": 49.98,
-                    "end": 49.98,
-                    "text": ""
-                },
-                {
-                    "ordinal": 9,
                     "Duration": "1.00",
                     "start": 49.98,
                     "end": 50.98,
@@ -1198,167 +553,76 @@
             ]
         },
         {
-            "ordinal": 10,
             "time": "51.36",
             "text": "聞こえたか？聞こえたか？",
-            "eln": 23,
             "etext": [
                 {
-                    "ordinal": 10,
                     "Duration": "0.15",
                     "start": 51.36,
                     "end": 51.51,
                     "text": "聞"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 51.51,
-                    "end": 51.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.17",
                     "start": 51.51,
                     "end": 51.68,
                     "text": "こ"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 51.68,
-                    "end": 51.68,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.14",
                     "start": 51.68,
                     "end": 51.82,
                     "text": "え"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 51.82,
-                    "end": 51.82,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.19",
                     "start": 51.82,
                     "end": 52.01,
                     "text": "た"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 52.01,
-                    "end": 52.01,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.16",
                     "start": 52.01,
                     "end": 52.17,
                     "text": "か"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 52.17,
-                    "end": 52.17,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.41",
                     "start": 52.17,
                     "end": 52.58,
                     "text": "？"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 52.58,
-                    "end": 52.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.16",
                     "start": 52.58,
                     "end": 52.74,
                     "text": "聞"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 52.74,
-                    "end": 52.74,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.16",
                     "start": 52.74,
                     "end": 52.9,
                     "text": "こ"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 52.9,
-                    "end": 52.9,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.15",
                     "start": 52.9,
                     "end": 53.05,
                     "text": "え"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 53.05,
-                    "end": 53.05,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.16",
                     "start": 53.05,
                     "end": 53.21,
                     "text": "た"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 53.21,
-                    "end": 53.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.14",
                     "start": 53.21,
                     "end": 53.35,
                     "text": "か"
                 },
                 {
-                    "ordinal": 10,
-                    "Duration": "0.00",
-                    "start": 53.35,
-                    "end": 53.35,
-                    "text": ""
-                },
-                {
-                    "ordinal": 10,
                     "Duration": "0.10",
                     "start": 53.35,
                     "end": 53.45,
@@ -1367,69 +631,34 @@
             ]
         },
         {
-            "ordinal": 11,
             "time": "53.65",
             "text": "肖像 喋った",
-            "eln": 9,
             "etext": [
                 {
-                    "ordinal": 11,
                     "Duration": "0.13",
                     "start": 53.65,
                     "end": 53.78,
                     "text": "肖"
                 },
                 {
-                    "ordinal": 11,
-                    "Duration": "0.00",
-                    "start": 53.78,
-                    "end": 53.78,
-                    "text": ""
-                },
-                {
-                    "ordinal": 11,
                     "Duration": "0.44",
                     "start": 53.78,
                     "end": 54.22,
                     "text": "像&nbsp;"
                 },
                 {
-                    "ordinal": 11,
-                    "Duration": "0.00",
-                    "start": 54.22,
-                    "end": 54.22,
-                    "text": ""
-                },
-                {
-                    "ordinal": 11,
                     "Duration": "0.17",
                     "start": 54.22,
                     "end": 54.39,
                     "text": "喋"
                 },
                 {
-                    "ordinal": 11,
-                    "Duration": "0.00",
-                    "start": 54.39,
-                    "end": 54.39,
-                    "text": ""
-                },
-                {
-                    "ordinal": 11,
                     "Duration": "0.28",
                     "start": 54.39,
                     "end": 54.67,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 11,
-                    "Duration": "0.00",
-                    "start": 54.67,
-                    "end": 54.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 11,
                     "Duration": "1.00",
                     "start": 54.67,
                     "end": 55.67,
@@ -1438,41 +667,22 @@
             ]
         },
         {
-            "ordinal": 12,
             "time": "56.97",
             "text": "だって",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 12,
                     "Duration": "0.12",
                     "start": 56.97,
                     "end": 57.09,
                     "text": "だ"
                 },
                 {
-                    "ordinal": 12,
-                    "Duration": "0.00",
-                    "start": 57.09,
-                    "end": 57.09,
-                    "text": ""
-                },
-                {
-                    "ordinal": 12,
                     "Duration": "0.12",
                     "start": 57.09,
                     "end": 57.21,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 12,
-                    "Duration": "0.00",
-                    "start": 57.21,
-                    "end": 57.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 12,
                     "Duration": "0.16",
                     "start": 57.21,
                     "end": 57.37,
@@ -1481,195 +691,88 @@
             ]
         },
         {
-            "ordinal": 13,
             "time": "57.57",
             "text": "どんなにバカでも 自分を撃つの",
-            "eln": 27,
             "etext": [
                 {
-                    "ordinal": 13,
                     "Duration": "0.14",
                     "start": 57.57,
                     "end": 57.71,
                     "text": "ど"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 57.71,
-                    "end": 57.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.28",
                     "start": 57.71,
                     "end": 57.99,
                     "text": "ん"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 57.99,
-                    "end": 57.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.13",
                     "start": 57.99,
                     "end": 58.12,
                     "text": "な"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 58.12,
-                    "end": 58.12,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.15",
                     "start": 58.12,
                     "end": 58.27,
                     "text": "に"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 58.27,
-                    "end": 58.27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.29",
                     "start": 58.27,
                     "end": 58.56,
                     "text": "バ"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 58.56,
-                    "end": 58.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "1.00",
                     "start": 58.56,
                     "end": 59.56,
                     "text": "カ"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.15",
+                    "Duration": "0.31",
                     "start": 59.56,
-                    "end": 59.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
-                    "Duration": "0.16",
-                    "start": 59.71,
                     "end": 59.87,
                     "text": "で"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 59.87,
-                    "end": 59.87,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.37",
                     "start": 59.87,
                     "end": 60.24,
                     "text": "も&nbsp;"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 60.24,
-                    "end": 60.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.18",
                     "start": 60.24,
                     "end": 60.42,
                     "text": "自"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 60.42,
-                    "end": 60.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.16",
                     "start": 60.42,
                     "end": 60.58,
                     "text": "分"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 60.58,
-                    "end": 60.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.22",
                     "start": 60.58,
                     "end": 60.8,
                     "text": "を"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 60.8,
-                    "end": 60.8,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.48",
                     "start": 60.8,
                     "end": 61.28,
                     "text": "撃"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 61.28,
-                    "end": 61.28,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "0.13",
                     "start": 61.28,
                     "end": 61.41,
                     "text": "つ"
                 },
                 {
-                    "ordinal": 13,
-                    "Duration": "0.00",
-                    "start": 61.41,
-                    "end": 61.41,
-                    "text": ""
-                },
-                {
-                    "ordinal": 13,
                     "Duration": "1.00",
                     "start": 61.41,
                     "end": 62.41,
@@ -1678,167 +781,76 @@
             ]
         },
         {
-            "ordinal": 14,
             "time": "62.51",
             "text": "もっと 紙の上に臙脂が 必要",
-            "eln": 23,
             "etext": [
                 {
-                    "ordinal": 14,
                     "Duration": "0.17",
                     "start": 62.51,
                     "end": 62.68,
                     "text": "も"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 62.68,
-                    "end": 62.68,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.14",
                     "start": 62.68,
                     "end": 62.82,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 62.82,
-                    "end": 62.82,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.31",
                     "start": 62.82,
                     "end": 63.13,
                     "text": "と&nbsp;"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 63.13,
-                    "end": 63.13,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.18",
                     "start": 63.13,
                     "end": 63.31,
                     "text": "紙"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 63.31,
-                    "end": 63.31,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.34",
                     "start": 63.31,
                     "end": 63.65,
                     "text": "の"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 63.65,
-                    "end": 63.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.16",
                     "start": 63.65,
                     "end": 63.81,
                     "text": "上"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 63.81,
-                    "end": 63.81,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "1.01",
                     "start": 63.81,
                     "end": 64.82,
                     "text": "に"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 64.82,
-                    "end": 64.82,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.18",
                     "start": 64.82,
                     "end": 65,
                     "text": "臙"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 65,
-                    "end": 65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.29",
                     "start": 65,
                     "end": 65.29,
                     "text": "脂"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 65.29,
-                    "end": 65.29,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.19",
                     "start": 65.29,
                     "end": 65.48,
                     "text": "が&nbsp;"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 65.48,
-                    "end": 65.48,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "0.14",
                     "start": 65.48,
                     "end": 65.62,
                     "text": "必"
                 },
                 {
-                    "ordinal": 14,
-                    "Duration": "0.00",
-                    "start": 65.62,
-                    "end": 65.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 14,
                     "Duration": "1.00",
                     "start": 65.62,
                     "end": 66.62,
@@ -1847,209 +859,94 @@
             ]
         },
         {
-            "ordinal": 15,
             "time": "68.15",
             "text": "巨大なパレットみたい 心臓と血管",
-            "eln": 29,
             "etext": [
                 {
-                    "ordinal": 15,
                     "Duration": "0.15",
                     "start": 68.15,
                     "end": 68.3,
                     "text": "巨"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 68.3,
-                    "end": 68.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.48",
                     "start": 68.3,
                     "end": 68.78,
                     "text": "大"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 68.78,
-                    "end": 68.78,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.16",
                     "start": 68.78,
                     "end": 68.94,
                     "text": "な"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 68.94,
-                    "end": 68.94,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.16",
                     "start": 68.94,
                     "end": 69.1,
                     "text": "パ"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 69.1,
-                    "end": 69.1,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.17",
                     "start": 69.1,
                     "end": 69.27,
                     "text": "レ"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 69.27,
-                    "end": 69.27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.15",
                     "start": 69.27,
                     "end": 69.42,
                     "text": "ッ"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 69.42,
-                    "end": 69.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.16",
                     "start": 69.42,
                     "end": 69.58,
                     "text": "ト"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 69.58,
-                    "end": 69.58,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.18",
                     "start": 69.58,
                     "end": 69.76,
                     "text": "み"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 69.76,
-                    "end": 69.76,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.17",
                     "start": 69.76,
                     "end": 69.93,
                     "text": "た"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 69.93,
-                    "end": 69.93,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "1.00",
                     "start": 69.93,
                     "end": 70.93,
                     "text": "い&nbsp;"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.83",
+                    "Duration": "0.97",
                     "start": 70.93,
-                    "end": 71.76,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
-                    "Duration": "0.14",
-                    "start": 71.76,
                     "end": 71.9,
                     "text": "心"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 71.9,
-                    "end": 71.9,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.14",
                     "start": 71.9,
                     "end": 72.04,
                     "text": "臓"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 72.04,
-                    "end": 72.04,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.19",
                     "start": 72.04,
                     "end": 72.23,
                     "text": "と"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 72.23,
-                    "end": 72.23,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "0.33",
                     "start": 72.23,
                     "end": 72.56,
                     "text": "血"
                 },
                 {
-                    "ordinal": 15,
-                    "Duration": "0.00",
-                    "start": 72.56,
-                    "end": 72.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 15,
                     "Duration": "1.00",
                     "start": 72.56,
                     "end": 73.56,
@@ -2058,195 +955,88 @@
             ]
         },
         {
-            "ordinal": 16,
             "time": "74.05",
             "text": "今日も気づいてほしい 困ったな",
-            "eln": 27,
             "etext": [
                 {
-                    "ordinal": 16,
                     "Duration": "0.13",
                     "start": 74.05,
                     "end": 74.18,
                     "text": "今"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 74.18,
-                    "end": 74.18,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.12",
                     "start": 74.18,
                     "end": 74.3,
                     "text": "日"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 74.3,
-                    "end": 74.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.38",
                     "start": 74.3,
                     "end": 74.68,
                     "text": "も"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 74.68,
-                    "end": 74.68,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.15",
                     "start": 74.68,
                     "end": 74.83,
                     "text": "気"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 74.83,
-                    "end": 74.83,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.17",
                     "start": 74.83,
                     "end": 75,
                     "text": "づ"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 75,
-                    "end": 75,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.16",
                     "start": 75,
                     "end": 75.16,
                     "text": "い"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 75.16,
-                    "end": 75.16,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.27",
                     "start": 75.16,
                     "end": 75.43,
                     "text": "て"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 75.43,
-                    "end": 75.43,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.14",
                     "start": 75.43,
                     "end": 75.57,
                     "text": "ほ"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 75.57,
-                    "end": 75.57,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.28",
                     "start": 75.57,
                     "end": 75.85,
                     "text": "し"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 75.85,
-                    "end": 75.85,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.48",
                     "start": 75.85,
                     "end": 76.33,
                     "text": "い&nbsp;"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 76.33,
-                    "end": 76.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.16",
                     "start": 76.33,
                     "end": 76.49,
                     "text": "困"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 76.49,
-                    "end": 76.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.16",
                     "start": 76.49,
                     "end": 76.65,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 76.65,
-                    "end": 76.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "0.13",
                     "start": 76.65,
                     "end": 76.78,
                     "text": "た"
                 },
                 {
-                    "ordinal": 16,
-                    "Duration": "0.00",
-                    "start": 76.78,
-                    "end": 76.78,
-                    "text": ""
-                },
-                {
-                    "ordinal": 16,
                     "Duration": "1.00",
                     "start": 76.78,
                     "end": 77.78,
@@ -2255,181 +1045,82 @@
             ]
         },
         {
-            "ordinal": 17,
             "time": "91.31",
             "text": "マスカレード、突発暗殺事件",
-            "eln": 25,
             "etext": [
                 {
-                    "ordinal": 17,
                     "Duration": "0.14",
                     "start": 91.31,
                     "end": 91.45,
                     "text": "マ"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 91.45,
-                    "end": 91.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.17",
                     "start": 91.45,
                     "end": 91.62,
                     "text": "ス"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 91.62,
-                    "end": 91.62,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.15",
                     "start": 91.62,
                     "end": 91.77,
                     "text": "カ"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 91.77,
-                    "end": 91.77,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.29",
                     "start": 91.77,
                     "end": 92.06,
                     "text": "レ"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 92.06,
-                    "end": 92.06,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.27",
                     "start": 92.06,
                     "end": 92.33,
                     "text": "ー"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 92.33,
-                    "end": 92.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.16",
                     "start": 92.33,
                     "end": 92.49,
                     "text": "ド"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 92.49,
-                    "end": 92.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.30",
                     "start": 92.49,
                     "end": 92.79,
                     "text": "、"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 92.79,
-                    "end": 92.79,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.18",
                     "start": 92.79,
                     "end": 92.97,
                     "text": "突"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 92.97,
-                    "end": 92.97,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.15",
                     "start": 92.97,
                     "end": 93.12,
                     "text": "発"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 93.12,
-                    "end": 93.12,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.15",
                     "start": 93.12,
                     "end": 93.27,
                     "text": "暗"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 93.27,
-                    "end": 93.27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.15",
                     "start": 93.27,
                     "end": 93.42,
                     "text": "殺"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 93.42,
-                    "end": 93.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.25",
                     "start": 93.42,
                     "end": 93.67,
                     "text": "事"
                 },
                 {
-                    "ordinal": 17,
-                    "Duration": "0.00",
-                    "start": 93.67,
-                    "end": 93.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 17,
                     "Duration": "0.19",
                     "start": 93.67,
                     "end": 93.86,
@@ -2438,167 +1129,76 @@
             ]
         },
         {
-            "ordinal": 18,
             "time": "94.06",
             "text": "死者の袖口、反応する硝煙",
-            "eln": 23,
             "etext": [
                 {
-                    "ordinal": 18,
                     "Duration": "0.19",
                     "start": 94.06,
                     "end": 94.25,
                     "text": "死"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 94.25,
-                    "end": 94.25,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.20",
                     "start": 94.25,
                     "end": 94.45,
                     "text": "者"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 94.45,
-                    "end": 94.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.30",
                     "start": 94.45,
                     "end": 94.75,
                     "text": "の"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 94.75,
-                    "end": 94.75,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.19",
                     "start": 94.75,
                     "end": 94.94,
                     "text": "袖"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 94.94,
-                    "end": 94.94,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.31",
                     "start": 94.94,
                     "end": 95.25,
                     "text": "口"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 95.25,
-                    "end": 95.25,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.16",
                     "start": 95.25,
                     "end": 95.41,
                     "text": "、"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 95.41,
-                    "end": 95.41,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.15",
                     "start": 95.41,
                     "end": 95.56,
                     "text": "反"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 95.56,
-                    "end": 95.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.19",
                     "start": 95.56,
                     "end": 95.75,
                     "text": "応"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 95.75,
-                    "end": 95.75,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.14",
                     "start": 95.75,
                     "end": 95.89,
                     "text": "す"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 95.89,
-                    "end": 95.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.16",
                     "start": 95.89,
                     "end": 96.05,
                     "text": "る"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 96.05,
-                    "end": 96.05,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.16",
                     "start": 96.05,
                     "end": 96.21,
                     "text": "硝"
                 },
                 {
-                    "ordinal": 18,
-                    "Duration": "0.00",
-                    "start": 96.21,
-                    "end": 96.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 18,
                     "Duration": "0.48",
                     "start": 96.21,
                     "end": 96.69,
@@ -2607,223 +1207,100 @@
             ]
         },
         {
-            "ordinal": 19,
             "time": "96.89",
             "text": "エッシャーの曖昧、自らを指す両手",
-            "eln": 31,
             "etext": [
                 {
-                    "ordinal": 19,
                     "Duration": "0.15",
                     "start": 96.89,
                     "end": 97.04,
                     "text": "エ"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 97.04,
-                    "end": 97.04,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.16",
                     "start": 97.04,
                     "end": 97.2,
                     "text": "ッ"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 97.2,
-                    "end": 97.2,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.15",
                     "start": 97.2,
                     "end": 97.35,
                     "text": "シ"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 97.35,
-                    "end": 97.35,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.15",
                     "start": 97.35,
                     "end": 97.5,
                     "text": "ャ"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 97.5,
-                    "end": 97.5,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.21",
                     "start": 97.5,
                     "end": 97.71,
                     "text": "ー"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 97.71,
-                    "end": 97.71,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.24",
                     "start": 97.71,
                     "end": 97.95,
                     "text": "の"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 97.95,
-                    "end": 97.95,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.16",
                     "start": 97.95,
                     "end": 98.11,
                     "text": "曖"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 98.11,
-                    "end": 98.11,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.15",
                     "start": 98.11,
                     "end": 98.26,
                     "text": "昧"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 98.26,
-                    "end": 98.26,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.23",
                     "start": 98.26,
                     "end": 98.49,
                     "text": "、"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 98.49,
-                    "end": 98.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.18",
                     "start": 98.49,
                     "end": 98.67,
                     "text": "自"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 98.67,
-                    "end": 98.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.14",
                     "start": 98.67,
                     "end": 98.81,
                     "text": "ら"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 98.81,
-                    "end": 98.81,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.17",
                     "start": 98.81,
                     "end": 98.98,
                     "text": "を"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 98.98,
-                    "end": 98.98,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.15",
                     "start": 98.98,
                     "end": 99.13,
                     "text": "指"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 99.13,
-                    "end": 99.13,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.16",
                     "start": 99.13,
                     "end": 99.29,
                     "text": "す"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 99.29,
-                    "end": 99.29,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "0.16",
                     "start": 99.29,
                     "end": 99.45,
                     "text": "両"
                 },
                 {
-                    "ordinal": 19,
-                    "Duration": "0.00",
-                    "start": 99.45,
-                    "end": 99.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 19,
                     "Duration": "1.00",
                     "start": 99.45,
                     "end": 100.45,
@@ -2832,181 +1309,82 @@
             ]
         },
         {
-            "ordinal": 20,
             "time": "102.37",
             "text": "パラドックス、不適切な比喩",
-            "eln": 25,
             "etext": [
                 {
-                    "ordinal": 20,
                     "Duration": "0.17",
                     "start": 102.37,
                     "end": 102.54,
                     "text": "パ"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 102.54,
-                    "end": 102.54,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.15",
                     "start": 102.54,
                     "end": 102.69,
                     "text": "ラ"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 102.69,
-                    "end": 102.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.15",
                     "start": 102.69,
                     "end": 102.84,
                     "text": "ド"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 102.84,
-                    "end": 102.84,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.15",
                     "start": 102.84,
                     "end": 102.99,
                     "text": "ッ"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 102.99,
-                    "end": 102.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.16",
                     "start": 102.99,
                     "end": 103.15,
                     "text": "ク"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 103.15,
-                    "end": 103.15,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.16",
                     "start": 103.15,
                     "end": 103.31,
                     "text": "ス"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 103.31,
-                    "end": 103.31,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.25",
                     "start": 103.31,
                     "end": 103.56,
                     "text": "、"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 103.56,
-                    "end": 103.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.14",
                     "start": 103.56,
                     "end": 103.7,
                     "text": "不"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 103.7,
-                    "end": 103.7,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.15",
                     "start": 103.7,
                     "end": 103.85,
                     "text": "適"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 103.85,
-                    "end": 103.85,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.16",
                     "start": 103.85,
                     "end": 104.01,
                     "text": "切"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 104.01,
-                    "end": 104.01,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.15",
                     "start": 104.01,
                     "end": 104.16,
                     "text": "な"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 104.16,
-                    "end": 104.16,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.15",
                     "start": 104.16,
                     "end": 104.31,
                     "text": "比"
                 },
                 {
-                    "ordinal": 20,
-                    "Duration": "0.00",
-                    "start": 104.31,
-                    "end": 104.31,
-                    "text": ""
-                },
-                {
-                    "ordinal": 20,
                     "Duration": "0.74",
                     "start": 104.31,
                     "end": 105.05,
@@ -3015,167 +1393,76 @@
             ]
         },
         {
-            "ordinal": 21,
             "time": "105.25",
             "text": "床屋がカツラを剃るように",
-            "eln": 23,
             "etext": [
                 {
-                    "ordinal": 21,
                     "Duration": "0.17",
                     "start": 105.25,
                     "end": 105.42,
                     "text": "床"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 105.42,
-                    "end": 105.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.18",
                     "start": 105.42,
                     "end": 105.6,
                     "text": "屋"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 105.6,
-                    "end": 105.6,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.19",
                     "start": 105.6,
                     "end": 105.79,
                     "text": "が"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 105.79,
-                    "end": 105.79,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.18",
                     "start": 105.79,
                     "end": 105.97,
                     "text": "カ"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 105.97,
-                    "end": 105.97,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.17",
                     "start": 105.97,
                     "end": 106.14,
                     "text": "ツ"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 106.14,
-                    "end": 106.14,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.19",
                     "start": 106.14,
                     "end": 106.33,
                     "text": "ラ"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 106.33,
-                    "end": 106.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.17",
                     "start": 106.33,
                     "end": 106.5,
                     "text": "を"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 106.5,
-                    "end": 106.5,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.17",
                     "start": 106.5,
                     "end": 106.67,
                     "text": "剃"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 106.67,
-                    "end": 106.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.16",
                     "start": 106.67,
                     "end": 106.83,
                     "text": "る"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 106.83,
-                    "end": 106.83,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.16",
                     "start": 106.83,
                     "end": 106.99,
                     "text": "よ"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 106.99,
-                    "end": 106.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.37",
                     "start": 106.99,
                     "end": 107.36,
                     "text": "う"
                 },
                 {
-                    "ordinal": 21,
-                    "Duration": "0.00",
-                    "start": 107.36,
-                    "end": 107.36,
-                    "text": ""
-                },
-                {
-                    "ordinal": 21,
                     "Duration": "0.51",
                     "start": 107.36,
                     "end": 107.87,
@@ -3184,181 +1471,82 @@
             ]
         },
         {
-            "ordinal": 22,
             "time": "108.07",
             "text": "自己形成、共軛のひどい理由",
-            "eln": 25,
             "etext": [
                 {
-                    "ordinal": 22,
                     "Duration": "0.19",
                     "start": 108.07,
                     "end": 108.26,
                     "text": "自"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 108.26,
-                    "end": 108.26,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.16",
                     "start": 108.26,
                     "end": 108.42,
                     "text": "己"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 108.42,
-                    "end": 108.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.17",
                     "start": 108.42,
                     "end": 108.59,
                     "text": "形"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 108.59,
-                    "end": 108.59,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.47",
                     "start": 108.59,
                     "end": 109.06,
                     "text": "成"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 109.06,
-                    "end": 109.06,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.28",
                     "start": 109.06,
                     "end": 109.34,
                     "text": "、"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 109.34,
-                    "end": 109.34,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.17",
                     "start": 109.34,
                     "end": 109.51,
                     "text": "共"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 109.51,
-                    "end": 109.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.16",
                     "start": 109.51,
                     "end": 109.67,
                     "text": "軛"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 109.67,
-                    "end": 109.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.17",
                     "start": 109.67,
                     "end": 109.84,
                     "text": "の"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 109.84,
-                    "end": 109.84,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.19",
                     "start": 109.84,
                     "end": 110.03,
                     "text": "ひ"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 110.03,
-                    "end": 110.03,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.16",
                     "start": 110.03,
                     "end": 110.19,
                     "text": "ど"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 110.19,
-                    "end": 110.19,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.16",
                     "start": 110.19,
                     "end": 110.35,
                     "text": "い"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 110.35,
-                    "end": 110.35,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "0.15",
                     "start": 110.35,
                     "end": 110.5,
                     "text": "理"
                 },
                 {
-                    "ordinal": 22,
-                    "Duration": "0.00",
-                    "start": 110.5,
-                    "end": 110.5,
-                    "text": ""
-                },
-                {
-                    "ordinal": 22,
                     "Duration": "1.00",
                     "start": 110.5,
                     "end": 111.5,
@@ -3367,279 +1555,124 @@
             ]
         },
         {
-            "ordinal": 23,
             "time": "113.62",
             "text": "ごめんなさい！たぶん幻覚だよね、でしょ？",
-            "eln": 39,
             "etext": [
                 {
-                    "ordinal": 23,
                     "Duration": "0.19",
                     "start": 113.62,
                     "end": 113.81,
                     "text": "ご"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 113.81,
-                    "end": 113.81,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.39",
                     "start": 113.81,
                     "end": 114.2,
                     "text": "め"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 114.2,
-                    "end": 114.2,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.16",
                     "start": 114.2,
                     "end": 114.36,
                     "text": "ん"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 114.36,
-                    "end": 114.36,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.17",
                     "start": 114.36,
                     "end": 114.53,
                     "text": "な"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 114.53,
-                    "end": 114.53,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.16",
                     "start": 114.53,
                     "end": 114.69,
                     "text": "さ"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 114.69,
-                    "end": 114.69,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.43",
                     "start": 114.69,
                     "end": 115.12,
                     "text": "い"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 115.12,
-                    "end": 115.12,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "1.00",
                     "start": 115.12,
                     "end": 116.12,
                     "text": "！"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.06",
+                    "Duration": "0.24",
                     "start": 116.12,
-                    "end": 116.18,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
-                    "Duration": "0.18",
-                    "start": 116.18,
                     "end": 116.36,
                     "text": "た"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 116.36,
-                    "end": 116.36,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.15",
                     "start": 116.36,
                     "end": 116.51,
                     "text": "ぶ"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 116.51,
-                    "end": 116.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.17",
                     "start": 116.51,
                     "end": 116.68,
                     "text": "ん"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 116.68,
-                    "end": 116.68,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.16",
                     "start": 116.68,
                     "end": 116.84,
                     "text": "幻"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 116.84,
-                    "end": 116.84,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.17",
                     "start": 116.84,
                     "end": 117.01,
                     "text": "覚"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 117.01,
-                    "end": 117.01,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.17",
                     "start": 117.01,
                     "end": 117.18,
                     "text": "だ"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 117.18,
-                    "end": 117.18,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.16",
                     "start": 117.18,
                     "end": 117.34,
                     "text": "よ"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 117.34,
-                    "end": 117.34,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.31",
                     "start": 117.34,
                     "end": 117.65,
                     "text": "ね"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 117.65,
-                    "end": 117.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.69",
                     "start": 117.65,
                     "end": 118.34,
                     "text": "、"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 118.34,
-                    "end": 118.34,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.17",
                     "start": 118.34,
                     "end": 118.51,
                     "text": "で"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 118.51,
-                    "end": 118.51,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.14",
                     "start": 118.51,
                     "end": 118.65,
                     "text": "し"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 118.65,
-                    "end": 118.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.16",
                     "start": 118.65,
                     "end": 118.81,
                     "text": "ょ"
                 },
                 {
-                    "ordinal": 23,
-                    "Duration": "0.00",
-                    "start": 118.81,
-                    "end": 118.81,
-                    "text": ""
-                },
-                {
-                    "ordinal": 23,
                     "Duration": "0.33",
                     "start": 118.81,
                     "end": 119.14,
@@ -3648,265 +1681,118 @@
             ]
         },
         {
-            "ordinal": 24,
             "time": "119.34",
             "text": "見えたか？見えたか？嘘なんかじゃない！",
-            "eln": 37,
             "etext": [
                 {
-                    "ordinal": 24,
                     "Duration": "0.19",
                     "start": 119.34,
                     "end": 119.53,
                     "text": "見"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 119.53,
-                    "end": 119.53,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.14",
                     "start": 119.53,
                     "end": 119.67,
                     "text": "え"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 119.67,
-                    "end": 119.67,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.14",
                     "start": 119.67,
                     "end": 119.81,
                     "text": "た"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 119.81,
-                    "end": 119.81,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.17",
                     "start": 119.81,
                     "end": 119.98,
                     "text": "か"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 119.98,
-                    "end": 119.98,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.31",
                     "start": 119.98,
                     "end": 120.29,
                     "text": "？"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 120.29,
-                    "end": 120.29,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.14",
                     "start": 120.29,
                     "end": 120.43,
                     "text": "見"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 120.43,
-                    "end": 120.43,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.14",
                     "start": 120.43,
                     "end": 120.57,
                     "text": "え"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 120.57,
-                    "end": 120.57,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.16",
                     "start": 120.57,
                     "end": 120.73,
                     "text": "た"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 120.73,
-                    "end": 120.73,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.16",
                     "start": 120.73,
                     "end": 120.89,
                     "text": "か"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 120.89,
-                    "end": 120.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.35",
                     "start": 120.89,
                     "end": 121.24,
                     "text": "？"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 121.24,
-                    "end": 121.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.18",
                     "start": 121.24,
                     "end": 121.42,
                     "text": "嘘"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 121.42,
-                    "end": 121.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.13",
                     "start": 121.42,
                     "end": 121.55,
                     "text": "な"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 121.55,
-                    "end": 121.55,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.17",
                     "start": 121.55,
                     "end": 121.72,
                     "text": "ん"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 121.72,
-                    "end": 121.72,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.17",
                     "start": 121.72,
                     "end": 121.89,
                     "text": "か"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 121.89,
-                    "end": 121.89,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.17",
                     "start": 121.89,
                     "end": 122.06,
                     "text": "じ"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 122.06,
-                    "end": 122.06,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.20",
                     "start": 122.06,
                     "end": 122.26,
                     "text": "ゃ"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 122.26,
-                    "end": 122.26,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.13",
                     "start": 122.26,
                     "end": 122.39,
                     "text": "な"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 122.39,
-                    "end": 122.39,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "0.37",
                     "start": 122.39,
                     "end": 122.76,
                     "text": "い"
                 },
                 {
-                    "ordinal": 24,
-                    "Duration": "0.00",
-                    "start": 122.76,
-                    "end": 122.76,
-                    "text": ""
-                },
-                {
-                    "ordinal": 24,
                     "Duration": "1.00",
                     "start": 122.76,
                     "end": 123.76,
@@ -3915,41 +1801,22 @@
             ]
         },
         {
-            "ordinal": 25,
             "time": "126.16",
             "text": "だって",
-            "eln": 5,
             "etext": [
                 {
-                    "ordinal": 25,
                     "Duration": "0.14",
                     "start": 126.16,
                     "end": 126.3,
                     "text": "だ"
                 },
                 {
-                    "ordinal": 25,
-                    "Duration": "0.00",
-                    "start": 126.3,
-                    "end": 126.3,
-                    "text": ""
-                },
-                {
-                    "ordinal": 25,
                     "Duration": "0.12",
                     "start": 126.3,
                     "end": 126.42,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 25,
-                    "Duration": "0.00",
-                    "start": 126.42,
-                    "end": 126.42,
-                    "text": ""
-                },
-                {
-                    "ordinal": 25,
                     "Duration": "0.09",
                     "start": 126.42,
                     "end": 126.51,
@@ -3958,195 +1825,88 @@
             ]
         },
         {
-            "ordinal": 26,
             "time": "126.66",
             "text": "どんなにバカでも 自分を撃つの",
-            "eln": 27,
             "etext": [
                 {
-                    "ordinal": 26,
                     "Duration": "0.14",
                     "start": 126.66,
                     "end": 126.8,
                     "text": "ど"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 126.8,
-                    "end": 126.8,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.16",
                     "start": 126.8,
                     "end": 126.96,
                     "text": "ん"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 126.96,
-                    "end": 126.96,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.15",
                     "start": 126.96,
                     "end": 127.11,
                     "text": "な"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 127.11,
-                    "end": 127.11,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.16",
                     "start": 127.11,
                     "end": 127.27,
                     "text": "に"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 127.27,
-                    "end": 127.27,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.32",
                     "start": 127.27,
                     "end": 127.59,
                     "text": "バ"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 127.59,
-                    "end": 127.59,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "1.00",
                     "start": 127.59,
                     "end": 128.59,
                     "text": "カ"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.28",
+                    "Duration": "0.45",
                     "start": 128.59,
-                    "end": 128.87,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
-                    "Duration": "0.17",
-                    "start": 128.87,
                     "end": 129.04,
                     "text": "で"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 129.04,
-                    "end": 129.04,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.35",
                     "start": 129.04,
                     "end": 129.39,
                     "text": "も&nbsp;"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 129.39,
-                    "end": 129.39,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.21",
                     "start": 129.39,
                     "end": 129.6,
                     "text": "自"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 129.6,
-                    "end": 129.6,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.17",
                     "start": 129.6,
                     "end": 129.77,
                     "text": "分"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 129.77,
-                    "end": 129.77,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.17",
                     "start": 129.77,
                     "end": 129.94,
                     "text": "を"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 129.94,
-                    "end": 129.94,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.20",
                     "start": 129.94,
                     "end": 130.14,
                     "text": "撃"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 130.14,
-                    "end": 130.14,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "0.31",
                     "start": 130.14,
                     "end": 130.45,
                     "text": "つ"
                 },
                 {
-                    "ordinal": 26,
-                    "Duration": "0.00",
-                    "start": 130.45,
-                    "end": 130.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 26,
                     "Duration": "1.00",
                     "start": 130.45,
                     "end": 131.45,
@@ -4155,167 +1915,76 @@
             ]
         },
         {
-            "ordinal": 27,
             "time": "131.68",
             "text": "もっと 紙の上に臙脂が 必要",
-            "eln": 23,
             "etext": [
                 {
-                    "ordinal": 27,
                     "Duration": "0.17",
                     "start": 131.68,
                     "end": 131.85,
                     "text": "も"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 131.85,
-                    "end": 131.85,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.15",
                     "start": 131.85,
                     "end": 132,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 132,
-                    "end": 132,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.37",
                     "start": 132,
                     "end": 132.37,
                     "text": "と&nbsp;"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 132.37,
-                    "end": 132.37,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.17",
                     "start": 132.37,
                     "end": 132.54,
                     "text": "紙"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 132.54,
-                    "end": 132.54,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.16",
                     "start": 132.54,
                     "end": 132.7,
                     "text": "の"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 132.7,
-                    "end": 132.7,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.20",
                     "start": 132.7,
                     "end": 132.9,
                     "text": "上"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 132.9,
-                    "end": 132.9,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "1.05",
                     "start": 132.9,
                     "end": 133.95,
                     "text": "に"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 133.95,
-                    "end": 133.95,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.26",
                     "start": 133.95,
                     "end": 134.21,
                     "text": "臙"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 134.21,
-                    "end": 134.21,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.24",
                     "start": 134.21,
                     "end": 134.45,
                     "text": "脂"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 134.45,
-                    "end": 134.45,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.20",
                     "start": 134.45,
                     "end": 134.65,
                     "text": "が&nbsp;"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 134.65,
-                    "end": 134.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "0.19",
                     "start": 134.65,
                     "end": 134.84,
                     "text": "必"
                 },
                 {
-                    "ordinal": 27,
-                    "Duration": "0.00",
-                    "start": 134.84,
-                    "end": 134.84,
-                    "text": ""
-                },
-                {
-                    "ordinal": 27,
                     "Duration": "1.00",
                     "start": 134.84,
                     "end": 135.84,
@@ -4324,209 +1993,94 @@
             ]
         },
         {
-            "ordinal": 28,
             "time": "137.30",
             "text": "巨大なパレットみたい 心臓と血管",
-            "eln": 29,
             "etext": [
                 {
-                    "ordinal": 28,
                     "Duration": "0.18",
                     "start": 137.3,
                     "end": 137.48,
                     "text": "巨"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 137.48,
-                    "end": 137.48,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.45",
                     "start": 137.48,
                     "end": 137.93,
                     "text": "大"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 137.93,
-                    "end": 137.93,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.18",
                     "start": 137.93,
                     "end": 138.11,
                     "text": "な"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 138.11,
-                    "end": 138.11,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.14",
                     "start": 138.11,
                     "end": 138.25,
                     "text": "パ"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 138.25,
-                    "end": 138.25,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.16",
                     "start": 138.25,
                     "end": 138.41,
                     "text": "レ"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 138.41,
-                    "end": 138.41,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.15",
                     "start": 138.41,
                     "end": 138.56,
                     "text": "ッ"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 138.56,
-                    "end": 138.56,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.19",
                     "start": 138.56,
                     "end": 138.75,
                     "text": "ト"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 138.75,
-                    "end": 138.75,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.18",
                     "start": 138.75,
                     "end": 138.93,
                     "text": "み"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 138.93,
-                    "end": 138.93,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.17",
                     "start": 138.93,
                     "end": 139.1,
                     "text": "た"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 139.1,
-                    "end": 139.1,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "1.00",
                     "start": 139.1,
                     "end": 140.1,
                     "text": "い&nbsp;"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.84",
+                    "Duration": "0.99",
                     "start": 140.1,
-                    "end": 140.94,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
-                    "Duration": "0.15",
-                    "start": 140.94,
                     "end": 141.09,
                     "text": "心"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 141.09,
-                    "end": 141.09,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.15",
                     "start": 141.09,
                     "end": 141.24,
                     "text": "臓"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 141.24,
-                    "end": 141.24,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.17",
                     "start": 141.24,
                     "end": 141.41,
                     "text": "と"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 141.41,
-                    "end": 141.41,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "0.36",
                     "start": 141.41,
                     "end": 141.77,
                     "text": "血"
                 },
                 {
-                    "ordinal": 28,
-                    "Duration": "0.00",
-                    "start": 141.77,
-                    "end": 141.77,
-                    "text": ""
-                },
-                {
-                    "ordinal": 28,
                     "Duration": "1.00",
                     "start": 141.77,
                     "end": 142.77,
@@ -4535,195 +2089,88 @@
             ]
         },
         {
-            "ordinal": 29,
             "time": "143.17",
             "text": "今日も気づいてほしい 困ったな",
-            "eln": 27,
             "etext": [
                 {
-                    "ordinal": 29,
                     "Duration": "0.14",
                     "start": 143.17,
                     "end": 143.31,
                     "text": "今"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 143.31,
-                    "end": 143.31,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.13",
                     "start": 143.31,
                     "end": 143.44,
                     "text": "日"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 143.44,
-                    "end": 143.44,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.37",
                     "start": 143.44,
                     "end": 143.81,
                     "text": "も"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 143.81,
-                    "end": 143.81,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.18",
                     "start": 143.81,
                     "end": 143.99,
                     "text": "気"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 143.99,
-                    "end": 143.99,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.17",
                     "start": 143.99,
                     "end": 144.16,
                     "text": "づ"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 144.16,
-                    "end": 144.16,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.17",
                     "start": 144.16,
                     "end": 144.33,
                     "text": "い"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 144.33,
-                    "end": 144.33,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.31",
                     "start": 144.33,
                     "end": 144.64,
                     "text": "て"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 144.64,
-                    "end": 144.64,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.18",
                     "start": 144.64,
                     "end": 144.82,
                     "text": "ほ"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 144.82,
-                    "end": 144.82,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.18",
                     "start": 144.82,
                     "end": 145,
                     "text": "し"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 145,
-                    "end": 145,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.49",
                     "start": 145,
                     "end": 145.49,
                     "text": "い&nbsp;"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 145.49,
-                    "end": 145.49,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.16",
                     "start": 145.49,
                     "end": 145.65,
                     "text": "困"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 145.65,
-                    "end": 145.65,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.15",
                     "start": 145.65,
                     "end": 145.8,
                     "text": "っ"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 145.8,
-                    "end": 145.8,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "0.16",
                     "start": 145.8,
                     "end": 145.96,
                     "text": "た"
                 },
                 {
-                    "ordinal": 29,
-                    "Duration": "0.00",
-                    "start": 145.96,
-                    "end": 145.96,
-                    "text": ""
-                },
-                {
-                    "ordinal": 29,
                     "Duration": "1.00",
                     "start": 145.96,
                     "end": 146.96,
