@@ -95,7 +95,6 @@
                if (text) {
                    text = text.replace(/<[^>]*>/g, '');
                    result.lyrics.push({
-                   	   ordinal: i,
                        time: totalSeconds.toFixed(2),
                        text: text,
                        eln: ei,
