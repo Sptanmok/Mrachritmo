@@ -61,7 +61,6 @@
                }
                //处理副歌词
                ;
-               let ei = 0;
                let eljson = [];
                if (text.includes('<') && text.includes('>')) {
                 const regex = /<(\d+):(\d+)\.(\d+)>/g;
@@ -71,7 +70,6 @@
                 let tttc;
                 while ((ttt = regex.exec(text)) !== null) {
                   if (tttc) {
-                    ei++;
 					 let decimal = null;
 					 if (tttc[3].toString().length === 3){//大部分为到百分位，有一些到千分位
 					 	decimal = parseInt(tttc[3]) / 1000
@@ -87,8 +85,6 @@
                   }
                   tttc = ttt;
                 }
-               } else{
-               	ei = 0;
                }
                
                //处理增强版lrc格式
@@ -97,7 +93,6 @@
                    result.lyrics.push({
                        time: totalSeconds.toFixed(2),
                        text: text,
-                       eln: ei,
                        etext: eljson
                        
                    });
