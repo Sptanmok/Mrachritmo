@@ -35,15 +35,15 @@
           let text = "";
           let totalSeconds = 0;
           const lines = lrc.split('\n');
-          const timeTagRegex = /^\[(\d{2}):(\d{2})\.(\d{2})\](.*)/;
-          const metadataRegex = /^\[(.*?):(.*)\]$/;
+          const timeTagRegex = /^\[(\d{1,2}):(\d{2})(?:\.(\d{1,3}))?\](.*)$/;
+          const metadataRegex = /^\[([a-zA-Z]+)\s*:\s*(.*?)\]$/;
           console.log("2");
           //定义正则表达式
           for (line of lines) {
                if (!line.trim()) continue;
                const metadataMatch = line.match(metadataRegex);
                if (metadataMatch) {
-                   result.metadata[metadataMatch[1].toLowerCase()] = metadataMatch[2];
+                   result.metadata[metadataMatch[1].toLowerCase()] = metadataMatch[2].trim();
                    continue;
                }
                //获取以及处理meta
