@@ -70,7 +70,7 @@
                 let tttc;
                 while ((ttt = regex.exec(text)) !== null) {
                   if (tttc) {
-					 const tttd = text.substring(tttc.index + tttc[0].length, ttt.index);
+					 let tttd = text.substring(tttc.index + tttc[0].length, ttt.index);
 					 if(tttd == ''){continue;}
 					 let decimal = null;
 					 if (tttc[3].toString().length === 3){//大部分为到百分位，有一些到千分位
