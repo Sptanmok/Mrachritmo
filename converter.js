@@ -70,16 +70,23 @@
                 let tttc;
                 while ((ttt = regex.exec(text)) !== null) {
                   if (tttc) {
+					 const tttd = text.substring(tttc.index + tttc[0].length, ttt.index);
+					 if(tttd == ''){continue;}
 					 let decimal = null;
 					 if (tttc[3].toString().length === 3){//大部分为到百分位，有一些到千分位
 					 	decimal = parseInt(tttc[3]) / 1000
 					 } else{
 					 	decimal = parseInt(tttc[3]) / 100
 					 }
+					 let decimalc = null;
+					 if (ttt[3].toString().length === 3){//大部分为到百分位，有一些到千分位
+					 	decimalc = parseInt(ttt[3]) / 1000
+					 } else{
+					 	decimalc = parseInt(ttt[3]) / 100
+					 }
             	     const totalSecondsStart = parseInt(tttc[1]) * 60 + parseInt(tttc[2]) + decimal;
-            	     const totalSecondsEnd = parseInt(ttt[1]) * 60 + parseInt(ttt[2]) + decimal;
-           	     const Duration = totalSecondsEnd - totalSecondsStart;
-           	     tttd = text.substring(tttc.index + tttc[0].length, ttt.index);
+            	     const totalSecondsEnd = parseInt(ttt[1]) * 60 + parseInt(ttt[2]) + decimalc;
+           	         const Duration = totalSecondsEnd - totalSecondsStart;
                      tttd = tttd.replace(/ /g, '&nbsp;')
                      eljson.push({ Duration: Duration.toFixed(2), start: totalSecondsStart, end: totalSecondsEnd, text: tttd });
                   }
@@ -94,7 +101,6 @@
                        time: totalSeconds.toFixed(2),
                        text: text,
                        etext: eljson
-                       
                    });
                }
           }
