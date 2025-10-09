@@ -1,9 +1,8 @@
 body{
-	/*background-image:url('./20250820072923875926.webp');*/
 	background: linear-gradient(green, blue);
 	background-repeat: no-repeat;
 	font-family: 'LXGW WenKai Light', 'Saira Light', sans-serif;
-    min-height: 100vh;
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     align-items: center;
