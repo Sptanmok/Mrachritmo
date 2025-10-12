@@ -140,9 +140,9 @@ audio.onplay = () => {
 };
 //键盘监测区
 document.addEventListener('keydown', function(event) {
-   if (event.key === 't' && LiteralRenderingModeSelectiona < LiteralRenderingModeSelectionall) {
+   if (event.key === 't' && LiteralRenderingModeSelection < LiteralRenderingModeSelectionall) {
        LiteralRenderingModeSelection++;
-   }else if(event.key === 't' && LiteralRenderingModeSelectionall >= LiteralRenderingModeSelectionall) {
+   }else if(event.key === 't' && LiteralRenderingModeSelection >= LiteralRenderingModeSelectionall) {
 	   LiteralRenderingModeSelection = 1;
    }
 });
