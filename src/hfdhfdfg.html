@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            padding: 5px;
+            -webkit-user-select: none;
+        }
+        .box:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            -webkit-box-shadow: 0 0 5px #646464;
+            cursor: pointer;
+        }
+        .text {
+            position: relative;
+            top: 8px;
+            display: flex;
+            justify-content: center;
+            font: bold 60px "微软雅黑", sans-serif;
+            -webkit-filter: brightness(2);
+        }
+        .text p {
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(left, #f00 0%, #00f 0%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-filter: drop-shadow(0px 0px 1px #f00);
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="parent">
+            <div class="text" type="lyric" id="lyric"></div>
+        </div>
+        <p type="text" id="pairlyric"></p>
+        <br />
+        <audio id="audio" src="Fra-Lippo-Lippi-Shouldnt-Have-To-Be-Like-That.mp3" controls style="width:100%"></audio>
+    </div>
+
+    <script>
+        let currentLyricIndex = -1;
+        let wordElements = [];
+        const lyricElement = document.getElementById('lyric');
+        const pairLyricElement = document.getElementById('pairlyric');
+
+        function player(jsonlyrics) {
+            const currentTime = audio.currentTime;
+            let newIndex = -1;
+            for (let i = 0; i < jsonlyrics.lyrics.length; i++) {
+                if (currentTime >= jsonlyrics.lyrics[i].time) {
+                    newIndex = i;
+                } else {
+                    break;
+                }
+            }
+            if (newIndex !== currentLyricIndex && newIndex !== -1) {
+                currentLyricIndex = newIndex;
+                displayCurrentLyric(jsonlyrics);
+            }
+            if (currentLyricIndex !== -1) {
+                highlightWords(currentTime, jsonlyrics);
+            }
+        }
+
+        function displayCurrentLyric(jsonlyrics) {
+            const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
+            let html = '';
+            for (let i = 0; i < currentLyric.etext.length; i++) {
+                html += `<p style="--progress:0%">${currentLyric.etext[i].text}</p>`;
+            }
+            lyricElement.innerHTML = html;
+            wordElements = lyricElement.getElementsByTagName('p');
+            pairLyricElement.textContent = `歌词行 ${currentLyricIndex + 1}`;
+        }
+
+        function highlightWords(currentTime, jsonlyrics) {
+            const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
+            for (let i = 0; i < currentLyric.etext.length; i++) {
+                const word = currentLyric.etext[i];
+                if (currentTime >= word.start && currentTime <= word.end) {
+                    const progress = ((currentTime - word.start) / word.Duration) * 100;
+                    if (wordElements[i]) {
+                        wordElements[i].style.setProperty('--progress', `${progress}%`);
+                    }
+                } else if (currentTime > word.end && wordElements[i]) {
+                    wordElements[i].style.setProperty('--progress', '100%');
+                } else if (wordElements[i]) {
+                    wordElements[i].style.setProperty('--progress', '0%');
+                }
+            }
+        }
+
+        fetch('./fdhhdh.json')
+            .then(response => response.json())
+            .then(jsonlyrics => {
+                console.log(jsonlyrics);
+                player(jsonlyrics);
+            })
+            .catch(error => {
+                console.error('加载失败:', error);
+            });
+    </script>
+</body>
+</html>

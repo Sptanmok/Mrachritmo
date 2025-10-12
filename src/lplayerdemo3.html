@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.text {
+    text-align: center; /* 让所有文本默认居中 */
+    margin: 20px 0;
+}
+.player{
+    justify-content: center;
+    align-items: center;
+}
+.text h2{
+	color: #555657;
+	transition: all ease-in-out 0.3s;
+	font-size: 1.5em;
+}
+.text p{
+	color: #555657;
+}
+.text span {
+    display: inline-block;
+    background: linear-gradient(to right, #000000 var(--progress, 0%), #555657 var(--progress, 0%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: --progress 0.1s ease;
+	white-space: normal;
+}
+.currently{
+	scroll-margin-top: 50%;
+}
+.currently h2{
+	transition: all ease-in-out 0.3s;
+	font-weight: bold;
+	filter: drop-shadow(...);
+	font-size: 2em;
+}
+
+
+</style>
+<meta charset="utf-8">
+<title>demo</title>
+</head>
+<body>
+    <div class="player">
+	  <audio id="audio" src="反方向的钟 - 周杰伦.flac" controls style="width:100%" lyricpath="https://music.emnasop.cn/%E5%8F%8D%E6%96%B9%E5%90%91%E7%9A%84%E9%92%9F%20-%20%E5%91%A8%E6%9D%B0%E4%BC%A6.json"></audio>
+      <div>
+      <div class="text" type="lyric" id="lyric"></div>
+      </div>
+      <p type="text" id="pairlyric"></p>
+      <br />
+    </div>
+<script src="lplayer.js"></script>
+</body>
+</html>
