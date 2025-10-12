@@ -54,6 +54,7 @@ body{
   font-weight: 300;
   font-style: normal;
   font-display: swap;
+}
 .text span {
     display: inline-block;
     background: linear-gradient(to right, #000000 var(--progress, 0%), #818282 var(--progress, 0%));
