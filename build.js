@@ -115,9 +115,9 @@ for (const musicfilename of allmusicfilename) {
   const lyriclrc = fs.readFileSync("src" + lrcpath, "utf8");
   let lyricjson = lrctojson(lyriclrc);
   fs.writeFileSync(`dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.json')}`,JSON.stringify(lyricjson, null, 2),"utf8");
-  fs.writeFileSync(`dist/${ol}.html`, html);
+  fs.writeFileSync(`dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`, html);
   fs.copyFileSync("src/musicfile/" + musicfilename, "dist/musicfile/" + musicfilename)
-  console.log(`生成: dist/${ol}.html`);
+  console.log(`生成: dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`);
   ol++;
 }
 fs.copyFileSync("src/player2.css", "dist/player2.css");
