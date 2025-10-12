@@ -18,7 +18,4 @@
     "url": "https://github.com/Sptanmok/Etmusic/issues"
   },
   "homepage": "https://github.com/Sptanmok/Etmusic#readme",
-  "devDependencies": {
-    "esbuild": "^0.25.10"
-  }
 }
