@@ -3,11 +3,18 @@
 半成品
 
 一个简易支持卡拉ok的字幕音乐播放器
-### 生成歌词json
 
-在converter.html可把增强版lrc文件转换为json格式
+## 搭建
 
-目前只支持增强版lrc的转换
+在src/musicfile目录放入音乐音频文件，并放入同名（不包含扩展名）的lrc增强版歌词文件
+
+并输入npm run build构建
+
+此时网站应构建成功，根目录输出在dist文件夹
+
+如果出现错误Error: You installed esbuild for another platform than the one you're currently using.
+
+则您需要输入命令npm rebuild esbuild来重新安装esbuild依赖
 
 ### 在你的网站内使用
 
