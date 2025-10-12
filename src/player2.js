@@ -38,7 +38,7 @@ fetch(lyricpath)
 	initLyrics();
   })
 function initLyrics() {
-    setInterval(updateLyrics, 30);//刷新
+    setInterval(updateLyrics, 15);//刷新
 }
 function updateLyrics() {
     const currentTime = audio.currentTime;
