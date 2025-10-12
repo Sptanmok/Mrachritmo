@@ -26,7 +26,13 @@ import fs from "fs";
                const timeMatch = line.match(timeTagRegex);
                if (timeMatch) {
                    text = timeMatch[4];
-                   totalSeconds = parseInt(timeMatch[1]) * 60 + parseInt(timeMatch[2]) + parseInt(timeMatch[3]) / 100;//大部分为到百分位，有一些到千分位
+				   let decimal = null;
+				   if (timeMatch[3].toString().length === 3){
+					   decimal = parseInt(timeMatch[3]) / 1000;
+				   }else{
+				   	   decimal = parseInt(timeMatch[3]) / 100;
+				   }
+                   totalSeconds = parseInt(timeMatch[1]) * 60 + parseInt(timeMatch[2]) + decimal;//大部分为到百分位，有一些到千分位
                }
                
                //获取和处理普通时间
@@ -72,10 +78,11 @@ import fs from "fs";
                }
                
                //处理增强版lrc格式
-               if (text) {
+               let timec = 
+			   if (text) {
                    text = text.replace(/<[^>]*>/g, '');
                    result.lyrics.push({
-                       time: totalSeconds.toFixed(2),
+                       time: totalSeconds,
                        text: text,
                        etext: eljson
                    });
