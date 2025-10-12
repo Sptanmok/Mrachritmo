@@ -85,9 +85,8 @@ function displayCurrentLyric() {
 function highlightWords(currentTime) {
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
     if(LiteralRenderingModeSelection === 2){
-	if(!lyricElement.getAttribute('class').includes("textt")){
-		lyricElement.classList.remove('text');
-		lyricElement.classList.add('textt');
+    if(!lyricElement.getAttribute('class').includes("textt")){
+		lyricElement.className = "textt";
 	}
     for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];//简化m
@@ -99,8 +98,7 @@ function highlightWords(currentTime) {
     }
 	}else{
 	if(!lyricElement.getAttribute('class').includes("text")){
-		lyricElement.classList.remove('textt');
-		lyricElement.classList.add('text');
+		lyricElement.className = "text";
 	}
 	for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];
