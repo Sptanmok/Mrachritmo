@@ -78,7 +78,6 @@ import fs from "fs";
                }
                
                //处理增强版lrc格式
-               let timec = 
 			   if (text) {
                    text = text.replace(/<[^>]*>/g, '');
                    result.lyrics.push({
