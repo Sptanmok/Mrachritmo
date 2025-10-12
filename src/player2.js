@@ -84,10 +84,11 @@ function displayCurrentLyric() {
 }
 function highlightWords(currentTime) {
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
+	const targetClass = LiteralRenderingModeSelection === 2 ? "textt" : "text";
+    if(!lyricElement.classList.contains(targetClass)) {
+        lyricElement.className = targetClass;
+    }
     if(LiteralRenderingModeSelection === 2){
-    if(!lyricElement.getAttribute('class').includes("textt")){
-		lyricElement.className = "textt";
-	}
     for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];//简化m
         if (currentTime >= word.start && wordElements[i]) { //判断时间
@@ -97,9 +98,6 @@ function highlightWords(currentTime) {
         }
     }
 	}else{
-	if(!lyricElement.getAttribute('class').includes("text")){
-		lyricElement.className = "text";
-	}
 	for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];
         if (currentTime >= word.start && currentTime <= word.end) {
