@@ -94,14 +94,13 @@ let allmusicfilename = fs.readdirSync("./src/musicfile");
 
 const nregex = /json|lrc/;
 allmusicfilename = allmusicfilename.filter(item => !nregex.test(item));
-
+await fs.promises.rm('dist', { recursive: true, force: true });
 await build({
   entryPoints: ["src/player2.js"],
   bundle: true,
   minify: true,
   outfile: "dist/player2.js"
 });
-await fs.promises.rm('dist', { recursive: true, force: true });
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
 
