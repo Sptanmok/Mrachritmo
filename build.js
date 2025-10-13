@@ -101,7 +101,7 @@ await build({
   minify: true,
   outfile: "dist/player2.js"
 });
-
+fs.rm('dist', { recursive: true, force: true });
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
 
@@ -127,3 +127,4 @@ for (const musicfilename of allmusicfilename) {
   ol++;
 }
 fs.copyFileSync("src/player2.css", "dist/player2.css");
+fs.copyFileSync("src/DSC00485.JPG", "dist/DSC00485.JPG");
