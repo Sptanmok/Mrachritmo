@@ -101,7 +101,7 @@ await build({
   minify: true,
   outfile: "dist/player2.js"
 });
-fs.rm('dist', { recursive: true, force: true });
+await fs.promises.rm('dist', { recursive: true, force: true });
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
 
