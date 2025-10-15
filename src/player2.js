@@ -80,7 +80,7 @@ function displayCurrentLyric() {
     }
 	wordElements = lyricElement.getElementsByTagName('span');
 	if(LiteralRenderingModeSelection === 2 && currentLyricIndex < jsonlyrics.lyrics.length){
-		fadeOutDown(currentLyric.time, currentLyric.etext[currentLyric.etext.length - 1].end, jsonlyrics.lyrics[currentLyricIndex + 1].time, wordElements, currentTime);
+		fadeOutDown(currentLyric.time, currentLyric.etext[currentLyric.etext.length - 1].end, jsonlyrics.lyrics[currentLyricIndex + 1].time, wordElements, audio.currentTime);
 	}
     lyricElement.innerHTML = html;
     pairLyricElement.textContent = currentLyric.pairlyric;
