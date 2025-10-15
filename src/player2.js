@@ -97,14 +97,13 @@ function highlightWords(currentTime) {
             wordElements[i].classList.remove('fade-in');
         }
     }
-	if(jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= wordElements.length * 0.05 + 0.3 && currentLyricIndex < jsonlyrics.lyrics.length){
+	if(jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= wordElements.length * 0.1 && currentLyricIndex < jsonlyrics.lyrics.length){
 		let outtimes = [];
 		let n = 0;
 		for(let word of wordElements){
-			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.05 + 0.3);
+			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.1);
 			outtimes.push(Time)
 		}
-		console.log(outtimes);
 		let a = 0;
 		for(const outtime of outtimes){
 			if(outtime > currentTime){

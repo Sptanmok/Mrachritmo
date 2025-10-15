@@ -43,11 +43,11 @@ body{
 @keyframes fadeOutdown {
   to {
     opacity: 0;
-    transform: translateY(-40px);
+    transform: translateY(-20px);
   }
 }
 .fade-out {
-  animation: fadeOutdown 0.5s forwards;
+  animation: fadeOutdown 0.1s forwards;
 }
 .fade-in {
   animation: fadeInUp 0.9s forwards;
