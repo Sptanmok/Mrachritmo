@@ -90,11 +90,12 @@ function highlightWords(currentTime) {
     }
     if(LiteralRenderingModeSelection === 2){
 	let outtimes = [];
-	if(jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= wordElements.length * 0.1 && currentLyricIndex <= jsonlyrics.lyrics.length - 1){
+	if(jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= wordElements.length * 0.05 && currentLyricIndex <= jsonlyrics.lyrics.length - 1){
 		let n = 0;
 		for(let word of wordElements){
-			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.1);
+			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.05);
 			outtimes.push(Time);
+			n++;
 		}
 		let a = 0;
 		for(const outtime of outtimes){
