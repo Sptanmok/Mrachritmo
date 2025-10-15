@@ -100,7 +100,6 @@ function highlightWords(currentTime) {
 		for(const outtime of outtimes){
 			if(outtime > currentTime){
 				wordElements[a].classList.remove('fade-out');
-				wordElements[a].classList.add('fade-in');
 				continue;
 			}
 			wordElements[a].classList.add('fade-out');
@@ -112,7 +111,7 @@ function highlightWords(currentTime) {
         const word = currentLyric.etext[i];//简化m
         if (currentTime >= word.start && !wordElements[i].classList.contains('fade-out')) { //判断时间
             wordElements[i].classList.add('fade-in');
-        } else if (currentTime < word.start && wordElements[i].classList.contains('fade-out')) {
+        } else if (currentTime < word.start && wordElements[i]) {
             wordElements[i].classList.remove('fade-in');
         }
     }
