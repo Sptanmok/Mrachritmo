@@ -94,7 +94,7 @@ function highlightWords(currentTime) {
 		let n = 0;
 		for(let word of wordElements){
 			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.1);
-			outtimes.push(Time)
+			outtimes.push(Time);
 		}
 		let a = 0;
 		for(const outtime of outtimes){
@@ -107,7 +107,6 @@ function highlightWords(currentTime) {
 		}
 	}
     for (let i = 0; i < currentLyric.etext.length; i++) {
-		if(outtimes != [] && )
         const word = currentLyric.etext[i];//简化m
         if (currentTime >= word.start && !wordElements[i].classList.contains('fade-out')) { //判断时间
             wordElements[i].classList.add('fade-in');
