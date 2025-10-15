@@ -100,11 +100,11 @@ function highlightWords(currentTime) {
 		for(const outtime of outtimes){
 			if(outtime > currentTime){
 				wordElements[a].classList.remove('fade-out');
-				wordElements[i].classList.add('fade-in');
+				wordElements[a].classList.add('fade-in');
 				continue;
 			}
 			wordElements[a].classList.add('fade-out');
-			wordElements[i].classList.remove('fade-in');
+			wordElements[a].classList.remove('fade-in');
 			a++;
 		}
 	}
