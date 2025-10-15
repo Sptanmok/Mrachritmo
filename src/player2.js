@@ -78,8 +78,11 @@ function displayCurrentLyric() {
     for (let i = 0; i < currentLyric.etext.length; i++) {
         html += `<span style="">${currentLyric.etext[i].text}</span>`;
     }
+	wordElements = lyricElement.getElementsByTagName('span');
+	if(LiteralRenderingModeSelection === 2 && currentLyricIndex < jsonlyrics.lyrics.length){
+		fadeOutDown(currentLyric.time, currentLyric.etext[currentLyric.etext.length - 1].end, jsonlyrics.lyrics[currentLyricIndex + 1].time, wordElements, currentTime);
+	}
     lyricElement.innerHTML = html;
-    wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
 }
 function highlightWords(currentTime) {
@@ -97,6 +100,7 @@ function highlightWords(currentTime) {
             wordElements[i].classList.remove('fade-in');
         }
     }
+	
 	}else{
 	for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];
@@ -111,6 +115,16 @@ function highlightWords(currentTime) {
             wordElements[i].style.setProperty('--progress', '0%');
         }
     }
+	}
+}
+function fadeOutDown(start, end, next, wordElements, currentTime){
+	if(next - end >= wordElements.length * 0.2  + 0.3 && currentTime + 0.1 > start){
+		let n = 0;
+		for(let word of wordElements){
+			let DelayTime = ( start - next ) - ( wordElements.length - n ) * 0.2 + 0.3;
+			word.style.setProperty('--fadeOutDownDelayTime', DelayTime + "s");
+			n++;
+		}
 	}
 }
 //频谱条

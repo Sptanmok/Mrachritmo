@@ -30,6 +30,9 @@ body{
 	white-space: normal;
 	opacity: 0;
 	transform: translateY(-13.33px);
+	animation-delay: var(--fadeOutDownDelayTime, 9999s);
+	animation: fadeOutdown 0.5s forwards;
+	will-change: transform, opacity;
 }
 
 @keyframes fadeInUp {
@@ -38,6 +41,14 @@ body{
     transform: translateY(0);
   }
 }
+
+@keyframes fadeOutdown {
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
 .fade-in {
   animation: fadeInUp 0.9s forwards;
 }
