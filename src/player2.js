@@ -118,10 +118,10 @@ function highlightWords(currentTime) {
 	}
 }
 function fadeOutDown(start, end, next, wordElements, currentTime){
-	if(next - end >= wordElements.length * 0.2  + 0.3 && currentTime + 0.1 > start){
+	if(next - end >= wordElements.length * 0.1  + 0.3 && currentTime + 0.1 > start){
 		let n = 0;
 		for(let word of wordElements){
-			let DelayTime = ( start - next ) - ( wordElements.length - n ) * 0.2 + 0.3;
+			let DelayTime = ( start - next ) - ( wordElements.length - n ) * 0.1 + 0.3;
 			word.style.setProperty('--fadeOutDownDelayTime', DelayTime + "s");
 			n++;
 		}

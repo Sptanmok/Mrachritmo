@@ -30,8 +30,7 @@ body{
 	white-space: normal;
 	opacity: 0;
 	transform: translateY(-13.33px);
-	animation-delay: var(--fadeOutDownDelayTime, 9999s);
-	animation: fadeOutdown 0.5s forwards;
+	animation: 0.5s forwards var(--fadeOutDownDelayTime, 9999s) fadeOutdown;
 	will-change: transform, opacity;
 }
 
