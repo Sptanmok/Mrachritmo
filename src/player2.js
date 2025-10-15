@@ -89,7 +89,8 @@ function highlightWords(currentTime) {
         lyricElement.className = targetClass;
     }
     if(LiteralRenderingModeSelection === 2){
-    for (let i = 0; i < currentLyric.etext.length; i++) {
+	let outzt = 1;
+    for (let i = 0; i < currentLyric.etext.length && outzt === 1; i++) {
         const word = currentLyric.etext[i];//简化m
         if (currentTime >= word.start && wordElements[i]) { //判断时间
             wordElements[i].classList.add('fade-in');
@@ -111,6 +112,7 @@ function highlightWords(currentTime) {
 				wordElements[a].classList.add('fade-in');
 				continue;
 			}
+			outzt = 2;
 			wordElements[a].classList.add('fade-out');
             wordElements[a].classList.remove('fade-in');
 			a++;
