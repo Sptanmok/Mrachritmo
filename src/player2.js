@@ -89,17 +89,8 @@ function highlightWords(currentTime) {
         lyricElement.className = targetClass;
     }
     if(LiteralRenderingModeSelection === 2){
-	let outzt = 1;
-    for (let i = 0; i < currentLyric.etext.length && outzt === 1; i++) {
-        const word = currentLyric.etext[i];//简化m
-        if (currentTime >= word.start && wordElements[i]) { //判断时间
-            wordElements[i].classList.add('fade-in');
-        } else if (currentTime < word.start && wordElements[i]) {
-            wordElements[i].classList.remove('fade-in');
-        }
-    }
+	let outtimes = [];
 	if(jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= wordElements.length * 0.1 && currentLyricIndex < jsonlyrics.lyrics.length){
-		let outtimes = [];
 		let n = 0;
 		for(let word of wordElements){
 			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.1);
@@ -109,15 +100,21 @@ function highlightWords(currentTime) {
 		for(const outtime of outtimes){
 			if(outtime > currentTime){
 				wordElements[a].classList.remove('fade-out');
-				wordElements[a].classList.add('fade-in');
 				continue;
 			}
-			outzt = 2;
 			wordElements[a].classList.add('fade-out');
-            wordElements[a].classList.remove('fade-in');
 			a++;
 		}
 	}
+    for (let i = 0; i < currentLyric.etext.length; i++) {
+		if(outtimes != [] && )
+        const word = currentLyric.etext[i];//简化m
+        if (currentTime >= word.start && !wordElements[i].classList.contains('fade-out')) { //判断时间
+            wordElements[i].classList.add('fade-in');
+        } else if (currentTime < word.start && wordElements[i].classList.contains('fade-out')) {
+            wordElements[i].classList.remove('fade-in');
+        }
+    }
 	}else{
 	for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];
