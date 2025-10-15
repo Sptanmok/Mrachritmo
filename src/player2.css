@@ -30,7 +30,6 @@ body{
 	white-space: normal;
 	opacity: 0;
 	transform: translateY(-13.33px);
-	animation: 0.5s forwards var(--fadeOutDownDelayTime, 9999s) fadeOutdown;
 	will-change: transform, opacity;
 }
 
@@ -47,7 +46,9 @@ body{
     transform: translateY(-40px);
   }
 }
-
+.fade-out {
+  animation: fadeOutdown 0.5s forwards;
+}
 .fade-in {
   animation: fadeInUp 0.9s forwards;
 }
