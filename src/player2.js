@@ -93,7 +93,7 @@ function highlightWords(currentTime) {
 	if(jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].start >= wordElements.length * 0.07 + 0.2 && currentLyricIndex <= jsonlyrics.lyrics.length - 3){
 		let n = 0;
 		for(let word of wordElements){
-			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.07 - 0.2);
+			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.07 + 0.2);
 			outtimes.push(Time);
 			n++;
 		}
