@@ -47,7 +47,7 @@ body{
   }
   100% {
     opacity: 0;
-    transform: translateY(13.33px);
+    transform: translateY(20px);
   }
 }
 .fade-out {

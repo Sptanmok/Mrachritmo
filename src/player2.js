@@ -78,8 +78,8 @@ function displayCurrentLyric() {
     for (let i = 0; i < currentLyric.etext.length; i++) {
         html += `<span style="">${currentLyric.etext[i].text}</span>`;
     }
-	wordElements = lyricElement.getElementsByTagName('span');
     lyricElement.innerHTML = html;
+	wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
 }
 function highlightWords(currentTime) {
@@ -90,7 +90,7 @@ function highlightWords(currentTime) {
     }
     if(LiteralRenderingModeSelection === 2){
 	let outtimes = [];
-	if(jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].start >= wordElements.length * 0.07 + 0.2 && currentLyricIndex <= jsonlyrics.lyrics.length - 3){
+	if(jsonlyrics.lyrics[currentLyricIndex + 1] && jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].start >= wordElements.length * 0.07 + 0.2){
 		let n = 0;
 		for(let word of wordElements){
 			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.07 + 0.2);
