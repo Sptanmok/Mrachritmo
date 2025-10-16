@@ -31,6 +31,7 @@ body{
 	opacity: 0;
 	transform: translateY(-13.33px);
 	will-change: transform, opacity;
+	font-weight: bold;
 }
 
 @keyframes fadeInUp {
@@ -79,6 +80,7 @@ body{
     color: transparent;
     transition: --progress 0.1s ease;
     white-space: normal;
+	font-weight: bold;
 }
 @keyframes shake {
   0% {
