@@ -71,7 +71,6 @@ function updateLyrics() {
     if(!lyricElement.classList.contains(targetClass)) {
         lyricElement.className = targetClass;
     }
-	canvas.width = main.clientWidth - 40;
 }
 function displayCurrentLyric() {
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
@@ -171,4 +170,7 @@ document.addEventListener('keydown', function(event) {
    }else if(event.key === 't' && LiteralRenderingModeSelection >= LiteralRenderingModeSelectionall) {
 	   LiteralRenderingModeSelection = 1;
    }
+});
+window.addEventListener('resize', () => {
+  canvas.width = main.clientWidth - 40;
 });
