@@ -38,7 +38,11 @@ fetch(lyricpath)
 	initLyrics();
   })
 function initLyrics() {
-    setInterval(updateLyrics, 15);//刷新
+	let sxl = 15;
+	if(LiteralRenderingModeSelection === 2){
+		 sxl = 60;
+	}
+    setInterval(updateLyrics, sxl);//刷新
 }
 function updateLyrics() {
     const currentTime = audio.currentTime;
@@ -51,25 +55,23 @@ function updateLyrics() {
             break;
        }
     }
-    
+    changeTitle();
     if (newIndex !== currentLyricIndex && newIndex !== -1) {
         currentLyricIndex = newIndex;
         displayCurrentLyric();
     }
-	if (document.hidden == true && audio.paused == false) {
-		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
-			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
-			old = jsonlyrics.lyrics[currentLyricIndex].text;
-		}else if(document.title == title){
-			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
-		}
-	}else if (document.title !== title){
-		document.title = title;
-	}
     if (currentLyricIndex !== -1) {
-        highlightWords(currentTime);
+		if(LiteralRenderingModeSelection === 2){
+			fadeWords(currentTime);
+		}else{
+            highlightWords(currentTime);
+		}
     }
-	canvas.width = main.clientWidth - 40
+	const targetClass = LiteralRenderingModeSelection === 2 ? "textt" : "text";
+    if(!lyricElement.classList.contains(targetClass)) {
+        lyricElement.className = targetClass;
+    }
+	canvas.width = main.clientWidth - 40;
 }
 function displayCurrentLyric() {
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
@@ -82,16 +84,11 @@ function displayCurrentLyric() {
 	wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
 }
-function highlightWords(currentTime) {
-    const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
-	const targetClass = LiteralRenderingModeSelection === 2 ? "textt" : "text";
-    if(!lyricElement.classList.contains(targetClass)) {
-        lyricElement.className = targetClass;
-    }
-    if(LiteralRenderingModeSelection === 2){
+function fadeWords(currentTime){
+	const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
 	let outtimes = [];
 	if(jsonlyrics.lyrics[currentLyricIndex + 1] && jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].start >= wordElements.length * 0.03 + 0.2){
-		let n = 0;
+		let n = 1;
 		for(let word of wordElements){
 			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.03 + 0.2);
 			outtimes.push(Time);
@@ -116,7 +113,9 @@ function highlightWords(currentTime) {
             wordElements[i].classList.remove('fade-in');
         }
     }
-	}else{
+}
+function highlightWords(currentTime) {
+    const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
 	for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];
         if (currentTime >= word.start && currentTime <= word.end) {
@@ -130,8 +129,20 @@ function highlightWords(currentTime) {
             wordElements[i].style.setProperty('--progress', '0%');
         }
     }
+}
+function changeTitle() {
+	if (document.hidden == true && audio.paused == false) {
+		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
+			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
+			old = jsonlyrics.lyrics[currentLyricIndex].text;
+		}else if(document.title == title){
+			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
+		}
+	}else if (document.title !== title){
+		document.title = title;
 	}
 }
+	
 //频谱条
 const barWidth = (canvas.width / bufferLength) * 2.5;
 function drawSpectrum() {
