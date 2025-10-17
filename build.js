@@ -122,7 +122,7 @@ for (const musicfilename of allmusicfilename) {
   fs.writeFileSync(`dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.json')}`,JSON.stringify(lyricjson, null, 2),"utf8");
   fs.writeFileSync(`dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`, html);
   fs.copyFileSync("src/musicfile/" + musicfilename, "dist/musicfile/" + musicfilename)
-  liebiao += `<li><a href="/src/musicfile/${musicfilename}">${musicfilename.replace(/\.[^.]*$/, '')}</a></li>`
+  liebiao += `<li><a href="/src/musicfile/${musicfilename.replace(/\.[^.]*$/, '.html')}">${musicfilename.replace(/\.[^.]*$/, '')}</a></li>`
   console.log(`生成: dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`);
   ol++;
 }
