@@ -91,7 +91,6 @@ import fs from "fs";
        }
 
 let allmusicfilename = fs.readdirSync("./src/musicfile");
-
 const nregex = /json|lrc/;
 allmusicfilename = allmusicfilename.filter(item => !nregex.test(item));
 await fs.promises.rm('dist', { recursive: true, force: true });
@@ -104,9 +103,10 @@ await build({
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
 
-
+const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let ol = 1;
+let liebiao = "";
 for (const musicfilename of allmusicfilename) {
   const lrcpath = "/musicfile/" + musicfilename.replace(/\.[^.]*$/, '.lrc');
   let html = template
@@ -122,8 +122,12 @@ for (const musicfilename of allmusicfilename) {
   fs.writeFileSync(`dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.json')}`,JSON.stringify(lyricjson, null, 2),"utf8");
   fs.writeFileSync(`dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`, html);
   fs.copyFileSync("src/musicfile/" + musicfilename, "dist/musicfile/" + musicfilename)
+  liebiao += `<li><a href="/src/musicfile/${musicfilename}">${musicfilename.replace(/\.[^.]*$/, '')}</a></li>/n`
   console.log(`生成: dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`);
   ol++;
 }
+let indexhtml = index
+    .replace(/{{link}}/g, liebiao)
+fs.writeFileSync(`dist/index.html`, indexhtml);
 fs.copyFileSync("src/player2.css", "dist/player2.css");
 fs.copyFileSync("src/DSC00485.JPG", "dist/DSC00485.JPG");
