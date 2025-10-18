@@ -132,3 +132,5 @@ fs.writeFileSync(`dist/index.html`, indexhtml);
 fs.copyFileSync("src/player2.css", "dist/player2.css");
 fs.copyFileSync("src/index.css", "dist/index.css");
 fs.copyFileSync("src/DSC00485.webp", "dist/DSC00485.webp");
+fs.copyFileSync("src/Saira-Light.woff2", "dist/Saira-Light.woff2");
+fs.copyFileSync("src/LXGWWenKai-Light.woff2", "dist/LXGWWenKai-Light.woff2");

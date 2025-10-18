@@ -9,7 +9,7 @@ body{
     align-items: center;
     padding: 20px;
 	text-align: center;
-	text-shadow: 1px 1px 2px black;
+	text-shadow: 1px 1px 2px gray;
 }
 @font-face {
   font-family: 'Saira Light';
