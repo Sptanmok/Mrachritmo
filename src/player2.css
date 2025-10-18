@@ -82,6 +82,32 @@ body{
     white-space: normal;
 	font-weight: bold;
 }
+.notification {
+	position: fixed;
+	bottom: 20px;
+	right: -440px;
+	background-color: #f8f9fa;
+	padding: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 400px;
+    border-radius: 15px;
+	animation: tc 3s;
+}
+@keyframes tc {
+	0% {
+	    right: -440px;
+	}
+	20% {
+		right: 20px;
+	}
+	80% {
+		right: 20px;
+	}
+	100% {
+		right: -440px;
+	}
+}
 @keyframes shake {
   0% {
     transform: translate(0, 0) rotate(0deg);
