@@ -14,7 +14,7 @@ const analyser = audioContext.createAnalyser();
 analyser.fftSize = 256;
 let LiteralRenderingModeSelection = 2;
 const LiteralRenderingModeSelectionall = 2;
-const bufferLength = analyser.frequencyBinCount;
+let bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
 let sxl = 15;
@@ -155,7 +155,7 @@ function drawSpectrum() {
     x += barWidth + 1;
   }
 }
-
+bufferLength = Math.floor( (canvas.width - 1 ) / (barWidth + 1) );
 audio.onplay = () => {
   audioContext.resume().then(() => {
     drawSpectrum();
@@ -170,5 +170,6 @@ document.addEventListener('keydown', function(event) {
    }
 });
 window.addEventListener('resize', () => {
-  canvas.width = main.clientWidth - 40;
+	canvas.width = main.clientWidth - 40;
+	bufferLength = Math.floor( (canvas.width - 1 ) / (barWidth + 1) );
 });
