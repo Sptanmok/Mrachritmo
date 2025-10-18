@@ -17,6 +17,8 @@ const LiteralRenderingModeSelectionall = 2;
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
+let sxl = 15;
+let interval;
 dd.connect(analyser);
 analyser.connect(audioContext.destination);
 main = document.querySelector(".main");
@@ -38,11 +40,7 @@ fetch(lyricpath)
 	initLyrics();
   })
 function initLyrics() {
-	let sxl = 15;
-	if(LiteralRenderingModeSelection === 2){
-		 sxl = 60;
-	}
-    setInterval(updateLyrics, sxl);//刷新
+    interval = setInterval(updateLyrics, sxl);//刷新
 }
 function updateLyrics() {
     const currentTime = audio.currentTime;
@@ -70,6 +68,15 @@ function updateLyrics() {
 	const targetClass = LiteralRenderingModeSelection === 2 ? "textt" : "text";
     if(!lyricElement.classList.contains(targetClass)) {
         lyricElement.className = targetClass;
+		if (LiteralRenderingModeSelection === 2){
+			sxl = 60;
+			clearInterval(interval);
+			interval = setInterval(interval, sxl);
+		}else{
+			sxl = 15;
+			clearInterval(interval);
+			interval = setInterval(interval, sxl);
+		}
     }
 }
 function displayCurrentLyric() {
