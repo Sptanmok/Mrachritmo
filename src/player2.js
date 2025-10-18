@@ -68,15 +68,6 @@ function updateLyrics() {
 	const targetClass = LiteralRenderingModeSelection === 2 ? "textt" : "text";
     if(!lyricElement.classList.contains(targetClass)) {
         lyricElement.className = targetClass;
-		if (LiteralRenderingModeSelection === 2){
-			sxl = 60;
-			clearInterval(interval);
-			interval = setInterval(interval, sxl);
-		}else{
-			sxl = 15;
-			clearInterval(interval);
-			interval = setInterval(interval, sxl);
-		}
     }
 }
 function displayCurrentLyric() {
