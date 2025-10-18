@@ -171,5 +171,5 @@ document.addEventListener('keydown', function(event) {
 });
 window.addEventListener('resize', () => {
 	canvas.width = main.clientWidth - 40;
-	bufferLength = Math.floor( (canvas.width - 1 ) / (barWidth + 1) );
+	bufferLength = Math.floor( (canvas.width + 1 ) / (barWidth + 1) );
 });
