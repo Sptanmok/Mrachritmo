@@ -130,4 +130,5 @@ let indexhtml = index
     .replace(/{{link}}/g, liebiao)
 fs.writeFileSync(`dist/index.html`, indexhtml);
 fs.copyFileSync("src/player2.css", "dist/player2.css");
-fs.copyFileSync("src/DSC00485.JPG", "dist/DSC00485.JPG");
+fs.copyFileSync("src/index.css", "dist/index.css");
+fs.copyFileSync("src/DSC00485.webp", "dist/DSC00485.webp");
