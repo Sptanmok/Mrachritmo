@@ -27,12 +27,15 @@ body{
   font-display: swap;
 }
 a:link {
-color: black;
+color: white;
 text-decoration: none;
 }
 a:hover {
 color: gray;
 text-decoration: underline;
+}
+a:visited {
+color: #cba6f7;
 }
 .footer {
 display: flex;
