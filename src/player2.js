@@ -155,6 +155,7 @@ function drawSpectrum() {
     x += barWidth + 1;
   }
 }
+canvas.width = main.clientWidth - 40;
 bufferLength = Math.floor( (canvas.width + 1 ) / (barWidth + 1) );
 audio.onplay = () => {
   audioContext.resume().then(() => {
