@@ -1,10 +1,14 @@
 # Etmucis
 
-一个简易支持卡拉ok的字幕音乐播放器
+一个简易支持卡拉ok和逐字（或词）淡入淡出效果的字幕音乐播放器
 
 可按T键切换歌词显示模式
 
+默认包含了一些歌曲
+
 ## 效果
+
+共有两种效果
 
 ### 模式1(较大众)
 
@@ -18,7 +22,7 @@
 
 ![](./previewgif/2xg2.gif)
 
-ps:两个歌曲分别是祖海的《为了谁》和Joy Division的《Love Will Tear Us Apart》
+两个歌曲分别是祖海的《为了谁》和Joy Division的《Love Will Tear Us Apart》
 
 ## 搭建
 
