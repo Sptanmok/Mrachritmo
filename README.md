@@ -3,6 +3,23 @@
 一个简易支持卡拉ok的字幕音乐播放器
 
 可按T键切换歌词显示模式
+
+## 效果
+
+### 模式1(较大众)
+
+![](./previewgif/1xg1.gif)
+
+![](./previewgif/2xg1.gif)
+
+### 模式2(默认,因为我喜欢这个awa)
+
+![](./previewgif/1xg2.gif)
+
+![](./previewgif/2xg2.gif)
+
+ps:两个歌曲分别是祖海的《为了谁》和Joy Division的《Love Will Tear Us Apart》
+
 ## 搭建
 
 在src/musicfile目录放入音乐音频文件，并放入同名（不包含扩展名）的lrc增强版歌词文件
