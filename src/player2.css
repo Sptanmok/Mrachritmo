@@ -59,7 +59,7 @@ body{
 }
 @font-face {
   font-family: 'Saira Light';
-  src: url('https://cdn.mioical.moe/font/Saira-Light.woff2') format('woff2');
+  src: url('./Saira-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -67,7 +67,7 @@ body{
 
 @font-face {
   font-family: 'LXGW WenKai Light';
-  src: url('https://cdn.mioical.moe/font/LXGWWenKai-Light.woff2') format('woff2');
+  src: url('./LXGWWenKai-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;

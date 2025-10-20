@@ -129,17 +129,13 @@ function highlightWords(currentTime) {
 }
 function changeTitle() {
 	if (document.hidden == true && audio.paused == false) {
-		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
-			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
-			old = jsonlyrics.lyrics[currentLyricIndex].text;
-		}else if(document.title == title){
+		if(document.title !== jsonlyrics.lyrics[currentLyricIndex].text){
 			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
 		}
 	}else if (document.title !== title){
 		document.title = title;
 	}
 }
-	
 //频谱条
 const barWidth = (canvas.width / bufferLength) * 2.5;
 function drawSpectrum() {

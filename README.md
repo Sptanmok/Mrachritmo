@@ -10,13 +10,13 @@
 
 共有两种效果
 
-### 模式1(较大众)
+### 卡拉OK(较大众)
 
 ![](./previewgif/1xg1.gif)
 
 ![](./previewgif/2xg1.gif)
 
-### 模式2(默认,因为我喜欢这个awa)
+### 淡出淡入(默认,因为我喜欢这个awa)
 
 ![](./previewgif/1xg2.gif)
 
@@ -28,13 +28,25 @@
 
 在src/musicfile目录放入音乐音频文件，并放入同名（不包含扩展名）的lrc增强版歌词文件
 
-并输入npm run build构建
+并输入
+
+```
+npm run build
+```
+
+构建
 
 此时网站应构建成功，根目录输出在dist文件夹
 
 如果出现错误Error: You installed esbuild for another platform than the one you're currently using.
 
-则您需要输入命令npm rebuild esbuild来重新安装esbuild依赖
+则您需要输入命令
+
+```
+npm rebuild esbuild
+```
+
+来重新安装esbuild依赖
 
 ### 在你的网站内使用
 
@@ -77,3 +89,10 @@ audio标签示例格式
 ```html
 <canvas id="spectrum" width="自定义" height="自定义"></canvas>
 ```
+
+## 鸣谢 
+
+[LxgwWenKai](https://github.com/lxgw/LxgwWenKai)等提供美观的字体
+
+以及所包含的歌曲制作人
+
