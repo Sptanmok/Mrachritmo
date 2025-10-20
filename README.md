@@ -94,5 +94,8 @@ audio标签示例格式
 
 [LxgwWenKai](https://github.com/lxgw/LxgwWenKai)等提供美观的字体
 
-以及所包含的歌曲制作人
+所有指点/指导的人,包括但不限于：[RainView](https://github.com/RainView-ovo),[LeonspaceX](https://github.com/LeonspaceX),[Silvaire-qwq](https://github.com/silvaire-qwq),[Mio](https://mioical.moe/)
+
+所包含的歌曲制作人
+
 
