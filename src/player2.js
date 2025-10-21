@@ -19,6 +19,7 @@ const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
 let sxl = 15;
 let interval;
+let htmllyric = '';
 dd.connect(analyser);
 analyser.connect(audioContext.destination);
 main = document.querySelector(".main");
@@ -40,11 +41,20 @@ fetch(lyricpath)
 	initLyrics();
   })
 function initLyrics() {
-    interval = setInterval(updateLyrics, sxl);//刷新
+	if(jsonlyrics.lyrics[0].time > 0){
+		let dsfsad = {"time": "0.00","text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
+		jsonlyrics.lyrics.unshift(dsfsad);
+	}
+    setInterval(updateLyrics, sxl);//刷新
 }
 function updateLyrics() {
     const currentTime = audio.currentTime;
-                
+    if (audio.readyState !=== 3 && newIndex == -1){
+		lyricElement.innerHTML = "Loading...";
+	}
+    if (audio.readyState !=== 3 && newIndex !== -1){
+		lyricElement.innerHTML = "Oops sorry lagging...";
+	}
     let newIndex = -1;
     for (let i = 0; i < jsonlyrics.lyrics.length; i++) {
         if (currentTime >= jsonlyrics.lyrics[i].time) {
@@ -53,10 +63,13 @@ function updateLyrics() {
             break;
        }
     }
+	console.log(audio.readyState);
     changeTitle();
-    if (newIndex !== currentLyricIndex && newIndex !== -1) {
-        currentLyricIndex = newIndex;
-        displayCurrentLyric();
+    if (audio.readyState === 3 && newIndex !== -1) {
+		if(newIndex !== currentLyricIndex || lyricElement.innerHTML !== htmllyric) {
+        	currentLyricIndex = newIndex;
+        	displayCurrentLyric();
+		}
     }
     if (currentLyricIndex !== -1) {
 		if(LiteralRenderingModeSelection === 2){
@@ -72,12 +85,10 @@ function updateLyrics() {
 }
 function displayCurrentLyric() {
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
-    let html = '';
-    
     for (let i = 0; i < currentLyric.etext.length; i++) {
-        html += `<span style="">${currentLyric.etext[i].text}</span>`;
+        htmllyric += `<span style="">${currentLyric.etext[i].text}</span>`;
     }
-    lyricElement.innerHTML = html;
+	lyricElement.innerHTML = htmllyric;
 	wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
 }

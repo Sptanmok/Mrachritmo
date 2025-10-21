@@ -44,10 +44,7 @@ function updateLyrics() {
         displayCurrentLyric();
     }
 	if (document.hidden == true && audio.paused == false) {
-		if(old !== jsonlyrics.lyrics[currentLyricIndex].text){
-			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
-			old = jsonlyrics.lyrics[currentLyricIndex].text;
-		}else if(document.title == title){
+		if(document.title !== jsonlyrics.lyrics[currentLyricIndex].text){
 			document.title = jsonlyrics.lyrics[currentLyricIndex].text;
 		}
 	}else if (document.title !== title){
