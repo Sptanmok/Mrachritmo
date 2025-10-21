@@ -49,10 +49,10 @@ function initLyrics() {
 }
 function updateLyrics() {
     const currentTime = audio.currentTime;
-    if (audio.readyState !=== 3 && newIndex == -1){
+    if (audio.readyState !== 3 && newIndex == -1){
 		lyricElement.innerHTML = "Loading...";
 	}
-    if (audio.readyState !=== 3 && newIndex !== -1){
+    if (audio.readyState !== 3 && newIndex !== -1){
 		lyricElement.innerHTML = "Oops sorry lagging...";
 	}
     let newIndex = -1;
