@@ -19,7 +19,6 @@ const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
 let sxl = 15;
 let interval;
-let htmllyric = '';
 dd.connect(analyser);
 analyser.connect(audioContext.destination);
 main = document.querySelector(".main");
@@ -47,6 +46,7 @@ function initLyrics() {
 	}
     setInterval(updateLyrics, sxl);//刷新
 }
+let zt = 1;
 function updateLyrics() {
     const currentTime = audio.currentTime;
     let newIndex = -1;
@@ -59,18 +59,23 @@ function updateLyrics() {
     }
 	if (audio.readyState !== 4 && newIndex == -1){
 		lyricElement.innerHTML = "Loading...";
+		zt = 2;
+		return;
 	}
     if (audio.readyState !== 4 && newIndex !== -1){
 		lyricElement.innerHTML = "Oops sorry lagging...";
+		zt = 2;
+		return;
 	}
-	console.log(audio.readyState);
     changeTitle();
-    if (audio.readyState === 4 && newIndex !== -1) {
-		if(newIndex !== currentLyricIndex || lyricElement.innerHTML !== htmllyric) {
-        	currentLyricIndex = newIndex;
-        	displayCurrentLyric();
-		}
+    if (newIndex !== currentLyricIndex && newIndex !== -1) {
+        currentLyricIndex = newIndex;
+        displayCurrentLyric();
     }
+	if(zt === 2){
+		displayCurrentLyric();
+		zt = 1;
+	}
     if (currentLyricIndex !== -1) {
 		if(LiteralRenderingModeSelection === 2){
 			fadeWords(currentTime);
@@ -84,6 +89,7 @@ function updateLyrics() {
     }
 }
 function displayCurrentLyric() {
+	let htmllyric = '';
     const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
     for (let i = 0; i < currentLyric.etext.length; i++) {
         htmllyric += `<span style="">${currentLyric.etext[i].text}</span>`;
