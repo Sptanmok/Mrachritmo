@@ -57,15 +57,15 @@ function updateLyrics() {
             break;
        }
     }
-	if (audio.readyState !== 3 && newIndex == -1){
+	if (audio.readyState !== 4 && newIndex == -1){
 		lyricElement.innerHTML = "Loading...";
 	}
-    if (audio.readyState !== 3 && newIndex !== -1){
+    if (audio.readyState !== 4 && newIndex !== -1){
 		lyricElement.innerHTML = "Oops sorry lagging...";
 	}
 	console.log(audio.readyState);
     changeTitle();
-    if (audio.readyState === 3 && newIndex !== -1) {
+    if (audio.readyState === 4 && newIndex !== -1) {
 		if(newIndex !== currentLyricIndex || lyricElement.innerHTML !== htmllyric) {
         	currentLyricIndex = newIndex;
         	displayCurrentLyric();
