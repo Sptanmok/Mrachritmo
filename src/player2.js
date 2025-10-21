@@ -49,12 +49,6 @@ function initLyrics() {
 }
 function updateLyrics() {
     const currentTime = audio.currentTime;
-    if (audio.readyState !== 3 && newIndex == -1){
-		lyricElement.innerHTML = "Loading...";
-	}
-    if (audio.readyState !== 3 && newIndex !== -1){
-		lyricElement.innerHTML = "Oops sorry lagging...";
-	}
     let newIndex = -1;
     for (let i = 0; i < jsonlyrics.lyrics.length; i++) {
         if (currentTime >= jsonlyrics.lyrics[i].time) {
@@ -63,6 +57,12 @@ function updateLyrics() {
             break;
        }
     }
+	if (audio.readyState !== 3 && newIndex == -1){
+		lyricElement.innerHTML = "Loading...";
+	}
+    if (audio.readyState !== 3 && newIndex !== -1){
+		lyricElement.innerHTML = "Oops sorry lagging...";
+	}
 	console.log(audio.readyState);
     changeTitle();
     if (audio.readyState === 3 && newIndex !== -1) {
