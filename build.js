@@ -128,7 +128,7 @@ for (const musicfilename of allmusicfilename) {
   fs.writeFileSync(`dist/musicfile/${musicname}.json`,JSON.stringify(lyricjson, null, 2),"utf8");
   fs.writeFileSync(`dist/${musicname}.html`, html);
   fs.copyFileSync("src/musicfile/" + musicfilename, "dist/musicfile/" + musicfilename)
-  liebiao += `<li><a href="/${musicname)}.html">${musicname}</a></li>`
+  liebiao += `<li><a href="/${musicname}.html">${musicname}</a></li>`
   console.log(`生成: dist/${musicname}.html`);
   ol++;
 }
