@@ -114,8 +114,8 @@ for (const musicfilename of allmusicfilename) {
   const metadata = await mm.parseFile("./src/" + musicfilename);
   let lyricjson = lrctojson(lyriclrc);
   if (metadata.common.picture && metadata.common.picture.length > 0) {
-  	fs.writeFileSync('./dist/musicfile/.jpg', metadata.common.picture[0]);
-  }else if()
+  	fs.writeFileSync('./dist/musicfile/${musicname}.jpg', metadata.common.picture[0]);
+  }
   const lrcpath = "/musicfile/" + musicfilename.replace(/\.[^.]*$/, '.lrc');
   let html = template
     .replace(/{{title}}/g, musicname)
