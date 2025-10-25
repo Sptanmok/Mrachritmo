@@ -88,7 +88,7 @@ import fs from "fs";
                    });
                }
           }
-		  result.metadata.push({zq: zq});
+		  result.metadata.zq = zq;
        return result;
        }
 
