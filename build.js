@@ -1,6 +1,5 @@
 import { build } from "esbuild";
 import fs from "fs";
-
        function lrctojson(lrc) {
        	const result = {
             metadata: {},
@@ -15,6 +14,7 @@ import fs from "fs";
 
           const metadataRegex = /^\s*\[([a-zA-Z]+)\s*:\s*(.*?)\]\s*$/;
           const timeTagRegex = /\[(\d{1,2}):(\d{2})(?:[.:](\d{1,3}))?\](.*)/;
+		  let zq = false;
           for (const line of lines) {
                if (!line.trim()) continue;
                const metadataMatch = line.match(metadataRegex);
@@ -45,6 +45,7 @@ import fs from "fs";
                ;
                let eljson = [];
                if (text.includes('<') && text.includes('>')) {
+				zq = true;
                 const regex = /<(\d+):(\d+)\.(\d+)>/g;
                 const dregex = /([^<]*)/g;
                 eljson = [];
@@ -71,7 +72,7 @@ import fs from "fs";
             	     const totalSecondsEnd = parseInt(ttt[1]) * 60 + parseInt(ttt[2]) + decimalc;
            	         const Duration = totalSecondsEnd - totalSecondsStart;
                      tttd = tttd.replace(/ /g, '&nbsp;')
-                     eljson.push({ Duration: Duration.toFixed(2), start: totalSecondsStart, end: totalSecondsEnd, text: tttd });
+                     eljson.push({ Duration: Duration, start: totalSecondsStart, end: totalSecondsEnd, text: tttd });
                   }
                   tttc = ttt;
                 }
@@ -87,6 +88,7 @@ import fs from "fs";
                    });
                }
           }
+		  result.metadata.push({zq: zq});
        return result;
        }
 
@@ -108,22 +110,26 @@ const template = fs.readFileSync("src/moban.html", "utf8");
 let ol = 1;
 let liebiao = "";
 for (const musicfilename of allmusicfilename) {
+  const musicname = musicfilename.replace(/\.[^.]*$/, '');
+  const metadata = await mm.parseFile("./src/" + musicfilename);
+  let lyricjson = lrctojson(lyriclrc);
+  if (metadata.common.picture && metadata.common.picture.length > 0) {
+  	fs.writeFileSync('./dist/musicfile/.jpg', metadata.common.picture[0]);
+  }else if()
   const lrcpath = "/musicfile/" + musicfilename.replace(/\.[^.]*$/, '.lrc');
   let html = template
-    .replace(/{{title}}/g, musicfilename.replace(/\.[^.]*$/, ''))
+    .replace(/{{title}}/g, musicname)
     .replace(/{{filename}}/g, musicfilename)
   if (!fs.existsSync("src/musicfile/" + musicfilename.replace(/\.[^.]*$/, '.lrc'))) {
 	  console.error(`没有找到${musicfilename}的对应lrc文件`);
 	  continue;
   }
-  fs.writeFileSync(`dist/${ol}.html`, html);
   const lyriclrc = fs.readFileSync("src" + lrcpath, "utf8");
-  let lyricjson = lrctojson(lyriclrc);
-  fs.writeFileSync(`dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.json')}`,JSON.stringify(lyricjson, null, 2),"utf8");
-  fs.writeFileSync(`dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`, html);
+  fs.writeFileSync(`dist/musicfile/${musicname}.json`,JSON.stringify(lyricjson, null, 2),"utf8");
+  fs.writeFileSync(`dist/${musicname}.html`, html);
   fs.copyFileSync("src/musicfile/" + musicfilename, "dist/musicfile/" + musicfilename)
-  liebiao += `<li><a href="/${musicfilename.replace(/\.[^.]*$/, '.html')}">${musicfilename.replace(/\.[^.]*$/, '')}</a></li>`
-  console.log(`生成: dist/${musicfilename.replace(/\.[^.]*$/, '')}.html`);
+  liebiao += `<li><a href="/${musicname)}.html">${musicname}</a></li>`
+  console.log(`生成: dist/${musicname}.html`);
   ol++;
 }
 let indexhtml = index

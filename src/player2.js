@@ -5,14 +5,14 @@ let wordElements = [];
 const lyricElement = document.getElementById('lyric');
 const pairLyricElement = document.getElementById('pairlyric');
 const title = document.title
-let jsonlyrics = {"time": "0.00","text": "Loading lyrics...","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
+let jsonlyrics = {"time": 0.00,"text": "Loading lyrics...","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Loading lyrics..."}]};
 let old;
 const canvas = document.getElementById('spectrum');
 const ctx = canvas.getContext('2d');
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const analyser = audioContext.createAnalyser();
 analyser.fftSize = 256;
-let LiteralRenderingModeSelection = 2;
+let LiteralRenderingModeSelection = Math.floor(Math.random() * (2)) + 1;
 const LiteralRenderingModeSelectionall = 2;
 let bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
@@ -41,7 +41,7 @@ fetch(lyricpath)
   })
 function initLyrics() {
 	if(jsonlyrics.lyrics[0].time > 0){
-		let dsfsad = {"time": "0.00","text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
+		let dsfsad = {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
 		jsonlyrics.lyrics.unshift(dsfsad);
 	}
     setInterval(updateLyrics, sxl);//刷新
