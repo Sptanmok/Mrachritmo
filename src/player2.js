@@ -5,7 +5,7 @@ let wordElements = [];
 const lyricElement = document.getElementById('lyric');
 const pairLyricElement = document.getElementById('pairlyric');
 const title = document.title
-let jsonlyrics = null;
+let jsonlyrics = {"time": "0.00","text": "Loading lyrics...","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
 let old;
 const canvas = document.getElementById('spectrum');
 const ctx = canvas.getContext('2d');
@@ -57,13 +57,8 @@ function updateLyrics() {
             break;
        }
     }
-	if (audio.readyState !== 4 && newIndex == -1){
-		lyricElement.innerHTML = "Loading...";
-		zt = 2;
-		return;
-	}
-    if (audio.readyState !== 4 && newIndex !== -1){
-		lyricElement.innerHTML = "Oops sorry lagging...";
+	if (audio.readyState !== 4 && audio.readyState !== 3){
+		lyricElement.innerHTML = "Loading music...";
 		zt = 2;
 		return;
 	}
