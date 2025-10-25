@@ -111,7 +111,6 @@ let ol = 1;
 let liebiao = "";
 for (const musicfilename of allmusicfilename) {
   const musicname = musicfilename.replace(/\.[^.]*$/, '');
-  let lyricjson = lrctojson(lyriclrc);
   const lrcpath = "/musicfile/" + musicfilename.replace(/\.[^.]*$/, '.lrc');
   let html = template
     .replace(/{{title}}/g, musicname)
@@ -121,6 +120,7 @@ for (const musicfilename of allmusicfilename) {
 	  continue;
   }
   const lyriclrc = fs.readFileSync("src" + lrcpath, "utf8");
+  let lyricjson = lrctojson(lyriclrc);
   fs.writeFileSync(`dist/musicfile/${musicname}.json`,JSON.stringify(lyricjson, null, 2),"utf8");
   fs.writeFileSync(`dist/${musicname}.html`, html);
   fs.copyFileSync("src/musicfile/" + musicfilename, "dist/musicfile/" + musicfilename)
