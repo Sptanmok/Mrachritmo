@@ -38,6 +38,7 @@ fetch(lyricpath)
     jsonlyrics = data;
     console.log(jsonlyrics);
 	initLyrics();
+    imgload();
   })
 function initLyrics() {
 	if(jsonlyrics.lyrics[0].time > 0){
