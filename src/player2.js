@@ -194,7 +194,7 @@ function imgload(){
                 img.src = xhe.responseText[0].pic;
                 img.width = 90;
                 img.height = 90;
-                main.container.appendChild(img);
+                main.appendChild(img);
             }
         }   
     }
