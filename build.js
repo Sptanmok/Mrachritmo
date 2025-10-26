@@ -117,7 +117,7 @@ for (const musicfilename of allmusicfilename) {
   let html = template
     .replace(/{{title}}/g, musicname)
     .replace(/{{filename}}/g, musicfilename)
-    .replace('https://picsum.photos/200/300', `./musicfile/${musicname}.jpg`)
+    .replace('https://picsum.photos/400/400', `./musicfile/${musicname}.jpg`)
   if (!fs.existsSync("src/musicfile/" + musicfilename.replace(/\.[^.]*$/, '.lrc'))) {
 	  console.warn(`没有找到${musicfilename}的对应lrc文件`);
 	  continue;
@@ -155,8 +155,8 @@ async function imgload(musicfilename, jsonlyrics){
         const pijg = await axios.get(`https://meting.qjqq.cn/?type=song&id=${ssjg.data.result.songs[0].id}`);
         if(!pijg.data[0].pic){
             console.error("img null!");
-            clearimg(musicfilename)
-            return;
+            clearimg(musicfilename) 
+            return; 
         }
         const imageResponse = await axios.get(pijg.data[0].pic, { responseType: 'arraybuffer' });
         fs.writeFileSync(`./dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.jpg')}`, imageResponse.data)
@@ -167,7 +167,6 @@ async function imgload(musicfilename, jsonlyrics){
     clearimg(musicfilename)
 }
 function clearimg(musicfilename){
-    console.warn('no img');
     const yl = fs.readFileSync(`./dist/${musicfilename.replace(/\.[^.]*$/, '.html')}`, 'utf8');
     const xg = yl.replace(/<img[^>]*>/gi, '')
     fs.writeFileSync(`./dist/${musicfilename.replace(/\.[^.]*$/, '.html')}`, xg);
