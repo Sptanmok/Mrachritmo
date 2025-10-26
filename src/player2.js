@@ -38,7 +38,6 @@ fetch(lyricpath)
     jsonlyrics = data;
     console.log(jsonlyrics);
 	initLyrics();
-    imgload();
   })
 function initLyrics() {
 	if(jsonlyrics.lyrics[0].time > 0){
@@ -171,40 +170,6 @@ audio.onplay = () => {
     drawSpectrum();
   });
 };
-function imgload(){
-    const xhr = new XMLHttpRequest();
-    const xhe = new XMLHttpRequest();
-    if(jsonlyrics.metadata.ti){
-        xhr.open('GET', encodeURIComponent(`https://music.163.com/api/search/get/web?csrf_token=&hlpretag=&hlposttag=&s=${jsonlyrics.metadata.ti}&type=1&offset=0&total=true&limit=10`));
-        xhr.onreadystatechange = () => {
-            if(xhr.status !== 200){
-                console.error("seimg !== 200");
-                return;
-            }
-            if(!xhr.responseText.result.songs[0].id){
-                console.error("seimg null!");
-                return;
-            }
-            xhe.open('GET', `https://meting.qjqq.cn/?type=song&id=${JSON.parse(xhr.responseText).result.songs[0].id}`);
-            xhe.onreadystatechange = () => {
-                if(xhe.status !== 200){
-                    console.error("img !== 200");
-                    return;
-                }
-                if(!xhe.responseText[0].pic){
-                    console.error("img null!");
-                    return;
-                }
-                const img = document.createElement("img");
-                img.src = JSON.parse(xhe.responseText)[0].pic;
-                img.width = 90;
-                img.height = 90;
-                main.appendChild(img);
-                console.log("img ok");
-            }
-        }
-    }
-}
 //键盘监测区
 document.addEventListener('keydown', function(event) {
    if (event.key === 't' && LiteralRenderingModeSelection < LiteralRenderingModeSelectionall) {
