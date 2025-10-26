@@ -144,15 +144,18 @@ async function imgload(musicfilename, jsonlyrics){
         console.log(ssjg.data);
         if(!ssjg.data.result.songs){
             console.error("seim error!");
+            clearimg(musicfilename)
             return;
         }
         if(!ssjg.data.result.songs[0].id){
             console.error("seimg null!");
+            clearimg(musicfilename)
             return;
         }
         const pijg = await axios.get(`https://meting.qjqq.cn/?type=song&id=${ssjg.data.result.songs[0].id}`);
         if(!pijg.data[0].pic){
             console.error("img null!");
+            clearimg(musicfilename)
             return;
         }
         const imageResponse = await axios.get(pijg.data[0].pic, { responseType: 'arraybuffer' });
@@ -160,6 +163,10 @@ async function imgload(musicfilename, jsonlyrics){
         console.log("img ok")
         return;
     }
+    console.warn('no img');
+    clearimg(musicfilename)
+}
+function clearimg(musicfilename){
     console.warn('no img');
     const yl = fs.readFileSync(`./dist/${musicfilename.replace(/\.[^.]*$/, '.html')}`, 'utf8');
     const xg = yl.replace(/<img[^>]*>/gi, '')
