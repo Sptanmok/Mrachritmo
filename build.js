@@ -116,7 +116,7 @@ for (const musicfilename of allmusicfilename) {
     .replace(/{{title}}/g, musicname)
     .replace(/{{filename}}/g, musicfilename)
   if (!fs.existsSync("src/musicfile/" + musicfilename.replace(/\.[^.]*$/, '.lrc'))) {
-	  console.error(`没有找到${musicfilename}的对应lrc文件`);
+	  console.warn(`没有找到${musicfilename}的对应lrc文件`);
 	  continue;
   }
   const lyriclrc = fs.readFileSync("src" + lrcpath, "utf8");
