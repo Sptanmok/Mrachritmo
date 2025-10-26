@@ -170,6 +170,34 @@ audio.onplay = () => {
     drawSpectrum();
   });
 };
+const xhr = new XMLHttpRequest();
+function imgload(){
+    if(jsonlyrics.metadata.ti){
+        xhr.open('GET', encodeURI('https://music.163.com/api/search/get/web?csrf_token=&hlpretag=&hlposttag=&s=${jsonlyrics.metadata.ti}&type=1&offset=0&total=true&limit=10'));
+        xhr.onreadystatechange = () => {
+            if(xhr.status !== 200){
+                return;
+            }
+            if(xhr.responseText.result.songs[0].id){
+                return;
+            }
+            xhe.open('GET', 'https://meting.qjqq.cn/?type=song&id=${xhr.responseText.result.songs[0].id}');
+            xhe.onreadystatechange = () => {
+                if(xhe.status !== 200){
+                    return;
+                }
+                if(xhe.responseText[0].pic){
+                    return;
+                }
+                const img = document.createElement("img");
+                img.src = xhe.responseText[0].pic;
+                img.width = 90;
+                img.height = 90;
+                main.container.appendChild(img);
+            }
+        }   
+    }
+}
 //键盘监测区
 document.addEventListener('keydown', function(event) {
    if (event.key === 't' && LiteralRenderingModeSelection < LiteralRenderingModeSelectionall) {

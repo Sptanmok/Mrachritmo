@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/Sptanmok/Etmusic#readme",
   "devDependencies": {
-    "esbuild": "^0.25.10"
+    "esbuild": "^0.25.11"
   }
 }
