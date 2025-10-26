@@ -2,6 +2,7 @@ import { build } from "esbuild";
 import fs from "fs";
 import { parseFile } from 'music-metadata';
 import axios from 'axios';
+import * as cheerio from 'cheerio';
   function lrctojson(lrc) {
   const result = {
       metadata: {},
@@ -127,7 +128,7 @@ for (const musicfilename of allmusicfilename) {
   fs.writeFileSync(`dist/musicfile/${musicname}.json`,JSON.stringify(lyricjson, null, 2),"utf8");
   fs.writeFileSync(`dist/${musicname}.html`, html);
   fs.copyFileSync("src/musicfile/" + musicfilename, "dist/musicfile/" + musicfilename)
-  liebiao += `<li><a href="/${musicname}.html">${musicname}</a></li>`
+  liebiao += `<li><a href="./${musicname}.html">${musicname}</a></li>`
   console.log(`生成: dist/${musicname}.html`);
   await imgload(musicfilename, lyricjson);
   ol++;
@@ -140,7 +141,7 @@ async function imgload(musicfilename, jsonlyrics){
       return;
     }
     if(jsonlyrics.metadata.ti){
-        const ssjg = await axios.get(`https://music.163.com/api/search/get/web?csrf_token=&hlpretag=&hlposttag=&s=${encodeURIComponent(jsonlyrics.metadata.ti)}&type=1&offset=0&total=true&limit=10`);
+        const ssjg = await axios.get(`https://music.163.com/api/search/get/web?csrf_token=&hlpretag=&hlposttag=&s=${encodeURIComponent(jsonlyrics.metadata.ti)}&type=1&offset=0&total=true&limit=10`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}});
         console.log(ssjg.data);
         if(!ssjg.data.result.songs){
             console.error("seim error!");
@@ -152,13 +153,21 @@ async function imgload(musicfilename, jsonlyrics){
             clearimg(musicfilename)
             return;
         }
-        const pijg = await axios.get(`https://meting.qjqq.cn/?type=song&id=${ssjg.data.result.songs[0].id}`);
-        if(!pijg.data[0].pic){
-            console.error("img null!");
-            clearimg(musicfilename) 
-            return; 
+        const pijt = await axios.get(`https://music.163.com/song?id=${ssjg.data.result.songs[0].id}`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}});
+        const $ = cheerio.load(pijt.data);
+        const dataSrcList = [];
+        $('img[data-src]').each((index, element) => {
+          const dataSrc = $(element).attr('data-src');
+          if (dataSrc) {
+            dataSrcList.push(dataSrc);
+          }
+        });
+        if(dataSrcList <= 0){
+          console.error("no img");
+          clearimg(musicfilename)
+          return;
         }
-        const imageResponse = await axios.get(pijg.data[0].pic, { responseType: 'arraybuffer' });
+        const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' });
         fs.writeFileSync(`./dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.jpg')}`, imageResponse.data)
         console.log("img ok")
         return;
