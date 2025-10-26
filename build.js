@@ -142,6 +142,10 @@ async function imgload(musicfilename, jsonlyrics){
     if(jsonlyrics.metadata.ti){
         const ssjg = await axios.get(`https://music.163.com/api/search/get/web?csrf_token=&hlpretag=&hlposttag=&s=${encodeURIComponent(jsonlyrics.metadata.ti)}&type=1&offset=0&total=true&limit=10`);
         console.log(ssjg.data);
+        if(!ssjg.data.result.songs){
+            console.error("seim error!");
+            return;
+        }
         if(!ssjg.data.result.songs[0].id){
             console.error("seimg null!");
             return;
