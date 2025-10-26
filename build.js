@@ -141,6 +141,15 @@ async function imgload(musicfilename, jsonlyrics){
       return;
     }
     if(jsonlyrics.metadata.ti){
+      const ssjg = await axios.get(`https://oiapi.net/api/Music_163?name=${encodeURIComponent(jsonlyrics.metadata.ti)}`);
+      const lb = ssjg.data
+      const imageResponse = await axios.get(lb.data[0].picurl, { responseType: 'arraybuffer' });
+      fs.writeFileSync(`./dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.jpg')}`, imageResponse.data)
+      console.log("img ok")
+      return;
+    }
+    /*
+    if(jsonlyrics.metadata.ti){
         const ssjg = await axios.get(`https://music.163.com/api/search/get/web?csrf_token=&hlpretag=&hlposttag=&s=${encodeURIComponent(jsonlyrics.metadata.ti)}&type=1&offset=0&total=true&limit=10`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}});
         console.log(ssjg.data);
         if(!ssjg.data.result.songs){
@@ -171,7 +180,9 @@ async function imgload(musicfilename, jsonlyrics){
         fs.writeFileSync(`./dist/musicfile/${musicfilename.replace(/\.[^.]*$/, '.jpg')}`, imageResponse.data)
         console.log("img ok")
         return;
+        
     }
+    */
     console.warn('no img');
     clearimg(musicfilename)
 }
