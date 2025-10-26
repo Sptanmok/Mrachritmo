@@ -177,17 +177,21 @@ function imgload(){
         xhr.open('GET', encodeURI('https://music.163.com/api/search/get/web?csrf_token=&hlpretag=&hlposttag=&s=${jsonlyrics.metadata.ti}&type=1&offset=0&total=true&limit=10'));
         xhr.onreadystatechange = () => {
             if(xhr.status !== 200){
+                console.error("seimg !== 200");
                 return;
             }
             if(xhr.responseText.result.songs[0].id){
+                console.error("seimg null!");
                 return;
             }
             xhe.open('GET', 'https://meting.qjqq.cn/?type=song&id=${xhr.responseText.result.songs[0].id}');
             xhe.onreadystatechange = () => {
                 if(xhe.status !== 200){
+                    console.error("img !== 200");
                     return;
                 }
                 if(xhe.responseText[0].pic){
+                    console.error("img null!");
                     return;
                 }
                 const img = document.createElement("img");
