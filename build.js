@@ -191,6 +191,9 @@ function clearimg(musicfilename){
     const xg = yl.replace(/<img[^>]*>/gi, '')
     fs.writeFileSync(`./dist/${musicfilename.replace(/\.[^.]*$/, '.html')}`, xg);
 }
+function dolwo(){
+  
+}
 let indexhtml = index
     .replace(/{{link}}/g, liebiao)
 fs.writeFileSync(`dist/index.html`, indexhtml);

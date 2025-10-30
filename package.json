@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "163musicbuild": "node playlistbuild.js"
   },
   "repository": {
     "type": "git",
