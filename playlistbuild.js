@@ -31,7 +31,7 @@ async function start(){
 }
 async function jxgd(listd,o){
     for(const musicd of listd){
-        if(o >= 50) {
+        if(o > 100) {
             console.warn("音乐过多，停止生成");
             break;
         }
@@ -40,19 +40,23 @@ async function jxgd(listd,o){
         let json = await YrcToJson(musicid);
         if(!json) continue;
         imgload(musicid, json.metadata.ti)
-        liebiao += `<li><a href="./${json.metadata.ti.replace("/",",")}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
-        if(!fs.existsSync(`dist/musicfile/${json.metadata.ti.replace("/",",")}.mp3`)){
+        liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
+        if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`)){
             const music = await axios.get(musicd.url, { responseType: 'arraybuffer' });
-            fs.writeFileSync(`dist/musicfile/${json.metadata.ti.replace("/",",")}.mp3`,music.data)
+            fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`,music.data)
         }
-        fs.writeFileSync(`dist/musicfile/${json.metadata.ti.replace("/",",")}.json`,JSON.stringify(json), "utf8")
+        fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.json`,JSON.stringify(json), "utf8")
         let ddyyweb = template
             .replace(/{{title}}/g, `${json.metadata.ar} - ${json.metadata.ti}`.replace("/",","))
-            .replace(/{{filename}}/g, json.metadata.ti.replace("/",",") + ".mp3")
-            .replace('https://picsum.photos/400/400', `./musicfile/${json.metadata.ti}.jpg`)
-        fs.writeFileSync(`./dist/${json.metadata.ti.replace("/",",")}.html`, ddyyweb)
+            .replace(/{{filename}}/g, filenamecl(json.metadata.ti) + ".mp3")
+            .replace('https://picsum.photos/400/400', `./musicfile/${filenamecl(json.metadata.ti)}.jpg`)
+        fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)}.html`, ddyyweb)
         o++;
     }
+}
+function filenamecl(name){
+    const result = name.replace("/",",").replace("*","x")
+    return result;
 }
 async function YrcToJson(musicid){
     const datae = await axios.get(`https://music.163.com/api/song/lyric?os=pc&id=${musicid}&yv=-1&tv=-1&rv=-1`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}})
@@ -95,34 +99,55 @@ async function YrcToJson(musicid){
         json.lyrics.push({time: timesec,text: text,etext: eljson})
     }
     const pairlyrics = yrc.tlyric.lyric.split("\n");
+    let bls = 0;
     if(pairlyrics){
         for(const pairlyric of pairlyrics){
+            /*
             let lyricMatch = pairlyric.match(timeTagRegex);
             if(!lyricMatch) continue;
             let text = lyricMatch[4]
             const decimal = lyricMatch[3].toString().length === 2 ? lyricMatch[3] / 100 : lyricMatch[3] / 1000;
             let timesec = lyricMatch[1] * 60 + lyricMatch[2] + decimal
-            const pairlyricif = json.lyrics.findIndex(lybl => lybl.time  <= timesec);
+            let pairlyricif = json.lyrics.findIndex(lybl => timesec + 0.2 >= lybl.time >= timesec - 0.2);//网易云音乐api会出现逐词字幕与副字幕时间有偏差
             if (pairlyricif != -1) {
                 json.lyrics[pairlyricif].pairlyric = text;
             }
+            */
+            let lyricMatch = pairlyric.match(timeTagRegex);
+            if(!lyricMatch) continue;
+            let text = lyricMatch[4]
+            if(text == "") continue;
+            if(!json.lyrics[bls]) continue;
+            json.lyrics[bls].pairlyric = text;
+            bls++;
         }
     }
     const romanizations = yrc.romalrc.lyric.split("\n");
+    let bl = 0;
     for(const romanization of romanizations){
+        /*
         let lyricMatch = romanization.match(timeTagRegex);
         if(!lyricMatch) continue;
         let text = lyricMatch[4]
         const decimal = lyricMatch[3].toString().length === 2 ? lyricMatch[3] / 100 : lyricMatch[3] / 1000;
         let timesec = lyricMatch[1] * 60 + lyricMatch[2] + decimal
-        const romanizationslyricif = json.lyrics.findIndex(lybl => lybl.time <= timesec);
+        const romanizationslyricif = json.lyrics.findIndex(lybl => timesec + 0.2 >= lybl.time >= timesec - 0.2);//网易云音乐api会出现逐词字幕与副字幕时间有偏差
         if (romanizationslyricif != -1) {
             json.lyrics[romanizationslyricif].romanizationslyric = text;
         }
+        */
+        let lyricMatch = romanization.match(timeTagRegex);
+        if(!lyricMatch) continue;
+        let text = lyricMatch[4]
+        if(text == "") continue;
+        if(!json.lyrics[bl]) continue;
+        json.lyrics[bl].romanizationslyric = text;
+        bl++;
     }
     const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
     json.metadata.ti = meta.data[0].name
     json.metadata.ar = meta.data[0].artist
+    json.metadata.CLXIIIid = musicid
     return json;
 }
 async function imgload(musicid, name){
@@ -140,7 +165,7 @@ async function imgload(musicid, name){
         return;
     }
     const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' });
-    fs.writeFileSync(`./dist/musicfile/${name.replace("/",",")}.jpg`, imageResponse.data)
+    fs.writeFileSync(`./dist/musicfile/${filenamecl(name)}.jpg`, imageResponse.data)
     return;
 }
 fs.copyFileSync("src/player2.css", "dist/player2.css");
