@@ -2,8 +2,7 @@ const audio = document.getElementById('audio');
 var lyricpath = audio.getAttribute('lyricpath');
 let currentLyricIndex = -1;
 let wordElements = [];
-var _etext = document.getElementById("lyric");
-const lyricElement = document.getElementById('lyric');
+const lyricElement = document.getElementById('audio');
 const pairLyricElement = document.getElementById('pairlyric');
 const title = document.title
 let old;
@@ -107,8 +106,6 @@ function drawSpectrum() {
     barHeight = dataArray[i];
     ctx.fillStyle = "white";
     ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-
-
     x += barWidth + 1;
   }
 }

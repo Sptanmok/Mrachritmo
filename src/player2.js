@@ -7,7 +7,6 @@ const pairLyricElement = document.getElementById('pairlyric');
 const romaLyricElement = document.getElementById('romalyric');
 const title = document.title
 let jsonlyrics;
-let old;
 const canvas = document.getElementById('spectrum');
 const ctx = canvas.getContext('2d');
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -18,8 +17,7 @@ const LiteralRenderingModeSelectionall = 2;
 let bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
-let sxl = 15;
-let interval;
+let sxl = 15;//较为合适，大了卡拉ok效果卡顿，小了性能开销大
 dd.connect(analyser);
 analyser.connect(audioContext.destination);
 main = document.querySelector(".main");
@@ -42,8 +40,8 @@ fetch(lyricpath)
   })
 function initLyrics() {
 	if(!jsonlyrics.lyrics[0] || jsonlyrics.lyrics[0].time > 0){
-		let dsfsad = {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
-		jsonlyrics.lyrics.unshift(dsfsad);
+		let defaultLyric = {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
+		jsonlyrics.lyrics.unshift(defaultLyric);
 	}
     if(jsonlyrics.metadata.zq){
         setInterval(updateLyrics, sxl);
@@ -105,7 +103,8 @@ function fadeWords(currentTime){
 	const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
 	let outtimes = [];
 	if(jsonlyrics.lyrics[currentLyricIndex + 1] && jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].start >= wordElements.length * 0.03 + 0.2){
-		let n = 1;
+		//逐字/词退出
+        let n = 1;
 		for(let word of wordElements){
 			let Time = jsonlyrics.lyrics[currentLyricIndex + 1].time - (( wordElements.length - n ) * 0.03 + 0.2);
 			outtimes.push(Time);
@@ -122,6 +121,7 @@ function fadeWords(currentTime){
 			a++;
 		}
 	}else if(jsonlyrics.lyrics[currentLyricIndex + 1] && jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= 0.2){
+        //整行退出
         let time = jsonlyrics.lyrics[currentLyricIndex + 1].time - 0.2;
         if(currentTime >= time){
             lyricElement.classList.add('fade-out');
@@ -219,15 +219,12 @@ function lowupdateLyrics(){
         pairLyricElement.textContent = jsonlyrics.lyrics[newIndex].pairlyric;
         romaLyricElement.textContent = jsonlyrics.lyrics[newIndex].romanizationslyric;
     }
-    if(jsonlyrics.lyrics[newIndex+1] && jsonlyrics.lyrics[newIndex+1].time - jsonlyrics.lyrics[newIndex].time > 0.2){
-        let time = jsonlyrics.lyrics[newIndex+1].time-0.2
-        if(currentTime >= time){
-            lyricElement.classList.add('fade-out');
-            lyricElement.classList.remove('fade-in');
-        }else{
-            lyricElement.classList.remove('fade-out');
-            lyricElement.classList.add('fade-in');
-        }
+    if(jsonlyrics.lyrics[newIndex+1] && jsonlyrics.lyrics[newIndex+1].time - jsonlyrics.lyrics[newIndex].time > 0.2 && currentTime >= jsonlyrics.lyrics[newIndex+1].time-0.2){
+        lyricElement.classList.add('fade-out');
+        lyricElement.classList.remove('fade-in');
+    }else{
+        lyricElement.classList.remove('fade-out');
+        lyricElement.classList.add('fade-in');
     }
 	if(zt === 2){
         lyricElement.innerHTML = jsonlyrics.lyrics[newIndex].text;

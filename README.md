@@ -64,7 +64,7 @@ npm run 163musicbuild
 
 ## 在你的网站内使用
 
-在网站内引用JS
+在网站内引用JS（在html audio以及文本元素之后，频谱条也一样）
 
 ```html
 <script src="player.js"></script>
