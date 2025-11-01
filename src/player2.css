@@ -42,7 +42,11 @@ img{
 }
 
 @keyframes fadeInUp {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(-13.33px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -63,6 +67,17 @@ img{
 }
 .fade-in {
   animation: fadeInUp 0.9s forwards;
+}
+.lowfadeinzb {
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: --progress 0.1s ease;
+	white-space: normal;
+	opacity: 0;
+	transform: translateY(-13.33px);
+	will-change: transform, opacity;
+	font-weight: bold;
 }
 @font-face {
   font-family: 'Saira Light';

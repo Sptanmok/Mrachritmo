@@ -4,8 +4,9 @@ let currentLyricIndex = -1;
 let wordElements = [];
 const lyricElement = document.getElementById('lyric');
 const pairLyricElement = document.getElementById('pairlyric');
+const romaLyricElement = document.getElementById('romalyric');
 const title = document.title
-let jsonlyrics = {"time": 0.00,"text": "Loading lyrics...","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Loading lyrics..."}]};
+let jsonlyrics;
 let old;
 const canvas = document.getElementById('spectrum');
 const ctx = canvas.getContext('2d');
@@ -37,14 +38,20 @@ fetch(lyricpath)
   .then(data => {
     jsonlyrics = data;
     console.log(jsonlyrics);
-	initLyrics();
+    initLyrics()
   })
 function initLyrics() {
-	if(jsonlyrics.lyrics[0].time > 0){
+	if(!jsonlyrics.lyrics[0] || jsonlyrics.lyrics[0].time > 0){
 		let dsfsad = {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
 		jsonlyrics.lyrics.unshift(dsfsad);
 	}
-    setInterval(updateLyrics, sxl);//刷新
+    if(jsonlyrics.metadata.zq){
+        setInterval(updateLyrics, sxl);
+    }
+    if(!jsonlyrics.metadata.zq){
+        lyricElement.classList.add('lowfadeinzb');
+        setInterval(lowupdateLyrics, sxl);
+    }
 }
 let zt = 1;
 function updateLyrics() {
@@ -92,6 +99,7 @@ function displayCurrentLyric() {
 	lyricElement.innerHTML = htmllyric;
 	wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
+    romaLyricElement.textContent = currentLyric.romanizationslyric;
 }
 function fadeWords(currentTime){
 	const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
@@ -113,7 +121,14 @@ function fadeWords(currentTime){
 			wordElements[a].classList.remove('fade-in');
 			a++;
 		}
-	}
+	}else if(jsonlyrics.lyrics[currentLyricIndex + 1] && jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= 0.2){
+        let time = jsonlyrics.lyrics[currentLyricIndex + 1].time - 0.2;
+        if(currentTime >= time){
+            lyricElement.classList.add('fade-out');
+        }else{
+            lyricElement.classList.remove('fade-out');
+        }
+    }
     for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];//简化m
         if (currentTime >= word.start && !wordElements[i].classList.contains('fade-out')) { //判断时间
@@ -182,3 +197,42 @@ window.addEventListener('resize', () => {
 	canvas.width = main.clientWidth - 40;
 	bufferLength = Math.floor( (canvas.width + 1 ) / (barWidth + 1) );
 });
+function lowupdateLyrics(){
+    const currentTime = audio.currentTime;
+    let newIndex = -1;
+    for (let i = 0; i < jsonlyrics.lyrics.length; i++) {
+        if (currentTime >= jsonlyrics.lyrics[i].time) {
+            newIndex = i;
+        } else {
+            break;
+        }
+    }
+	if (audio.readyState !== 4 && audio.readyState !== 3){
+		lyricElement.innerHTML = "Loading music...";
+		zt = 2;
+		return;
+	}
+    changeTitle();
+    if (newIndex !== currentLyricIndex && newIndex !== -1) {
+        currentLyricIndex = newIndex;
+        lyricElement.innerHTML = jsonlyrics.lyrics[newIndex].text;
+        pairLyricElement.textContent = jsonlyrics.lyrics[newIndex].pairlyric;
+        romaLyricElement.textContent = jsonlyrics.lyrics[newIndex].romanizationslyric;
+    }
+    if(jsonlyrics.lyrics[newIndex+1] && jsonlyrics.lyrics[newIndex+1].time - jsonlyrics.lyrics[newIndex].time > 0.2){
+        let time = jsonlyrics.lyrics[newIndex+1].time-0.2
+        if(currentTime >= time){
+            lyricElement.classList.add('fade-out');
+            lyricElement.classList.remove('fade-in');
+        }else{
+            lyricElement.classList.remove('fade-out');
+            lyricElement.classList.add('fade-in');
+        }
+    }
+	if(zt === 2){
+        lyricElement.innerHTML = jsonlyrics.lyrics[newIndex].text;
+        pairLyricElement.textContent = jsonlyrics.lyrics[newIndex].pairlyric;
+        romaLyricElement.textContent = jsonlyrics.lyrics[newIndex].romanizationslyric;
+		zt = 1;
+	}
+}

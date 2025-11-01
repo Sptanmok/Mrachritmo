@@ -18,6 +18,7 @@ const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
 async function start(){
+    liebiao = "";
     let dd = 0;
     let indexhtml;
     let o = 1;
@@ -37,7 +38,7 @@ async function jxgd(listd,o){
         }
         console.log(o);
         const musicid = musicd.url.match(/\d+$/);
-        let json = await YrcToJson(musicid);
+        let json = await YrcToJson(musicid[0]);
         if(!json) continue;
         imgload(musicid, json.metadata.ti)
         liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
@@ -59,48 +60,57 @@ function filenamecl(name){
     return result;
 }
 async function YrcToJson(musicid){
-    const datae = await axios.get(`https://music.163.com/api/song/lyric?os=pc&id=${musicid}&yv=-1&tv=-1&rv=-1`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}})
-    const yrc = datae.data;
-    if(!yrc.tlyric && !yrc.yrc){
-        //没有歌词（大概率纯音乐）
-        return false;
-    }
-    if(yrc.tlyric && !yrc.yrc){
-        //没有中文翻译或不是逐字/词歌词
-        return false;
-    }
-    yrc.yrc.lyric = yrc.yrc.lyric.replace(/^\uFEFF/, '');
-    const lyrics = yrc.yrc.lyric.split("\n");
-    let json ={metadata: {}, lyrics: [],};
-    const timeTagRegex = /\[(\d{1,2}):(\d{2})(?:[.:](\d{1,3}))?\](.*)/;
+    const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
     const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
     const regex = /\((\d+),(\d+),(\d+)\)([^()\n]+)/g;
-    //let zq = false;
-    for(const lyric of lyrics){
-        let lyricMatch = lyric.match(zqTagRegex);
-        let text;
-        let timesec;
-        if(!lyricMatch) continue;
-        text = lyricMatch[3]
-        timesec = lyricMatch[1] / 1000
-        let eljson = [];
-        if (text.includes('(') && text.includes(')')) {
-            let ttt;
-            while ((ttt = regex.exec(lyric)) !== null) {
-                const Duration = ttt[2] / 1000
-                const start = ttt[1] / 1000
-                const totalSecondsEnd =  start + Duration
-                const texte = ttt[4].replace(/ /g, '&nbsp;')
-                eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
-            }
-        json.metadata.zq = eljson.length > 0;
-        }
-        text = text.replace(/\([^)]*\)/g, '')
-        json.lyrics.push({time: timesec,text: text,etext: eljson})
+    const datae = await axios.get(`https://music.163.com/api/song/lyric?os=pc&id=${musicid}&yv=-1&tv=-1&rv=-1&lv=-1`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}})
+    const yrc = datae.data;
+    let json ={metadata: {zq:false,m:2}, lyrics: [],};
+    if(!yrc.tlyric && !yrc.yrc){
+        //没有歌词（大概率纯音乐）
+        const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
+        json.metadata.ti = meta.data[0].name
+        json.metadata.ar = meta.data[0].artist
+        json.metadata.CLXIIIid = musicid
+        json.metadata.nolyric = true
+        return json;
     }
-    const pairlyrics = yrc.tlyric.lyric.split("\n");
+    if(yrc.yrc){
+        yrc.yrc.lyric = yrc.yrc.lyric.replace(/^\uFEFF/, '');
+        const lyrics = yrc.yrc.lyric.split("\n");
+        for(const lyric of lyrics){
+            let lyricMatch = lyric.match(zqTagRegex);
+            let text;
+            let timesec;
+            if(!lyricMatch) continue;
+            text = lyricMatch[3]
+            timesec = lyricMatch[1] / 1000
+            let eljson = [];
+            if (text.includes('(') && text.includes(')')) {
+                let ttt;
+                while ((ttt = regex.exec(lyric)) !== null) {
+                    const Duration = ttt[2] / 1000
+                    const start = ttt[1] / 1000
+                    const totalSecondsEnd =  start + Duration
+                    const texte = ttt[4].replace(/ /g, '&nbsp;')
+                    eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
+                }
+                json.metadata.zq = eljson.length > 0;
+            }
+            text = text.replace(/\([^)]*\)/g, '')
+            json.lyrics.push({time: timesec,text: text,etext: eljson})
+        }
+    }else if(yrc.lrc){//没有逐字/词歌词
+        let lyrics = yrc.lrc.lyric.split("\n").filter(item => timeTagRegex.test(item))
+        for(const lyric of lyrics){
+            let lyricMatch = lyric.match(timeTagRegex);
+            const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
+            json.lyrics.push({time: parseInt(lyricMatch[1])*60+parseInt(lyricMatch[2])+decimal,text: lyricMatch[4]})
+        }
+    }
+    const pairlyrics = yrc.tlyric.lyric.split("\n").filter(item => timeTagRegex.test(item));
     let bls = 0;
-    if(pairlyrics){
+    if(pairlyrics && pairlyrics.length === json.lyrics.length){
         for(const pairlyric of pairlyrics){
             /*
             let lyricMatch = pairlyric.match(timeTagRegex);
@@ -116,33 +126,33 @@ async function YrcToJson(musicid){
             let lyricMatch = pairlyric.match(timeTagRegex);
             if(!lyricMatch) continue;
             let text = lyricMatch[4]
-            if(text == "") continue;
-            if(!json.lyrics[bls]) continue;
             json.lyrics[bls].pairlyric = text;
             bls++;
         }
     }
-    const romanizations = yrc.romalrc.lyric.split("\n");
+    const romanizations = yrc.romalrc.lyric.split("\n").filter(item => timeTagRegex.test(item));
     let bl = 0;
-    for(const romanization of romanizations){
-        /*
-        let lyricMatch = romanization.match(timeTagRegex);
-        if(!lyricMatch) continue;
-        let text = lyricMatch[4]
-        const decimal = lyricMatch[3].toString().length === 2 ? lyricMatch[3] / 100 : lyricMatch[3] / 1000;
-        let timesec = lyricMatch[1] * 60 + lyricMatch[2] + decimal
-        const romanizationslyricif = json.lyrics.findIndex(lybl => timesec + 0.2 >= lybl.time >= timesec - 0.2);//网易云音乐api会出现逐词字幕与副字幕时间有偏差
-        if (romanizationslyricif != -1) {
-            json.lyrics[romanizationslyricif].romanizationslyric = text;
+    if(romanizations && romanizations.length === json.lyrics.length){
+        for(const romanization of romanizations){
+            /*
+            let lyricMatch = romanization.match(timeTagRegex);
+            if(!lyricMatch) continue;
+            let text = lyricMatch[4]
+            const decimal = lyricMatch[3].toString().length === 2 ? lyricMatch[3] / 100 : lyricMatch[3] / 1000;
+            let timesec = lyricMatch[1] * 60 + lyricMatch[2] + decimal
+            const romanizationslyricif = json.lyrics.findIndex(lybl => timesec + 0.2 >= lybl.time >= timesec - 0.2);//网易云音乐api会出现逐词字幕与副字幕时间有偏差
+            if (romanizationslyricif != -1) {
+                json.lyrics[romanizationslyricif].romanizationslyric = text;
+            }
+            */
+            let lyricMatch = romanization.match(timeTagRegex);
+            if(!lyricMatch) continue;
+            let text = lyricMatch[4]
+            if(text == "") continue;
+            if(!json.lyrics[bl]) continue;
+            json.lyrics[bl].romanizationslyric = text;
+            bl++;
         }
-        */
-        let lyricMatch = romanization.match(timeTagRegex);
-        if(!lyricMatch) continue;
-        let text = lyricMatch[4]
-        if(text == "") continue;
-        if(!json.lyrics[bl]) continue;
-        json.lyrics[bl].romanizationslyric = text;
-        bl++;
     }
     const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
     json.metadata.ti = meta.data[0].name
