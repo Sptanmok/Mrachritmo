@@ -13,7 +13,7 @@ await build({
   outfile: "dist/player2.js"
 });
 const gedang = fs.readFileSync(`neteaseplaylist.txt`, 'utf8')
-const playmusics = gedang.split(/\r?\n/);
+const nplaymusics = gedang.split(/\r?\n/);
 const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
@@ -22,7 +22,7 @@ async function start(){
     let dd = 0;
     let indexhtml;
     let o = 1;
-    for(const playmusic of playmusics){
+    for(const playmusic of nplaymusics){
         const list = await axios.get(`https://meting.qjqq.cn/?type=playlist&id=${playmusic.match(/\d+$/)}`);
         await jxgd(list.data, o);
     }
@@ -75,6 +75,7 @@ async function YrcToJson(musicid){
         json.metadata.nolyric = true
         return json;
     }
+    let pdjg;
     if(yrc.yrc){
         yrc.yrc.lyric = yrc.yrc.lyric.replace(/^\uFEFF/, '');
         const lyrics = yrc.yrc.lyric.split("\n");
@@ -98,60 +99,17 @@ async function YrcToJson(musicid){
                 json.metadata.zq = eljson.length > 0;
             }
             text = text.replace(/\([^)]*\)/g, '')
-            json.lyrics.push({time: timesec,text: text,etext: eljson})
+            pdjg = prpdl(yrc, timesec)
+            json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
     }else if(yrc.lrc){//没有逐字/词歌词
         let lyrics = yrc.lrc.lyric.split("\n").filter(item => timeTagRegex.test(item))
         for(const lyric of lyrics){
             let lyricMatch = lyric.match(timeTagRegex);
             const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
-            json.lyrics.push({time: parseInt(lyricMatch[1])*60+parseInt(lyricMatch[2])+decimal,text: lyricMatch[4]})
-        }
-    }
-    const pairlyrics = yrc.tlyric.lyric.split("\n").filter(item => timeTagRegex.test(item));
-    let bls = 0;
-    if(pairlyrics && pairlyrics.length === json.lyrics.length){
-        for(const pairlyric of pairlyrics){
-            /*
-            let lyricMatch = pairlyric.match(timeTagRegex);
-            if(!lyricMatch) continue;
-            let text = lyricMatch[4]
-            const decimal = lyricMatch[3].toString().length === 2 ? lyricMatch[3] / 100 : lyricMatch[3] / 1000;
-            let timesec = lyricMatch[1] * 60 + lyricMatch[2] + decimal
-            let pairlyricif = json.lyrics.findIndex(lybl => timesec + 0.2 >= lybl.time >= timesec - 0.2);//网易云音乐api会出现逐词字幕与副字幕时间有偏差
-            if (pairlyricif != -1) {
-                json.lyrics[pairlyricif].pairlyric = text;
-            }
-            */
-            let lyricMatch = pairlyric.match(timeTagRegex);
-            if(!lyricMatch) continue;
-            let text = lyricMatch[4]
-            json.lyrics[bls].pairlyric = text;
-            bls++;
-        }
-    }
-    const romanizations = yrc.romalrc.lyric.split("\n").filter(item => timeTagRegex.test(item));
-    let bl = 0;
-    if(romanizations && romanizations.length === json.lyrics.length){
-        for(const romanization of romanizations){
-            /*
-            let lyricMatch = romanization.match(timeTagRegex);
-            if(!lyricMatch) continue;
-            let text = lyricMatch[4]
-            const decimal = lyricMatch[3].toString().length === 2 ? lyricMatch[3] / 100 : lyricMatch[3] / 1000;
-            let timesec = lyricMatch[1] * 60 + lyricMatch[2] + decimal
-            const romanizationslyricif = json.lyrics.findIndex(lybl => timesec + 0.2 >= lybl.time >= timesec - 0.2);//网易云音乐api会出现逐词字幕与副字幕时间有偏差
-            if (romanizationslyricif != -1) {
-                json.lyrics[romanizationslyricif].romanizationslyric = text;
-            }
-            */
-            let lyricMatch = romanization.match(timeTagRegex);
-            if(!lyricMatch) continue;
-            let text = lyricMatch[4]
-            if(text == "") continue;
-            if(!json.lyrics[bl]) continue;
-            json.lyrics[bl].romanizationslyric = text;
-            bl++;
+            let timesec = parseInt(lyricMatch[1])*60+parseInt(lyricMatch[2])+decimal
+            pdjg = prpdl(yrc, timesec)
+            json.lyrics.push({time:timesec,text:lyricMatch[4],pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
     }
     const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
@@ -159,6 +117,38 @@ async function YrcToJson(musicid){
     json.metadata.ar = meta.data[0].artist
     json.metadata.CLXIIIid = musicid
     return json;
+}
+function prpdl(yrc, timesec){
+    const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
+    let pairtext = "";
+    if(yrc.tlyric.lyric){
+        const pairlyrics = yrc.tlyric.lyric.split("\n").filter(item => timeTagRegex.test(item));
+        for(let i = 0; i < pairlyrics.length; i++){
+            let lyricMatch = pairlyrics[i].match(timeTagRegex);
+            if(!lyricMatch) continue;
+            let text = lyricMatch[4]
+            const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
+            let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
+            if(Math.abs(timesec - timesecp) < 0.5){
+                pairtext = text;
+            }
+        }
+    }
+    let romatext = '';
+    if(yrc.romalrc.lyric){
+        const romalyrics = yrc.romalrc.lyric.split("\n").filter(item => timeTagRegex.test(item));
+        for(let i = 0; i < romalyrics.length; i++){
+            let lyricMatch = romalyrics[i].match(timeTagRegex);
+            if(!lyricMatch) continue;
+            let text = lyricMatch[4]
+            const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
+            let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
+            if(Math.abs(timesec - timesecp) < 0.5){
+                romatext = text;
+            }
+        }
+    }
+    return {pairtext:pairtext,romatext:romatext};
 }
 async function imgload(musicid, name){
     const pijt = await axios.get(`https://music.163.com/song?id=${musicid}`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}});
