@@ -98,6 +98,7 @@ function displayCurrentLyric() {
 	wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
     romaLyricElement.textContent = currentLyric.romanizationslyric;
+    if(LiteralRenderingModeSelection === 2) lyricElement.classList.remove('fade-out');//源定于函数fadeWords的逻辑
 }
 function fadeWords(currentTime){
 	const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
@@ -125,8 +126,6 @@ function fadeWords(currentTime){
         let time = jsonlyrics.lyrics[currentLyricIndex + 1].time - 0.2;
         if(currentTime >= time){
             lyricElement.classList.add('fade-out');
-        }else{
-            lyricElement.classList.remove('fade-out');
         }
     }
     for (let i = 0; i < currentLyric.etext.length; i++) {
