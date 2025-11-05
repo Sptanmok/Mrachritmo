@@ -13,7 +13,7 @@ await build({
   outfile: "dist/player2.js"
 });
 const gedang = fs.readFileSync(`neteaseplaylist.txt`, 'utf8')
-const nplaymusics = gedang.split(/\r?\n/);
+const playmusics = gedang.split(/\r?\n/);
 const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
@@ -22,9 +22,9 @@ async function start(){
     let dd = 0;
     let indexhtml;
     let o = 1;
-    for(const playmusic of nplaymusics){
+    for(const playmusic of playmusics){
         const list = await axios.get(`https://meting.qjqq.cn/?type=playlist&id=${playmusic.match(/\d+$/)}`);
-        await jxgd(list.data, o);
+        await jxgd(list.data, o); 
     }
     indexhtml = index.replace(/{{link}}/g, liebiao)
     fs.writeFileSync("./dist/index.html", indexhtml)
@@ -39,6 +39,10 @@ async function jxgd(listd,o){
         console.log(o);
         const musicid = musicd.url.match(/\d+$/);
         let json = await YrcToJson(musicid[0]);
+        if(json.metadata.nolyric){
+            //替补
+            
+        }
         if(!json) continue;
         imgload(musicid, json.metadata.ti)
         liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
@@ -66,7 +70,7 @@ async function YrcToJson(musicid){
     const datae = await axios.get(`https://music.163.com/api/song/lyric?os=pc&id=${musicid}&yv=-1&tv=-1&rv=-1&lv=-1`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}})
     const yrc = datae.data;
     let json ={metadata: {zq:false,m:2}, lyrics: [],};
-    if(!yrc.tlyric && !yrc.yrc){
+    if(!yrc.yrc && !yrc.tlyric.lyric){
         //没有歌词（大概率纯音乐）
         const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
         json.metadata.ti = meta.data[0].name
@@ -75,6 +79,7 @@ async function YrcToJson(musicid){
         json.metadata.nolyric = true
         return json;
     }
+    json.metadata.nolyric = false
     let pdjg;
     if(yrc.yrc){
         yrc.yrc.lyric = yrc.yrc.lyric.replace(/^\uFEFF/, '');
@@ -102,7 +107,7 @@ async function YrcToJson(musicid){
             pdjg = prpdl(yrc, timesec)
             json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
-    }else if(yrc.lrc){//没有逐字/词歌词
+    }else if(yrc.lrc.lyric){//没有逐字/词歌词
         let lyrics = yrc.lrc.lyric.split("\n").filter(item => timeTagRegex.test(item))
         for(const lyric of lyrics){
             let lyricMatch = lyric.match(timeTagRegex);
@@ -111,15 +116,25 @@ async function YrcToJson(musicid){
             pdjg = prpdl(yrc, timesec)
             json.lyrics.push({time:timesec,text:lyricMatch[4],pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
+    }else{
+        pdjg = {pairtext:"",pairif:false,romatext:"",romaif:false};
+        json.metadata.nolyric = true
     }
     const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
     json.metadata.ti = meta.data[0].name
     json.metadata.ar = meta.data[0].artist
     json.metadata.CLXIIIid = musicid
+    json.metadata.roma = pdjg.romaif
+    json.metadata.pair = pdjg.pairif
     return json;
+}
+function QrcToJson(musicid){
+    
 }
 function prpdl(yrc, timesec){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
+    let pairif = false;
+    let romaif = false;
     let pairtext = "";
     if(yrc.tlyric.lyric){
         const pairlyrics = yrc.tlyric.lyric.split("\n").filter(item => timeTagRegex.test(item));
@@ -133,6 +148,7 @@ function prpdl(yrc, timesec){
                 pairtext = text;
             }
         }
+        pairif = true;
     }
     let romatext = '';
     if(yrc.romalrc.lyric){
@@ -147,8 +163,9 @@ function prpdl(yrc, timesec){
                 romatext = text;
             }
         }
+        romaif = true;
     }
-    return {pairtext:pairtext,romatext:romatext};
+    return {pairtext,pairif,romatext,romaif};
 }
 async function imgload(musicid, name){
     const pijt = await axios.get(`https://music.163.com/song?id=${musicid}`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}});

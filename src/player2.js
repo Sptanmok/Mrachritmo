@@ -44,11 +44,11 @@ function initLyrics() {
 		jsonlyrics.lyrics.unshift(defaultLyric);
 	}
     if(jsonlyrics.metadata.zq){
-        setInterval(updateLyrics, sxl);
+        updateLyrics();
     }
     if(!jsonlyrics.metadata.zq){
         lyricElement.classList.add('lowfadeinzb');
-        setInterval(lowupdateLyrics, sxl);
+        lowupdateLyrics();
     }
 }
 let zt = 1;
@@ -65,6 +65,7 @@ function updateLyrics() {
 	if (audio.readyState !== 4 && audio.readyState !== 3){
 		lyricElement.innerHTML = "Loading music...";
 		zt = 2;
+        requestAnimationFrame(updateLyrics);
 		return;
 	}
     changeTitle();
@@ -87,6 +88,7 @@ function updateLyrics() {
     if(!lyricElement.classList.contains(targetClass)) {
         lyricElement.className = targetClass;
     }
+    requestAnimationFrame(updateLyrics);
 }
 function displayCurrentLyric() {
 	let htmllyric = '';
@@ -209,6 +211,7 @@ function lowupdateLyrics(){
 	if (audio.readyState !== 4 && audio.readyState !== 3){
 		lyricElement.innerHTML = "Loading music...";
 		zt = 2;
+        requestAnimationFrame(lowupdateLyrics);
 		return;
 	}
     changeTitle();
@@ -231,4 +234,5 @@ function lowupdateLyrics(){
         romaLyricElement.textContent = jsonlyrics.lyrics[newIndex].romanizationslyric;
 		zt = 1;
 	}
+    requestAnimationFrame(lowupdateLyrics);
 }

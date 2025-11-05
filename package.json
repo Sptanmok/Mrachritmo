@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "node build.js",
-    "163musicbuild": "node playlistbuild.js"
+    "163musicbuild": "node playlistbuild.js",
+    "preview": "npx serve dist"
   },
   "repository": {
     "type": "git",
