@@ -2,10 +2,13 @@ import { build } from "esbuild";
 import fs from "fs";
 import axios from 'axios';
 import * as cheerio from 'cheerio';
+import { console } from "inspector";
+import querystring from 'querystring';
 
 //await fs.promises.rm('dist', { recursive: true, force: true });
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
+if (!fs.existsSync("dist/musicfile/img")) fs.mkdirSync("dist/musicfile/img", { recursive: true });
 await build({
   entryPoints: ["src/player2.js"],
   bundle: true,
@@ -17,34 +20,42 @@ const playmusics = gedang.split(/\r?\n/);
 const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
+let o = 1;
 async function start(){
     liebiao = "";
     let dd = 0;
     let indexhtml;
-    let o = 1;
     for(const playmusic of playmusics){
         const list = await axios.get(`https://meting.qjqq.cn/?type=playlist&id=${playmusic.match(/\d+$/)}`);
-        await jxgd(list.data, o); 
+        await jxgd(list.data);
+        if(o > 700) {
+            break;
+        }
     }
     indexhtml = index.replace(/{{link}}/g, liebiao)
     fs.writeFileSync("./dist/index.html", indexhtml)
     console.log("successfully")
 }
-async function jxgd(listd,o){
+async function jxgd(listd){
     for(const musicd of listd){
-        if(o > 100) {
+        if(o > 700) {
             console.warn("音乐过多，停止生成");
             break;
         }
         console.log(o);
         const musicid = musicd.url.match(/\d+$/);
-        let json = await YrcToJson(musicid[0]);
-        if(json.metadata.nolyric){
+        const metadata = {name:musicd.name,artist:musicd.artist}
+        let json = await YrcToJson(musicid[0],metadata);
+        /*
+        if(json.metadata.nolyric || !json.metadata.zq){
             //替补
-            
+            const jg = await searchqqmusic(metadata.name, metadata.artist);
+            if(jg){
+                QrcToJson(jg,json.metadata);
+            }
         }
+        */
         if(!json) continue;
-        imgload(musicid, json.metadata.ti)
         liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
         if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`)){
             const music = await axios.get(musicd.url, { responseType: 'arraybuffer' });
@@ -54,33 +65,34 @@ async function jxgd(listd,o){
         let ddyyweb = template
             .replace(/{{title}}/g, `${json.metadata.ar} - ${json.metadata.ti}`.replace("/",","))
             .replace(/{{filename}}/g, filenamecl(json.metadata.ti) + ".mp3")
-            .replace('https://picsum.photos/400/400', `./musicfile/${filenamecl(json.metadata.ti)}.jpg`)
+            .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
         fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)}.html`, ddyyweb)
         o++;
     }
 }
 function filenamecl(name){
-    const result = name.replace("/",",").replace("*","x")
+    const result = name.replace(/\//g,",").replace(/\*/g,"x").replace(/\"/g,"'")
     return result;
 }
-async function YrcToJson(musicid){
+async function YrcToJson(musicid, meta){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
     const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
     const regex = /\((\d+),(\d+),(\d+)\)([^()\n]+)/g;
     const datae = await axios.get(`https://music.163.com/api/song/lyric?os=pc&id=${musicid}&yv=-1&tv=-1&rv=-1&lv=-1`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}})
     const yrc = datae.data;
     let json ={metadata: {zq:false,m:2}, lyrics: [],};
-    if(!yrc.yrc && !yrc.tlyric.lyric){
+    let metadata_ = await metaload(musicid, meta.name)
+    if(!yrc.yrc && !yrc.tlyric){
         //没有歌词（大概率纯音乐）
-        const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
-        json.metadata.ti = meta.data[0].name
-        json.metadata.ar = meta.data[0].artist
+        json.metadata.ti = meta.name
+        json.metadata.ar = meta.artist
+        json.metadata.al = metadata_.albumName
         json.metadata.CLXIIIid = musicid
         json.metadata.nolyric = true
         return json;
     }
     json.metadata.nolyric = false
-    let pdjg;
+    let pdjg = {pairtext:"",pairif:false,romatext:"",romaif:false};;
     if(yrc.yrc){
         yrc.yrc.lyric = yrc.yrc.lyric.replace(/^\uFEFF/, '');
         const lyrics = yrc.yrc.lyric.split("\n");
@@ -117,19 +129,112 @@ async function YrcToJson(musicid){
             json.lyrics.push({time:timesec,text:lyricMatch[4],pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
     }else{
-        pdjg = {pairtext:"",pairif:false,romatext:"",romaif:false};
         json.metadata.nolyric = true
     }
-    const meta = await axios.get(`https://meting.qjqq.cn/?type=song&id=${musicid}`)
-    json.metadata.ti = meta.data[0].name
-    json.metadata.ar = meta.data[0].artist
+    json.metadata.ti = meta.name
+    json.metadata.ar = meta.artist
+    json.metadata.al = metadata_.albumName
     json.metadata.CLXIIIid = musicid
     json.metadata.roma = pdjg.romaif
     json.metadata.pair = pdjg.pairif
     return json;
 }
-function QrcToJson(musicid){
-    
+async function searchqqmusic(title,artist) {
+    let url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_search_pc_lrc.fcg?'
+    let data = {
+        SONGNAME: title,
+        SINGERNAME: artist,
+        TYPE: 2,
+        RANGE_MIN: 1,
+        RANGE_MAX: 20
+    }
+    url += querystring.stringify(data)
+    const headers = {'Referer':'https://y.qq.com'}
+    let body = await axios.get(url,headers);
+    let xmlDoc = mxml.loadString(body)
+    let songList = xmlDoc.findElement('songinfo') || []
+    if(songList == []){
+        return false;
+    }
+    let stageSongList = []
+    for (const song of songList) {
+        let id = song.getAttr('id')
+        if (id == null) continue
+        stageSongList.push(id)
+    }
+    console.log(stageSongList)
+    debugger
+    return stageSongList[0];
+}
+async function QrcToJson(musicid,meta){
+    let headers = {}
+    headers = {'Referer':'https://y.qq.com','Host':'u.y.qq.com'}
+    // notes: some params may not be required, I'm not tested. //来自原作者的提醒
+    let postData = {
+        comm: {
+            _channelid: '0',
+            _os_version: '6.2.9200-2',
+            authst: '',
+            ct: '19',
+            cv: '1873',
+            //guid: '30D1D7C616938DDB575AF16E56D44BD4',
+            patch: '118',
+            psrf_access_token_expiresAt: 0,
+            psrf_qqaccess_token: '',
+            psrf_qqopenid: '',
+            psrf_qqunionid: '',
+            tmeAppID: 'qqmusic',
+            tmeLoginType: 2,
+            uin: '0',
+            wid: '0'
+        },
+        'music.musichallSong.PlayLyricInfo.GetPlayLyricInfo': {
+            method: 'GetPlayLyricInfo',
+            module: 'music.musichallSong.PlayLyricInfo'
+        }
+    }
+    let songID = musicid | 0
+    postData['music.musichallSong.PlayLyricInfo.GetPlayLyricInfo']['param'] = {
+        crypt : 1,
+        ct : 19,
+        cv : 1873,
+        lrc_t : 0,
+        qrc : 1,
+        qrc_t : 0,
+        roma : 1,
+        roma_t : 0,
+        songID : songID,
+        trans : 1,
+        trans_t : 0,
+        type : -1
+    }
+    let url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?'
+    let params = {
+        pcachetime: new Date().getTime() | 0
+    }
+    url += querystring.stringify(params)
+    console.log(url)
+    let postDataString = JSON.stringify(postData)
+    const qqmsj = await axios({method: 'post',url: url,headers: headers,data: postDataString})
+    console.log(qqmsj)
+    debugger
+    let obj = JSON.parse(qqmsj.data)
+    if (obj['code'] != 0) {
+        return
+    }
+
+    let lyricObjRoot = obj['music.musichallSong.PlayLyricInfo.GetPlayLyricInfo']
+    if (lyricObjRoot['code'] != 0) {
+        return
+    }
+
+    let lyricObj = lyricObjRoot['data']
+    if (lyricObj['songID'] != songID) {
+        return
+    }
+    lyricText = JSON.stringify(lyricObj)
+    console.log(lyricText);
+    debugger
 }
 function prpdl(yrc, timesec){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
@@ -144,7 +249,7 @@ function prpdl(yrc, timesec){
             let text = lyricMatch[4]
             const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
-            if(Math.abs(timesec - timesecp) < 0.5){
+            if(Math.abs(timesec - timesecp) < 1){
                 pairtext = text;
             }
         }
@@ -159,7 +264,7 @@ function prpdl(yrc, timesec){
             let text = lyricMatch[4]
             const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
-            if(Math.abs(timesec - timesecp) < 0.5){
+            if(Math.abs(timesec - timesecp) < 1){
                 romatext = text;
             }
         }
@@ -167,23 +272,34 @@ function prpdl(yrc, timesec){
     }
     return {pairtext,pairif,romatext,romaif};
 }
-async function imgload(musicid, name){
+async function metaload(musicid, name){
     const pijt = await axios.get(`https://music.163.com/song?id=${musicid}`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}});
     const $ = cheerio.load(pijt.data);
-    const dataSrcList = [];
-    $('img[data-src]').each((index, element) => {
-        const dataSrc = $(element).attr('data-src');
-        if (dataSrc) {
-        dataSrcList.push(dataSrc);
+    let albumName = '';let albumLink = '';
+    $('a[href*="/album?id="]').each((index, element) => {
+        const $link = $(element);
+        const parentText = $link.parent().text();
+        if (parentText.includes('所属专辑：')) {
+            albumLink = $link.attr('href');
+            if (albumLink && !albumLink.startsWith('http')) {
+                albumName = $link.text().trim();
+                albumLink = `https://music.163.com${albumLink}`;
+            }
+            return false;
         }
     });
-    if(dataSrcList <= 0){
-        console.error("no img");
-        return;
+    if(!fs.existsSync(`dist/musicfile/img/${filenamecl(albumName)}`)){
+        const dataSrcList = [];
+        $('img[data-src]').each((index, element) => {
+            const dataSrc = $(element).attr('data-src');
+            if (dataSrc) {
+            dataSrcList.push(dataSrc);
+            }
+        });
+        const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' });
+        fs.writeFile(`./dist/musicfile/img/${filenamecl(albumName)}.jpg`, imageResponse.data, (err) => {});
     }
-    const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' });
-    fs.writeFileSync(`./dist/musicfile/${filenamecl(name)}.jpg`, imageResponse.data)
-    return;
+    return {albumName,albumLink};
 }
 fs.copyFileSync("src/player2.css", "dist/player2.css");
 fs.copyFileSync("src/index.css", "dist/index.css");

@@ -17,7 +17,6 @@ const LiteralRenderingModeSelectionall = 2;
 let bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
-let sxl = 15;//较为合适，大了卡拉ok效果卡顿，小了性能开销大
 dd.connect(analyser);
 analyser.connect(audioContext.destination);
 main = document.querySelector(".main");
@@ -40,16 +39,17 @@ fetch(lyricpath)
   })
 function initLyrics() {
 	if(!jsonlyrics.lyrics[0] || jsonlyrics.lyrics[0].time > 0){
-		let defaultLyric = {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]};
+		let defaultLyric = !jsonlyrics.metadata.nolyric ? {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]} : {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Write your own lyrics to pure instrumental music!"}]}
 		jsonlyrics.lyrics.unshift(defaultLyric);
 	}
     if(jsonlyrics.metadata.zq){
-        updateLyrics();
+        setInterval(updateLyrics, 15);
     }
     if(!jsonlyrics.metadata.zq){
         lyricElement.classList.add('lowfadeinzb');
-        lowupdateLyrics();
+        setInterval(lowupdateLyrics, 50);
     }
+    setInterval(changeTitle, 50);
 }
 let zt = 1;
 function updateLyrics() {
@@ -65,10 +65,8 @@ function updateLyrics() {
 	if (audio.readyState !== 4 && audio.readyState !== 3){
 		lyricElement.innerHTML = "Loading music...";
 		zt = 2;
-        requestAnimationFrame(updateLyrics);
 		return;
 	}
-    changeTitle();
     if (newIndex !== currentLyricIndex && newIndex !== -1) {
         currentLyricIndex = newIndex;
         displayCurrentLyric();
@@ -79,16 +77,15 @@ function updateLyrics() {
 	}
     if (currentLyricIndex !== -1) {
 		if(LiteralRenderingModeSelection === 2){
-			fadeWords(currentTime);
+			requestAnimationFrame(() => fadeWords(currentTime));
 		}else{
-            highlightWords(currentTime);
+            requestAnimationFrame(() => highlightWords(currentTime));
 		}
     }
 	const targetClass = LiteralRenderingModeSelection === 2 ? "textt" : "text";
     if(!lyricElement.classList.contains(targetClass)) {
         lyricElement.className = targetClass;
     }
-    requestAnimationFrame(updateLyrics);
 }
 function displayCurrentLyric() {
 	let htmllyric = '';
@@ -211,10 +208,8 @@ function lowupdateLyrics(){
 	if (audio.readyState !== 4 && audio.readyState !== 3){
 		lyricElement.innerHTML = "Loading music...";
 		zt = 2;
-        requestAnimationFrame(lowupdateLyrics);
 		return;
 	}
-    changeTitle();
     if (newIndex !== currentLyricIndex && newIndex !== -1) {
         currentLyricIndex = newIndex;
         lyricElement.innerHTML = jsonlyrics.lyrics[newIndex].text;
@@ -234,5 +229,4 @@ function lowupdateLyrics(){
         romaLyricElement.textContent = jsonlyrics.lyrics[newIndex].romanizationslyric;
 		zt = 1;
 	}
-    requestAnimationFrame(lowupdateLyrics);
 }
