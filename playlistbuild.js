@@ -6,6 +6,9 @@ import { console } from "inspector";
 import querystring from 'querystring';
 
 //await fs.promises.rm('dist', { recursive: true, force: true });
+const metingapi_url='https://meting.qjqq.cn/'
+const qqmusiclyric_api ='http://127.0.0.1:5000/'
+
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
 if (!fs.existsSync("dist/musicfile/img")) fs.mkdirSync("dist/musicfile/img", { recursive: true });
@@ -25,8 +28,9 @@ async function start(){
     liebiao = "";
     let dd = 0;
     let indexhtml;
+    console.warn("开始！");
     for(const playmusic of playmusics){
-        const list = await axios.get(`https://meting.qjqq.cn/?type=playlist&id=${playmusic.match(/\d+$/)}`);
+        const list = await axios.get(`${metingapi_url}?type=playlist&id=${playmusic.match(/\d+$/)}`);
         await jxgd(list.data);
         if(o > 700) {
             break;
@@ -44,18 +48,24 @@ async function jxgd(listd){
         }
         console.log(o);
         const musicid = musicd.url.match(/\d+$/);
-        const metadata = {name:musicd.name,artist:musicd.artist}
+        const metadata = {name:musicd.name, artist:musicd.artist}
         let json = await YrcToJson(musicid[0],metadata);
-        /*
-        if(json.metadata.nolyric || !json.metadata.zq){
+        if(!json.metadata.zq){
             //替补
-            const jg = await searchqqmusic(metadata.name, metadata.artist);
-            if(jg){
-                QrcToJson(jg,json.metadata);
+            let jsonq;
+            jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al);
+            if(jsonq){
+            if(!jsonq.metadata.nolyric && jsonq.metadata.zq){
+                const r = json
+                json = jsonq
+                json.lyrict = r
+            }
             }
         }
-        */
-        if(!json) continue;
+        
+        if(!json) {
+        continue;
+        }
         liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
         if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`)){
             const music = await axios.get(musicd.url, { responseType: 'arraybuffer' });
@@ -109,7 +119,7 @@ async function YrcToJson(musicid, meta){
                 while ((ttt = regex.exec(lyric)) !== null) {
                     const Duration = ttt[2] / 1000
                     const start = ttt[1] / 1000
-                    const totalSecondsEnd =  start + Duration
+                    const totalSecondsEnd = (parseInt(ttt[1])+parseInt(ttt[2]))/1000
                     const texte = ttt[4].replace(/ /g, '&nbsp;')
                     eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
                 }
@@ -139,102 +149,84 @@ async function YrcToJson(musicid, meta){
     json.metadata.pair = pdjg.pairif
     return json;
 }
-async function searchqqmusic(title,artist) {
-    let url = 'https://c.y.qq.com/lyric/fcgi-bin/fcg_search_pc_lrc.fcg?'
-    let data = {
-        SONGNAME: title,
-        SINGERNAME: artist,
-        TYPE: 2,
-        RANGE_MIN: 1,
-        RANGE_MAX: 20
-    }
-    url += querystring.stringify(data)
-    const headers = {'Referer':'https://y.qq.com'}
-    let body = await axios.get(url,headers);
-    let xmlDoc = mxml.loadString(body)
-    let songList = xmlDoc.findElement('songinfo') || []
-    if(songList == []){
-        return false;
-    }
-    let stageSongList = []
-    for (const song of songList) {
-        let id = song.getAttr('id')
-        if (id == null) continue
-        stageSongList.push(id)
-    }
-    console.log(stageSongList)
-    debugger
-    return stageSongList[0];
-}
-async function QrcToJson(musicid,meta){
-    let headers = {}
-    headers = {'Referer':'https://y.qq.com','Host':'u.y.qq.com'}
-    // notes: some params may not be required, I'm not tested. //来自原作者的提醒
-    let postData = {
-        comm: {
-            _channelid: '0',
-            _os_version: '6.2.9200-2',
-            authst: '',
-            ct: '19',
-            cv: '1873',
-            //guid: '30D1D7C616938DDB575AF16E56D44BD4',
-            patch: '118',
-            psrf_access_token_expiresAt: 0,
-            psrf_qqaccess_token: '',
-            psrf_qqopenid: '',
-            psrf_qqunionid: '',
-            tmeAppID: 'qqmusic',
-            tmeLoginType: 2,
-            uin: '0',
-            wid: '0'
-        },
-        'music.musichallSong.PlayLyricInfo.GetPlayLyricInfo': {
-            method: 'GetPlayLyricInfo',
-            module: 'music.musichallSong.PlayLyricInfo'
+async function QrcToJson(name,artist,album, i){
+    const metadataRegex = /^\s*\[([a-zA-Z]+)\s*:\s*(.*?)\]\s*$/;
+    const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
+    const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
+    const regex = /\((\d+),(\d+)\)([^()\n]+)/g;
+    const datae = await axios.get(`${qqmusiclyric_api}?name=${name}&artists=${artist}&album=${album}`)
+    if(datae.data.code !== 200) return;
+    const qrc = datae.data;
+    let json ={metadata: {zq:false,m:2}, lyrics: [],};
+    if(qrc.orig){
+        let pdjg;
+        qrc.orig = qrc.orig.replace(/^\uFEFF/, '');
+        const lyrics = qrc.orig.split("\n");
+        for(const lyric of lyrics){
+            const metadataMatch = lyric.match(metadataRegex);
+            if (metadataMatch) {
+                 json.metadata[metadataMatch[1].toLowerCase()] = metadataMatch[2].trim();
+                 continue;
+            }
+            let lyricMatch = lyric.match(zqTagRegex);
+            let text;
+            let timesec;
+            if(!lyricMatch) continue;
+            text = lyricMatch[3]
+            timesec = lyricMatch[1] / 1000
+            let eljson = [];
+            if (text.includes('(') && text.includes(')')) {
+                let ttt;
+                while ((ttt = regex.exec(lyric)) !== null) {
+                    const Duration = parseInt(ttt[1]) / 1000
+                    const start = parseInt(ttt[2]) / 1000
+                    const totalSecondsEnd = (parseInt(ttt[0])+parseInt(ttt[1]))/1000
+                    const texte = ttt[3].replace(/ /g, '&nbsp;')
+                    eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
+                }
+                json.metadata.zq = eljson.length > 0;
+                if(!json.metadata.zq) return 0;
+            }
+            text = text.replace(/\([^)]*\)/g, '')
+            pdjg = prpdlq(qrc, timesec)
+            json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
     }
-    let songID = musicid | 0
-    postData['music.musichallSong.PlayLyricInfo.GetPlayLyricInfo']['param'] = {
-        crypt : 1,
-        ct : 19,
-        cv : 1873,
-        lrc_t : 0,
-        qrc : 1,
-        qrc_t : 0,
-        roma : 1,
-        roma_t : 0,
-        songID : songID,
-        trans : 1,
-        trans_t : 0,
-        type : -1
+    return json;
+}
+function prpdlq(qrc, timesec){
+    const timeTagRegex = /\[(\d+),(\d+)?\](.*)/;
+    let pairif = false;
+    let romaif = false;
+    let pairtext = "";
+    if(qrc.ts){
+        const pairlyrics = qrc.ts.split("\n").filter(item => timeTagRegex.test(item));
+        for(let i = 0; i < pairlyrics.length; i++){
+            let lyricMatch = pairlyrics[i].match(timeTagRegex);
+            if(!lyricMatch) continue;
+            let text = lyricMatch[2]
+            let timesecp = parseInt(lyricMatch[1])/1000
+            if(Math.abs(timesec - timesecp) < 1){
+                pairtext = text;
+            }
+        }
+        pairif = true;
     }
-    let url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?'
-    let params = {
-        pcachetime: new Date().getTime() | 0
+    let romatext = '';
+    if(qrc.roma){
+        const romalyrics = qrc.roma.split("\n").filter(item => timeTagRegex.test(item));
+        for(let i = 0; i < romalyrics.length; i++){
+            let lyricMatch = romalyrics[i].match(timeTagRegex);
+            if(!lyricMatch) continue;
+            let text = lyricMatch[4]
+            let timesecp = parseInt(lyricMatch[1])/1000
+            if(Math.abs(timesec - timesecp) < 1){
+                romatext = text;
+            }
+        }
+        romaif = true;
     }
-    url += querystring.stringify(params)
-    console.log(url)
-    let postDataString = JSON.stringify(postData)
-    const qqmsj = await axios({method: 'post',url: url,headers: headers,data: postDataString})
-    console.log(qqmsj)
-    debugger
-    let obj = JSON.parse(qqmsj.data)
-    if (obj['code'] != 0) {
-        return
-    }
-
-    let lyricObjRoot = obj['music.musichallSong.PlayLyricInfo.GetPlayLyricInfo']
-    if (lyricObjRoot['code'] != 0) {
-        return
-    }
-
-    let lyricObj = lyricObjRoot['data']
-    if (lyricObj['songID'] != songID) {
-        return
-    }
-    lyricText = JSON.stringify(lyricObj)
-    console.log(lyricText);
-    debugger
+    return {pairtext,pairif,romatext,romaif};
 }
 function prpdl(yrc, timesec){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;

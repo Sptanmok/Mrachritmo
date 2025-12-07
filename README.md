@@ -6,6 +6,12 @@
 
 默认包含了一些歌曲和歌词
 
+## 特点
+
+无后端
+
+完全服务器本地存储
+性能表现好
 ## 效果
 
 共有两种效果，默认随机
@@ -104,11 +110,21 @@ audio标签示例格式
 <canvas id="spectrum" width="自定义" height="自定义"></canvas>
 ```
 
+## QQlyricApi
+
+因为此部分闭源原因，只能单独分开
+
+文件为于项目gw/qqlyric.py
+
+修改于[QRCD](https://github.com/xmcp/QRCD)项目
+
 ## 鸣谢 
 
 [LxgwWenKai](https://github.com/lxgw/LxgwWenKai)等提供美观的字体
 
 API提供：~~music.163.com~~，meting.qjqq.cn[Meting-API](https://github.com/injahow/meting-api)
+
+解密提供：[QRCD](https://github.com/xmcp/QRCD)
 
 所有指点/指导的人,包括但不限于：[RainView](https://github.com/RainView-ovo),[LeonspaceX](https://github.com/LeonspaceX),[Silvaire-qwq](https://github.com/silvaire-qwq),[Mio](https://mioical.moe/),[LYXOfficial](https://github.com/LYXOfficial),[Android-KitKat](https://github.com/Android-KitKat)
 

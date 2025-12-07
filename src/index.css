@@ -46,3 +46,17 @@ text-align: right;
 ul{
 	list-style-type: none;
 }
+.card {/*参考自项目：https://github.com/silvaire-qwq/Miracle */
+  border-radius: var(--vp-border-radius-1);
+  border: 1px solid var(--vp-c-divider);
+  height: 100%;
+  background-color: var(--vp-c-bg);
+  will-change: transform;
+  box-shadow: var(--vp-shadow);
+  transition: all var(--vp-transition-time);
+}
+
+.card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: var(--vp-shadow-brand);
+}
