@@ -11,7 +11,9 @@
 无后端
 
 完全服务器本地存储
-性能表现好
+
+短小精悍
+
 ## 效果
 
 共有两种效果，默认随机
@@ -56,7 +58,7 @@ npm rebuild esbuild
 
 来重新安装esbuild依赖
 
-### 网易云音乐模式（实验性功能）
+### 云音乐模式
 
 在neteaseplaylist.txt中添加你的网易云音乐歌单链接或id（一行一个）
 
@@ -67,6 +69,8 @@ npm run 163musicbuild
 ```
 
 即可
+
+会优先通过网易云音乐获取歌词，如果没有逐词会尝试使用QQ音乐歌词
 
 ## 在你的网站内使用
 
@@ -112,11 +116,13 @@ audio标签示例格式
 
 ## QQlyricApi
 
-因为此部分闭源原因，只能单独分开
+因为此部分闭源原因，且市面上没有成熟的方案，只能单独分开
 
-文件为于项目gw/qqlyric.py
+文件位于项目gw/qqlyric.py，windows版本是gw/qqlyric_win.py
 
-修改于[QRCD](https://github.com/xmcp/QRCD)项目
+运行liunx版本前请先安装wine，所以会有一定的性能问题
+
+此部分修改于[QRCD](https://github.com/xmcp/QRCD)项目
 
 ## 鸣谢 
 
@@ -124,7 +130,7 @@ audio标签示例格式
 
 API提供：~~music.163.com~~，meting.qjqq.cn[Meting-API](https://github.com/injahow/meting-api)
 
-解密提供：[QRCD](https://github.com/xmcp/QRCD)
+解密提供：[QRCD - xmcp](https://github.com/xmcp/QRCD)
 
 所有指点/指导的人,包括但不限于：[RainView](https://github.com/RainView-ovo),[LeonspaceX](https://github.com/LeonspaceX),[Silvaire-qwq](https://github.com/silvaire-qwq),[Mio](https://mioical.moe/),[LYXOfficial](https://github.com/LYXOfficial),[Android-KitKat](https://github.com/Android-KitKat)
 
