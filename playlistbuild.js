@@ -48,7 +48,7 @@ async function jxgd(listd){
             await delay(50);
         }
         t = amusic(musicd)
-        if(t && t = 0 
+        if(t && t == 0) break;
     }
 }
 function delay(ms) {
@@ -59,7 +59,7 @@ async function amusic(musicd){
     if(o > 700) {
         console.warn("音乐过多，停止生成");
         async_nu--;
-        return;
+        return 0;
     }
     console.log(o);
     const musicid = musicd.url.match(/\d+$/);
@@ -79,7 +79,7 @@ async function amusic(musicd){
     }
     
     if(!json) {
-    continue;
+    return;
     }
     liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
     if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`)){
