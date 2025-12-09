@@ -7,7 +7,7 @@ import querystring from 'querystring';
 
 //await fs.promises.rm('dist', { recursive: true, force: true });
 const metingapi_url='https://meting.qjqq.cn/'
-const qqmusiclyric_api ='http://127.0.0.1:5000/'
+const qqmusiclyric_api ='http://8.140.228.251:5000/'
 
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
@@ -28,7 +28,7 @@ async function start(){
     liebiao = "";
     let dd = 0;
     let indexhtml;
-    console.warn("开始！");
+    console.log("开始！");
     for(const playmusic of playmusics){
         const list = await axios.get(`${metingapi_url}?type=playlist&id=${playmusic.match(/\d+$/)}`);
         await jxgd(list.data);
@@ -40,47 +40,65 @@ async function start(){
     fs.writeFileSync("./dist/index.html", indexhtml)
     console.log("successfully")
 }
+let async_max = 10
+let async_nu = 0
 async function jxgd(listd){
     for(const musicd of listd){
-        if(o > 700) {
-            console.warn("音乐过多，停止生成");
-            break;
+        while(async_nu >= async_max){
+            await delay(50);
         }
-        console.log(o);
-        const musicid = musicd.url.match(/\d+$/);
-        const metadata = {name:musicd.name, artist:musicd.artist}
-        let json = await YrcToJson(musicid[0],metadata);
-        if(!json.metadata.zq){
-            //替补
-            let jsonq;
-            jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al);
-            if(jsonq){
-            if(!jsonq.metadata.nolyric && jsonq.metadata.zq){
-                const r = json
-                json = jsonq
-                json.lyrict = r
-            }
-            }
-        }
-        
-        if(!json) {
-        continue;
-        }
-        liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
-        if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`)){
-            const music = await axios.get(musicd.url, { responseType: 'arraybuffer' });
-            fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`,music.data)
-        }
-        fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.json`,JSON.stringify(json), "utf8")
-        let ddyyweb = template
-            .replace(/{{title}}/g, `${json.metadata.ar} - ${json.metadata.ti}`.replace("/",","))
-            .replace(/{{filename}}/g, filenamecl(json.metadata.ti) + ".mp3")
-            .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
-        fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)}.html`, ddyyweb)
-        o++;
+        t = amusic(musicd)
+        if(t && t = 0 
     }
 }
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function amusic(musicd){
+    async_nu++;
+    if(o > 700) {
+        console.warn("音乐过多，停止生成");
+        async_nu--;
+        return;
+    }
+    console.log(o);
+    const musicid = musicd.url.match(/\d+$/);
+    const metadata = {name:musicd.name, artist:musicd.artist}
+    let json = await YrcToJson(musicid[0],metadata);
+    if(!json.metadata.zq && !json.metadata.nolyric){
+        //替补
+        let jsonq;
+        jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al);
+        if(jsonq && !jsonq.metadata.nolyric){
+            const r = json
+            json = jsonq
+            json.lyrict = r
+        }else{
+            json.lyricq = jsonq
+        }
+    }
+    
+    if(!json) {
+    continue;
+    }
+    liebiao += `<li><a href="./${filenamecl(json.metadata.ti)}.html">${json.metadata.ar} - ${json.metadata.ti}</a></li>`
+    if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`)){
+        const music = await axios.get(musicd.url, { responseType: 'arraybuffer' });
+        fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.mp3`,music.data)
+    }
+    fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)}.json`,JSON.stringify(json), "utf8")
+    let ddyyweb = template
+        .replace(/{{title}}/g, `${json.metadata.ar} - ${json.metadata.ti}`.replace("/",","))
+        .replace(/{{filename}}/g, filenamecl(json.metadata.ti) + ".mp3")
+        .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
+    fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)}.html`, ddyyweb)
+    o++;
+    async_nu--;
+}
 function filenamecl(name){
+    if(!name){
+        return '';
+    }
     const result = name.replace(/\//g,",").replace(/\*/g,"x").replace(/\"/g,"'")
     return result;
 }
@@ -133,7 +151,7 @@ async function YrcToJson(musicid, meta){
         let lyrics = yrc.lrc.lyric.split("\n").filter(item => timeTagRegex.test(item))
         for(const lyric of lyrics){
             let lyricMatch = lyric.match(timeTagRegex);
-            const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
+            const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesec = parseInt(lyricMatch[1])*60+parseInt(lyricMatch[2])+decimal
             pdjg = prpdl(yrc, timesec)
             json.lyrics.push({time:timesec,text:lyricMatch[4],pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
@@ -154,7 +172,7 @@ async function QrcToJson(name,artist,album, i){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
     const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
     const regex = /\((\d+),(\d+)\)([^()\n]+)/g;
-    const datae = await axios.get(`${qqmusiclyric_api}?name=${name}&artists=${artist}&album=${album}`)
+    const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name)}&artists=${encodeURIComponent(artist)}&album=${encodeURIComponent(album)}`)
     if(datae.data.code !== 200) return;
     const qrc = datae.data;
     let json ={metadata: {zq:false,m:2}, lyrics: [],};
@@ -204,7 +222,7 @@ function prpdlq(qrc, timesec){
         for(let i = 0; i < pairlyrics.length; i++){
             let lyricMatch = pairlyrics[i].match(timeTagRegex);
             if(!lyricMatch) continue;
-            let text = lyricMatch[2]
+            let text = lyricMatch[3]
             let timesecp = parseInt(lyricMatch[1])/1000
             if(Math.abs(timesec - timesecp) < 1){
                 pairtext = text;
@@ -218,7 +236,7 @@ function prpdlq(qrc, timesec){
         for(let i = 0; i < romalyrics.length; i++){
             let lyricMatch = romalyrics[i].match(timeTagRegex);
             if(!lyricMatch) continue;
-            let text = lyricMatch[4]
+            let text = lyricMatch[3]
             let timesecp = parseInt(lyricMatch[1])/1000
             if(Math.abs(timesec - timesecp) < 1){
                 romatext = text;
@@ -239,7 +257,7 @@ function prpdl(yrc, timesec){
             let lyricMatch = pairlyrics[i].match(timeTagRegex);
             if(!lyricMatch) continue;
             let text = lyricMatch[4]
-            const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
+            const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
             if(Math.abs(timesec - timesecp) < 1){
                 pairtext = text;
@@ -254,7 +272,7 @@ function prpdl(yrc, timesec){
             let lyricMatch = romalyrics[i].match(timeTagRegex);
             if(!lyricMatch) continue;
             let text = lyricMatch[4]
-            const decimal = lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000;
+            const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
             if(Math.abs(timesec - timesecp) < 1){
                 romatext = text;
