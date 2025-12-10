@@ -6,6 +6,12 @@
 
 默认包含了一些歌曲和歌词
 
+## Demo演示
+
+本地模式：https://music.emnasop.cn/
+
+云模式：https://emnasop.cn/dist/
+
 ## 特点
 
 无后端
