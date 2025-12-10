@@ -23,7 +23,7 @@ const playmusics = gedang.split(/\r?\n/);
 const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
-let o = 1;
+let o = 0;
 async function start(){
     liebiao = "";
     let dd = 0;
@@ -44,38 +44,38 @@ let async_max = 10
 let async_nu = 0
 async function jxgd(listd){
     for(const musicd of listd){
+        o++;
+        if(o > 700) {
+            console.warn("音乐过多，停止生成");
+            break;
+        }
         while(async_nu >= async_max){
             await delay(50);
         }
-        t = amusic(musicd)
-        if(t && t == 0) break;
+        amusic(musicd,  o)
     }
 }
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-async function amusic(musicd){
+async function amusic(musicd, o){
     async_nu++;
-    if(o > 700) {
-        console.warn("音乐过多，停止生成");
-        async_nu--;
-        return 0;
-    }
-    console.log(o);
     const musicid = musicd.url.match(/\d+$/);
     const metadata = {name:musicd.name, artist:musicd.artist}
     let json = await YrcToJson(musicid[0],metadata);
-    if(!json.metadata.zq && !json.metadata.nolyric){
-        //替补
-        let jsonq;
-        jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al);
-        if(jsonq && !jsonq.metadata.nolyric){
-            const r = json
-            json = jsonq
-            json.lyrict = r
-        }else{
-            json.lyricq = jsonq
-        }
+    //替补
+    let jsonq;
+    jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al);
+    if(!json.metadata.zq && !json.metadata.nolyric && jsonq && !jsonq.metadata.nolyric){
+        const r = json
+        json = jsonq
+        json.metadataq = json.metadata
+        json.metadata.ti = r.metadata.ti
+        json.metadata.ar = r.metadata.ar
+        json.metadata.al = r.metadata.al
+        json.lyrict = r
+    }else{
+        json.lyricq = jsonq
     }
     
     if(!json) {
@@ -92,7 +92,7 @@ async function amusic(musicd){
         .replace(/{{filename}}/g, filenamecl(json.metadata.ti) + ".mp3")
         .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
     fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)}.html`, ddyyweb)
-    o++;
+    console.log(o);
     async_nu--;
 }
 function filenamecl(name){
@@ -209,6 +209,14 @@ async function QrcToJson(name,artist,album, i){
             pdjg = prpdlq(qrc, timesec)
             json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
+        json.metadata.nolyric = !json.lyrics.length > 0;
+        json.metadata.roma = pdjg.romaif
+        json.metadata.pair = pdjg.pairif
+    }else{
+        json.metadata.nolyric =false;
+        json.metadata.zq = false;
+        json.metadata.roma = false;
+        json.metadata.pair = false;
     }
     return json;
 }
