@@ -198,7 +198,7 @@ async function QrcToJson(name,artist,album, i){
                 while ((ttt = regex.exec(lyric)) !== null) {
                     const Duration = parseInt(ttt[2]) / 1000
                     const start = parseInt(ttt[1]) / 1000
-                    const totalSecondsEnd = (parseInt(ttt[0])+parseInt(ttt[1]))/1000
+                    const totalSecondsEnd = (parseInt(ttt[1])+parseInt(ttt[2]))/1000
                     const texte = ttt[3].replace(/ /g, '&nbsp;')
                     eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
                 }
@@ -218,6 +218,7 @@ async function QrcToJson(name,artist,album, i){
         json.metadata.roma = false;
         json.metadata.pair = false;
     }
+    json.metadata.qqmusicid = qrc.id;
     return json;
 }
 function prpdlq(qrc, timesec){
