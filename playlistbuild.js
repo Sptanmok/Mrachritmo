@@ -196,8 +196,8 @@ async function QrcToJson(name,artist,album, i){
             if (text.includes('(') && text.includes(')')) {
                 let ttt;
                 while ((ttt = regex.exec(lyric)) !== null) {
-                    const Duration = parseInt(ttt[1]) / 1000
-                    const start = parseInt(ttt[2]) / 1000
+                    const Duration = parseInt(ttt[2]) / 1000
+                    const start = parseInt(ttt[1]) / 1000
                     const totalSecondsEnd = (parseInt(ttt[0])+parseInt(ttt[1]))/1000
                     const texte = ttt[3].replace(/ /g, '&nbsp;')
                     eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
