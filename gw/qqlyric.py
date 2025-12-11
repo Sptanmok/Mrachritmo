@@ -1,4 +1,3 @@
-#修改自https://github.com/xmcp/QRCD/blob/master/qrcd.py，谢谢xmcp
 import requests
 import urllib.parse
 from bs4 import BeautifulSoup as bs
@@ -10,7 +9,7 @@ import zlib
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-
+ 
 @app.route('/', methods=['GET'])
 def form():
     name = request.args.get('name')
@@ -21,18 +20,20 @@ def form():
         return jsonify({'error': '参数不完整'}), 400
     if not cid:
         cid = 0
+    if len(artists) > 40:
+        return jsonify({'error': '字符串过长','code':404}), 200
     if cid:
         cid = int(cid)
     songlist=list(query_lyric(name,artists))
     if not songlist:
-        return jsonify({'error': '没找到音乐'}), 404
+        return jsonify({'error': '没找到音乐','code':404}), 200
     if not cid < len(songlist):
-        return jsonify({'error': '没找到音乐'}), 404
+        return jsonify({'error': '没找到音乐','code':404}), 200
     songid=songlist[cid]['songid']
     print('Song ID = %s'%songid)
     print('Downloading...')
     res=fetch_lyric_by_id(songid,['orig','ts','roma'])
-    return jsonify({'name':songlist[cid]['name'],'singer':songlist[cid]['singer'],'album':songlist[cid]['album'],'id':songid,'orig': res['orig'], 'ts': res['ts'], 'roma': res['roma'],'mi':len(songlist)})
+    return jsonify({'name':songlist[cid]['name'],'singer':songlist[cid]['singer'],'album':songlist[cid]['album'],'id':songid,'orig': res['orig'], 'ts': res['ts'], 'roma': res['roma'],'mi':len(songlist),'code':200})
 
 
 extract_xml_re=re.compile(r'<Lyric_1 LyricType="1" LyricContent="(.*?)"/>',re.DOTALL)
@@ -57,7 +58,7 @@ def qrc_decode(data):
         print('!! decode error',type(e),e)
         return b''
 
-
+    
 def query_lyric(name,singer):
     res=requests.get('https://c.y.qq.com/lyric/fcgi-bin/fcg_search_pc_lrc.fcg',params=dict(
         SONGNAME=name,
@@ -75,7 +76,7 @@ def query_lyric(name,singer):
             singer=urllib.parse.unquote(song.find('singername').text),
             album=urllib.parse.unquote(song.find('albumname').text),
         )
-
+        
 def download_lyric(songid):
     res=requests.get('https://c.y.qq.com/qqmusic/fcgi-bin/lyric_download.fcg',params=dict(
         version='15',
@@ -85,22 +86,23 @@ def download_lyric(songid):
     ))
     res.raise_for_status()
     soup=bs(res.text.replace('<!--','').replace('-->',''),'xml')
-
+    
     def decode(obj):
         txt=obj.text
         if txt.strip():
             return binascii.unhexlify(txt.encode('ascii'))
         else:
             return b''
-
+    
     return dict(
         orig=decode(soup.find('content')),
         ts=decode(soup.find('contentts')),
         roma=decode(soup.find('contentroma')),
     )
-
+    
 def tamper_lyric(data):
     return b'[offset:0]\n'+data
+    
 def lrc_to_dummy_qrc(data):
     outputs=[]
     for line_s in data.replace('\r','').split('\n'):
@@ -108,28 +110,28 @@ def lrc_to_dummy_qrc(data):
         if not line:
             print('ignored LINE:',line_s)
             continue
-
+            
         timestamp,content=line.groups()
         time=datetime.datetime.strptime(timestamp,'%M:%S.%f')
-
+        
         outputs.append((time.minute*60*1000+time.second*1000+time.microsecond//1000,content))
-
+        
     if not outputs:
         return ''
-
+    
     outputs.append((2147483647,'')) # end
-
+    
     return '\n'.join([
         '[%d,%d]%s'%(time,outputs[ind+1][0]-time,content) for ind,(time,content) in enumerate(outputs[:-1]) if content
     ])
-
+    
 def extract_qrc_xml(data):
     if '<?xml ' not in data[:10]:
         #return data
         return lrc_to_dummy_qrc(data)
     #so that `\n`s are preversed
     return extract_xml_re.search(data).groups()[0]
-
+    
 def fetch_lyric_by_id(songid,requested_type):
     lrc=download_lyric(songid)
     ret={}
@@ -141,4 +143,4 @@ def fetch_lyric_by_id(songid,requested_type):
     return ret
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port=5000)
+    app.run(debug=False,host='0.0.0.0',port=5000)

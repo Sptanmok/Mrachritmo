@@ -24,6 +24,7 @@ const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
 let o = 0;
+const musicnum_max = 2000;
 async function start(){
     liebiao = "";
     let dd = 0;
@@ -32,7 +33,7 @@ async function start(){
     for(const playmusic of playmusics){
         const list = await axios.get(`${metingapi_url}?type=playlist&id=${playmusic.match(/\d+$/)}`);
         await jxgd(list.data);
-        if(o > 700) {
+        if(o > musicnum_max) {
             break;
         }
     }
@@ -45,7 +46,7 @@ let async_nu = 0
 async function jxgd(listd){
     for(const musicd of listd){
         o++;
-        if(o > 700) {
+        if(o > musicnum_max) {
             console.warn("音乐过多，停止生成");
             break;
         }
@@ -65,17 +66,33 @@ async function amusic(musicd, o){
     let json = await YrcToJson(musicid[0],metadata);
     //替补
     let jsonq;
-    jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al);
-    if(!json.metadata.zq && !json.metadata.nolyric && jsonq && !jsonq.metadata.nolyric){
-        const r = json
-        json = jsonq
-        json.metadataq = json.metadata
-        json.metadata.ti = r.metadata.ti
-        json.metadata.ar = r.metadata.ar
-        json.metadata.al = r.metadata.al
-        json.lyrict = r
-    }else{
-        json.lyricq = jsonq
+    let i_max = 10
+    let qrc_list = [];
+    let matches_largest = 0;
+    let matches_largest_i = 0;
+    if(!json.metadata.zq && !json.metadata.nolyric){
+        for(let i = 0;i<=i_max;i++){
+            jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al,i);
+            if(!jsonq) continue;
+            i_max = jsonq.metadata.mi
+            let pd_s = QrcMatchingYrcTimeline(jsonq.lyrics,json.lyrics)
+            qrc_list.push({pd_s,jsonq})
+            if(pd_s > matches_largest){
+                matches_largest = pd_s;
+                matches_largest_i = i;
+            }
+        }
+        if(qrc_list[matches_largest_i] && qrc_list[matches_largest_i].jsonq && !qrc_list[matches_largest_i].jsonq.metadata.nolyric){
+            const r = json
+            json = qrc_list[matches_largest_i].jsonq
+            json.metadataq = json.metadata
+            json.metadata.ti = r.metadata.ti
+            json.metadata.ar = r.metadata.ar
+            json.metadata.al = r.metadata.al
+            json.lyrict = r
+        }else if(qrc_list[matches_largest_i] && qrc_list[matches_largest_i].jsonq){
+            json.lyricq = qrc_list[matches_largest_i].jsonq
+        }
     }
     
     if(!json) {
@@ -94,6 +111,21 @@ async function amusic(musicd, o){
     fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)}.html`, ddyyweb)
     console.log(o);
     async_nu--;
+}
+function QrcMatchingYrcTimeline(qrcjson, yrcjson){
+    let Num_matches = 0;
+    for(const liney of yrcjson){
+        for(const lineq of qrcjson){
+            if(Math.abs(liney.time - lineq.time) < 1){
+                Num_matches++;
+                break;
+            }
+            if(lineq.time > liney.time){
+                break;
+            }
+        }
+    }
+    return Num_matches;
 }
 function filenamecl(name){
     if(!name){
@@ -167,12 +199,12 @@ async function YrcToJson(musicid, meta){
     json.metadata.pair = pdjg.pairif
     return json;
 }
-async function QrcToJson(name,artist,album, i){
+async function QrcToJson(name,artist,album,i){
     const metadataRegex = /^\s*\[([a-zA-Z]+)\s*:\s*(.*?)\]\s*$/;
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
     const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
     const regex = /\((\d+),(\d+)\)([^()\n]+)/g;
-    const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name)}&artists=${encodeURIComponent(artist)}&album=${encodeURIComponent(album)}`)
+    const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name)}&artists=${encodeURIComponent(artist)}&album=${encodeURIComponent(album)}&cid=${i}`)
     if(datae.data.code !== 200) return;
     const qrc = datae.data;
     let json ={metadata: {zq:false,m:2}, lyrics: [],};
@@ -218,6 +250,7 @@ async function QrcToJson(name,artist,album, i){
         json.metadata.roma = false;
         json.metadata.pair = false;
     }
+    json.metadata.mi = qrc.mi;
     json.metadata.qqmusicid = qrc.id;
     return json;
 }
@@ -245,7 +278,7 @@ function prpdlq(qrc, timesec){
         for(let i = 0; i < romalyrics.length; i++){
             let lyricMatch = romalyrics[i].match(timeTagRegex);
             if(!lyricMatch) continue;
-            let text = lyricMatch[3]
+            let text = lyricMatch[3].replace(/\([^)]*\)/g, '')
             let timesecp = parseInt(lyricMatch[1])/1000
             if(Math.abs(timesec - timesecp) < 1){
                 romatext = text;

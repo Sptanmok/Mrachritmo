@@ -124,9 +124,9 @@ audio标签示例格式
 
 因为此部分闭源原因，且市面上没有成熟的方案，只能单独分开
 
-文件位于项目gw/qqlyric.py，windows版本是gw/qqlyric_win.py
+文件位于项目gw/qqlyric.py
 
-运行liunx版本前请先安装wine，所以会有一定的性能问题
+在liunx前请先安装wine，所以会有一定的性能问题
 
 此部分修改于[QRCD](https://github.com/xmcp/QRCD)项目
 
