@@ -77,12 +77,12 @@ async function amusic(musicd, o){
             i_max = jsonq.metadata.mi
             let pd_s = QrcMatchingYrcTimeline(jsonq.lyrics,json.lyrics)
             qrc_list.push({pd_s,jsonq})
-            if(pd_s > matches_largest){
+            if(jsonq && !jsonq.metadata.nolyric && pd_s > matches_largest){
                 matches_largest = pd_s;
                 matches_largest_i = i;
             }
         }
-        if(qrc_list[matches_largest_i] && qrc_list[matches_largest_i].jsonq && !qrc_list[matches_largest_i].jsonq.metadata.nolyric){
+        if(qrc_list[matches_largest_i]){
             const r = json
             json = qrc_list[matches_largest_i].jsonq
             json.metadataq = json.metadata
@@ -116,7 +116,7 @@ function QrcMatchingYrcTimeline(qrcjson, yrcjson){
     let Num_matches = 0;
     for(const liney of yrcjson){
         for(const lineq of qrcjson){
-            if(Math.abs(liney.time - lineq.time) < 1){
+            if(Math.abs(liney.time - lineq.time) < 0.5){
                 Num_matches++;
                 break;
             }
@@ -203,7 +203,7 @@ async function QrcToJson(name,artist,album,i){
     const metadataRegex = /^\s*\[([a-zA-Z]+)\s*:\s*(.*?)\]\s*$/;
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
     const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
-    const regex = /\((\d+),(\d+)\)([^()\n]+)/g;
+    const regex = /([^\(]+)\((\d+),(\d+)\)/g;
     const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name)}&artists=${encodeURIComponent(artist)}&album=${encodeURIComponent(album)}&cid=${i}`)
     if(datae.data.code !== 200) return;
     const qrc = datae.data;
@@ -227,11 +227,11 @@ async function QrcToJson(name,artist,album,i){
             let eljson = [];
             if (text.includes('(') && text.includes(')')) {
                 let ttt;
-                while ((ttt = regex.exec(lyric)) !== null) {
-                    const Duration = parseInt(ttt[2]) / 1000
-                    const start = parseInt(ttt[1]) / 1000
-                    const totalSecondsEnd = (parseInt(ttt[1])+parseInt(ttt[2]))/1000
-                    const texte = ttt[3].replace(/ /g, '&nbsp;')
+                while ((ttt = regex.exec(lyric.replace(/\[.*?\]/g, ''))) !== null) {
+                    const Duration = parseInt(ttt[3]) / 1000
+                    const start = parseInt(ttt[2]) / 1000
+                    const totalSecondsEnd = (parseInt(ttt[2])+parseInt(ttt[3]))/1000
+                    const texte = ttt[1].replace(/ /g, '&nbsp;')
                     eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
                 }
                 json.metadata.zq = eljson.length > 0;
@@ -241,15 +241,16 @@ async function QrcToJson(name,artist,album,i){
             pdjg = prpdlq(qrc, timesec)
             json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
-        json.metadata.nolyric = !json.lyrics.length > 0;
+        json.metadata.nolyric = json.lyrics.length === 0;
         json.metadata.roma = pdjg.romaif
         json.metadata.pair = pdjg.pairif
     }else{
-        json.metadata.nolyric =false;
+        json.metadata.nolyric =true;
         json.metadata.zq = false;
         json.metadata.roma = false;
         json.metadata.pair = false;
     }
+    json.metadata.cid = i;
     json.metadata.mi = qrc.mi;
     json.metadata.qqmusicid = qrc.id;
     return json;
