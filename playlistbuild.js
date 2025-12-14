@@ -175,7 +175,7 @@ async function YrcToJson(musicid, meta){
                 }
                 json.metadata.zq = eljson.length > 0;
             }
-            text = text.replace(/\([^)]*\)/g, '')
+            text = text.replace(/\(\d+,\d+,\d+\)/g, '')
             pdjg = prpdl(yrc, timesec)
             json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
@@ -237,7 +237,7 @@ async function QrcToJson(name,artist,album,i){
                 json.metadata.zq = eljson.length > 0;
                 if(!json.metadata.zq) return 0;
             }
-            text = text.replace(/\([^)]*\)/g, '')
+            text = text.replace(/\(\d+,\d+\)/g, '')
             pdjg = prpdlq(qrc, timesec)
             json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
         }
@@ -267,8 +267,8 @@ function prpdlq(qrc, timesec){
             if(!lyricMatch) continue;
             let text = lyricMatch[3]
             let timesecp = parseInt(lyricMatch[1])/1000
-            if(Math.abs(timesec - timesecp) < 1){
-                pairtext = text;
+            if(Math.abs(timesec - timesecp) < 0.3){
+                pairtext = text.replace('//', '');
             }
         }
         pairif = true;
@@ -281,13 +281,13 @@ function prpdlq(qrc, timesec){
             if(!lyricMatch) continue;
             let text = lyricMatch[3].replace(/\([^)]*\)/g, '')
             let timesecp = parseInt(lyricMatch[1])/1000
-            if(Math.abs(timesec - timesecp) < 1){
+            if(Math.abs(timesec - timesecp) < 0.3){
                 romatext = text;
             }
         }
         romaif = true;
     }
-    return {pairtext.replace('//', ''),pairif,romatext,romaif};
+    return {pairtext,pairif,romatext,romaif};
 }
 function prpdl(yrc, timesec){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
@@ -302,7 +302,7 @@ function prpdl(yrc, timesec){
             let text = lyricMatch[4]
             const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
-            if(Math.abs(timesec - timesecp) < 1){
+            if(Math.abs(timesec - timesecp) < 0.8){
                 pairtext = text;
             }
         }
@@ -317,7 +317,7 @@ function prpdl(yrc, timesec){
             let text = lyricMatch[4]
             const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
-            if(Math.abs(timesec - timesecp) < 1){
+            if(Math.abs(timesec - timesecp) < 0.8){
                 romatext = text;
             }
         }
