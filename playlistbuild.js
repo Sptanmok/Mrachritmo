@@ -24,7 +24,7 @@ const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
 let o = 0;
-const musicnum_max = 2000;
+const musicnum_max = 10000;
 async function start(){
     liebiao = "";
     let dd = 0;
@@ -70,7 +70,7 @@ async function amusic(musicd, o){
     let qrc_list = [];
     let matches_largest = 0;
     let matches_largest_i = 0;
-    if(!json.metadata.zq && !json.metadata.nolyric){
+    if(!json.metadata.zq){
         for(let i = 0;i<=i_max;i++){
             jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al,i);
             if(!jsonq) continue;
@@ -204,7 +204,7 @@ async function QrcToJson(name,artist,album,i){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
     const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
     const regex = /([^\(]+)\((\d+),(\d+)\)/g;
-    const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name)}&artists=${encodeURIComponent(artist)}&album=${encodeURIComponent(album)}&cid=${i}`)
+    const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}&cid=${i}`)
     if(datae.data.code !== 200) return;
     const qrc = datae.data;
     let json ={metadata: {zq:false,m:2}, lyrics: [],};
@@ -287,7 +287,7 @@ function prpdlq(qrc, timesec){
         }
         romaif = true;
     }
-    return {pairtext,pairif,romatext,romaif};
+    return {pairtext.replace('//', ''),pairif,romatext,romaif};
 }
 function prpdl(yrc, timesec){
     const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;

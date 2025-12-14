@@ -113,7 +113,6 @@ def lrc_to_dummy_qrc(data):
             
         timestamp,content=line.groups()
         time=datetime.datetime.strptime(timestamp,'%M:%S.%f')
-        
         outputs.append((time.minute*60*1000+time.second*1000+time.microsecond//1000,content))
         
     if not outputs:
