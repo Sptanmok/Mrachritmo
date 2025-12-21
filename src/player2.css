@@ -36,7 +36,7 @@ body{
     transition: --progress 0.1s ease;
 	white-space: normal;
 	opacity: 0;
-	transform: translateY(-13.33px);
+	transform: translate(var(--inX, 0px), var(--inY, -13.33px));
 	will-change: transform, opacity;
 	font-weight: bold;
 }
@@ -44,22 +44,22 @@ body{
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(-13.33px);
+    transform: translate(var(--inX, 0px), var(--inY, -13.33px));
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0,0);
   }
 }
 
 @keyframes fadeOutdown {
   0% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translate(0,0);
   }
   100% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate(var(--outX, 0px), var(--outY, 20px));
   }
 }
 .fade-out {

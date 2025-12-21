@@ -8,6 +8,8 @@ import querystring from 'querystring';
 //await fs.promises.rm('dist', { recursive: true, force: true });
 const metingapi_url='https://meting.qjqq.cn/'
 const qqmusiclyric_api ='http://8.140.228.251:5000/'
+const qqyuan = true
+//↑↑↑配置处↑↑↑
 
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
 if (!fs.existsSync("dist/musicfile")) fs.mkdirSync("dist/musicfile", { recursive: true });
@@ -64,34 +66,36 @@ async function amusic(musicd, o){
     const musicid = musicd.url.match(/\d+$/);
     const metadata = {name:musicd.name, artist:musicd.artist}
     let json = await YrcToJson(musicid[0],metadata);
+    if(qqyuan){
     //替补
-    let jsonq;
-    let i_max = 10
-    let qrc_list = [];
-    let matches_largest = 0;
-    let matches_largest_i = 0;
-    if(!json.metadata.zq){
-        for(let i = 0;i<=i_max;i++){
-            jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al,i);
-            if(!jsonq) continue;
-            i_max = jsonq.metadata.mi
-            let pd_s = QrcMatchingYrcTimeline(jsonq.lyrics,json.lyrics)
-            qrc_list.push({pd_s,jsonq})
-            if(jsonq && !jsonq.metadata.nolyric && pd_s > matches_largest){
-                matches_largest = pd_s;
-                matches_largest_i = i;
+        let jsonq;
+        let i_max = 10
+        let qrc_list = [];
+        let matches_largest = 0;
+        let matches_largest_i = 9999999;
+        if(!json.metadata.zq){
+            for(let i = 0;i<=i_max;i++){
+                jsonq= await QrcToJson(json.metadata.ti,json.metadata.ar,json.metadata.al,i);
+                if(!jsonq) continue;
+                i_max = jsonq.metadata.mi
+                let pd_s = QrcMatchingYrcTimeline(jsonq.lyrics,json.lyrics)
+                qrc_list.push({pd_s,jsonq})
+                if(jsonq && !jsonq.metadata.nolyric && pd_s > matches_largest){
+                    matches_largest = pd_s;
+                    matches_largest_i = i;
+                }
             }
-        }
-        if(qrc_list[matches_largest_i]){
-            const r = json
-            json = qrc_list[matches_largest_i].jsonq
-            json.metadataq = json.metadata
-            json.metadata.ti = r.metadata.ti
-            json.metadata.ar = r.metadata.ar
-            json.metadata.al = r.metadata.al
-            json.lyrict = r
-        }else if(qrc_list[matches_largest_i] && qrc_list[matches_largest_i].jsonq){
-            json.lyricq = qrc_list[matches_largest_i].jsonq
+            if(qrc_list[matches_largest_i]){
+                const r = json
+                json = qrc_list[matches_largest_i].jsonq
+                json.metadataq = json.metadata
+                json.metadata.ti = r.metadata.ti
+                json.metadata.ar = r.metadata.ar
+                json.metadata.al = r.metadata.al
+                json.lyrict = r
+            }else if(qrc_list[matches_largest_i] && qrc_list[matches_largest_i].jsonq){
+                json.lyricq = qrc_list[matches_largest_i].jsonq
+            }
         }
     }
     

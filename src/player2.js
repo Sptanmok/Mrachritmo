@@ -12,8 +12,8 @@ const ctx = canvas.getContext('2d');
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const analyser = audioContext.createAnalyser();
 analyser.fftSize = 256;
-let LiteralRenderingModeSelection = Math.floor(Math.random() * (2)) + 1;
-const LiteralRenderingModeSelectionall = 2;
+let LiteralRenderingModeSelection = Math.floor(Math.random() * (3)) + 1;
+const LiteralRenderingModeSelectionall = 3;
 let bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
@@ -76,13 +76,13 @@ function updateLyrics() {
 		zt = 1;
 	}
     if (currentLyricIndex !== -1) {
-		if(LiteralRenderingModeSelection === 2){
+		if(LiteralRenderingModeSelection === 2 || LiteralRenderingModeSelection === 3){
 			requestAnimationFrame(() => fadeWords(currentTime));
 		}else{
             requestAnimationFrame(() => highlightWords(currentTime));
 		}
     }
-	const targetClass = LiteralRenderingModeSelection === 2 ? "textt" : "text";
+	const targetClass =  LiteralRenderingModeSelection === 2 || LiteralRenderingModeSelection === 3 ? "textt" : "text";
     if(!lyricElement.classList.contains(targetClass)) {
         lyricElement.className = targetClass;
     }
@@ -97,7 +97,25 @@ function displayCurrentLyric() {
 	wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
     romaLyricElement.textContent = currentLyric.romanizationslyric;
-    if(LiteralRenderingModeSelection === 2) lyricElement.classList.remove('fade-out');//源定于函数fadeWords的逻辑
+    if(LiteralRenderingModeSelection === 2 || LiteralRenderingModeSelection === 3) lyricElement.classList.remove('fade-out');//源定于函数fadeWords的逻辑
+    if(LiteralRenderingModeSelection === 3){
+        for(let i = 0;i < wordElements.length;i++){
+            let bianD = Math.ceil(4 - (Math.random())*4)
+            let xcs = 20-(Math.random())*40
+            let inX;
+            let inY;
+            let outX;
+            let outY;
+            if(bianD===1){inY=20;inX=xcs;outY=-20;outX=-xcs;}
+            if(bianD===2){inX=-20;inY=xcs;outX=20;outY=-xcs;}
+            if(bianD===3){inY=-20;inX=xcs;outY=20;outX=-xcs;}
+            if(bianD===4){inX=20;inY=xcs;outX=-20;outY=-xcs;}
+            wordElements[i].style.setProperty('--inX', `${inX}px`);
+            wordElements[i].style.setProperty('--inY', `${inY}px`);
+            wordElements[i].style.setProperty('--outX', `${outX}px`);
+            wordElements[i].style.setProperty('--outY', `${outY}px`);
+        }
+    }
 }
 function fadeWords(currentTime){
 	const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
