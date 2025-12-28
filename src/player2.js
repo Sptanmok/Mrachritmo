@@ -97,25 +97,45 @@ function displayCurrentLyric() {
 	wordElements = lyricElement.getElementsByTagName('span');
     pairLyricElement.textContent = currentLyric.pairlyric;
     romaLyricElement.textContent = currentLyric.romanizationslyric;
-    if(LiteralRenderingModeSelection === 2 || LiteralRenderingModeSelection === 3) lyricElement.classList.remove('fade-out');//源定于函数fadeWords的逻辑
+    if(LiteralRenderingModeSelection === 2 || LiteralRenderingModeSelection === 3) arowfadeWords();
     if(LiteralRenderingModeSelection === 3){
-        for(let i = 0;i < wordElements.length;i++){
-            let bianD = Math.ceil(4 - (Math.random())*4)
-            let xcs = 20-(Math.random())*40
-            let inX;
-            let inY;
-            let outX;
-            let outY;
-            if(bianD===1){inY=20;inX=xcs;outY=-20;outX=-xcs;}
-            if(bianD===2){inX=-20;inY=xcs;outX=20;outY=-xcs;}
-            if(bianD===3){inY=-20;inX=xcs;outY=20;outX=-xcs;}
-            if(bianD===4){inX=20;inY=xcs;outX=-20;outY=-xcs;}
-            wordElements[i].style.setProperty('--inX', `${inX}px`);
-            wordElements[i].style.setProperty('--inY', `${inY}px`);
-            wordElements[i].style.setProperty('--outX', `${outX}px`);
-            wordElements[i].style.setProperty('--outY', `${outY}px`);
+        arowfadeWordsmode3()
+    }
+}
+function arowfadeWordsmode3(){
+    for(let i = 0;i < wordElements.length;i++){
+        let bianD = Math.ceil(4 - (Math.random())*4)
+        let xcs = 20-(Math.random())*40
+        let inX;let inY;let outX;let outY;
+        if(bianD===1){inY=20;inX=xcs;outY=-20;outX=-xcs;}
+        if(bianD===2){inX=-20;inY=xcs;outX=20;outY=-xcs;}
+        if(bianD===3){inY=-20;inX=xcs;outY=20;outX=-xcs;}
+        if(bianD===4){inX=20;inY=xcs;outX=-20;outY=-xcs;}
+        wordElements[i].style.setProperty('--inX', `${inX}px`);
+        wordElements[i].style.setProperty('--inY', `${inY}px`);
+        wordElements[i].style.setProperty('--outX', `${outX}px`);
+        wordElements[i].style.setProperty('--outY', `${outY}px`);
+    }
+}
+function arowfadeWords(){
+    let smjgtime = 0.9;
+    /*
+    for(let b=0;b < jsonlyrics.lyrics[currentLyricIndex].etext.length;b++){
+        if(jsonlyrics.lyrics[currentLyricIndex].etext[b] && jsonlyrics.lyrics[currentLyricIndex].etext[b].Duration < smjgtime){
+            smjgtime = jsonlyrics.lyrics[currentLyricIndex].etext[b].Duration
         }
     }
+    */
+    smjgtime = jsonlyrics.lyrics[currentLyricIndex+1]?jsonlyrics.lyrics[currentLyricIndex+1].time-jsonlyrics.lyrics[currentLyricIndex].etext[jsonlyrics.lyrics[currentLyricIndex].etext.length-1].start-0.2:0.9//0.2为淡出动画时间
+    if(smjgtime > 0.8){
+        smjgtime = 0.8
+    }
+    if(smjgtime < 0.6){
+        smjgtime = 0.6
+    }
+    lyricElement.style.setProperty('--inTime', `${smjgtime}s`);
+    console.log(smjgtime)
+    //  根据歌词间隔时长设置淡入时间，但是不允许大于0.8s或小于0.4s
 }
 function fadeWords(currentTime){
 	const currentLyric = jsonlyrics.lyrics[currentLyricIndex];
@@ -138,12 +158,24 @@ function fadeWords(currentTime){
 			wordElements[a].classList.remove('fade-in');
 			a++;
 		}
-	}else if(jsonlyrics.lyrics[currentLyricIndex + 1] && jsonlyrics.lyrics[currentLyricIndex + 1].time - currentLyric.etext[currentLyric.etext.length - 1].end >= 0.2){
+		lyricElement.style.setProperty('--outTime', `0.2s`);
+	}else if(jsonlyrics.lyrics[currentLyricIndex + 1]){
         //整行退出
-        let time = jsonlyrics.lyrics[currentLyricIndex + 1].time - 0.2;
-        if(currentTime >= time){
-            lyricElement.classList.add('fade-out');
-        }
+            let outTime = jsonlyrics.lyrics[currentLyricIndex+1].time-currentLyric.etext[currentLyric.etext.length-1].start-0.6
+            outTime = outTime<0.1?0.1:(outTime<0.2?outTime:0.2)
+            const time = jsonlyrics.lyrics[currentLyricIndex + 1].time - outTime;
+            if(currentTime < time){
+                for(let i = 0;i < wordElements.length;i++){
+                    wordElements[i].classList.remove('fade-out');
+                }
+            }
+            if(currentTime >= time){
+                for(let i = 0;i < wordElements.length;i++){
+                    wordElements[i].classList.add('fade-out');
+                    wordElements[i].classList.remove('fade-in');
+                }
+            }
+            lyricElement.style.setProperty('--outTime', `${outTime}s`);
     }
     for (let i = 0; i < currentLyric.etext.length; i++) {
         const word = currentLyric.etext[i];//简化m

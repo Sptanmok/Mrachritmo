@@ -1,6 +1,6 @@
 # Etmucis
 
-一个支持卡拉ok和逐字（或词）淡入淡出效果的字幕音乐播放器
+一个支持卡拉ok和逐字（或词）淡入淡出效果的Web字幕音乐播放器音乐库
 
 可通过网易云歌单自动部署
 
@@ -10,9 +10,9 @@
 
 ## Demo演示
 
-本地模式：https://music.emnasop.cn/
-
 云模式：https://emnasop.cn/dist/
+
+本地模式：https://music.emnasop.cn/
 
 ## 效果
 
@@ -20,17 +20,23 @@
 
 ### 卡拉OK(较大众)
 
+万能模式，可读性最好
+
 ![](./previewgif/1xg1.gif)
 
 ![](./previewgif/2xg1.gif)
 
 ### 淡出淡入(较小众)
 
+适合逐个字的意音/音节文字（如中文，日语，韩语），以及逐个词的音位文字（如英语，俄语），不适合逐个字的音位文字（如英语，俄语），以及快节奏歌词
+
 ![](./previewgif/1xg2.gif)
 
 ![](./previewgif/2xg2.gif)
 
 ### 随机淡出淡入(由上衍生而来)
+
+接近万能。
 
 ![](./previewgif/3xg3.gif)
 
@@ -52,16 +58,6 @@ npm run build
 
 此时网站应构建成功，根目录输出在dist文件夹
 
-如果出现错误Error: You installed esbuild for another platform than the one you're currently using.
-
-则您需要输入命令
-
-```
-npm rebuild esbuild
-```
-
-来重新安装esbuild依赖
-
 ### 云音乐模式
 
 在neteaseplaylist.txt中添加你的网易云音乐歌单链接或id（一行一个）
@@ -75,6 +71,18 @@ npm run 163musicbuild
 即可
 
 会优先通过网易云音乐获取歌词，如果没有逐词会尝试使用QQ音乐歌词
+
+
+
+如果出现错误Error: You installed esbuild for another platform than the one you're currently using.
+
+则您需要输入命令
+
+```
+npm rebuild esbuild
+```
+
+来重新安装esbuild依赖
 
 ## 在你的网站内使用
 
@@ -118,27 +126,11 @@ audio标签示例格式
 <canvas id="spectrum" width="自定义" height="自定义"></canvas>
 ```
 
-## QQlyricApi
-
-此部分为弥补网易云音乐逐字/词空洞而产生
-
-因为此部分闭源原因，且市面上没有成熟的方案，只能单独分开
-
-文件位于项目gw/qqlyric.py
-
-在liunx前请先安装wine，所以会有一定的性能问题
-
-此部分修改于[QRCD](https://github.com/xmcp/QRCD)项目
-
-此部分尚未完善，可能会存在部分歌曲歌词获取错误，你可以在playlistbuild.js通过设置常量qqyuan关闭
-
-## 鸣谢 
+## 鸣谢
 
 [LxgwWenKai](https://github.com/lxgw/LxgwWenKai)等提供美观的字体
 
-API提供：~~music.163.com~~，meting.qjqq.cn[Meting-API](https://github.com/injahow/meting-api)
-
-解密提供：[QRCD - xmcp](https://github.com/xmcp/QRCD)
+API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/)(2025\12\28报告目前存在偶尔请求出现502错误，求作者修复呜QAQ)
 
 所有指点/指导的人,包括但不限于：[RainView](https://github.com/RainView-ovo),[LeonspaceX](https://github.com/LeonspaceX),[Silvaire-qwq](https://github.com/silvaire-qwq),[Mio](https://mioical.moe/),[LYXOfficial](https://github.com/LYXOfficial),[Android-KitKat](https://github.com/Android-KitKat)
 

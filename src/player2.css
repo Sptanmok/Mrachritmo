@@ -44,7 +44,8 @@ body{
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translate(var(--inX, 0px), var(--inY, -13.33px));
+    //transform: translate(var(--inX, 0px), var(--inY, -13.33px));
+    transform: translate(var(--inX, 0px), var(--inY, -20px));
   }
   100% {
     opacity: 1;
@@ -63,10 +64,10 @@ body{
   }
 }
 .fade-out {
-  animation: fadeOutdown 0.2s forwards;
+  animation: fadeOutdown var(--outTime, 0.2s) forwards;
 }
 .fade-in {
-  animation: fadeInUp 0.9s forwards;
+  animation: fadeInUp var(--inTime, 0.9s) forwards;
 }
 .lowfadeinzb {
     display: inline-block;
