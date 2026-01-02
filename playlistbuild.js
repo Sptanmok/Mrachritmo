@@ -9,6 +9,7 @@ import querystring from 'querystring';
 const metingapi_url='https://meting.qjqq.cn/'
 const qqmusiclyric_api ='http://8.140.228.251:5000/'
 const qqyuan = true
+const yuming ='https://etmusic.emnasop.cn/'
 //↑↑↑配置处↑↑↑
 
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
@@ -25,12 +26,12 @@ const playmusics = gedang.split(/\r?\n/);
 const index = fs.readFileSync("src/indexmoban.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
+let liebiaoj = [];
 let o = 0;
+let mobanc =""
 const musicnum_max = 10000;
 async function start(){
-    liebiao = "";
     let dd = 0;
-    let indexhtml;
     console.log("开始！");
     for(const playmusic of playmusics){
         const list = await axios.get(`${metingapi_url}?type=playlist&id=${playmusic.match(/\d+$/)}`);
@@ -39,11 +40,11 @@ async function start(){
             break;
         }
     }
-    indexhtml = index.replace(/{{link}}/g, liebiao)
-    fs.writeFileSync("./dist/index.html", indexhtml)
+    let indexhtml = index.replace(/{{link}}/g, mobanc).replace(/previous_button_hide/g, '')
+    fs.writeFileSync(`./dist/${indexpageo}.html`, indexhtml)
     console.log("successfully")
 }
-let async_max = 10
+let async_max = 6
 let async_nu = 0
 async function jxgd(listd){
     let rw =[];
@@ -64,10 +65,15 @@ async function jxgd(listd){
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+let yureliebiao = "";
+let indexpage = 0;
+const indexpage_max = 50;
+let indexpageo = 1;
 async function amusic(musicd, o){
     async_nu++;
     const musicid = musicd.url.match(/\d+$/);
     const metadata = {name:musicd.name, artist:musicd.artist}
+    liebiaoj.push(metadata)
     let json = await YrcToJson(musicid[0],metadata);
     if(qqyuan){
     //替补
@@ -91,7 +97,19 @@ async function amusic(musicd, o){
     if(!json) {
     return;
     }
-    liebiao += `<li><a href="./${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html">${json.metadata.ti} - ${json.metadata.ar}${json.metadata.ti==json.metadata.al?'':` · ${json.metadata.al}`}</a></li>`
+    
+    mobanc +=`
+        <div class="card" url="./${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html">
+            <img src="./musicfile/img/${filenamecl(json.metadata.al)}.jpg" alt="${filenamecl(json.metadata.al)}专辑" class="card-image">
+            <div class="card-content">
+                <div>
+                    <h3 class="card-ti">${json.metadata.ti}</h3>
+                    <p class="card-ar">——${filenamecl(json.metadata.ar)}</p>
+                    <p class="card-al">${json.metadata.ti==json.metadata.al?"":filenamecl(json.metadata.al)}</p>
+                </div>
+            </div>
+        </div>`
+    //liebiaoj.push({name:json.metadata.ti, artist:json.metadata.ar, album:json.metadata.al})
     if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)){
         const music = await axios.get(musicd.url, { responseType: 'arraybuffer' });
         fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
@@ -102,7 +120,21 @@ async function amusic(musicd, o){
         .replace(/{{filename}}/g, `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)
         .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
     fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`, ddyyweb)
+    yureliebiao += encodeURI(`${yuming}${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`) + `\n`
+    yureliebiao += encodeURI(`${yuming}musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`) +`\n`
     console.log(o);
+    indexpage++;
+    if(indexpage>=indexpage_max){
+        let indexhtml="";
+        indexhtml=index.replace(/{{link}}/g, mobanc).replace(/next_button_hide/g, '')
+        if(indexpageo!==1){
+            indexhtml = indexhtml.replace(/previous_button_hide/g, '')
+        }
+        fs.writeFileSync(`./dist/${indexpageo===1?'index':indexpageo}.html`, indexhtml)
+        indexpage=0;
+        mobanc=""
+        indexpageo++;
+    }
     async_nu--;
 }
 function filenamecl(name){
@@ -110,7 +142,7 @@ function filenamecl(name){
         return '';
     }
     let result = name.replace(/\//g,",").replace(/\*/g,"x").replace(/\"/g,"'")
-    if(result.length>20) result = result.slice(0,5-result.length)+" ··· "+result.slice(result.length-5)
+    if(result.length>30) result = result.slice(0,5-result.length)+" ··· "+result.slice(result.length-5)
     return result;
 }
 async function YrcToJson(musicid, meta){
@@ -187,34 +219,39 @@ async function QrcToJson(name,artist,album){
     const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
     const regex = /(.*?)\((\d+),(\d+)\)/g;
     //const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}&cid=${i}`)
-    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}%20-%20${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502);}})
+    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}`,{validateStatus: function (status) {return (status==200)||(status==502);}})
     while(nme.status==502){
         await delay(1000);
-        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}%20-%20${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502);}})
+        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}`,{validateStatus: function (status) {return (status==200)||(status==502);}})
     }
+    let name_pipei_max = 0;
     let mi;
     for(let i = 0;true;i++){
         if(!nme.data.data[i])break;
         let aru = similar(nme.data.data[i].singer,artist)
-        let tiu = similar(nme.data.data[i].song,name)
-        let alu = similar(nme.data.data[i].album,album)
-        if(aru>50){//&& tiu>50 && alu>50
+        let tiu = similar(nme.data.data[i].name,name)
+        if(aru+tiu>name_pipei_max){//&& tiu>50 && alu>50
+            name_pipei_max = aru
             mi = i
-            break;
         }
     }
     if(!mi) {sade = `${sade}${name} - ${artist} ~ ${album}\n`;mi=0;};
     if(!nme.data.data[0]) {sadee = `${sadee}${name} - ${artist} ~ ${album}\n`;return};
     let datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[mi].id}`,{validateStatus: function (status) {return (status==200)||(status==502);}})//api有时会出现502错误
     while(datae.status!==200){
+        if(mi>=nme.data.data.length)break;
         await delay(1000);
         datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[mi].id}`,{validateStatus: function (status) {return (status==200)||(status==502);}})
     }
-    if(datae.data.code !== 200) return;
+    if(datae.data.code===500){//备用API
+        datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}`)
+    }
     let qrc = datae.data;
-    qrc.orig = qrc.data.yrc
-    qrc.ts = qrc.data.trans
-    qrc.roma = qrc.data.roma
+    if(datae.data.data){
+        qrc.orig = qrc.data.yrc
+        qrc.ts = qrc.data.trans
+        qrc.roma = qrc.data.roma
+    }
     let json ={metadata: {zq:false,m:2}, lyrics: [],};
     if(qrc.orig){
         let pdjg;
@@ -268,6 +305,8 @@ function prpdlq(qrc, timesec){
     let pairif = false;
     let romaif = false;
     let pairtext = "";
+    let min_pairtime = 2;
+    let min_romatime = 2;
     if(qrc.ts){
         const pairlyrics = qrc.ts.split("\n").filter(item => timeTagRegex.test(item));
         for(let i = 0; i < pairlyrics.length; i++){
@@ -276,8 +315,9 @@ function prpdlq(qrc, timesec){
             let text = lyricMatch[4]
             const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
-            if(Math.abs(timesec - timesecp) < 0.3){
-                pairtext = text.replace('//', '');
+            if(min_pairtime > Math.abs(timesec - timesecp)){
+                    min_pairtime = Math.abs(timesec - timesecp);
+                    pairtext = text.replace('//', '');
             }
         }
         pairif = true;
@@ -290,7 +330,8 @@ function prpdlq(qrc, timesec){
             if(!lyricMatch) continue;
             let text = lyricMatch[3].replace(/\([^)]*\)/g, '')
             let timesecp = parseInt(lyricMatch[1])/1000
-            if(Math.abs(timesec - timesecp) < 0.3){
+            if(min_romatime > Math.abs(timesec - timesecp)){
+                min_romatime = Math.abs(timesec - timesecp);
                 romatext = text;
             }
         }
@@ -303,6 +344,8 @@ function prpdl(yrc, timesec){
     let pairif = false;
     let romaif = false;
     let pairtext = "";
+    let min_pairtime = 1.5;
+    let min_romatime = 1.5;
     if(yrc.tlyric.lyric){
         const pairlyrics = yrc.tlyric.lyric.split("\n").filter(item => timeTagRegex.test(item));
         for(let i = 0; i < pairlyrics.length; i++){
@@ -311,8 +354,9 @@ function prpdl(yrc, timesec){
             let text = lyricMatch[4]
             const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
-            if(Math.abs(timesec - timesecp) < 1){
-                pairtext = text;
+           if(min_pairtime > Math.abs(timesec - timesecp)){
+                    min_pairtime = Math.abs(timesec - timesecp);
+                    pairtext = text.replace('//', '');
             }
         }
         pairif = true;
@@ -326,7 +370,8 @@ function prpdl(yrc, timesec){
             let text = lyricMatch[4]
             const decimal = lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[3]) / 1000) : 0;
             let timesecp = parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal
-            if(Math.abs(timesec - timesecp) < 1){
+            if(min_romatime > Math.abs(timesec - timesecp)){
+                min_romatime = Math.abs(timesec - timesecp);
                 romatext = text;
             }
         }
@@ -360,7 +405,10 @@ async function metaload(musicid, name){
             }
         });
         const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' });
-        fs.writeFile(`./dist/musicfile/img/${filenamecl(albumName)}.jpg`, imageResponse.data, (err) => {picerr+=`${err}\n`});
+        fs.writeFile(`./dist/musicfile/img/${filenamecl(albumName)}.jpg`, imageResponse.data, (err) => {
+            picerr+=err?`${err}\n`:''
+            yureliebiao += encodeURI(`${yuming}musicfile/img/${filenamecl(albumName)}.jpg`) +`\n`
+        });
     }
     return {albumName,albumLink};
 }
@@ -413,6 +461,7 @@ await start()
 fs.writeFileSync(`./nonono.txt`,sade)
 fs.writeFileSync(`./nononono.txt`,sadee)
 fs.writeFileSync(`./picerr.txt`,picerr)
+fs.writeFileSync(`./yureurl.txt`,yureliebiao)
 /*
 function QrcMatchingYrcTimeline(qrcjson, yrcjson){
     let Num_matches = 0;

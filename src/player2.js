@@ -134,7 +134,6 @@ function arowfadeWords(){
         smjgtime = 0.6
     }
     lyricElement.style.setProperty('--inTime', `${smjgtime}s`);
-    console.log(smjgtime)
     //  根据歌词间隔时长设置淡入时间，但是不允许大于0.8s或小于0.4s
 }
 function fadeWords(currentTime){

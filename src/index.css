@@ -46,7 +46,113 @@ text-align: right;
 ul{
 	list-style-type: none;
 }
-.card {/*参考自项目：https://github.com/silvaire-qwq/Miracle */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+    justify-content: center;
+    align-items: start;
+}
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.card{
+  display: flex;
+	width: 300px;
+	height: 110px;
+  border-radius: 15px;
+  position:relative;
+  transition:0.5s;
+  transition-style: preserve-3d;
+	backdrop-filter: blur(7px);
+	background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px 25px;
+}
+.card-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(0, 0, 0, 0.85);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    margin-right: 16px;
+}
+.card-content {
+    flex: 1;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    justify-content: space-between;
+}
+.card-ti {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+.card:hover {
+    transform: perspective(500px) translateZ(50px);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.card-ar {
+   flex: 1;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow: hidden;
+}
+.card-al {
+    font-size: 9px;
+    line-height: 1.4;
+    overflow: hidden;
+   flex: 1;
+   text-align: right;
+}
+.pagination_button{
+    display: flex;
+    justify-content: center;
+
+.pbutton{
+	width: 150px;
+	height: 20px;
+  border-radius: 15px;
+  position:relative;
+  transition:0.5s;
+  transition-style: preserve-3d;
+	backdrop-filter: blur(7px);
+	background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px 25px;
+  text-align: center;
+}
+.nbutton{
+	width: 150px;
+	height: 20px;
+  border-radius: 15px;
+  position:relative;
+  transition:0.5s;
+  transition-style: preserve-3d;
+	backdrop-filter: blur(7px);
+	background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px 25px;
+  text-align: center;
+}
+.pbutton:hover{
+    transform: perspective(500px) translateZ(50px);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.nbutton:hover{
+    transform: perspective(500px) translateZ(50px);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.previous_button_hide{
+    display: none;
+}
+.next_button_hide{
+    display: none;
+}
+.carddgsghdfh {/*参考自项目：https://github.com/silvaire-qwq/Miracle */
   border-radius: var(--vp-border-radius-1);
   border: 1px solid var(--vp-c-divider);
   height: 100%;
@@ -56,7 +162,7 @@ ul{
   transition: all var(--vp-transition-time);
 }
 
-.card:hover {
+.cardhgfhdfhfdh:hover {
   border-color: var(--vp-c-brand-1);
   box-shadow: var(--vp-shadow-brand);
 }
