@@ -8,6 +8,10 @@
 
 默认包含了一些歌曲和歌词
 
+## 部署要求
+
+NodeJS>=20（完整的ES6模块支持，File API及现代JavaScript语法等）
+
 ## Demo演示
 
 云模式：https://emnasop.cn/dist/
@@ -130,9 +134,9 @@ audio标签示例格式
 
 [LxgwWenKai](https://github.com/lxgw/LxgwWenKai)等提供美观的字体
 
-API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/)(2025\12\28报告目前存在偶尔请求出现502错误，求作者修复呜QAQ)
+API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/)(2025\12\28报告目前存在偶尔请求出现502错误，求作者修复呜)
 
-所有指点/指导的人,包括但不限于：[RainView](https://github.com/RainView-ovo),[LeonspaceX](https://github.com/LeonspaceX),[Silvaire-qwq](https://github.com/silvaire-qwq),[Mio](https://mioical.moe/),[LYXOfficial](https://github.com/LYXOfficial),[Android-KitKat](https://github.com/Android-KitKat)
+所有指点/指导的人,包括但不限于：[RainView](https://github.com/RainView-ovo),[LeonspaceX](https://github.com/LeonspaceX),[Silvaire-qwq](https://github.com/silvaire-qwq),[Mio](https://mioical.moe/),[LYXOfficial](https://github.com/LYXOfficial),[Android-KitKat](https://github.com/Android-KitKat),[Ariasaka](https://github.com/LYXOfficial)
 
 所包含的歌曲制作人
 

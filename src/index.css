@@ -10,6 +10,7 @@ body{
     padding: 20px;
 	text-align: center;
 	text-shadow: 1px 1px 2px gray;
+    background-attachment:fixed;
 }
 @font-face {
   font-family: 'Saira Light';
@@ -109,11 +110,14 @@ ul{
     overflow: hidden;
    flex: 1;
    text-align: right;
+   bottom: 0;
+   right: 0;
 }
 .pagination_button{
+    margin-top: 16px;
     display: flex;
     justify-content: center;
-
+}
 .pbutton{
 	width: 150px;
 	height: 20px;
@@ -123,8 +127,10 @@ ul{
   transition-style: preserve-3d;
 	backdrop-filter: blur(7px);
 	background-color: rgba(255, 255, 255, 0.3);
-  padding: 20px 25px;
   text-align: center;
+  margin-right: 10px;
+  line-height: 20px;
+  padding: 20px 25px;
 }
 .nbutton{
 	width: 150px;
@@ -135,12 +141,20 @@ ul{
   transition-style: preserve-3d;
 	backdrop-filter: blur(7px);
 	background-color: rgba(255, 255, 255, 0.3);
-  padding: 20px 25px;
   text-align: center;
+  margin-left: 10px;
+  line-height: 20px;
+  padding: 20px 25px;
 }
 .pbutton:hover{
     transform: perspective(500px) translateZ(50px);
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.pbutton p{
+    margin: 0px 0px 0px 0px;
+}
+.nbutton p{
+    margin: 0px 0px 0px 0px;
 }
 .nbutton:hover{
     transform: perspective(500px) translateZ(50px);

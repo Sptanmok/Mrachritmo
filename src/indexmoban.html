@@ -32,6 +32,11 @@ document.querySelectorAll('.card').forEach(card => {
         const url = card.getAttribute('url')
         window.open(url, '_blank');
     });
+    card.addEventListener('click', function() {
+        const title = this.querySelector('.card-ti').textContent;
+        const url = card.getAttribute('url')
+        window.open(url, '_blank');
+    });
 });
 function getCurrentPage() {
   const path = window.location.pathname;
@@ -51,6 +56,7 @@ document.querySelector('.nbutton').addEventListener('click', function() {
   const newPage = currentPage === 1 ? '2.html' : `${currentPage + 1}.html`;
   window.location.href = newPage;
 });
+
 </script>
 </body>
 </html>
