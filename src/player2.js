@@ -50,6 +50,21 @@ function initLyrics() {
         setInterval(lowupdateLyrics, 50);
     }
     setInterval(changeTitle, 50);
+    let alimg = document.querySelector(".img");
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: jsonlyrics.metadata.ti,
+            artist: jsonlyrics.metadata.ar,
+            album: jsonlyrics.metadata.al,
+            artwork: [
+            {
+                src: alimg.src,
+                sizes: "1400x1400",
+                type: "image/jpeg"
+            }
+            ]
+        });
+    }
 }
 let zt = 1;
 function updateLyrics() {

@@ -136,6 +136,8 @@ audio标签示例格式
 
 API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)=>api.qijieya.cn/meting，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/)(2025\12\28报告目前存在偶尔请求出现502错误，求作者修复呜)
 
+QQ音乐备用API修改于项目[QRCD - xmcp](https://github.com/xmcp/QRCD)
+
 所有指点/指导的人,包括但不限于：[RainView](https://github.com/RainView-ovo),[LeonspaceX](https://github.com/LeonspaceX),[Silvaire-qwq](https://github.com/silvaire-qwq),[Mio](https://mioical.moe/),[LYXOfficial](https://github.com/LYXOfficial),[Android-KitKat](https://github.com/Android-KitKat),[Ariasaka](https://github.com/LYXOfficial)
 
 所包含的歌曲制作人

@@ -12,7 +12,8 @@ const qqmusiclyric_api ='http://8.140.228.251:5000/'
 const qqyuan = true;//我们联合起来！
 const yuming ='https://etmusic.emnasop.cn/'
 const indexpage_max = 50;
-const async_max = 6;//让暴风雨来得更猛烈些吧！
+const async_max = 13;//让暴风雨来得更猛烈些吧！
+const async_downfile_max = 6;
 const musicnum_max = 10000;
 //↑↑↑配置处↑↑↑
 
@@ -28,28 +29,39 @@ await build({
 const gedang = fs.readFileSync(`neteaseplaylist.txt`, 'utf8')
 const playmusics = gedang.split(/\r?\n/);
 const index = fs.readFileSync("src/indexmoban.html", "utf8");
+const simplicityindexb = fs.readFileSync("src/index.html", "utf8");
 const template = fs.readFileSync("src/moban.html", "utf8");
 let liebiao = "";
 let liebiaoj = [];
 let o = 0;
 let mobanc =""
+let simplicitylibiao = ""
 async function start(){
     let dd = 0;
     console.log("开始！");
     for(const playmusic of playmusics){
         const list = await axios.get(`${metingapi_url}?type=playlist&id=${playmusic.match(/\d+$/)}`,{headers: {'user-agent': "Thank you very much for your API! This request comes from the open-source project: https://github.com/Sptanmok/Etmusic  , Qwq"}});
-        await jxgd(list.data);
+        const listd = list.data
+        if(!Array.isArray(listd)){
+            console.error(`歌单${playmusic.match(/\d+$/)}错误！,   它不是一个数组`);
+            continue;
+        }
+        await jxgd(listd);
         if(o > musicnum_max) {
             break;
         }
     }
     let indexhtml = index.replace(/{{link}}/g, mobanc).replace(/previous_button_hide/g, '')
+    const simplicityindexr = simplicityindexb.replace(/{{link}}/g, simplicitylibiao)
     fs.writeFileSync(`./dist/${indexpageo}.html`, indexhtml)
+    fs.writeFileSync(`./dist/simplicityindex.html`, simplicityindexr)
     console.log("successfully")
 }
 let async_nu = 0
 let yureliebiao = "";
 let indexpageo = 1;
+let downfile_task;
+let rwd =[];
 async function jxgd(listd){
     let rw =[];
     let indexpage = 0;
@@ -75,7 +87,7 @@ async function jxgd(listd){
         //替补
             let jsonq;
             if(!json.metadata.zq){
-                jsonq= await QQJsonPut(json.metadata.ti,json.metadata.ar,json.metadata.al,json);
+                jsonq= await QQJsonGET(json.metadata.ti,json.metadata.ar,json.metadata.al,json);
                 if(jsonq && jsonq.metadata.zq){
                     const r = json
                     json = jsonq
@@ -94,7 +106,8 @@ async function jxgd(listd){
             async_nu--;
             return;
         }
-        
+        const task = downMusicFilePut(json, musicd);
+        rwd.push(task)
         mobanc +=`
             <div class="card" url="./${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html">
                 <img src="./musicfile/img/${filenamecl(json.metadata.al)}.jpg" alt="${filenamecl(json.metadata.al)}专辑" class="card-image">
@@ -107,18 +120,15 @@ async function jxgd(listd){
                 </div>
             </div>`
         //liebiaoj.push({name:json.metadata.ti, artist:json.metadata.ar, album:json.metadata.al})
-        if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)){
-            const music = await axios.get(musicd.url, { responseType: 'arraybuffer' ,headers: {'user-agent': "Thank you very much for your API! This request comes from the open-source project: https://github.com/Sptanmok/Etmusic. Since your API supports VIP songs in an unconventional way, it won't be pushed for now, Qwq"}});
-            fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
-        }
+        simplicitylibiao += `<li><a href="./${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html">${json.metadata.ti} - ${json.metadata.ar} · ${json.metadata.ti==json.metadata.al?"":json.metadata.al}</a></li>`
         fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.json`,JSON.stringify(json), "utf8")
         let ddyyweb = template
             .replace(/{{title}}/g, `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}`.replace("/",","))
             .replace(/{{filename}}/g, `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)
             .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
         fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`, ddyyweb)
-        yureliebiao += encodeURI(`${yuming}${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`) + `\n`
-        yureliebiao += encodeURI(`${yuming}musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`) +`\n`
+        //yureliebiao += encodeURI(`${yuming}${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`) + `\n`
+        //yureliebiao += encodeURI(`${yuming}musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`) +`\n`
         console.log(o);
         indexpage++;
         if(indexpage>=indexpage_max){
@@ -135,6 +145,19 @@ async function jxgd(listd){
         async_nu--;
     }
     await Promise.all(rw);
+    await Promise.all(rwd);
+}
+let async_downfile = 0;
+async function downMusicFilePut(json,musicd){
+    while(async_downfile >= async_downfile_max){
+        await delay(50);
+    }
+    async_downfile++;
+    if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)){
+        const music = await axios.get(musicd.url, { responseType: 'arraybuffer' ,headers: {'user-agent': "Thank you very much for your API! This request comes from the open-source project: https://github.com/Sptanmok/Etmusic., Qwq"}});
+        fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
+    }
+    async_downfile--;
 }
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -143,7 +166,7 @@ function filenamecl(name){
     if(!name){
         return '';
     }
-    let result = name.replace(/\//g,",").replace(/\*/g,"x").replace(/\"/g,"'")
+    let result = name.replace(/\//g,",").replace(/\*/g,"x").replace(/\"/g,"'").replace(/\#/g,"")//“#”是URL注释符，在此替换
     if(result.length>30) result = result.slice(0,5-result.length)+" ··· "+result.slice(result.length-5)
     return result;
 }
@@ -255,7 +278,7 @@ async function YrcToJson(musicid, meta){
 }
 let sade ='';
 let sadee ='';
-async function QQJsonPut(name,artist,album,yrcjson){
+async function QQJsonGET(name,artist,album,yrcjson){
     function QrcMatchingYrcTimeline(qrcjson, yrcjson){
         let Num_matches = 0;
         for(const liney of yrcjson){
@@ -272,10 +295,10 @@ async function QQJsonPut(name,artist,album,yrcjson){
         return Num_matches;
     }
     //const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}&cid=${i}`)
-    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}`,{validateStatus: function (status) {return (status==200)||(status==502);},headers: {'user-agent': "Thank you very much for your API! This request comes from the open-source project: https://github.com/Sptanmok/Etmusic. ,Uh, could you fix the occasional 502 error? Please, thank you. Qwq"}})
+    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} - ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502);},headers: {'user-agent': "Thank you very much for your API! This request comes from the open-source project: https://github.com/Sptanmok/Etmusic. ,Uh, could you fix the occasional 502 error? Please, thank you. Qwq"}})
     while(nme.status==502){
         await delay(1000);
-        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}`,{validateStatus: function (status) {return (status==200)||(status==502);},headers: {'user-agent': "Thank you very much for your API! This request comes from the open-source project: https://github.com/Sptanmok/Etmusic. ,Uh, could you fix the occasional 502 error? Please, thank you. Qwq"}})
+        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} - ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502);},headers: {'user-agent': "Thank you very much for your API! This request comes from the open-source project: https://github.com/Sptanmok/Etmusic. ,Uh, could you fix the occasional 502 error? Please, thank you. Qwq"}})
     }
     /*
     准确度不高已被暂时遗弃
@@ -291,7 +314,7 @@ async function QQJsonPut(name,artist,album,yrcjson){
         }
     }*/
     
-    if(!nme.data.data&&!nme.data.data[0]) {sadee = `${sadee}${name} - ${artist} ~ ${album}\n`;return};
+    if(!nme.data.data||!Array.isArray(nme.data.data)) {sadee = `${sadee}${name} - ${artist} ~ ${album}\n`;return};
     let pipei_max = 0;
     let qrcjson;
     let id;
@@ -309,7 +332,7 @@ async function QQJsonPut(name,artist,album,yrcjson){
         qrc.roma = datae.data.data.roma
         let qrcjsonn = QrcToJson(qrc,nme.data.data[i].id,0)
         let pipeinum = QrcMatchingYrcTimeline(qrcjsonn.lyrics, yrcjson.lyrics)
-        if(pipeinum>pipei_max+4){//最开始的特权
+        if(pipeinum>pipei_max+2){//最开始的特权
             pipei_max=pipeinum
             qrcjson=qrcjsonn
             id=nme.data.data[i].id;

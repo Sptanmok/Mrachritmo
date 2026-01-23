@@ -17,7 +17,7 @@ body{
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 	backdrop-filter: blur(7px);
 	background-color: rgba(255, 255, 255, 0.3);
-  line-height:30px;
+  line-height:40px;
   padding: 20px 25px;
 }
 .img{
@@ -95,6 +95,9 @@ body{
   font-style: normal;
   font-display: swap;
 }
+.text {
+  animation: floatOnWater 19s ease-in-out infinite;
+}
 .text span {
     display: inline-block;
     background: linear-gradient(to right, #000000 var(--progress, 0%), #818282 var(--progress, 0%));
@@ -104,6 +107,20 @@ body{
     transition: --progress 0.1s ease;
     white-space: normal;
 	font-weight: bold;
+}
+@keyframes floatOnWater {
+  0%, 100% {
+    transform: translateY(0) rotate(0.7deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-0.7deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0.8deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(-0.7deg);
+  }
 }
 .notification {
 	position: fixed;
