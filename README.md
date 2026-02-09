@@ -52,6 +52,12 @@ NodeJS>=20（完整的ES6模块支持，File API及现代JavaScript语法等）
 
 在src/musicfile目录放入音乐音频文件，并放入同名（不包含扩展名）的lrc增强版歌词文件
 
+先输入
+
+```
+npm install
+```
+
 并输入
 
 ```
@@ -67,6 +73,12 @@ npm run build
 在neteaseplaylist.txt中添加你的网易云音乐歌单链接或id（一行一个）
 
 然后输入
+
+```
+npm install
+```
+
+安装依赖，再输入
 
 ```
 npm run 163musicbuild

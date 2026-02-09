@@ -44,7 +44,7 @@ body{
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    //transform: translate(var(--inX, 0px), var(--inY, -13.33px));
+    transform: translate(var(--inX, 0px), var(--inY, -13.33px));
     transform: translate(var(--inX, 0px), var(--inY, -20px));
   }
   100% {
