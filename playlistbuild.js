@@ -1,10 +1,10 @@
 import { build } from "esbuild";
 import fs from "fs";
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import * as cheerio from 'cheerio';
 import { console } from "inspector";
 import querystring from 'querystring';
-
 //喵喵喵！
 //await fs.promises.rm('dist', { recursive: true, force: true });
 const metingapi_url='https://api.qijieya.cn/meting/'//好人一生平安！
@@ -123,7 +123,7 @@ async function jxgd(listd){
         simplicitylibiao += `<li><a href="./${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html">${json.metadata.ti} - ${json.metadata.ar} · ${json.metadata.ti==json.metadata.al?"":json.metadata.al}</a></li>`
         fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.json`,JSON.stringify(json), "utf8")
         let ddyyweb = template
-            .replace(/{{title}}/g, `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}`.replace("/",","))
+            .replace(/{{title}}/g, `${json.metadata.ti} - ${json.metadata.ar} · ${json.metadata.al}`)
             .replace(/{{filename}}/g, `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)
             .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
         fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`, ddyyweb)
@@ -134,9 +134,11 @@ async function jxgd(listd){
         if(indexpage>=indexpage_max){
             let indexhtml="";
             indexhtml=index.replace(/{{link}}/g, mobanc).replace(/next_button_hide/g, '')
+            //非尾页启用下一页按钮（尾页处理在start函数）
             if(indexpageo!==1){
                 indexhtml = indexhtml.replace(/previous_button_hide/g, '')
             }
+            //非首页启用上一页按钮
             fs.writeFileSync(`./dist/${indexpageo===1?'index':indexpageo}.html`, indexhtml)
             indexpage=0;
             mobanc=""
@@ -176,8 +178,8 @@ async function YrcToJson(musicid, meta){
         let pairif = false;
         let romaif = false;
         let pairtext = "";
-        let min_pairtime = 1.5;
-        let min_romatime = 1.5;
+        let min_pairtime = 3;
+        let min_romatime = 3;
         if(yrc.tlyric.lyric){
             const pairlyrics = yrc.tlyric.lyric.split("\n").filter(item => timeTagRegex.test(item));
             for(let i = 0; i < pairlyrics.length; i++){
@@ -358,8 +360,8 @@ function QrcToJson(qrcd,id, apinu){
         let pairif = false;
         let romaif = false;
         let pairtext = "";
-        let min_pairtime = 1;
-        let min_romatime = 1;
+        let min_pairtime = 3;
+        let min_romatime = 3;
         if(qrc.ts){
             let pairlyrics;
             let lyricMatch;
@@ -377,7 +379,7 @@ function QrcToJson(qrcd,id, apinu){
                 let timesecp = apinu===0?parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal:lyricMatch[1]/1000
                 if(min_pairtime > Math.abs(timesec - timesecp)){
                         min_pairtime = Math.abs(timesec - timesecp);
-                        pairtext = text.replace('//', '');
+                        pairtext = text.replace('//', '');//TX特有的局部无翻译文本的替换字符
                 }
             }
             pairif = true;
@@ -472,7 +474,7 @@ async function metaload(musicid, name){
             }
         });
         const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' });
-        fs.writeFile(`./dist/musicfile/img/${filenamecl(albumName)}.jpg`, imageResponse.data, (err) => {
+        fs.writeFile(`./dist/musicfile/img/${filenamecl(albumName)}.jpg`, imageResponse.data, (err) => {//以专辑名作为名称，减少空间浪费
             picerr+=err?`${err}\n`:''
             yureliebiao += encodeURI(`${yuming}musicfile/img/${filenamecl(albumName)}.jpg`) +`\n`
         });
@@ -539,3 +541,16 @@ function sjzzh(sjzx){
     return `${min}:${sec}.${zzxs}`
 }
 */
+axiosRetry(axios, {
+  //不包括api.vkeys.cn api
+  retries: 3,
+  retryDelay: (retryCount) => {
+    return axiosRetry.exponentialDelay(retryCount);
+  },
+  retryCondition: (error) => {
+    return (axiosRetry.isNetworkError(error) || 
+           axiosRetry.isRetryableError(error) ||
+           (error.response && error.response.status !== 200))&&error.response.status !== 502
+  },
+  shouldResetTimeout: true
+});
