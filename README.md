@@ -14,9 +14,9 @@ NodeJS>=20（完整的ES6模块支持，File API及现代JavaScript语法等）
 
 ## Demo演示
 
-云模式：https://emnasop.cn/dist/
+1：https://emnasop.cn/dist/
 
-本地模式：https://music.emnasop.cn/
+2：https://music.emnasop.cn/
 
 ## 效果
 
