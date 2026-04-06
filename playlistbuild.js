@@ -384,7 +384,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
         return qrcjson
     }
     //备用API，与前者相比能获取的歌词较少，大道至简（雾
-    let datas = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}`, {validateStatus: function (status) {return (status==500)||(status==404);}})
+    let datas = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}`, {validateStatus: function (status) {return (status==500)||(status==404)||(status==200);}})
     if(datas.status===500||datas.status===404||datas.data.code===404){
         return{metadata:{zq:false}}
     }
