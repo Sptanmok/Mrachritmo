@@ -7,13 +7,20 @@ const pairLyricElement = document.getElementById('pairlyric');
 const romaLyricElement = document.getElementById('romalyric');
 const title = document.title
 let jsonlyrics;
+let alimg = document.querySelector(".img");
 const canvas = document.getElementById('spectrum');
+const canvasb = document.getElementById('spectrumb');
+const canvasd = document.getElementById('spectrumd');
 const ctx = canvas.getContext('2d');
+const ctxb = canvasb.getContext('2d');
+const ctxd = canvasd.getContext('2d');
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const analyser = audioContext.createAnalyser();
 analyser.fftSize = 256;
-let LiteralRenderingModeSelection = Math.floor(Math.random() * (3)) + 1;
 const LiteralRenderingModeSelectionall = 3;
+let LiteralRenderingModeSelection = Math.floor(Math.random() * (LiteralRenderingModeSelectionall)) + 1;
+const AudioVisualizationModeSelectionall = 2;
+let AudioVisualizationModeSelection = 1;
 let bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
 const dd = audioContext.createMediaElementSource(audio);
@@ -50,7 +57,6 @@ function initLyrics() {
         setInterval(lowupdateLyrics, 50);
     }
     setInterval(changeTitle, 50);
-    let alimg = document.querySelector(".img");
     if ("mediaSession" in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
             title: jsonlyrics.metadata.ti,
@@ -227,20 +233,118 @@ function changeTitle() {
 }
 //频谱条
 const barWidth = (canvas.width / bufferLength) * 2.5;
+let oldAudioVisualizationModeSelection;
+let barmove = -73;
+let barmoveb = window.innerWidth;
+setInterval(updateBarmove,20);
+function updateBarmove() {
+    barmove++;
+    barmoveb--;
+    if(barmove > canvasb.width){
+        barmove = -73;
+        barmoveb = window.innerWidth;
+    }
+}
 function drawSpectrum() {
-  requestAnimationFrame(drawSpectrum);
-  analyser.getByteFrequencyData(dataArray);
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  let barHeight;
-  let x = 0;
-  for (let i = 0; i < bufferLength; i++) {
-    barHeight = dataArray[i];
-    ctx.fillStyle = "white";
-    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-    x += barWidth + 1;
+    analyser.getByteFrequencyData(dataArray);
+    if(AudioVisualizationModeSelection !== oldAudioVisualizationModeSelection){
+    oldAudioVisualizationModeSelection = AudioVisualizationModeSelection;
+    if(AudioVisualizationModeSelection===2){
+        canvas.setAttribute('style', 'display: none;');
+        canvasb.setAttribute('style', 'display: block;');
+        canvasd.setAttribute('style', 'display: block;');
+        alimg.setAttribute('style', 'margin-top: 100px;');
+    }
+    if(AudioVisualizationModeSelection===1){
+        canvasb.setAttribute('style', 'display: none;');
+        canvasd.setAttribute('style', 'display: none;');
+        canvas.setAttribute('style', 'margin-top: 0px;');
+    }
   }
+  if (AudioVisualizationModeSelection===1){
+    draw_a();
+  }
+  if (AudioVisualizationModeSelection===2){
+    draw_b();
+  }
+  function draw_a(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let barHeight;
+    let x = 0;
+
+    for (let i = 0; i < bufferLength; i++) {
+        barHeight = dataArray[i];
+        ctx.fillStyle = "white";
+        ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+        x += barWidth + 1;
+    }
+  }
+  function draw_b(){
+    let sjdataArray = dataArray.slice(20,20+bufferLengthb);
+    let max = -Infinity;
+    let min = Infinity;
+    for(let i = 0;i < sjdataArray.length;i++){
+        if(sjdataArray[i] > max){
+            max = sjdataArray[i];
+        }
+        if(sjdataArray[i] < min){
+            min = sjdataArray[i];
+        }
+    }
+
+    ctxb.clearRect(0, 0, canvasb.width, canvasb.height);
+    ctxd.clearRect(0, 0, canvasd.width, canvasd.height);
+    ctxb.fillStyle = "white";
+    //barmove loops between -73 and the window width
+    let barHeight;
+    let x = 0;
+    let yic_mun=0;
+    for (let i = 0; i < sjdataArray.length; i++) {
+        barHeight = (sjdataArray[i]-min)/(max-min>0?max-min:1)*(canvasb.height-170);
+        ctxb.fillStyle = "white";
+        if(x+barmove < canvasb.width){
+            ctxb.fillRect(x+barmove, 0, 60, barHeight);
+            ctxb.beginPath();
+            ctxb.arc(x+barmove+30, barHeight, 30, 0, 2 * Math.PI, false);
+            ctxb.fill();
+        }
+        if(x+barmove > canvasb.width){
+            yic_mun++;
+            ctxb.fillRect(barmove-yic_mun*73, 0, 60, barHeight);
+            ctxb.beginPath();
+            ctxb.arc(barmove-yic_mun*73+30, barHeight, 30, 0, 2 * Math.PI, false);
+            ctxb.fill();
+        }
+        x += 73;
+    }
+    x=0;
+    yic_mun = 0;
+    for (let i = sjdataArray.length-1; i >= 0; i--) {
+        barHeight = (sjdataArray[i]-min)/(max-min>0?max-min:1)*(canvasd.height-170);
+        ctxd.fillStyle = "white";
+        if(x+barmoveb < canvasb.width){
+            ctxd.fillRect(barmoveb+x, canvasd.height - barHeight, 60, barHeight);
+            ctxd.beginPath()
+            ctxd.arc(barmoveb+x+30, canvasd.height - barHeight, 30, 0, 2 * Math.PI, true);
+            ctxd.fill();
+        }
+        if(x+barmoveb > canvasb.width){
+            yic_mun++;
+            ctxd.fillRect(barmoveb-yic_mun*73, canvasd.height - barHeight, 60, barHeight);
+            ctxd.beginPath();
+            ctxd.arc(barmoveb-yic_mun*73+30, canvasd.height - barHeight, 30, 0, 2 * Math.PI, true);
+            ctxd.fill();
+        }
+        x += 73;
+    }
+
+  }
+  requestAnimationFrame(drawSpectrum);
 }
 canvas.width = main.clientWidth - 40;
+canvasb.width = window.innerWidth;
+canvasd.width = window.innerWidth;
+let bufferLengthb = (Math.ceil(canvasb.width / 73)+1)*2;
 bufferLength = Math.floor( (canvas.width + 1 ) / (barWidth + 1) );
 audio.onplay = () => {
   audioContext.resume().then(() => {
@@ -254,10 +358,18 @@ document.addEventListener('keydown', function(event) {
    }else if(event.key === 't' && LiteralRenderingModeSelection >= LiteralRenderingModeSelectionall) {
 	   LiteralRenderingModeSelection = 1;
    }
+   if (event.key === 'y' && AudioVisualizationModeSelection < AudioVisualizationModeSelectionall) {
+       AudioVisualizationModeSelection++;
+   }else if(event.key === 'y' && AudioVisualizationModeSelection >= AudioVisualizationModeSelectionall) {
+	   AudioVisualizationModeSelection = 1;
+   }
 });
 window.addEventListener('resize', () => {
 	canvas.width = main.clientWidth - 40;
 	bufferLength = Math.floor( (canvas.width + 1 ) / (barWidth + 1) );
+    bufferLengthb = Math.ceil(canvasb.width / 73)+1;
+    canvasb.width = window.innerWidth;
+    canvasd.width = window.innerWidth;
 });
 function lowupdateLyrics(){
     const currentTime = audio.currentTime;
