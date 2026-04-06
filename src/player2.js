@@ -300,7 +300,7 @@ function drawSpectrum() {
     let x = 0;
     let yic_mun=0;
     for (let i = 0; i < sjdataArray.length; i++) {
-        barHeight = (sjdataArray[i]-min)/(max-min>0?max-min:1)*(canvasb.height-170);
+        barHeight = (sjdataArray[i]-min)/(max-min>0?max-min:1)*(canvasb.height-120);
         ctxb.fillStyle = "white";
         if(x+barmove < canvasb.width){
             ctxb.fillRect(x+barmove, 0, 60, barHeight);
@@ -320,7 +320,7 @@ function drawSpectrum() {
     x=0;
     yic_mun = 0;
     for (let i = sjdataArray.length-1; i >= 0; i--) {
-        barHeight = (sjdataArray[i]-min)/(max-min>0?max-min:1)*(canvasd.height-170);
+        barHeight = (sjdataArray[i]-min)/(max-min>0?max-min:1)*(canvasd.height-120);
         ctxd.fillStyle = "white";
         if(x+barmoveb < canvasb.width){
             ctxd.fillRect(barmoveb+x, canvasd.height - barHeight, 60, barHeight);
