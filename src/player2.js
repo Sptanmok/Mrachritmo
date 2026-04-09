@@ -44,6 +44,7 @@ fetch(lyricpath)
     console.log(jsonlyrics);
     initLyrics()
   })
+let suijsz =[]
 function initLyrics() {
 	if(!jsonlyrics.lyrics[0] || jsonlyrics.lyrics[0].time > 0){
 		let defaultLyric = !jsonlyrics.metadata.nolyric ? {"time": 0.00,"text": "Enjoy to the fullest!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Enjoy to the fullest :)"}]} : {"time": 0.00,"text": "Write your own lyrics to pure instrumental music!","etext": [{"Duration": 0.10,"start": 0.0,"end": 0.1,"text": "Write your own lyrics to pure instrumental music!"}]}
@@ -57,6 +58,10 @@ function initLyrics() {
         setInterval(lowupdateLyrics, 50);
     }
     setInterval(changeTitle, 50);
+    for(let i=1;i<=200;i++){
+        suijsz.push(i)
+    }
+    suijsz.sort(() => Math.random() - 0.5)
     if ("mediaSession" in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
             title: jsonlyrics.metadata.ti,
@@ -234,18 +239,33 @@ function changeTitle() {
 //频谱条
 const barWidth = (canvas.width / bufferLength) * 2.5;
 let oldAudioVisualizationModeSelection;
-let barmove = -73;
+let startmove = 0;
+let barmove = startmove;
 let barmoveb = window.innerWidth;
 setInterval(updateBarmove,20);
 function updateBarmove() {
     barmove++;
     barmoveb--;
-    if(barmove > canvasb.width){
-        barmove = -73;
+    if(barmove >= canvasb.width){
+        barmove = startmove;
         barmoveb = window.innerWidth;
     }
 }
+let oldwindowwidth = 0;
 function drawSpectrum() {
+    if(oldwindowwidth !== window.innerWidth){
+        oldwindowwidth = window.innerWidth
+        canvas.width = main.clientWidth - 40;
+        bufferLength = Math.floor( (canvas.width + 1 ) / (barWidth + 1) );
+        bufferLengthb = (Math.ceil(canvasb.width / 73)+1)*2;
+        canvasb.width = window.innerWidth;
+        canvasd.width = window.innerWidth;
+        suijsz=[];
+        for(let i=1;i<=bufferLengthb;i++){
+            suijsz.push(i)
+        }
+        suijsz.sort(() => Math.random() - 0.5)
+    }
     analyser.getByteFrequencyData(dataArray);
     if(AudioVisualizationModeSelection !== oldAudioVisualizationModeSelection){
     oldAudioVisualizationModeSelection = AudioVisualizationModeSelection;
@@ -280,7 +300,15 @@ function drawSpectrum() {
     }
   }
   function draw_b(){
-    let sjdataArray = dataArray.slice(20,20+bufferLengthb);
+    let sjdataArray = dataArray.slice(20,20+bufferLengthb+1);
+    /*
+    for(let i=0;i<rawdataArray.length;i++){
+        sjdataArray.push(rawdataArray[suijsz[i]])
+    }
+    */
+    bufferLengthb = (Math.ceil(canvasb.width / 73)+1)*2;
+    startmove = window.innerWidth-bufferLengthb/2*73
+    console.log(startmove+"  "+barmove)
     let max = -Infinity;
     let min = Infinity;
     for(let i = 0;i < sjdataArray.length;i++){
@@ -363,13 +391,6 @@ document.addEventListener('keydown', function(event) {
    }else if(event.key === 'y' && AudioVisualizationModeSelection >= AudioVisualizationModeSelectionall) {
 	   AudioVisualizationModeSelection = 1;
    }
-});
-window.addEventListener('resize', () => {
-	canvas.width = main.clientWidth - 40;
-	bufferLength = Math.floor( (canvas.width + 1 ) / (barWidth + 1) );
-    bufferLengthb = Math.ceil(canvasb.width / 73)+1;
-    canvasb.width = window.innerWidth;
-    canvasd.width = window.innerWidth;
 });
 function lowupdateLyrics(){
     const currentTime = audio.currentTime;
