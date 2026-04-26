@@ -10,13 +10,13 @@ import querystring from 'querystring';
 const metingapi_url='https://api.qijieya.cn/meting/'//好人一生平安！
 //const metingapi_url='https://api.injahow.cn/meting/'//好人一生平安！
 const qqmusiclyric_api ='http://38.76.201.17:5000/'
-const qqyuan = true;//我们联合起来！
+const qqyuan = true;//我们联合起来！r
 const yuming ='https://etmusic.emnasop.cn/'
 const indexpage_max = 50;
-const async_max = 3;//让暴风雨来得更猛烈些吧！
-const async_downfile_max = 2;
+const async_max = 5;//让暴风雨来得更猛烈些吧！
+const async_downfile_max = 1;
 const musicnum_max = 10000;
-const user_agent = "hi"
+const user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
 const user_agent_b = "hi"
 let no_wyy = 0;
 let sesc_ppe = 0;
@@ -166,7 +166,7 @@ async function downMusicFilePut(json,musicd){
     }
     async_downfile++;
     if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)){
-        const music = await axios.get(musicd.url, { responseType: 'arraybuffer' ,headers: {'user-agent': user_agent}});
+        const music = await axios.get(musicd.url, { responseType: 'arraybuffer' ,headers: {'user-agent': user_agent},timeout: 60000});
         fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
     }
     async_downfile--;
@@ -315,7 +315,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
         Request_timed_out_b = true;
     }
     });
-    while(nme.status!==200||Request_timed_out_b){
+    while(!nme||nme.status!==200||Request_timed_out_b){
         console.error("api.vkeys.cn Request failed_       sss")
         await delay(1000);
         nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
@@ -350,7 +350,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
         }
         });
 
-        while(datae.status!==200||Request_timed_out){
+        while(!datae||datae.status!==200||Request_timed_out){
             console.error("api.vkeys.cn Request failed")
             await delay(1000);
             datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[i].id}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
@@ -384,7 +384,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
         return qrcjson
     }
     //备用API，与前者相比能获取的歌词较少，大道至简（雾
-    let datas = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}`, {validateStatus: function (status) {return (status==500)||(status==404)||(status==200);}})
+    let datas = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}`, {validateStatus: function (status) {return (status==500)||(status==404)||(status==200);},timeout: 60000})
     if(datas.status===500||datas.status===404||datas.data.code===404){
         return{metadata:{zq:false}}
     }
@@ -518,7 +518,7 @@ async function metaload(musicid, name){
             dataSrcList.push(dataSrc);
             }
         });
-        const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' });
+        const imageResponse = await axios.get(dataSrcList[0], { responseType: 'arraybuffer' ,timeout: 30000});
         fs.writeFile(`./dist/musicfile/img/${filenamecl(albumName)}.jpg`, imageResponse.data, (err) => {//以专辑名作为名称，减少空间浪费
             picerr+=err?`${err}\n`:''
             yureliebiao += encodeURI(`${yuming}musicfile/img/${filenamecl(albumName)}.jpg`) +`\n`
