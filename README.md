@@ -1,6 +1,8 @@
-# Mrachritmo[^?name]
+# Mrachritmo
 
-<p align="left">——一个孤独的音乐播放库</p>
+Mrachritmo[^?name]
+
+<p align="right">——一个孤独的音乐播放库</p>
 
 [^?name]原旧名“Etmusic”与其它产品冲突，现已更改
 
