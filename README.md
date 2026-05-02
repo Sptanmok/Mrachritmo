@@ -93,7 +93,7 @@ npm run 163musicbuild
 
 会优先通过网易云音乐获取歌词，如果没有逐词会尝试使用QQ音乐歌词
 
-
+<!--
 
 如果出现错误Error: You installed esbuild for another platform than the one you're currently using.
 
@@ -104,7 +104,7 @@ npm rebuild esbuild
 ```
 
 来重新安装esbuild依赖
-
+-->
 ## 在你的网站内使用
 
 在网站内引用JS（在html audio以及文本元素之后，频谱条也一样）

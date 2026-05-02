@@ -1,5 +1,5 @@
 {
-  "name": "etmusic",
+  "name": "mrachritmo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sptanmok/Etmusic.git"
+    "url": "git+https://github.com/Sptanmok/Mrachritmo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Sptanmok/Etmusic/issues"
+    "url": "https://github.com/Sptanmok/Mrachritmo/issues"
   },
-  "homepage": "https://github.com/Sptanmok/Etmusic#readme",
+  "homepage": "https://github.com/Sptanmok/Mrachritmo#readme",
   "devDependencies": {
     "esbuild": "^0.25.11"
   },
