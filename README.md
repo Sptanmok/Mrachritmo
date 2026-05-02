@@ -4,7 +4,7 @@ Mrachritmo[^?name]
 
 <p align="right">——一个孤独的音乐播放库</p>
 
-[^?name]原旧名“Etmusic”与其它产品冲突，现已更改。Mrachritmo是мрачный的音译Mrachnyi与ritmo的融合
+[^?name]: 原旧名“Etmusic”名字冲突，现已更改。Mrachritmo是мрачный的音译Mrachnyi与ritmo的融合
 
 一个支持卡拉ok和逐字（或词）淡入淡出效果的Web字幕音乐播放器音乐库
 
