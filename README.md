@@ -1,4 +1,10 @@
-# Etmucis
+# Mrachritmo[^?name]
+
+<p align="left">——一个孤独的音乐播放库</p>
+
+[^?name]原旧名“Etmusic”与其它产品冲突，现已更改
+
+[^?name]Mrachritmo是мрачный的音译Mrachnyi与ritmo的融合
 
 一个支持卡拉ok和逐字（或词）淡入淡出效果的Web字幕音乐播放器音乐库
 
@@ -14,9 +20,7 @@ NodeJS>=20（完整的ES6模块支持，File API及现代JavaScript语法等）
 
 ## Demo演示
 
-1：https://emnasop.cn/dist/
-
-2：https://music.emnasop.cn/
+https://music.emnasop.cn/
 
 ## 效果
 
@@ -48,6 +52,7 @@ NodeJS>=20（完整的ES6模块支持，File API及现代JavaScript语法等）
 
 ## 搭建
 
+<!--
 ### 本地模式
 
 在src/musicfile目录放入音乐音频文件，并放入同名（不包含扩展名）的lrc增强版歌词文件
@@ -67,7 +72,7 @@ npm run build
 构建
 
 此时网站应构建成功，根目录输出在dist文件夹
-
+-->
 ### 云音乐模式
 
 在neteaseplaylist.txt中添加你的网易云音乐歌单链接或id（一行一个）

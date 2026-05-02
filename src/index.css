@@ -36,7 +36,8 @@ color: gray;
 text-decoration: underline;
 }
 a:visited {
-color: #cba6f7;
+/*color: #cba6f7;*/
+color: white;
 }
 .footer {
 display: flex;

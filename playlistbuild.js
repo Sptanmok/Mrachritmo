@@ -308,7 +308,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
     }
     //const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}&cid=${i}`)
     let Request_timed_out_b = false;
-    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
+    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
     .catch(err => {
     if (err.code === 'ECONNABORTED') {
         console.error('api.vkeys.cn请求超时！');
@@ -318,7 +318,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
     while(!nme||nme.status!==200||Request_timed_out_b){
         console.error("api.vkeys.cn Request failed_       sss")
         await delay(1000);
-        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
+        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
         Request_timed_out_b = true;
     }
     /*
