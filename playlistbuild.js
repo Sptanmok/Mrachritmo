@@ -13,11 +13,12 @@ const qqmusiclyric_api ='http://38.76.201.17:5000/'
 const qqyuan = true;//我们联合起来！r
 const yuming ='https://mrachritmo.emnasop.cn/'
 const indexpage_max = 50;
-const async_max = 2;//让暴风雨来得更猛烈些吧！
-const async_downfile_max = 1;
+const async_max = 5;//让暴风雨来得更猛烈些吧！
+const async_downfile_max = 3;
 const musicnum_max = 10000;
 const user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
 const user_agent_b = "hi"
+const jymaster = true;
 let no_wyy = 0;
 let sesc_ppe = 0;
 axios.defaults.timeout = 10000;
@@ -102,6 +103,7 @@ async function jxgd(listd){
                     json.metadata.ti = r.metadata.ti
                     json.metadata.ar = r.metadata.ar
                     json.metadata.al = r.metadata.al
+                    json.metadata.CLXIIIid = r.metadata.CLXIIIid
                     json.lyrict = r
                 }else if(jsonq){
                     json.lyricq = jsonq
@@ -134,7 +136,7 @@ async function jxgd(listd){
         fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.json`,JSON.stringify(json), "utf8")
         let ddyyweb = template
             .replace(/{{title}}/g, `${json.metadata.ti} - ${json.metadata.ar} · ${json.metadata.al}`)
-            .replace(/{{filename}}/g, `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)
+            .replace(/{{filename}}/g, `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.${jymaster?'flac':'mp3'}`)
             .replace('https://picsum.photos/400/400', `./musicfile/img/${filenamecl(json.metadata.al)}.jpg`)
         fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`, ddyyweb)
         //yureliebiao += encodeURI(`${yuming}${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`) + `\n`
@@ -165,9 +167,13 @@ async function downMusicFilePut(json,musicd){
         await delay(50);
     }
     async_downfile++;
-    if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)){
+    if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)&&!jymaster){
         const music = await axios.get(musicd.url, { responseType: 'arraybuffer' ,headers: {'user-agent': user_agent},timeout: 60000});
         fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
+    }
+    if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.flac`)&&jymaster){
+        const music = await axios.post("http://127.0.0.1:5000/download",{"id": json.metadata.CLXIIIid,"quality": "jymaster"}, { responseType: 'arraybuffer' ,headers: {'user-agent': user_agent},timeout: 60000});
+        fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.flac`,music.data)
     }
     async_downfile--;
 }
