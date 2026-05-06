@@ -1,6 +1,4 @@
-# Mrachritmo
-
-Mrachritmo[^?name]
+# Mrachritmo[^?name]
 
 <p align="right">——一个孤独的音乐播放库</p>
 
@@ -108,7 +106,7 @@ npm rebuild esbuild
 
 ## 使用Hi-Res音质
 
-你须在部署另一个项目https://github.com/Suxiaoqinx/Netease_url
+你须在本地部署另一个项目https://github.com/Suxiaoqinx/Netease_url
 
 并在playlistbuild.js中在顶部配置部分将jymaster常量设置为true
 
@@ -118,7 +116,7 @@ npm rebuild esbuild
 
 ## 在你的网站内使用
 
-在网站内引用JS（在html audio以及文本元素之后，频谱条也一样）
+在网站内引用JS（在html audio和文本以及频谱条canvas元素之后）
 
 ```html
 <script src="player.js"></script>
