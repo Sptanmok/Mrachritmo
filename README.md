@@ -162,7 +162,7 @@ audio标签示例格式
 
 [LxgwWenKai](https://github.com/lxgw/LxgwWenKai)等提供美观的字体
 
-API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)=>api.qijieya.cn/meting，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/)(2025\12\28报告目前存在偶尔请求出现502错误，求作者修复呜),[Netease_url](https://github.com/Suxiaoqinx/Netease_url)
+API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)=>api.qijieya.cn/meting，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/),[Netease_url](https://github.com/Suxiaoqinx/Netease_url)
 
 QQ音乐备用API修改于项目[QRCD - xmcp](https://github.com/xmcp/QRCD)
 
