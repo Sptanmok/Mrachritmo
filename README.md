@@ -105,6 +105,17 @@ npm rebuild esbuild
 
 来重新安装esbuild依赖
 -->
+
+## 使用Hi-Res音质
+
+你须在部署另一个项目https://github.com/Suxiaoqinx/Netease_url
+
+并在playlistbuild.js中在顶部配置部分将jymaster常量设置为true
+
+默认下载最高网易云音乐的最高品质，即24bit192kHz
+
+不推荐在公开网站使用此方法，大部分的服务商带宽无法支撑音频流畅播放
+
 ## 在你的网站内使用
 
 在网站内引用JS（在html audio以及文本元素之后，频谱条也一样）
@@ -151,7 +162,7 @@ audio标签示例格式
 
 [LxgwWenKai](https://github.com/lxgw/LxgwWenKai)等提供美观的字体
 
-API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)=>api.qijieya.cn/meting，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/)(2025\12\28报告目前存在偶尔请求出现502错误，求作者修复呜)
+API提供：~~music.163.com~~，meting.qjqq.cn>[Meting-API](https://github.com/injahow/meting-api)=>api.qijieya.cn/meting，api.vkeys.cn/v2/music/tencent/>[落月API - QQMusic](https://doc.vkeys.cn/)(2025\12\28报告目前存在偶尔请求出现502错误，求作者修复呜),[Netease_url](https://github.com/Suxiaoqinx/Netease_url)
 
 QQ音乐备用API修改于项目[QRCD - xmcp](https://github.com/xmcp/QRCD)
 

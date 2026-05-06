@@ -3,7 +3,7 @@ import fs from "fs";
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
 import * as cheerio from 'cheerio';
-import { console } from "inspector";
+//import { console } from "inspector";
 import querystring from 'querystring';
 //喵喵喵！
 //await fs.promises.rm('dist', { recursive: true, force: true });
@@ -12,16 +12,15 @@ const metingapi_url='https://api.qijieya.cn/meting/'//好人一生平安！
 const qqmusiclyric_api ='http://38.76.201.17:5000/'
 const qqyuan = true;//我们联合起来！r
 const yuming ='https://mrachritmo.emnasop.cn/'
-const indexpage_max = 50;
-const async_max = 5;//让暴风雨来得更猛烈些吧！
-const async_downfile_max = 3;
+const indexpage_max = 500;//每页歌曲数量，过大可能导致部分手机浏览器无法打开
+const async_max = 1;//让暴风雨来得更猛烈些吧！
+const async_downfile_max = 1;
 const musicnum_max = 10000;
 const user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
-const user_agent_b = "hi"
-const jymaster = true;
+const user_agent_b = "Sent by the https://github.com/Sptanmok/Mrachritmo project, thanks for your service!"
+const jymaster = false;
 let no_wyy = 0;
 let sesc_ppe = 0;
-axios.defaults.timeout = 10000;
 //↑↑↑配置处↑↑↑
 
 if (!fs.existsSync("dist")) fs.mkdirSync("dist", { recursive: true });
@@ -167,13 +166,19 @@ async function downMusicFilePut(json,musicd){
         await delay(50);
     }
     async_downfile++;
-    if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)&&!jymaster){
+    if(!fs.existsSync(`./dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`)&&!jymaster){
         const music = await axios.get(musicd.url, { responseType: 'arraybuffer' ,headers: {'user-agent': user_agent},timeout: 60000});
-        fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
+        fs.writeFileSync(`./dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
     }
-    if(!fs.existsSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.flac`)&&jymaster){
-        const music = await axios.post("http://127.0.0.1:5000/download",{"id": json.metadata.CLXIIIid,"quality": "jymaster"}, { responseType: 'arraybuffer' ,headers: {'user-agent': user_agent},timeout: 60000});
-        fs.writeFileSync(`dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.flac`,music.data)
+    if(!fs.existsSync(`./dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.flac`)&&jymaster){
+        const music = await axios.post("http://127.0.0.1:5000/download",{"id": json.metadata.CLXIIIid,"quality": "jymaster"}, {validateStatus: function (status) {return (status==200)||(status==404);}, responseType: 'arraybuffer' ,headers: {'user-agent': user_agent},timeout: 500000});
+        if(music.status===404){
+            const music = await axios.get(musicd.url, { responseType: 'arraybuffer' ,headers: {'user-agent': user_agent},timeout: 60000});
+            fs.writeFileSync(`./dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.mp3`,music.data)
+            fs.writeFileSync(`./dist/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`,fs.readFileSync(`./dist/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.html`,"utf8").replace("flac", "mp3"))
+        }else{
+            fs.writeFileSync(`./dist/musicfile/${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}.flac`,music.data)
+        }
     }
     async_downfile--;
 }
@@ -314,7 +319,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
     }
     //const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}&cid=${i}`)
     let Request_timed_out_b = false;
-    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
+    let nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b},timeout: 10000})
     .catch(err => {
     if (err.code === 'ECONNABORTED') {
         console.error('api.vkeys.cn请求超时！');
@@ -324,7 +329,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
     while(!nme||nme.status!==200||Request_timed_out_b){
         console.error("api.vkeys.cn Request failed_       sss")
         await delay(1000);
-        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
+        nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b},timeout: 10000})
         Request_timed_out_b = true;
     }
     /*
@@ -346,9 +351,9 @@ async function QQJsonGET(name,artist,album,yrcjson){
     let qrcjson;
     let id;
     //不是自己的API，不寒碜，干脆全部试一遍awa
-    for(let i=0;i<nme.data.data.length&&i<2;i++){//添加小于2以屏蔽后面准确度的不高的结果
+    for(let i=0;i<nme.data.data.length&&i<1;i++){//添加小于2以屏蔽后面准确度的不高的结果
         let Request_timed_out = false;
-        let datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[i].id}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})//api有时会出现502错误
+        let datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[i].id}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b},timeout: 10000})//api有时会出现502错误
         .catch(err => {
         if (err.code === 'ECONNABORTED') {
             console.error('api.vkeys.cn请求超时！');
@@ -359,7 +364,7 @@ async function QQJsonGET(name,artist,album,yrcjson){
         while(!datae||datae.status!==200||Request_timed_out){
             console.error("api.vkeys.cn Request failed")
             await delay(1000);
-            datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[i].id}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b}})
+            datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[i].id}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b},timeout: 10000})
             .catch(err => {
             if (err.code === 'ECONNABORTED') {
                 console.error('api.vkeys.cn请求超时！');
@@ -591,7 +596,7 @@ function sjzzh(sjzx){
     const zzxs = decimal.toFixed(3)
     return `${min}:${sec}.${zzxs}`
 }
-*/
+
 axiosRetry(axios, {
   //不包括api.vkeys.cn api
   retries: 3,
@@ -605,3 +610,4 @@ axiosRetry(axios, {
   },
   shouldResetTimeout: true
 });
+*/
