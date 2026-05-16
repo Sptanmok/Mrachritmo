@@ -332,24 +332,48 @@ async function QQJsonGET(name,artist,album,yrcjson){
         nme = await axios.get(`https://api.vkeys.cn/v2/music/tencent/search/song?word=${encodeURIComponent(name)} ${encodeURIComponent(artist)}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b},timeout: 10000})
         Request_timed_out_b = true;
     }
-    /*
-    准确度不高已被暂时遗弃
-    let name_pipei_max = 0;
     let mi;
-    for(let i = 0;true;i++){
-        if(!nme.data.data[i])break;
-        let aru = similar(nme.data.data[i].singer,artist)
-        let tiu = similar(nme.data.data[i].name,name)
-        if(aru+tiu>name_pipei_max){//&& tiu>50 && alu>50
-            name_pipei_max = aru
-            mi = i
-        }
-    }*/
-    
     if(!nme.data.data||!Array.isArray(nme.data.data)) {sadee = `${sadee}${name} - ${artist} ~ ${album}\n`;return};
+    let aru = stringSimilarity(nme.data.data[0].singer,artist)
+    let tiu = stringSimilarity(nme.data.data[0].name,name)
+    let alu = stringSimilarity(nme.data.data[0].album,album)
+    if(aru<0.5&&tiu<0.8&&alu<0.8){
+        return {metadata:{zq:false}};
+    }
+    let Request_timed_out = false;
+    let datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[0].id}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b},timeout: 10000})//api有时会出现502错误
+    .catch(err => {
+    if (err.code === 'ECONNABORTED') {
+        console.error('api.vkeys.cn请求超时！');
+        Request_timed_out = true;
+    }
+    });
+
+    while(!datae||datae.status!==200||Request_timed_out){
+        console.error("api.vkeys.cn Request failed")
+        await delay(1000);
+        datae = await axios.get(`https://api.vkeys.cn/v2/music/tencent/lyric?id=${nme.data.data[0].id}`,{validateStatus: function (status) {return (status==200)||(status==502)||(status==500);},headers: {'user-agent': user_agent_b},timeout: 10000})
+        .catch(err => {
+        if (err.code === 'ECONNABORTED') {
+            console.error('api.vkeys.cn请求超时！');
+            Request_timed_out = true;
+        }
+        });
+    }
+    if(!datae.data.data) return;
+    let qrc={};
+    qrc.orig = datae.data.data.yrc
+    qrc.ts = datae.data.data.trans
+    qrc.roma = datae.data.data.roma
+    let qrcjson = QrcToJson(qrc,nme.data.data[0].id,0)
+    
+    
+    
+    /*
     let pipei_max = 0;
     let qrcjson;
     let id;
+    
     //不是自己的API，不寒碜，干脆全部试一遍awa
     for(let i=0;i<nme.data.data.length&&i<1;i++){//添加小于2以屏蔽后面准确度的不高的结果
         let Request_timed_out = false;
@@ -391,13 +415,14 @@ async function QQJsonGET(name,artist,album,yrcjson){
             id=nme.data.data[i].id;
         }
     }
+    */
     if(qrcjson){
         return qrcjson
     }
     //备用API，与前者相比能获取的歌词较少，大道至简（雾
     let datas = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}`, {validateStatus: function (status) {return (status==500)||(status==404)||(status==200);},timeout: 60000})
     if(datas.status===500||datas.status===404||datas.data.code===404){
-        return{metadata:{zq:false}}
+        return {metadata:{zq:false}};
     }
     qrcjson = QrcToJson(datas.data,datas.data.id,1)
     qrcjson.metadata.apimode = 2;
@@ -537,46 +562,6 @@ async function metaload(musicid, name){
     }
     return {albumName,albumLink};
 }
-function similar(s, t) {
-  if (!s || !t) {
-    return 0
-  }
-  if(s === t){
-    return 100;
-  }
-  var l = s.length > t.length ? s.length : t.length
-  var n = s.length
-  var m = t.length
-  var d = []
-  let f = 2
-  var min = function (a, b, c) {
-    return a < b ? (a < c ? a : c) : (b < c ? b : c)
-  }
-  var i, j, si, tj, cost
-  if (n === 0) return m
-  if (m === 0) return n
-  for (i = 0; i <= n; i++) {
-    d[i] = []
-    d[i][0] = i
-  }
-  for (j = 0; j <= m; j++) {
-    d[0][j] = j
-  }
-  for (i = 1; i <= n; i++) {
-    si = s.charAt(i - 1)
-    for (j = 1; j <= m; j++) {
-      tj = t.charAt(j - 1)
-      if (si === tj) {
-        cost = 0
-      } else {
-        cost = 1
-      }
-      d[i][j] = min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost)
-    }
-  }
-  let res = (1 - d[n][m] / l) *100
-  return res.toFixed(f)
-}
 fs.copyFileSync("src/player2.css", "dist/player2.css");
 fs.copyFileSync("src/index.css", "dist/index.css");
 fs.copyFileSync("src/DSC00485.webp", "dist/DSC00485.webp");
@@ -611,3 +596,33 @@ axiosRetry(axios, {
   shouldResetTimeout: true
 });
 */
+function stringSimilarity(a, b) {
+    const strA = a == null ? '' : String(a);
+    const strB = b == null ? '' : String(b);
+    const lenA = strA.length, lenB = strB.length;
+    // 空串情况
+    if (lenA === 0 && lenB === 0) return 1;
+    if (lenA === 0 || lenB === 0) return 0;
+
+    // 前一行的编辑距离数组，初始为0..lenB
+    let prev = Array.from({ length: lenB + 1 }, (_, i) => i);
+    let curr = new Array(lenB + 1);
+
+    for (let i = 1; i <= lenA; i++) {
+        curr[0] = i; // 第一列值 = i（删除a的字符数）
+        for (let j = 1; j <= lenB; j++) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            // 插入、删除、替换的最小代价
+            curr[j] = Math.min(
+                curr[j - 1] + 1,   // 插入
+                prev[j] + 1,       // 删除
+                prev[j - 1] + cost // 替换
+            );
+        }
+        // 交换当前行与前行，复用数组
+        [prev, curr] = [curr, prev];
+    }
+
+    const distance = prev[lenB]; // 最终编辑距离
+    return 1 - distance / Math.max(lenA, lenB);
+}
