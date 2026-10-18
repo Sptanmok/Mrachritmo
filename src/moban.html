@@ -5,6 +5,7 @@
 <link rel="preload" href="./LXGWWenKai-Light.woff2" as="font" type="font/woff2" crossorigin="">
 <link rel="stylesheet" type="text/css" href="player2.css">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mrachritmo</title>
 </head>
 <body>
@@ -18,8 +19,73 @@
       </div>
       <p type="text" id="romalyric" style="font-size:10px;line-height:1px;"></p>
       <p type="text" id="pairlyric"></p>
-      <br />
-      <audio id="audio" controls style="width:100%"></audio>
+      <audio id="audio" preload="metadata"></audio>
+      <div id="custom-audio-player" class="cap-player" role="region" aria-label="音频播放控制">
+        <div class="cap-timeline-row">
+          <span id="cap-current-time" class="cap-time cap-current-time">00:00</span>
+          <div class="cap-progress-wrapper">
+            <input id="cap-seek-bar" class="cap-range cap-seek-bar" type="range" min="0" max="100" value="0" step="0.1" aria-label="播放进度" />
+          </div>
+          <span id="cap-duration-time" class="cap-time cap-duration-time">00:00</span>
+        </div>
+        <div class="cap-controls-row">
+          <div class="cap-group cap-modes-group">
+            <button id="cap-lyric-mode-btn" class="cap-btn cap-mode-btn" type="button" aria-label="切换歌词模式" title="切换歌词模式 (按T键)">
+              <svg class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:subtitles-outline" aria-hidden="true">
+                <path fill="currentColor" d="M19 4H5c-1.11 0-2 .9-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 14H5V6h14zm-9-4H6v-2h4zm8 0h-6v-2h6zm-4-4H6V8h8zm6 0h-4V8h4z"/>
+              </svg>
+              <span id="cap-lyric-mode-text" class="cap-badge">K1</span>
+            </button>
+            <button id="cap-vis-mode-btn" class="cap-btn cap-mode-btn" type="button" aria-label="切换频谱可视化" title="切换频谱可视化 (按Y键)">
+              <svg class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:equalizer" aria-hidden="true">
+                <path fill="currentColor" d="M10 20h4V4h-4zm-6 0h4v-8H4zM16 9v11h4V9z"/>
+              </svg>
+              <span id="cap-vis-mode-text" class="cap-badge">S1</span>
+            </button>
+          </div>
+          <div class="cap-group cap-playback-group">
+            <button id="cap-prev-btn" class="cap-btn cap-step-btn" type="button" aria-label="快退5秒" title="快退 5 秒 (左方向键)">
+              <svg class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:skip-previous" aria-hidden="true">
+                <path fill="currentColor" d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+              </svg>
+            </button>
+            <button id="cap-play-btn" class="cap-btn cap-play-btn" type="button" aria-label="播放/暂停" title="播放 / 暂停 (空格键)">
+              <svg id="cap-icon-play" class="cap-icon cap-icon-main" viewBox="0 0 24 24" data-icon="mdi:play" aria-hidden="true">
+                <path fill="currentColor" d="M8 5v14l11-7z"/>
+              </svg>
+              <svg id="cap-icon-pause" class="cap-icon cap-icon-main" viewBox="0 0 24 24" data-icon="mdi:pause" aria-hidden="true" style="display: none;">
+                <path fill="currentColor" d="M14 19h4V5h-4M6 19h4V5H6z"/>
+              </svg>
+            </button>
+            <button id="cap-next-btn" class="cap-btn cap-step-btn" type="button" aria-label="快进5秒" title="快进 5 秒 (右方向键)">
+              <svg class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:skip-next" aria-hidden="true">
+                <path fill="currentColor" d="M16 6h2v12h-2zm-8.5 6L15 6v12z"/>
+              </svg>
+            </button>
+            <button id="cap-replay-btn" class="cap-btn cap-step-btn" type="button" aria-label="重新播放" title="重新从头播放">
+              <svg class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:replay" aria-hidden="true">
+                <path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6s-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8s-3.58-8-8-8z"/>
+              </svg>
+            </button>
+          </div>
+          <div class="cap-group cap-volume-group">
+            <button id="cap-volume-btn" class="cap-btn cap-volume-btn" type="button" aria-label="音量/静音" title="静音 / 恢复音量 (上下方向键调节)">
+              <svg id="cap-icon-vol-high" class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:volume-high" aria-hidden="true">
+                <path fill="currentColor" d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02M3 9v6h4l5 5V4L7 9z"/>
+              </svg>
+              <svg id="cap-icon-vol-med" class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:volume-medium" aria-hidden="true" style="display: none;">
+                <path fill="currentColor" d="M5 9v6h4l5 5V4L9 9zm11.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02"/>
+              </svg>
+              <svg id="cap-icon-vol-mute" class="cap-icon" viewBox="0 0 24 24" data-icon="mdi:volume-mute" aria-hidden="true" style="display: none;">
+                <path fill="currentColor" d="M12 4L9.91 6.09L12 8.18M4.27 3L3 4.27l4.73 4.73H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9zM19 12c0 .82-.15 1.61-.41 2.34l1.53 1.53c.56-1.17.88-2.48.88-3.87c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71m-2.5 0c0-.53-.12-1.03-.3-1.5l1.65-1.65c.42.94.65 1.99.65 3.15z"/>
+              </svg>
+            </button>
+            <div class="cap-volume-wrapper">
+              <input id="cap-volume-slider" class="cap-range cap-volume-slider" type="range" min="0" max="1" step="0.01" value="1" aria-label="音量调节" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 <div class="notification">
   <p>小提示：按t键（小写）可以切换歌词逐字模式哦</p>

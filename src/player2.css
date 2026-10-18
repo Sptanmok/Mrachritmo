@@ -1,78 +1,468 @@
-body{
-	background-image:url('./DSC00485.webp');
-	background-repeat: no-repeat;
-	background-size: cover;
-	font-family: 'LXGW WenKai Light', 'Saira Light', sans-serif;
+/* ==========================================================================
+   Mrachritmo Player Stylesheet
+   兼容更老版本 Chrome (WebKit / Blink) 且优化视觉层级与自实现音频控制栏
+   ========================================================================== */
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./DSC00485.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  font-family: 'LXGW WenKai Light', 'Saira Light', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
+  margin: 0;
+  padding: 24px 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
-  padding: 20px;
 }
-.main{
-	width: 100%;
-	max-width: 800px;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-	backdrop-filter: blur(7px);
-	background-color: rgba(255, 255, 255, 0.3);
-  line-height:40px;
-  padding: 20px 25px;
+
+.main {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  line-height: 1.6;
 }
-.img{
-    border: 1.5px solid rgba(0, 0, 0, 0.85);
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
+
+.img {
+  max-width: 100%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border: 1.5px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  margin-bottom: 20px;
 }
+
 .player {
-   clear:both
+  clear: both;
+  width: 100%;
+}
+
+/* 彻底隐藏原生音频用户代理控件，由自实现UI完全接管 */
+audio {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   自定义音频播放器面板 (替换浏览器默认用户代理样式表)
+   ========================================================================== */
+
+.cap-player {
+  width: 100%;
+  margin-top: 16px;
+  padding: 16px 20px;
+  background-color: rgba(24, 26, 34, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: #f8fafc;
+  -webkit-user-select: none;
+  user-select: none;
+  line-height: normal;
+}
+
+/* 时间轴与进度条行 */
+.cap-timeline-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.cap-time {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+  color: rgba(255, 255, 255, 0.88);
+  min-width: 44px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cap-current-time {
+  text-align: left;
+  margin-right: 12px;
+}
+
+.cap-duration-time {
+  text-align: right;
+  margin-left: 12px;
+}
+
+.cap-progress-wrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 20px;
+}
+
+/* 自实现滑块 (兼容 WebKit / Chrome 早期版本) */
+.cap-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: rgba(255, 255, 255, 0.22);
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+  vertical-align: middle;
+  -webkit-transition: height 0.15s ease, background-color 0.15s ease;
+  transition: height 0.15s ease, background-color 0.15s ease;
+}
+
+.cap-range:hover {
+  height: 8px;
+}
+
+.cap-range::-webkit-slider-runnable-track {
+  height: 100%;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: transparent;
+  border: none;
+}
+
+.cap-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid rgba(15, 23, 42, 0.85);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  margin-top: -3px;
+  -webkit-transition: -webkit-transform 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.cap-range:hover::-webkit-slider-thumb,
+.cap-range:active::-webkit-slider-thumb {
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+  background: #38bdf8;
+  border-color: #0369a1;
+}
+
+.cap-range:focus {
+  outline: none;
+}
+
+/* 控制按钮栏 */
+.cap-controls-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cap-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* 老版本 Chrome flex 不支持 gap，采用子元素 margin 确保百分之百兼容 */
+.cap-modes-group .cap-btn {
+  margin-right: 8px;
+}
+
+.cap-playback-group .cap-btn {
+  margin: 0 4px;
+}
+
+.cap-volume-group .cap-volume-btn {
+  margin-right: 8px;
+}
+
+/* 按钮通用样式 */
+.cap-btn {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: background-color 0.15s ease, border-color 0.15s ease, -webkit-transform 0.15s ease, -webkit-box-shadow 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.cap-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.45);
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.cap-btn:active {
+  -webkit-transform: translateY(1px) scale(0.96);
+  transform: translateY(1px) scale(0.96);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.cap-btn:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* 主播放/暂停按钮 */
+.cap-play-btn {
+  width: 44px;
+  height: 44px;
+  background: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.16) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.16) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.cap-play-btn:hover {
+  background: -webkit-linear-gradient(135deg, rgba(56, 189, 248, 0.45) 0%, rgba(14, 165, 233, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.45) 0%, rgba(14, 165, 233, 0.3) 100%);
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+/* 步进与重播控制按键 */
+.cap-step-btn {
+  width: 34px;
+  height: 34px;
+}
+
+/* 模式切换按键 */
+.cap-mode-btn {
+  width: auto;
+  min-width: 36px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+}
+
+.cap-badge {
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 5px;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
+/* 音量控制区 */
+.cap-volume-btn {
+  width: 34px;
+  height: 34px;
+}
+
+.cap-volume-wrapper {
+  width: 76px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 20px;
+}
+
+.cap-volume-slider {
+  width: 100%;
+}
+
+/* Iconify 图标规范样式 */
+.cap-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+  pointer-events: none;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.cap-icon-main {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   歌词文字动效与基础排版
+   ========================================================================= */
+
+#lyric {
+  margin: 10px 0;
+  font-size: 1.85rem;
+  line-height: 1.4;
+  min-height: 2.8rem;
+  text-align: center;
+  word-break: break-word;
+}
+
+#romalyric {
+  font-size: 11px;
+  line-height: 1.3;
+  color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+  margin: 4px 0;
+  min-height: 14px;
+}
+
+#pairlyric {
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  margin: 4px 0 16px 0;
+  min-height: 20px;
 }
 
 .textt span {
-    display: inline-block;
-    -webkit-background-clip: text;
-    background-clip: text;
-    transition: --progress 0.1s ease;
-	white-space: normal;
-	opacity: 0;
-	transform: translate(var(--inX, 0px), var(--inY, -13.33px));
-	will-change: transform, opacity;
-	font-weight: bold;
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-transition: --progress 0.1s ease;
+  transition: --progress 0.1s ease;
+  white-space: normal;
+  opacity: 0;
+  -webkit-transform: translate(var(--inX, 0px), var(--inY, -13.33px));
+  transform: translate(var(--inX, 0px), var(--inY, -13.33px));
+  will-change: transform, opacity;
+  font-weight: bold;
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    /*transform: translate(var(--inX, 0px), var(--inY, -13.33px));*/
-    /*filter: blur(2px);
-    font-size:90%;*/
+    -webkit-transform: translate(var(--inX, 0px), var(--inY, -20px));
     transform: translate(var(--inX, 0px), var(--inY, -20px));
   }
   100% {
     opacity: 1;
-    transform: translate(0,0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(var(--inX, 0px), var(--inY, -20px));
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
   }
 }
 
 @keyframes fadeOutdown {
   0% {
     opacity: 1;
-    transform: translate(0,0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
   100% {
     opacity: 0;
-    /*filter: blur(2px);
-    font-size:110%;*/
+    -webkit-transform: translate(var(--outX, 0px), var(--outY, 20px));
     transform: translate(var(--outX, 0px), var(--outY, 20px));
   }
 }
+
+@-webkit-keyframes fadeOutdown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(var(--outX, 0px), var(--outY, 20px));
+  }
+}
+
 .fade-out {
+  -webkit-animation: fadeOutdown var(--outTime, 0.2s) forwards;
   animation: fadeOutdown var(--outTime, 0.2s) forwards;
 }
+
 .fade-in {
+  -webkit-animation: fadeInUp var(--inTime, 0.9s) forwards;
   animation: fadeInUp var(--inTime, 0.9s) forwards;
 }
+
 .canvasb-top {
   position: fixed;
   top: 0;
@@ -81,6 +471,7 @@ body{
   height: 250px;
   z-index: -1;
 }
+
 .canvasb-ntop {
   position: fixed;
   bottom: 0;
@@ -89,17 +480,21 @@ body{
   height: 250px;
   z-index: -1;
 }
+
 .lowfadeinzb {
-    display: inline-block;
-    -webkit-background-clip: text;
-    background-clip: text;
-    transition: --progress 0.1s ease;
-	white-space: normal;
-	opacity: 0;
-	transform: translateY(-13.33px);
-	will-change: transform, opacity;
-	font-weight: bold;
+  display: inline-block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-transition: --progress 0.1s ease;
+  transition: --progress 0.1s ease;
+  white-space: normal;
+  opacity: 0;
+  -webkit-transform: translateY(-13.33px);
+  transform: translateY(-13.33px);
+  will-change: transform, opacity;
+  font-weight: bold;
 }
+
 @font-face {
   font-family: 'Saira Light';
   src: url('./Saira-Light.woff2') format('woff2');
@@ -115,19 +510,40 @@ body{
   font-style: normal;
   font-display: swap;
 }
+
 .text {
+  -webkit-animation: floatOnWater 19s ease-in-out infinite;
   animation: floatOnWater 19s ease-in-out infinite;
 }
+
 .text span {
-    display: inline-block;
-    background: linear-gradient(to right, #000000 var(--progress, 0%), #818282 var(--progress, 0%));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: --progress 0.1s ease;
-    white-space: normal;
-	font-weight: bold;
+  display: inline-block;
+  background: -webkit-linear-gradient(left, #000000 var(--progress, 0%), #818282 var(--progress, 0%));
+  background: linear-gradient(to right, #000000 var(--progress, 0%), #818282 var(--progress, 0%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-transition: --progress 0.1s ease;
+  transition: --progress 0.1s ease;
+  white-space: normal;
+  font-weight: bold;
 }
+
+@-webkit-keyframes floatOnWater {
+  0%, 100% {
+    -webkit-transform: translateY(0) rotate(0.7deg);
+  }
+  25% {
+    -webkit-transform: translateY(-10px) rotate(-0.7deg);
+  }
+  50% {
+    -webkit-transform: translateY(-5px) rotate(0.8deg);
+  }
+  75% {
+    -webkit-transform: translateY(-10px) rotate(-0.7deg);
+  }
+}
+
 @keyframes floatOnWater {
   0%, 100% {
     transform: translateY(0) rotate(0.7deg);
@@ -142,103 +558,151 @@ body{
     transform: translateY(-10px) rotate(-0.7deg);
   }
 }
+
+/* 提示弹窗 */
 .notification {
-	position: fixed;
-	bottom: 20px;
-	right: -440px;
-	background-color: #f8f9fa;
-	padding: 16px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	width: 400px;
-    border-radius: 15px;
-	animation: tc 3s;
+  position: fixed;
+  bottom: 20px;
+  right: -440px;
+  background-color: rgba(24, 26, 32, 0.88);
+  color: #f8fafc;
+  padding: 14px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  width: 380px;
+  max-width: calc(100vw - 40px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-animation: tc 3s;
+  animation: tc 3s;
+  z-index: 100;
 }
+
+.notification p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@-webkit-keyframes tc {
+  0% {
+    right: -440px;
+  }
+  20%, 80% {
+    right: 20px;
+  }
+  100% {
+    right: -440px;
+  }
+}
+
 @keyframes tc {
-	0% {
-	    right: -440px;
-	}
-	20% {
-		right: 20px;
-	}
-	80% {
-		right: 20px;
-	}
-	100% {
-		right: -440px;
-	}
+  0% {
+    right: -440px;
+  }
+  20%, 80% {
+    right: 20px;
+  }
+  100% {
+    right: -440px;
+  }
 }
+
 @keyframes shake {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  10% {
-    transform: translate(5px, -5px) rotate(3deg);
-  }
-  20% {
-    transform: translate(-10px, 8px) rotate(-3deg);
-  }
-  30% {
-    transform: translate(7px, 6px) rotate(2deg);
-  }
-  40% {
-    transform: translate(-3px, -4px) rotate(-5deg);
-  }
-  50% {
-    transform: translate(6px, -7px) rotate(4deg);
-  }
-  60% {
-    transform: translate(-8px, 5px) rotate(1deg);
-  }
-  70% {
-    transform: translate(4px, -3px) rotate(-2deg);
-  }
-  80% {
-    transform: translate(-6px, 4px) rotate(6deg);
-  }
-  90% {
-    transform: translate(2px, -2px) rotate(-4deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
+  0% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(5px, -5px) rotate(3deg); }
+  20% { transform: translate(-10px, 8px) rotate(-3deg); }
+  30% { transform: translate(7px, 6px) rotate(2deg); }
+  40% { transform: translate(-3px, -4px) rotate(-5deg); }
+  50% { transform: translate(6px, -7px) rotate(4deg); }
+  60% { transform: translate(-8px, 5px) rotate(1deg); }
+  70% { transform: translate(4px, -3px) rotate(-2deg); }
+  80% { transform: translate(-6px, 4px) rotate(6deg); }
+  90% { transform: translate(2px, -2px) rotate(-4deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
+
 @keyframes translation_shake {
-  0% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(5px, -5px);
-  }
-  20% {
-    transform: translate(-10px, 8px);
-  }
-  30% {
-    transform: translate(7px, 6px);
-  }
-  40% {
-    transform: translate(-3px, -4px);
-  }
-  50% {
-    transform: translate(6px, -7px);
-  }
-  60% {
-    transform: translate(-8px, 5px);
-  }
-  70% {
-    transform: translate(4px, -3px);
-  }
-  80% {
-    transform: translate(-6px, 4px);
-  }
-  90% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(5px, -5px); }
+  20% { transform: translate(-10px, 8px); }
+  30% { transform: translate(7px, 6px); }
+  40% { transform: translate(-3px, -4px); }
+  50% { transform: translate(6px, -7px); }
+  60% { transform: translate(-8px, 5px); }
+  70% { transform: translate(4px, -3px); }
+  80% { transform: translate(-6px, 4px); }
+  90% { transform: translate(2px, -2px); }
+  100% { transform: translate(0, 0); }
 }
+
+@-webkit-keyframes translation_shake {
+  0% { -webkit-transform: translate(0, 0); }
+  10% { -webkit-transform: translate(5px, -5px); }
+  20% { -webkit-transform: translate(-10px, 8px); }
+  30% { -webkit-transform: translate(7px, 6px); }
+  40% { -webkit-transform: translate(-3px, -4px); }
+  50% { -webkit-transform: translate(6px, -7px); }
+  60% { -webkit-transform: translate(-8px, 5px); }
+  70% { -webkit-transform: translate(4px, -3px); }
+  80% { -webkit-transform: translate(-6px, 4px); }
+  90% { -webkit-transform: translate(2px, -2px); }
+  100% { -webkit-transform: translate(0, 0); }
+}
+
 .shake-text {
   display: inline-block;
-  animation: shake_translation 20s ease-in-out infinite;
+  -webkit-animation: translation_shake 20s ease-in-out infinite;
+  animation: translation_shake 20s ease-in-out infinite;
+}
+
+/* 响应式断点 (移动端适配) */
+@media (max-width: 620px) {
+  body {
+    padding: 16px 10px;
+  }
+
+  .main {
+    padding: 18px 16px;
+  }
+
+  .img {
+    width: 280px;
+    height: 280px;
+  }
+
+  #lyric {
+    font-size: 1.45rem;
+  }
+
+  .cap-controls-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .cap-playback-group {
+    order: 1;
+    -webkit-order: 1;
+    margin-bottom: 14px;
+  }
+
+  .cap-modes-group {
+    order: 2;
+    -webkit-order: 2;
+    margin-bottom: 12px;
+  }
+
+  .cap-volume-group {
+    order: 3;
+    -webkit-order: 3;
+  }
+
+  .cap-volume-wrapper {
+    width: 100px;
+  }
 }

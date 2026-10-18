@@ -43,4 +43,6 @@ start().catch((error) => {
   lyric.textContent = error.message;
   audio.hidden = true;
   cover.hidden = true;
+  const customPlayer = document.getElementById("custom-audio-player");
+  if (customPlayer) customPlayer.style.display = "none";
 });
