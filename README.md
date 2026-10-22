@@ -104,6 +104,21 @@ npm run 163musicupdate
 该命令使用 `dist/.playlist-state.json` 保存歌单快照，只处理新增或发生变化的歌曲；
 歌单请求全部失败时不会覆盖现有资源。
 
+歌词匹配逻辑位于 `src/lyric/`，可单独测试：
+
+```
+npm test
+node qqtest.js "Lemon" "米津玄師" "Lemon" --id=536622304
+```
+
+`qqtest.js` 只请求搜索/歌词接口，不下载音频。相关环境变量：
+
+- `QQMUSIC_API`：本地 QQ 音乐 API，默认 `http://127.0.0.1:3030`
+- `QQMUSIC_TIMEOUT`：单次请求超时毫秒数，默认 `8000`
+- `QQ_LYRIC_CACHE=0`：关闭 `.lyric-cache/` 磁盘缓存
+- `SKIP_ARTWORK=1`：跳过专辑封面下载
+
+
 <!--
 
 如果出现错误Error: You installed esbuild for another platform than the one you're currently using.
