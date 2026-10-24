@@ -1,4 +1,5 @@
 dist/
+.lyric-cache/
 gw/
 node_modules/
 nonono.txt

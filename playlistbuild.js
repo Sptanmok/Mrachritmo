@@ -4,12 +4,13 @@ import axiosRetry from 'axios-retry';
 import * as cheerio from 'cheerio';
 import { pathToFileURL } from 'url';
 import { escapeHtml, prepareDist, songHref, writeSongCatalog } from "./build-shared.js";
+import { QQJsonGET } from "./src/lyric/qq.js";
+import { normalizeText } from "./src/lyric/text.js";
 //import { console } from "inspector";
 //喵喵喵！
 //await fs.promises.rm('dist', { recursive: true, force: true });
 const metingapi_url='https://api.qijieya.cn/meting/'//好人一生平安！
 //const metingapi_url='https://api.injahow.cn/meting/'//好人一生平安！
-const qqmusiclyric_api ='http://38.76.201.17:5000/'
 const qqmusic_api ="http://127.0.0.1:3030"
 const qqyuan = true;//我们联合起来！r
 const yuming ='https://mrachritmo.emnasop.cn/'
@@ -285,6 +286,7 @@ async function YrcToJson(musicid, meta){
         json.metadata.ar = meta.artist
         json.metadata.al = metadata_.albumName
         json.metadata.CLXIIIid = musicid
+        json.metadata.duration = metadata_.duration || 0
         json.metadata.nolyric = true
         return json;
     }
@@ -349,349 +351,36 @@ async function YrcToJson(musicid, meta){
     json.metadata.ar = meta.artist
     json.metadata.al = metadata_.albumName
     json.metadata.CLXIIIid = musicid
-    json.metadata.roma = pdjg.romaif
-    json.metadata.pair = pdjg.pairif
+    const lastLine = json.lyrics[json.lyrics.length-1];
+    const lastWord = lastLine?.etext?.[lastLine.etext.length-1];
+    json.metadata.duration = metadata_.duration || (lastLine ? lastLine.time + (lastWord?.Duration || 0) : 0)
+    json.metadata.zq = json.lyrics.some(line => line.etext && line.etext.length > 0)
+    json.metadata.roma = json.lyrics.some(line => !!line.romanizationslyric)
+    json.metadata.pair = json.lyrics.some(line => !!line.pairlyric)
     return json;
 }
 let sade ='';
 let sadee ='';
-async function QQJsonGET(name,artist,album,yrcjson){
-    function QrcMatchingYrcTimeline(qrcjson, yrcjson){
-        let Num_matches = 0;
-        for(const liney of yrcjson){
-            for(const lineq of qrcjson){
-                if(Math.abs(liney.time - lineq.time) < 1){
-                    Num_matches++;
-                    break;
-                }
-                if(lineq.time > liney.time){
-                    break;
-                }
-            }
-        }
-        return Num_matches;
-    }
-    function QrcMatchingYrcTimelineOffset(qrcjson, yrcjson){
-        let matches = [];
-        for(let i=0;i<yrcjson.length;i++){
-            const liney = yrcjson[i];
-            if(!liney.text || liney.text.length < 2) continue;
-            let best_sim = 0;
-            let nq_i = -1;
-            for(let c=0;c<qrcjson.length;c++){
-                const lineq = qrcjson[c];
-                if(!lineq.text || lineq.text.length < 2) continue;
-                const sim = stringSimilarity(liney.text, lineq.text);
-                if(sim > best_sim){
-                    best_sim = sim;
-                    nq_i = c;
-                }
-            }
-            if(best_sim > 0.5 && nq_i >= 0){
-                matches.push({
-                    sim: best_sim,
-                    offset: parseFloat((liney.time - qrcjson[nq_i].time).toFixed(2))
-                });
-            }
-        }
-        if(matches.length < 3){
-            console.log("Not enough matches for offset");
-            return 0;
-        }
-        matches.sort((a, b) => b.sim - a.sim);
-        let top = matches.slice(0, Math.min(10, matches.length));
-        let offsets = top.map(m => m.offset);
-        offsets.sort((a, b) => a - b);
-        let median = offsets.length % 2
-            ? offsets[Math.floor(offsets.length/2)]
-            : (offsets[offsets.length/2 - 1] + offsets[offsets.length/2]) / 2;
-        let mean = offsets.reduce((s, v) => s + v, 0) / offsets.length;
-        let variance = offsets.reduce((s, v) => s + (v - mean) ** 2, 0) / offsets.length;
-        let stddev = Math.sqrt(variance);
-        if(stddev > 1.5){
-            console.log(`Offset unreliable (stddev=${stddev.toFixed(2)}, pairs=${matches.length}), skipping`);
-            return 0;
-        }
-        let filtered = offsets.filter(v => Math.abs(v - median) <= stddev);
-        let finalOffset = filtered.reduce((s, v) => s + v, 0) / filtered.length;
-        console.log(`Offset: ${finalOffset.toFixed(2)}s (from ${filtered.length}/${matches.length} pairs)`);
-        return parseFloat(finalOffset.toFixed(2));
-    }
-    //const datae = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}&cid=${i}`)
-    const cleanName = name.replace(/-.*$/, '').replace(/\([^)]*\)/g, '').replace(/【[^】]*】/g, "");
-    const searchKeywords = [`${cleanName} - ${artist}`.trim(), cleanName].filter((value, index, list) => value && list.indexOf(value) === index);
-    let all_search_arr = [];
-    // Retry an empty local response once before moving to the external fallback.
-    for (let attempt = 0; attempt < 2 && all_search_arr.length === 0; attempt++) {
-        const localSearches = await Promise.allSettled(searchKeywords.map((keyword) =>
-            axios.get(`${qqmusic_api}/search`, {
-                params: { keyword, limit: 10 },
-                timeout: qqmusic_timeout,
-                validateStatus: (status) => status >= 200 && status < 300,
-                headers: { 'user-agent': user_agent_b }
-            })
-        ));
-        for (const result of localSearches) {
-            const rows = result.status === 'fulfilled' && Array.isArray(result.value.data?.data)
-                ? result.value.data.data
-                : [];
-            all_search_arr.push(...rows);
-        }
-        if (all_search_arr.length === 0 && attempt === 0) await delay(250);
-    }
-    all_search_arr = all_search_arr.filter((item, index, self) => item && self.findIndex((t) => t.id === item.id) === index);
-    if(all_search_arr.length===0){
-        const backupSearches = await Promise.allSettled(searchKeywords.map((keyword) =>
-            axios.get('https://api.vkeys.cn/v2/music/tencent/search/song', {
-                params: { word: keyword },
-                timeout: qqmusic_timeout,
-                validateStatus: (status) => status >= 200 && status < 300,
-                headers: { 'user-agent': user_agent_b }
-            })
-        ));
-        for (const result of backupSearches) {
-            const rows = result.status === 'fulfilled' && Array.isArray(result.value.data?.data)
-                ? result.value.data.data
-                : [];
-            all_search_arr.push(...rows);
-        }
-        all_search_arr = all_search_arr.filter((item, index, self) => item && self.findIndex((t) => t.id === item.id) === index);
-    }
-    let mi;
-    if(all_search_arr.length === 0) {sadee = `${sadee}${name} - ${artist} ~ ${album}\n`;return {metadata:{zq:false,message:`NSA  .`}}};
-    let index=-1;
-    let search_arr = [];
-    let fail_arr= [];
-    if(all_search_arr.length===0){
-        return {metadata:{zq:false,message:`未找到歌词  .`}};
-    }
-    for(let i=0;i<all_search_arr.length;i++){
-        /*
-        此过滤的目的是寻找歌曲及其不同版本，而不是完全相同的，因为wyy和qq哪怕歌曲名字、艺人名字、专辑名字都相同，歌曲时间轴也可能完全不同
-        (可能原因是音源不同，导致歌曲开始时间不同，例如网易云的某些歌曲一开始有留白，qq则没有)
-        这只能通过下面的时间轴匹配来确定更好的版本，哪怕不是同一个人唱的（例如wyy是初音唱，qq上没有初音唱的版本或者音源有较大差异，则用重音的翻唱版本歌词代替一下，效果也差不多x）
-        保证最佳的逐词源供应
-        */
-        const qqName = all_search_arr[i].song?all_search_arr[i].song:"";const qqArtist = all_search_arr[i].singer?all_search_arr[i].singer:"";const qqAlbum = all_search_arr[i].album?all_search_arr[i].album:"";
-        const qqList = qqArtist.replace(/\([^)]*\)/g, '').replace(/ /g, "").toUpperCase().split("/");
-        const wyList = artist.replace(/\([^)]*\)/g, '').replace(/ /g, "").toUpperCase().split("/");
-        let a_aru = 0;
-        for (const qq of qqList) { 
-            for (const wy of wyList) {
-                const sim = stringSimilarity(qq, wy);
-                if (sim > a_aru) {
-                    a_aru = sim;
-                }
-            }
-        }
-        const a_tiu = Math.max(
-            stringSimilarity(qqName.replace(/\([^)]*\)/g, '').replace(/【[^】]*】/g,"").replace(/\[[^)]*\]/g,"").replace(/-.*$/, '').replace(/ /g, "").toUpperCase(),name.replace(/\([^)]*\)/g, '').replace(/【[^】]*】/g,"").replace(/\[[^)]*\]/g,"").replace(/-.*$/, '').replace(/ /g, "").toUpperCase()),
-            stringSimilarity(qqName.replace(/\[[^)]*\]/g,"").replace(/【[^】]*】/g,"").replace(/-.*$/, '').replace(/ /g, "").toUpperCase(),name.replace(/\[[^)]*\]/g,"").replace(/【[^】]*】/g,"").replace(/-.*$/, '').replace(/ /g, "").toUpperCase())
-        )
-        const a_alu = stringSimilarity(qqAlbum.replace(/\([^)]*\)/g, '').replace(/ /g, "").toUpperCase(),album.replace(/\([^)]*\)/g, '').replace(/ /g, "").toUpperCase())
-        if(a_tiu>0.6&&(a_aru+a_alu>0.9||(a_aru>0.7&&(album===name||qqName===qqAlbum)))){
-            let ojb =all_search_arr[i];
-            ojb.taa_ppl=stringSimilarity(qqName,name)+stringSimilarity(qqArtist,artist)+stringSimilarity(qqAlbum,album)
-            search_arr.push(all_search_arr[i])
-        }else{//debug
-            let ojb =all_search_arr[i]
-            ojb.message=`${a_tiu}、${a_aru}、${a_alu}`
-            fail_arr.push(ojb)
-        }
-    }
-    search_arr.sort((a, b) => b.taa_ppl - a.taa_ppl)
-    /*
-    const filter_search_arr=search_arr.filter(obj => {
-        return obj.song!==obj.album;
-    });
-    if(name!==album&&filter_search_arr){
-        search_arr=filter_search_arr
-    }*/
-    if(search_arr.length===0){
-        search_arr.push(all_search_arr[0]);//保底
-    }
-    let wyylyricstext="";
-    for(const ajson of yrcjson.lyrics){
-        wyylyricstext+=ajson.text
-    }
 
-    let max_matches_num=0
-    let datae;
-    let qrcjson;
-    for(let i=0;i<search_arr.length;i++){
-        datae = null;
-        try{
-            datae = await axios.get(`${qqmusic_api}/lyric`, { params: { id: search_arr[i].mid, qrc: 1 }, timeout: qqmusic_timeout, validateStatus: (status) => status === 200 || status === 404, headers: { 'user-agent': user_agent_b } });
-        }catch{
-            datae = null;
-        }
-        // A local response containing yrc is valid; only fall back when it is absent.
-        if(!datae || datae.status !== 200 || !datae.data?.data?.yrc){
-            try{
-                datae = await axios.get('https://api.vkeys.cn/v2/music/tencent/lyric', { params: { id: search_arr[i].id }, timeout: qqmusic_timeout, validateStatus: (status) => status === 200 || status === 404 });
-            }catch{
-                datae = null;
-            }
-        }
-        if(!datae || datae.status !== 200 || !datae.data?.data) continue;
-        let qrc={};
-        qrc.orig = datae.data.data.yrc
-        qrc.ts = datae.data.data.trans
-        qrc.roma = datae.data.data.roma
-        const json = QrcToJson(qrc,search_arr[i].id,0)
-        let qqlyricstext="";
-        for(const ajson of json.lyrics){
-            qqlyricstext+=ajson.text
-        }
-        const lyrics_text_matches=lyricsSimilarity(wyylyricstext,qqlyricstext)
-        const matches_num=QrcMatchingYrcTimeline(json.lyrics,yrcjson.lyrics)
-        search_arr[i].matches_num=matches_num//debug
-        search_arr[i].lyrics_text_matches=lyrics_text_matches
-        if(matches_num>=max_matches_num+Math.min(json.lyrics.length,yrcjson.lyrics.length,7)&&lyrics_text_matches>0.4){
-            max_matches_num=matches_num
-            qrcjson=json
-        }
-    }
-    if(!qrcjson){
-        return {metadata:{zq:false,message:`歌曲无歌词  .`,search_arr,fail_arr}};
-    }
-    qrcjson.metadata.search_arr = search_arr//debug
-    qrcjson.metadata.fail_arr = fail_arr//debug
-    qrcjson = QrcOffset(qrcjson,QrcMatchingYrcTimelineOffset(yrcjson.lyrics,qrcjson.lyrics))
-    if(qrcjson){
-        return qrcjson
-    }
-    //备用API，与前者相比能获取的歌词较少，大道至简（雾
-    let datas = await axios.get(`${qqmusiclyric_api}?name=${encodeURIComponent(name.replace(/ - .*/, ''))}&artists=${encodeURIComponent(artist.replace(/\/.*/, ''))}&album=${encodeURIComponent(album)}`, {validateStatus: function (status) {return (status==500)||(status==404)||(status==200);},timeout: 60000})
-    if(datas.status===500||datas.status===404||datas.data.code===404){
-        return {metadata:{zq:false}};
-    }
-    qrcjson = QrcToJson(datas.data,datas.data.id,1)
-    qrcjson = QrcOffset(qrcjson,QrcMatchingYrcTimelineOffset(yrcjson.lyrics,qrcjson.lyrics))
-    qrcjson.metadata.apimode = 2;
-    //qrcjson.metadata.nmess = nme.data;//调试用
-    return qrcjson
-}
-function QrcOffset(json,offset){
-    if(offset<3){
-        return json;
-    }
-    let qrc=json;
-    for(let i=0;i<qrc.lyrics.length;i++){
-        qrc.lyrics[i].time += offset;
-        for(let c=0;c<qrc.lyrics[i].etext.length;c++){
-            qrc.lyrics[i].etext[c].start += offset;
-            qrc.lyrics[i].etext[c].end += offset;
-        }
-    }
-    qrc.metadata.offset=offset
-    return qrc;
-}
-function QrcToJson(qrcd,id, apinu){
-    let qrc = qrcd;
-    const metadataRegex = /^\s*\[([a-zA-Z]+)\s*:\s*(.*?)\]\s*$/;
-    const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
-    const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
-    const regex = /(.*?)\((\d+),(\d+)\)/g;
-    function prpdlq(qrc, timesec,apinu){
-        const timeTagRegex = /\[(\d+):(\d+)(?:[.:](\d+))?\](.*)/;
-        const zqTagRegex = /\[(\d+),(\d+)?\](.*)/
-        let pairif = false;
-        let romaif = false;
-        let pairtext = "";
-        let min_pairtime = 3;
-        let min_romatime = 3;
-        if(qrc.ts){
-            let pairlyrics;
-            let lyricMatch;
-            if(apinu===0){
-                pairlyrics = qrc.ts.split("\n").filter(item => timeTagRegex.test(item));
-            }
-            if(apinu===1){
-                pairlyrics = qrc.ts.split("\n").filter(item => zqTagRegex.test(item));
-            }
-            for(let i = 0; i < pairlyrics.length; i++){
-                lyricMatch = apinu===0?pairlyrics[i].match(timeTagRegex):pairlyrics[i].match(zqTagRegex);
-                if(!lyricMatch) continue;
-                let text = apinu===0?lyricMatch[4]:lyricMatch[3]
-                const decimal = apinu===0?(lyricMatch[3] ? (lyricMatch[3].toString().length === 2 ? parseInt(lyricMatch[3]) / 100 : parseInt(lyricMatch[1])/1000):0):0
-                let timesecp = apinu===0?parseInt(lyricMatch[1]) * 60 + parseInt(lyricMatch[2]) + decimal:lyricMatch[1]/1000
-                if(min_pairtime > Math.abs(timesec - timesecp)){
-                        min_pairtime = Math.abs(timesec - timesecp);
-                        pairtext = text.replace('//', '');//TX特有的局部无翻译文本的替换字符
-                }
-            }
-            pairif = true;
-        }
-        let romatext = '';
-        if(qrc.roma){
-            const romalyrics = qrc.roma.split("\n").filter(item => zqTagRegex.test(item));
-            for(let i = 0; i < romalyrics.length; i++){
-                let lyricMatch = romalyrics[i].match(zqTagRegex);
-                if(!lyricMatch) continue;
-                let text = lyricMatch[3].replace(/\((\d+),(\d+)\)/g, '')
-                let timesecp = parseInt(lyricMatch[1])/1000
-                if(min_romatime > Math.abs(timesec - timesecp)){
-                    min_romatime = Math.abs(timesec - timesecp);
-                    romatext = text;
-                }
-            }
-            romaif = true;
-        }
-        return {pairtext,pairif,romatext,romaif};
-    }
-    let json ={metadata: {zq:false,m:2}, lyrics: [],};
-    if(qrc.orig){
-        let pdjg;
-        qrc.orig = qrc.orig.replace(/^\uFEFF/, '');
-        const lyrics = qrc.orig.split("\n");
-        for(const lyric of lyrics){
-            const metadataMatch = lyric.match(metadataRegex);
-            if (metadataMatch) {
-                 json.metadata[metadataMatch[1].toLowerCase()] = metadataMatch[2].trim();
-                 continue;
-            }
-            let lyricMatch = lyric.match(zqTagRegex);
-            let text;
-            let timesec;
-            if(!lyricMatch) continue;
-            text = lyricMatch[3]
-            timesec = lyricMatch[1] / 1000
-            let eljson = [];
-            if (text.includes('(') && text.includes(')')) {
-                let ttt;
-                let i = 0;
-                while ((ttt = regex.exec(lyric.replace(/\[.*?\]/g, '')))) {
-                    const Duration = parseInt(ttt[3]) / 1000
-                    const start = parseInt(ttt[2]) / 1000
-                    const totalSecondsEnd = (parseInt(ttt[2])+parseInt(ttt[3]))/1000
-                    const texte = ttt[1].replace(/ /g, '&nbsp;')
-                    eljson.push({ Duration: Duration, start: start, end: totalSecondsEnd, text: texte });
-                }
-                if(eljson[eljson.length-1]=='&nbsp;') eljson.pop();
-                json.metadata.zq = eljson.length > 0;
-            }
-            text = text.replace(/\(\d+,\d+\)/g, '')
-            pdjg = prpdlq(qrc, timesec, apinu)
-            json.lyrics.push({time: timesec,text: text,etext: eljson,pairlyric: pdjg.pairtext,romanizationslyric: pdjg.romatext})
-        }
-        json.metadata.nolyric = json.lyrics.length === 0;
-        json.metadata.roma = pdjg?pdjg.romaif:false
-        json.metadata.pair = pdjg?pdjg.pairif:false
-    }else{
-        json.metadata.nolyric =true;
-        json.metadata.zq = false;
-        json.metadata.roma = false;
-        json.metadata.pair = false;
-    }
-    json.metadata.qqmusicid = id;
-    return json;
-}
+
+
 let picerr = '';
 async function metaload(musicid, name){
     const pijt = await axios.get(`https://music.163.com/song?id=${musicid}`, {headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}});
     const $ = cheerio.load(pijt.data);
     let albumName = '';let albumLink = '';
+    let duration = 0;
+    let detailAlbum = '';
+    try {
+        const detail = await axios.get(`https://music.163.com/api/song/detail?ids=[${musicid}]`, {
+            headers: {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'},
+            timeout: 10000
+        });
+        duration = Number(detail.data?.songs?.[0]?.duration || 0) / 1000;
+        detailAlbum = detail.data?.songs?.[0]?.album?.name || '';
+    } catch {
+        // 时长只是匹配加分项，失败不影响歌词
+    }
     $('a[href*="/album?id="]').each((index, element) => {
         const $link = $(element);
         const parentText = $link.parent().text();
@@ -704,6 +393,7 @@ async function metaload(musicid, name){
             return false;
         }
     });
+    if(!albumName) albumName = detailAlbum;
     if(!fs.existsSync(`dist/musicfile/img/${filenamecl(albumName)}.jpg`)){
         const dataSrcList = [];
         $('img[data-src]').each((index, element) => {
@@ -718,7 +408,7 @@ async function metaload(musicid, name){
             yureliebiao += encodeURI(`${yuming}musicfile/img/${filenamecl(albumName)}.jpg`) +`\n`;
         }
     }
-    return {albumName,albumLink};
+    return {albumName,albumLink,duration};
 }
 if (isMain) {
     await start()
@@ -751,168 +441,8 @@ axiosRetry(axios, {
   shouldResetTimeout: true
 });
 */
-function stringSimilarity(str1, str2, options = {}) {
-    // 输入归一化
-    const s1 = str1 == null ? '' : String(str1);
-    const s2 = str2 == null ? '' : String(str2);
 
-    // 完全相等时直接返回 1
-    if (s1 === s2) return 1;
 
-    // 空串快速处理
-    if (s1.length === 0 || s2.length === 0) return 0;
-
-    // 转为字符数组，正确处理 Unicode 字符（如 emoji）
-    const a = Array.from(s1);
-    const b = Array.from(s2);
-    const len1 = a.length;
-    const len2 = b.length;
-
-    // 匹配窗口：max(0, floor(max(len1, len2) / 2) - 1)
-    const matchWindow = Math.max(0, Math.floor(Math.max(len1, len2) / 2) - 1);
-
-    const matches1 = new Array(len1).fill(false);
-    const matches2 = new Array(len2).fill(false);
-
-    let matches = 0;
-
-    // 第一步：找出所有匹配字符
-    for (let i = 0; i < len1; i++) {
-        const start = Math.max(0, i - matchWindow);
-        const end = Math.min(i + matchWindow + 1, len2);
-
-        for (let j = start; j < end; j++) {
-            if (!matches2[j] && a[i] === b[j]) {
-                matches1[i] = true;
-                matches2[j] = true;
-                matches++;
-                break;
-            }
-        }
-    }
-
-    // 无匹配字符时相似度为 0
-    if (matches === 0) return 0;
-
-    // 第二步：计算换位数（transpositions）
-    const matchedChars1 = [];
-    const matchedChars2 = [];
-
-    for (let i = 0; i < len1; i++) {
-        if (matches1[i]) matchedChars1.push(a[i]);
-    }
-    for (let j = 0; j < len2; j++) {
-        if (matches2[j]) matchedChars2.push(b[j]);
-    }
-
-    let transpositions = 0;
-    for (let k = 0; k < matchedChars1.length; k++) {
-        if (matchedChars1[k] !== matchedChars2[k]) {
-            transpositions++;
-        }
-    }
-    transpositions /= 2;
-
-    // 第三步：计算 Jaro 相似度
-    const jaro = (
-        matches / len1 +
-        matches / len2 +
-        (matches - transpositions) / matches
-    ) / 3;
-
-    // 第四步：Jaro-Winkler 前缀奖励
-    const scalingFactor = options.scalingFactor !== undefined ? options.scalingFactor : 0.1;
-    const maxPrefixLength = options.prefixLength !== undefined ? options.prefixLength : 4;
-    const prefixLimit = Math.min(maxPrefixLength, len1, len2);
-
-    let commonPrefix = 0;
-    for (let i = 0; i < prefixLimit; i++) {
-        if (a[i] === b[i]) {
-            commonPrefix++;
-        } else {
-            break;
-        }
-    }
-
-    const jaroWinkler = jaro + commonPrefix * scalingFactor * (1 - jaro);
-
-    // 确保结果不超过 1
-    return Math.min(1, jaroWinkler);
-}
-function lyricsSimilarity(lyricsA, lyricsB, options = {}) {
-    const n = options.n || 3;
-    const useLogTF = !!options.useLogTF;
-
-    // 1. 预处理：转为字符串、统一小写、去除非字母数字和中文的字符
-    const clean = (text) => {
-        if (text == null) return '';
-        return String(text)
-            .toLowerCase()
-            .replace(/[^\w\u4e00-\u9fff]/g, ''); // 保留字母、数字、下划线及基本汉字
-    };
-
-    const a = clean(lyricsA);
-    const b = clean(lyricsB);
-
-    // 空串处理
-    if (a.length === 0 && b.length === 0) return 1;
-    if (a.length === 0 || b.length === 0) return 0;
-
-    // 2. 生成 n-gram 频率 Map
-    const getNgrams = (str) => {
-        const map = new Map();
-        const len = str.length;
-
-        if (len < n) {
-            // 若字符串过短，退化为单字符 n-gram
-            for (const ch of str) {
-                map.set(ch, (map.get(ch) || 0) + 1);
-            }
-        } else {
-            for (let i = 0; i <= len - n; i++) {
-                const gram = str.slice(i, i + n);
-                map.set(gram, (map.get(gram) || 0) + 1);
-            }
-        }
-
-        // 可选：对数词频，压缩高频 n-gram 的影响
-        if (useLogTF) {
-            for (const [gram, count] of map) {
-                map.set(gram, 1 + Math.log(count));
-            }
-        }
-
-        return map;
-    };
-
-    const mapA = getNgrams(a);
-    const mapB = getNgrams(b);
-
-    // 3. 计算余弦相似度
-    let dot = 0;
-    let normA = 0;
-    let normB = 0;
-
-    // 范数计算
-    for (const count of mapA.values()) normA += count * count;
-    for (const count of mapB.values()) normB += count * count;
-
-    if (normA === 0 || normB === 0) return 0;
-
-    // 点积：遍历较小的 Map 以减少计算量
-    const [smaller, larger] = mapA.size <= mapB.size ? [mapA, mapB] : [mapB, mapA];
-    for (const [gram, count] of smaller) {
-        const otherCount = larger.get(gram);
-        if (otherCount) {
-            dot += count * otherCount;
-        }
-    }
-
-    const similarity = dot / (Math.sqrt(normA) * Math.sqrt(normB));
-
-    // 防止浮点误差导致超出范围
-    return Math.min(1, Math.max(0, similarity));
-}
 export function songManifest(json){
     const basename = `${filenamecl(json.metadata.ti)} - ${filenamecl(json.metadata.ar)} · ${filenamecl(json.metadata.al)}`;
     return {
@@ -923,6 +453,26 @@ export function songManifest(json){
         image: `img/${filenamecl(json.metadata.al)}.jpg`
     };
 }
+// QQ 与网易云常常一行对多行/多行对一行；文本完全一致时把翻译/罗马音搬过去。
+function fillAuxFromReference(target, reference){
+    const byText = new Map();
+    for(const line of reference.lyrics || []){
+        const key = normalizeText(line.text);
+        if(!key) continue;
+        const entry = byText.get(key) || {pair:"",roma:""};
+        if(!entry.pair && line.pairlyric) entry.pair = line.pairlyric;
+        if(!entry.roma && line.romanizationslyric) entry.roma = line.romanizationslyric;
+        byText.set(key, entry);
+    }
+    for(const line of target.lyrics || []){
+        const entry = byText.get(normalizeText(line.text));
+        if(!entry) continue;
+        if(!line.pairlyric && entry.pair) line.pairlyric = entry.pair;
+        if(!line.romanizationslyric && entry.roma) line.romanizationslyric = entry.roma;
+    }
+    target.metadata.pair = target.lyrics.some(line => !!line.pairlyric);
+    target.metadata.roma = target.lyrics.some(line => !!line.romanizationslyric);
+}
 export async function resolveSong(musicd){
     const musicid = musicd.url && musicd.url.match(/\d+$/);
     if(!musicid) return null;
@@ -930,18 +480,57 @@ export async function resolveSong(musicd){
     let json = await YrcToJson(musicid[0], metadata);
     if(qqyuan && (trytoqqlyric || !json.metadata.zq)){
         no_wyy++;
-        const jsonq = await QQJsonGET(json.metadata.ti, json.metadata.ar, json.metadata.al, json);
-        if(jsonq && jsonq.metadata.zq){
+        const jsonq = await QQJsonGET(json.metadata.ti, json.metadata.ar, json.metadata.al, json, {
+            api: qqmusic_api,
+            timeout: qqmusic_timeout
+        });
+        if(jsonq && jsonq.metadata.accepted){
             const wyy = json;
-            json = jsonq;
-            json.metadataq = json.metadata;
-            json.metadata.ti = wyy.metadata.ti;
-            json.metadata.ar = wyy.metadata.ar;
-            json.metadata.al = wyy.metadata.al;
-            json.metadata.CLXIIIid = wyy.metadata.CLXIIIid;
-            json.lyrict = wyy;
+            // 网易云有逐字而 QQ 只有行级时保留网易云，避免降级逐词源。
+            if(jsonq.metadata.zq || !wyy.metadata.zq){
+                fillAuxFromReference(jsonq, wyy);
+                json = jsonq;
+                json.metadata.ti = wyy.metadata.ti;
+                json.metadata.ar = wyy.metadata.ar;
+                json.metadata.al = wyy.metadata.al;
+                json.metadata.CLXIIIid = wyy.metadata.CLXIIIid;
+                json.metadata.duration = wyy.metadata.duration;
+                json.metadata.qq = {
+                    matched: true,
+                    kept: "qq",
+                    id: json.metadata.qqmusicid,
+                    mid: json.metadata.qqmid,
+                    provider: json.metadata.provider,
+                    score: json.metadata.matchScore,
+                    offset: json.metadata.offset,
+                    ...(json.metadata.scale ? {scale: json.metadata.scale} : {}),
+                    align: json.metadata.align
+                };
+            }else{
+                json.metadata.qq = {
+                    matched: true,
+                    kept: "netease",
+                    id: jsonq.metadata.qqmusicid,
+                    mid: jsonq.metadata.qqmid,
+                    provider: jsonq.metadata.provider,
+                    score: jsonq.metadata.matchScore,
+                    offset: jsonq.metadata.offset,
+                    ...(jsonq.metadata.scale ? {scale: jsonq.metadata.scale} : {}),
+                    align: jsonq.metadata.align
+                };
+                sesc_ppe++;
+            }
         }else if(jsonq){
-            json.lyricq = jsonq;
+            if(jsonq.metadata.message === "NSA  ."){
+                sadee = `${sadee}${json.metadata.ti} - ${json.metadata.ar} ~ ${json.metadata.al}\n`;
+            }
+            const best = jsonq.metadata.candidates && jsonq.metadata.candidates[0];
+            json.metadata.qq = {
+                matched: false,
+                kept: "netease",
+                message: jsonq.metadata.message,
+                ...(best ? {best} : {})
+            };
             sesc_ppe++;
         }else{
             sesc_ppe++;
